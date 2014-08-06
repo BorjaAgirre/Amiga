@@ -1,0 +1,7 @@
+parameters:
+#    zubietxe_principal.example.class: Zubietxe\PrincipalBundle\Example
+
+services:
+#    zubietxe_principal.example:
+#        class: %zubietxe_principal.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

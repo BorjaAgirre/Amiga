@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+
+    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+
+</head>
+
+<body>
+
+
+    <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <!-- Include all JavaScripts, compiled by Assetic -->
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+
+<div class="container">
+
+<nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Zubietxe</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="">
+            </div>
+            <button type="submit" class="btn btn-default">Buscar</button>
+        </form>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
+
+
+<h3>Formulario actividad: </h3>
+
+		{{ form_start(form, { 'style': 'horizontal' }) }}
+
+		{{ form_errors(form) }}
+
+		{{ form_row(form.responsable, { 'label_col': 2, 'widget_col': 2}) }}
+		{{ form_row(form.responsable2, { 'label_col': 2, 'widget_col': 2}) }}
+
+		{{ form_row(form.volunt, { 'label_col': 2, 'widget_col': 2}) }} 
+		{{ form_row(form.fechaActividad, { 'label_col': 2, 'widget_col': 4}) }}
+		{{ form_row(form.comentarioActividad, { 'label_col': 2, 'widget_col': 8}) }}    
+		{{ form_row(form.observacionesActividad, { 'label_col': 2, 'widget_col': 8}) }}
+		{{ form_row(form.tipoActiv, { 'label_col': 2, 'widget_col': 4}) }}   
+
+		{{ form_end(form) }}
+
+</div>
+</body>

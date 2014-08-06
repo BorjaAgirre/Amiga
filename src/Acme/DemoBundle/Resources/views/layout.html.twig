@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+
+    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+
+</head>
+
+<body>
+
+
+    <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <!-- Include all JavaScripts, compiled by Assetic -->
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+
+
+
+ <div class="container">
+<div class="row">
+<div class="span12">
+LOGO
+</div>
+</div>
+   <div class="navbar navbar-inverse">
+   <div class="navbar-inner">
+   <div class="container">
+   
+   <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+   <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+   </a>
+   
+   <!-- Be sure to leave the brand out there if you want it shown -->
+   <a class="brand" href="#">Project name</a>
+   
+   <!-- Everything you want hidden at 940px or less, place within here -->
+   <div class="nav-collapse collapse">
+   <!-- .nav, .navbar-search, .navbar-form, etc -->
+   <ul class="nav">
+   <li class="active">
+   <a href="#">Home</a>
+   </li>
+   <li><a href="#">Link</a></li>
+   <li><a href="#">Link</a></li>
+   </ul>  
+   </div>
+   
+   </div>
+   </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+   <div id="myCarousel" class="carousel slide">
+   <!-- Carousel items -->
+   <div class="carousel-inner">
+   <div class="active item">
+    <img src="http://lorempixel.com/800/250/nature/1/">
+   </div>
+   <div class="item"><img src="http://lorempixel.com/800/250/nature/2/"></div>
+   <div class="item"><img src="http://lorempixel.com/800/250/nature/3/"></div>
+   </div>
+   <!-- Carousel nav -->
+   <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+   </div>    
+    </div>
+   </div>
+   <div class="row">
+    <div class="span12">
+    Hello !
+    </div>
+   </div>
+</div>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,39 @@
+Zubietxe\PrincipalBundle\Entity\Varios:
+    type: entity
+    table: varios
+    id:
+        idVarios:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: id_varios
+            generator:
+                strategy: IDENTITY
+    fields:
+        variable:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+        valor:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+        valor2:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+        fechaCambio:
+            type: datetime
+            nullable: true
+            comment: ''
+            default: '0000-00-00 00:00:00'
+            column: fecha_cambio
+    lifecycleCallbacks: {  }
