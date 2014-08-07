@@ -1036,6 +1036,12 @@ class Persona
      */
     private $documentoidentif;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="JusticiaGratuita", type="integer", nullable=true)
+     */
+    private $justiciaGratuita;
 
 
     /**
