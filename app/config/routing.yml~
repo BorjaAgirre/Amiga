@@ -1,0 +1,8 @@
+amiga_principal:
+    resource: "@AmigaPrincipalBundle/Resources/config/routing.yml"
+    prefix:   /
+
+themes_bootstrap:
+    resource: "@ThemesBootstrapBundle/Resources/config/routing.yml"
+    prefix:   /
+

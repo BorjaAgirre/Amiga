@@ -1,0 +1,3 @@
+amiga_principal_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AmigaPrincipalBundle:Default:index }

@@ -1,0 +1,7 @@
+parameters:
+#    amiga_principal.example.class: Amiga\PrincipalBundle\Example
+
+services:
+#    amiga_principal.example:
+#        class: %amiga_principal.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
