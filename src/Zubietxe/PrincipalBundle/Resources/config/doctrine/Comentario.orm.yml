@@ -1,0 +1,91 @@
+Zubietxe\PrincipalBundle\Entity\Comentario:
+    type: entity
+    table: comentario
+    indexes:
+        id_pers:
+            columns:
+                - id_unico
+        id_actividad:
+            columns:
+                - id_actividad
+        hito:
+            columns:
+                - hito
+    id:
+        idComent:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: id_coment
+            generator:
+                strategy: IDENTITY
+    fields:
+        comentario:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        fecha:
+            type: date
+            nullable: true
+            comment: ''
+        tutor:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        grupo:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        permisos:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        tipoComentario:
+            type: string
+            nullable: true
+            length: 1
+            fixed: false
+            comment: ''
+            column: tipo_comentario
+        hitoActiv:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: hito_activ
+    manyToOne:
+        idActividad:
+            targetEntity: Actividad
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_actividad:
+                    referencedColumnName: id_activ
+            orphanRemoval: false
+        idUnico:
+            targetEntity: Persona
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_unico:
+                    referencedColumnName: id_unico
+            orphanRemoval: false
+        hito:
+            targetEntity: Hito
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                hito:
+                    referencedColumnName: id_hito
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

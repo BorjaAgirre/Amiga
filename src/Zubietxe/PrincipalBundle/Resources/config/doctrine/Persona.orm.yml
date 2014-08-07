@@ -1,0 +1,879 @@
+Zubietxe\PrincipalBundle\Entity\Persona:
+    type: entity
+    table: persona
+    indexes:
+        id_unico:
+            columns:
+                - id_unico
+    id:
+        idPers:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: id_pers
+            generator:
+                strategy: IDENTITY
+    fields:
+        idUnico:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: id_unico
+        historial:
+            type: string
+            nullable: true
+            length: 9
+            fixed: false
+            comment: ''
+        sexo:
+            type: string
+            nullable: true
+            length: 5
+            fixed: false
+            comment: ''
+        nombre:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+        apellido1:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+        apellido2:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+        fechanac:
+            type: date
+            nullable: true
+            comment: ''
+        lugarNac:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+            column: lugar_nac
+        dniPas:
+            type: string
+            nullable: true
+            length: 15
+            fixed: false
+            comment: ''
+            column: dni_pas
+        numSs:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: num_ss
+        numExpediente:
+            type: string
+            nullable: true
+            length: 10
+            fixed: false
+            comment: ''
+            column: num_expediente
+        nacionalidad:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        telefono:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+        direccion:
+            type: string
+            nullable: true
+            length: 40
+            fixed: false
+            comment: ''
+        poblacion:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        nucleoConv:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: nucleo_conv
+        estadoCivil:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: estado_civil
+        hijos:
+            type: string
+            nullable: true
+            length: 4
+            fixed: false
+            comment: ''
+        nHijos:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: n_hijos
+        observacionesHijos:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: observaciones_hijos
+        telefonosInteres:
+            type: string
+            nullable: true
+            length: 512
+            fixed: false
+            comment: ''
+            default: ' '
+            column: telefonos_interes
+        fechaIngreso:
+            type: date
+            nullable: true
+            comment: ''
+            column: fecha_ingreso
+        fechaSalida:
+            type: date
+            nullable: true
+            comment: ''
+            column: fecha_salida
+        procedenciaDemanda:
+            type: string
+            nullable: true
+            length: 120
+            fixed: false
+            comment: ''
+            column: procedencia_demanda
+        tutor:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        comeLu:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: come_lu
+        comeMa:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: come_ma
+        comeMi:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: come_mi
+        comeJu:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: come_ju
+        comeVi:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: come_vi
+        comeSa:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: come_sa
+        comeDo:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: come_do
+        comeSaNotas:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+            column: come_sa_notas
+        comeDoNotas:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+            column: come_do_notas
+        creditrans:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        listaEsperaPiso:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: lista_espera_piso
+        datosformativosobs:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+            column: DatosFormativosObs
+        datosformativositem:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+            column: DatosFormativosItem
+        idioma:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+            column: Idioma
+        edadabandonoestudios:
+            type: string
+            nullable: true
+            length: 5
+            fixed: false
+            comment: ''
+            column: EdadAbandonoEstudios
+        laboralorigen:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: LaboralOrigen
+        laboralespana:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: LaboralEspana
+        tiempotrabajado:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: TiempoTrabajado
+        trabaja:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Trabaja
+        autonomia:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Autonomia
+        disminucionfisica:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: DisminucionFisica
+        minusvaliaporcentaje:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: MinusvaliaPorcentaje
+        incapacitacion:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Incapacitacion
+        toxicomania:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Toxicomania
+        antecconsumo:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: AntecConsumo
+        disminucionpsiquica:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: DisminucionPsiquica
+        enfermedadmental:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: EnfermedadMental
+        tuberculosis:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Tuberculosis
+        hepatitis:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Hepatitis
+        vih:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: VIH
+        diabetes:
+            type: string
+            nullable: true
+            length: 2
+            fixed: false
+            comment: ''
+        otras:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Otras
+        enfermedadescomentarios:
+            type: string
+            nullable: true
+            length: 200
+            fixed: false
+            comment: ''
+            column: EnfermedadesComentarios
+        medicacion:
+            type: string
+            nullable: true
+            length: 200
+            fixed: false
+            comment: ''
+            column: Medicacion
+        enfmentaldiagnostico:
+            type: string
+            nullable: true
+            length: 120
+            fixed: false
+            comment: ''
+            column: EnfMentalDiagnostico
+        enfmentalfechadiagn:
+            type: date
+            nullable: true
+            comment: ''
+            column: EnfMentalFechaDiagn
+        enfmentaltratamiento:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: EnfMentalTratamiento
+        enfmentalingresos:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+            column: EnfMentalIngresos
+        enfmentalpadres:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: EnfMentalPadres
+        enfmentalhermanos:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: EnfMentalHermanos
+        enfmentalpareja:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: EnfMentalPareja
+        enfmentalhijos:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: EnfMentalHijos
+        drogaspadres:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: DrogasPadres
+        drogashermanos:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: DrogasHermanos
+        drogaspareja:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: DrogasPareja
+        drogashijos:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: DrogasHijos
+        permisoresid:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PermisoResid
+        permisoresidtr:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PermisoResidTr
+        npasap:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+        fpasap:
+            type: date
+            nullable: true
+            comment: ''
+        ncedula:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+        fcedula:
+            type: date
+            nullable: true
+            comment: ''
+        fressol:
+            type: date
+            nullable: true
+            comment: ''
+        nresconc:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+        fresconc:
+            type: date
+            nullable: true
+            comment: ''
+        frestrsol:
+            type: date
+            nullable: true
+            comment: ''
+        nrestrconc:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+        frestrconc:
+            type: date
+            nullable: true
+            comment: ''
+        visado:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        asilo:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        otrosdoc:
+            type: string
+            nullable: true
+            length: 40
+            fixed: false
+            comment: ''
+        fentrada:
+            type: date
+            nullable: true
+            comment: ''
+        fprueba:
+            type: date
+            nullable: true
+            comment: ''
+        abogadootros:
+            type: string
+            nullable: true
+            length: 40
+            fixed: false
+            comment: ''
+        permisoresidrazonesno:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: PermisoResidRazonesNo
+        permisosolicitudfecha:
+            type: date
+            nullable: true
+            comment: ''
+            column: PermisoSolicitudFecha
+        permisosolicitudlugar:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: PermisoSolicitudLugar
+        tiemporesidenciaespanya:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: TiempoResidenciaEspanya
+        tiemporesidenciabilbao:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: TiempoResidenciaBilbao
+        permisotrabajo:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: PermisoTrabajo
+        permisotrabajorazonesno:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: PermisoTrabajoRazonesNo
+        fechaempadronamiento:
+            type: date
+            nullable: true
+            comment: ''
+            column: FechaEmpadronamiento
+        empadronamiento:
+            type: string
+            nullable: true
+            length: 50
+            fixed: false
+            comment: ''
+            column: Empadronamiento
+        tis:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Tis
+        redapoyo:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: RedApoyo
+        ingresospropios:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: IngresosPropios
+        ingresospnc:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: IngresosPnc
+        ingresosotros:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: IngresosOtros
+        ingresosnomina:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: IngresosNomina
+        ingresosrentabas:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: IngresosRentaBas
+        ingresosprestcontrib:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: IngresosPrestContrib
+        ingresossedesconoce:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: IngresosSeDesconoce
+        ingresosayudaindividual:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: IngresosAyudaIndividual
+        ingresosno:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: IngresosNo
+        penalantecedentesprision:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PenalAntecedentesPrision
+        penalordenalejamiento:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PenalOrdenAlejamiento
+        penalprisionpreventiva:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PenalPrisionPreventiva
+        penalprisionotros:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PenalPrisionOtros
+        penallibcondicional:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PenalLibCondicional
+        penalmedidaseguridad:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PenalMedidaSeguridad
+        penalcausaspendientes:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PenalCausasPendientes
+        penalpermisopenitenc:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PenalPermisoPenitenc
+        penaltercergrado:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PenalTercerGrado
+        penaltbc:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: PenalTbc
+        ducha:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        ropero:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        lavanderia:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        tlSabado:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: tl_sabado
+        tlDomingo:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: tl_domingo
+        salidaVerano:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: salida_verano
+        salidaOtro:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: salida_otro
+        medicacionCentro:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: medicacion_centro
+        nivelcastellano:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: NivelCastellano
+        expLaboral:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: exp_laboral
+        lanbide:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        fAltaLanbide:
+            type: date
+            nullable: true
+            comment: ''
+            column: F_alta_lanbide
+        fRenovLanbide:
+            type: date
+            nullable: true
+            comment: ''
+            column: F_renov_lanbide
+        inem:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        fAltaInem:
+            type: date
+            nullable: true
+            comment: ''
+            column: F_alta_inem
+        fRenovInem:
+            type: date
+            nullable: true
+            comment: ''
+            column: F_renov_inem
+        cursos:
+            type: string
+            nullable: true
+            length: 100
+            fixed: false
+            comment: ''
+        poblacionPadron:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: poblacion_padron
+        consumoprinc:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: ConsumoPrinc
+        insertIdUsuario:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: insert_id_usuario
+        insertFecha:
+            type: date
+            nullable: true
+            comment: ''
+            column: insert_fecha
+        anosconsumo:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: AnosConsumo
+        tratamiento:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: Tratamiento
+        tratamientotipo:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: TratamientoTipo
+        procedenciaDemandaLista:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: procedencia_demanda_lista
+        documentoidentif:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: DocumentoIdentif
+    lifecycleCallbacks: {  }

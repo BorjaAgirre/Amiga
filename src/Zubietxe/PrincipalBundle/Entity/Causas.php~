@@ -1,0 +1,88 @@
+<?php
+
+namespace Zubietxe\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Causas
+ *
+ * @ORM\Table(name="causas")
+ * @ORM\Entity
+ */
+class Causas
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_causa", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCausa;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_unico", type="integer", nullable=true)
+     */
+    private $idUnico;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="organo_judicial", type="string", length=30, nullable=true)
+     */
+    private $organoJudicial;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="situacion", type="string", length=30, nullable=true)
+     */
+    private $situacion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="abogado", type="string", length=30, nullable=true)
+     */
+    private $abogado;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="citaciones", type="string", length=30, nullable=true)
+     */
+    private $citaciones;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="condena", type="string", length=30, nullable=true)
+     */
+    private $condena;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="informes", type="string", length=30, nullable=true)
+     */
+    private $informes;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="domicilio", type="string", length=30, nullable=true)
+     */
+    private $domicilio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="informes2", type="string", length=30, nullable=true)
+     */
+    private $informes2;
+
+
+}

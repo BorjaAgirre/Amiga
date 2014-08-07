@@ -1,0 +1,4 @@
+zubietxe_principal:
+    resource: "@ZubietxePrincipalBundle/Resources/config/routing.yml"
+    prefix:   /
+

@@ -1,0 +1,44 @@
+<?php
+
+namespace Zubietxe\PrincipalBundle\Form;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
+class DesplegablesType extends AbstractType
+{
+        /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('despl')
+            ->add('idDespl')
+            ->add('nombre')
+            ->add('dato1')
+            ->add('dato2')
+            ->add('datotexto')
+        ;
+    }
+    
+    /**
+     * @param OptionsResolverInterface $resolver
+     */
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'Zubietxe\PrincipalBundle\Entity\Desplegables'
+        ));
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return 'zubietxe_principalbundle_desplegables';
+    }
+}

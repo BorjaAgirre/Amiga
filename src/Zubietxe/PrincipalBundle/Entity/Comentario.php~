@@ -1,0 +1,104 @@
+<?php
+
+namespace Zubietxe\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Comentario
+ *
+ * @ORM\Table(name="comentario", indexes={@ORM\Index(name="id_pers", columns={"id_unico"}), @ORM\Index(name="id_actividad", columns={"id_actividad"}), @ORM\Index(name="hito", columns={"hito"})})
+ * @ORM\Entity
+ */
+class Comentario
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_coment", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idComent;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comentario", type="text", nullable=true)
+     */
+    private $comentario;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha", type="date", nullable=true)
+     */
+    private $fecha;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tutor", type="integer", nullable=true)
+     */
+    private $tutor;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="grupo", type="integer", nullable=true)
+     */
+    private $grupo;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="permisos", type="integer", nullable=true)
+     */
+    private $permisos;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tipo_comentario", type="string", length=1, nullable=true)
+     */
+    private $tipoComentario;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="hito_activ", type="integer", nullable=true)
+     */
+    private $hitoActiv;
+
+    /**
+     * @var \Zubietxe\PrincipalBundle\Entity\Actividad
+     *
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Actividad")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_actividad", referencedColumnName="id_activ")
+     * })
+     */
+    private $idActividad;
+
+    /**
+     * @var \Zubietxe\PrincipalBundle\Entity\Persona
+     *
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Persona")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_unico", referencedColumnName="id_unico")
+     * })
+     */
+    private $idUnico;
+
+    /**
+     * @var \Zubietxe\PrincipalBundle\Entity\Hito
+     *
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Hito")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="hito", referencedColumnName="id_hito")
+     * })
+     */
+    private $hito;
+
+
+}

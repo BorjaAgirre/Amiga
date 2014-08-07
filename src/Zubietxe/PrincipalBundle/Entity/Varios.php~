@@ -1,0 +1,53 @@
+<?php
+
+namespace Zubietxe\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Varios
+ *
+ * @ORM\Table(name="varios")
+ * @ORM\Entity
+ */
+class Varios
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_varios", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idVarios;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="variable", type="string", length=30, nullable=true)
+     */
+    private $variable;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="valor", type="string", length=30, nullable=true)
+     */
+    private $valor;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="valor2", type="string", length=30, nullable=true)
+     */
+    private $valor2;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_cambio", type="datetime", nullable=true)
+     */
+    private $fechaCambio;
+
+
+}

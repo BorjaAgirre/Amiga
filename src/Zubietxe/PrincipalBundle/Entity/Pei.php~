@@ -1,0 +1,119 @@
+<?php
+
+namespace Zubietxe\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Pei
+ *
+ * @ORM\Table(name="pei", indexes={@ORM\Index(name="id_unico", columns={"id_unico"})})
+ * @ORM\Entity
+ */
+class Pei
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pei", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPei;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pei_unico", type="integer", nullable=true)
+     */
+    private $idPeiUnico;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_creacion", type="datetime", nullable=false)
+     */
+    private $fechaCreacion;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="dimension", type="integer", nullable=true)
+     */
+    private $dimension;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="objetivo", type="integer", nullable=true)
+     */
+    private $objetivo;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="meta", type="string", length=255, nullable=true)
+     */
+    private $meta;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="accion", type="integer", nullable=true)
+     */
+    private $accion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tarea", type="string", length=255, nullable=true)
+     */
+    private $tarea;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="recurso", type="string", length=255, nullable=true)
+     */
+    private $recurso;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_ini", type="date", nullable=true)
+     */
+    private $fechaIni;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_fin", type="date", nullable=true)
+     */
+    private $fechaFin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="responsable", type="string", length=255, nullable=true)
+     */
+    private $responsable;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="resultado", type="string", length=255, nullable=true)
+     */
+    private $resultado;
+
+    /**
+     * @var \Zubietxe\PrincipalBundle\Entity\Persona
+     *
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Persona")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_unico", referencedColumnName="id_unico")
+     * })
+     */
+    private $idUnico;
+
+
+}

@@ -1,0 +1,11 @@
+zubietxe_principal_homepage:
+    path:     /tutor/{name}
+    defaults: { _controller: ZubietxePrincipalBundle:Grabar:index }
+
+zubietxe_guardado
+    path:     /guardado
+    defaults: { _controller: ZubietxePrincipalBundle:Guardado:index }
+
+zubietxe_actividad: 
+    path:     /actividad
+    defaults: { _controller: ZubietxePrincipalBundle:Formulario:activ }
