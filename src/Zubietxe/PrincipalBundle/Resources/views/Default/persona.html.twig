@@ -46,165 +46,222 @@
     <h3>Formulario persona: </h3>
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#identificacion" role="tab" data-toggle="tab">Identificación</a></li>
-  <li><a href="#formativo" role="tab" data-toggle="tab">Formativo-laborales</a></li>
-  <li><a href="#sanitario" role="tab" data-toggle="tab">Sanitarios</a></li>
-  <li><a href="#administrativo" role="tab" data-toggle="tab">Administrativo</a></li>
-  <li><a href="#juridico" role="tab" data-toggle="tab">Jurídico</a></li>
+  <li><a href="#juridico" role="tab" data-toggle="tab">Jurídico-Administrativa</a></li>
+  <li><a href="#economico" role="tab" data-toggle="tab">Económica</a></li>
+  <li><a href="#formativo" role="tab" data-toggle="tab">Formativa</a></li>
+  <li><a href="#laboral" role="tab" data-toggle="tab">Ocupacional-laboral</a></li>
+  <li><a href="#vivienda" role="tab" data-toggle="tab">Vivienda</a></li>
+  <li><a href="#social" role="tab" data-toggle="tab">Apoyo social</a></li>
+  <li><a href="#convivencia" role="tab" data-toggle="tab">Convivencia</a></li>
+  <li><a href="#salud" role="tab" data-toggle="tab">Salud y autonomía</a></li>
+  <li><a href="#competencias" role="tab" data-toggle="tab">Competencias</a></li>
+  <li><a href="#aceptacion" role="tab" data-toggle="tab">Aceptación social</a></li>
+  <li><a href="#participacion" role="tab" data-toggle="tab">Participación social</a></li>
   <li><a href="#intervencion" role="tab" data-toggle="tab">Intervención</a></li>
+
 </ul>
 
 
             {{ form_start(form, { 'style': 'horizontal' }) }}
 <div class="tab-content">
     <div class="tab-pane active fade in active" id="identificacion">
-            {{form_row(form.sexo) }}
-            {{form_row(form.nombre) }}
-            {{form_row(form.apellido1) }}
-            {{form_row(form.apellido2) }}
-            {{form_row(form.fechanac) }}
-            {{form_row(form.lugarNac) }}
-            {{form_row(form.dniPas) }}
-            {{form_row(form.numSs) }}
-            {{form_row(form.numExpediente) }}
-            {{form_row(form.nacionalidad) }}
-            {{form_row(form.telefono) }}
-            {{form_row(form.direccion) }}
-            {{form_row(form.poblacion) }}
-            {{form_row(form.nucleoConv) }}
-    </div>    
-    <div class="tab-pane active fade" id="formativo">
+            {{form_row(form.sexo, {'label': 'Sexo', 'label_col': 2, 'widget_col': 2}) }}
+            {{form_row(form.nombre, {'label': 'Nombre', 'label_col': 2, 'widget_col': 4}) }}
+            {{form_row(form.apellido1, {'label': 'Primer apellido', 'label_col': 2, 'widget_col': 4}) }}
+            {{form_row(form.apellido2, {'label': 'Segundo apellido'}) }}
 
-            {{form_row(form.estadoCivil) }}
-            {{form_row(form.hijos) }}
-            {{form_row(form.nHijos) }}
-            {{form_row(form.observacionesHijos) }}
-            {{form_row(form.telefonosInteres) }}
-            {{form_row(form.fechaIngreso) }}
-            {{form_row(form.fechaSalida) }}
-            {{form_row(form.procedenciaDemanda) }}
-            {{form_row(form.tutor) }}
-            {{form_row(form.comeLu) }}
-            {{form_row(form.comeMa) }}
-            {{form_row(form.comeMi) }}
-            {{form_row(form.comeJu) }}
-            {{form_row(form.comeVi) }}
-            {{form_row(form.comeSa) }}
-            {{form_row(form.comeDo) }}
-            {{form_row(form.comeSaNotas) }}
-            {{form_row(form.comeDoNotas) }}
+    <div class="form-group">
+      <label for="inputType" class="col-md-2 control-label">Sexo</label>
+      <div class="col-md-4">
+          <input type="text" class="form-control" id="inputType" placeholder="Sexo (mujer, hombre) ">
+      </div>
     </div>
-            {{form_row(form.creditrans) }}
-            {{form_row(form.listaEsperaPiso) }}
-            {{form_row(form.datosformativosobs) }}
-            {{form_row(form.datosformativositem) }}
-            {{form_row(form.idioma) }}
-            {{form_row(form.edadabandonoestudios) }}
-            {{form_row(form.laboralorigen) }}
-            {{form_row(form.laboralespana) }}
-            {{form_row(form.tiempotrabajado) }}
-            {{form_row(form.trabaja) }}
-            {{form_row(form.autonomia) }}
-            {{form_row(form.disminucionfisica) }}
-            {{form_row(form.minusvaliaporcentaje) }}
-            {{form_row(form.incapacitacion) }}
-            {{form_row(form.toxicomania) }}
-            {{form_row(form.antecconsumo) }}
-            {{form_row(form.disminucionpsiquica) }}
-            {{form_row(form.enfermedadmental) }}
-            {{form_row(form.tuberculosis) }}
-            {{form_row(form.hepatitis) }}
-            {{form_row(form.vih) }}
-            {{form_row(form.diabetes) }}
-            {{form_row(form.otras) }}
-            {{form_row(form.enfermedadescomentarios) }}
-            {{form_row(form.medicacion) }}
-            {{form_row(form.enfmentaldiagnostico) }}
-            {{form_row(form.enfmentalfechadiagn) }}
-            {{form_row(form.enfmentaltratamiento) }}
-            {{form_row(form.enfmentalingresos) }}
-            {{form_row(form.enfmentalpadres) }}
-            {{form_row(form.enfmentalhermanos) }}
-            {{form_row(form.enfmentalpareja) }}
-            {{form_row(form.enfmentalhijos) }}
-            {{form_row(form.drogaspadres) }}
-            {{form_row(form.drogashermanos) }}
-            {{form_row(form.drogaspareja) }}
-            {{form_row(form.drogashijos) }}
-            {{form_row(form.permisoresid) }}
-            {{form_row(form.permisoresidtr) }}
-            {{form_row(form.npasap) }}
-            {{form_row(form.fpasap) }}
-            {{form_row(form.ncedula) }}
-            {{form_row(form.fcedula) }}
-            {{form_row(form.fressol) }}
-            {{form_row(form.nresconc) }}
-            {{form_row(form.fresconc) }}
-            {{form_row(form.frestrsol) }}
-            {{form_row(form.nrestrconc) }}
-            {{form_row(form.frestrconc) }}
-            {{form_row(form.visado) }}
-            {{form_row(form.asilo) }}
-            {{form_row(form.otrosdoc) }}
-            {{form_row(form.fentrada) }}
-            {{form_row(form.fprueba) }}
-            {{form_row(form.abogadootros) }}
-            {{form_row(form.permisoresidrazonesno) }}
-            {{form_row(form.permisosolicitudfecha) }}
-            {{form_row(form.permisosolicitudlugar) }}
-            {{form_row(form.tiemporesidenciaespanya) }}
-            {{form_row(form.tiemporesidenciabilbao) }}
-            {{form_row(form.permisotrabajo) }}
-            {{form_row(form.permisotrabajorazonesno) }}
-            {{form_row(form.fechaempadronamiento) }}
-            {{form_row(form.empadronamiento) }}
-            {{form_row(form.tis) }}
-            {{form_row(form.redapoyo) }}
-            {{form_row(form.ingresospropios) }}
-            {{form_row(form.ingresospnc) }}
-            {{form_row(form.ingresosotros) }}
-            {{form_row(form.ingresosnomina) }}
-            {{form_row(form.ingresosrentabas) }}
-            {{form_row(form.ingresosprestcontrib) }}
-            {{form_row(form.ingresossedesconoce) }}
-            {{form_row(form.ingresosayudaindividual) }}
-            {{form_row(form.ingresosno) }}
-            {{form_row(form.penalantecedentesprision) }}
-            {{form_row(form.penalordenalejamiento) }}
-            {{form_row(form.penalprisionpreventiva) }}
-            {{form_row(form.penalprisionotros) }}
-            {{form_row(form.penallibcondicional) }}
-            {{form_row(form.penalmedidaseguridad) }}
-            {{form_row(form.penalcausaspendientes) }}
-            {{form_row(form.penalpermisopenitenc) }}
-            {{form_row(form.penaltercergrado) }}
-            {{form_row(form.penaltbc) }}
-            {{form_row(form.ducha) }}
-            {{form_row(form.ropero) }}
-            {{form_row(form.lavanderia) }}
-            {{form_row(form.tlSabado) }}
-            {{form_row(form.tlDomingo) }}
-            {{form_row(form.salidaVerano) }}
-            {{form_row(form.salidaOtro) }}
-            {{form_row(form.medicacionCentro) }}
-            {{form_row(form.nivelcastellano) }}
-            {{form_row(form.expLaboral) }}
-            {{form_row(form.lanbide) }}
-            {{form_row(form.fAltaLanbide) }}
-            {{form_row(form.fRenovLanbide) }}
-            {{form_row(form.inem) }}
-            {{form_row(form.fAltaInem) }}
-            {{form_row(form.fRenovInem) }}
-            {{form_row(form.cursos) }}
-            {{form_row(form.poblacionPadron) }}
-            {{form_row(form.consumoprinc) }}
-            {{form_row(form.insertIdUsuario) }}
-            {{form_row(form.insertFecha) }}
-            {{form_row(form.anosconsumo) }}
-            {{form_row(form.tratamiento) }}
-            {{form_row(form.tratamientotipo) }}
-            {{form_row(form.procedenciaDemandaLista) }}
-            {{form_row(form.documentoidentif) }}
+    <div class="form-group">
+        <span class="col-md-2 control-label"><b>Nombre: </b></span>
+        <div class="col-md-8">
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="apellido1" placeholder="Apellido">
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+
+            {{form_row(form.fechanac, {'label': 'Fecha nacimiento'}) }}
+            {{form_row(form.lugarNac, {'label': 'Lugar nacimiento'}) }}
+            {{form_row(form.dniPas, {'label': 'Dni'}) }}
+            {{form_row(form.documentoidentif, {'label': 'Documento'}) }}
+            {{form_row(form.numSs, {'label': 'Número Seguridad Social'}) }}
+            {{form_row(form.numExpediente, {'label': 'Número expediente'}) }}
+            {{form_row(form.nacionalidad, {'label': 'Nacionalidad'}) }}
+            {{form_row(form.telefono, {'label': 'Teléfono'}) }}
+            {{form_row(form.direccion, {'label': 'Dirección'}) }}
+            {{form_row(form.poblacion, {'label': 'Población'}) }}
+            {{form_row(form.poblacionPadron, {'label': 'Población padrón'}) }}
+            {{form_row(form.nucleoConv, {'label': 'Núcleo convivencia'}) }}
+            {{form_row(form.estadoCivil, {'label': 'Estado civil'}) }}
+            {{form_row(form.hijos, {'label': '¿Hijos/as?'}) }}
+            {{form_row(form.nHijos, {'label': 'Núm. hijos/as'}) }}
+            {{form_row(form.observacionesHijos, {'label': 'Observaciones hijos/as'}) }}
+            {{form_row(form.telefonosInteres, {'label': 'Teléfonos de contacto'}) }}
+    </div>    
+    <div class="tab-pane active fade" id="juridico">
+        {{form_row(form.permisoresid, {'label': ''}) }}
+            {{form_row(form.permisoresidtr, {'label': ''}) }}
+            {{form_row(form.npasap, {'label': ''}) }}
+            {{form_row(form.fpasap, {'label': ''}) }}
+            {{form_row(form.ncedula, {'label': ''}) }}
+            {{form_row(form.fcedula, {'label': ''}) }}
+            {{form_row(form.fressol, {'label': ''}) }}
+            {{form_row(form.nresconc, {'label': ''}) }}
+            {{form_row(form.fresconc, {'label': ''}) }}
+            {{form_row(form.frestrsol, {'label': ''}) }}
+            {{form_row(form.nrestrconc, {'label': ''}) }}
+            {{form_row(form.frestrconc, {'label': ''}) }}
+            {{form_row(form.visado, {'label': ''}) }}
+            {{form_row(form.asilo, {'label': ''}) }}
+            {{form_row(form.otrosdoc, {'label': ''}) }}
+            {{form_row(form.fentrada, {'label': ''}) }}
+            {{form_row(form.fprueba, {'label': ''}) }}
+            {{form_row(form.abogadootros, {'label': ''}) }}
+            {{form_row(form.permisoresidrazonesno, {'label': ''}) }}
+            {{form_row(form.permisosolicitudfecha, {'label': ''}) }}
+            {{form_row(form.permisosolicitudlugar, {'label': ''}) }}
+            {{form_row(form.tiemporesidenciaespanya, {'label': ''}) }}
+            {{form_row(form.tiemporesidenciabilbao, {'label': ''}) }}
+            {{form_row(form.permisotrabajo, {'label': ''}) }}
+            {{form_row(form.permisotrabajorazonesno, {'label': ''}) }}
+             {{form_row(form.fechaempadronamiento, {'label': ''}) }}
+            {{form_row(form.empadronamiento, {'label': ''}) }}
+              {{form_row(form.penalantecedentesprision, {'label': ''}) }}
+            {{form_row(form.penalordenalejamiento, {'label': ''}) }}
+            {{form_row(form.penalprisionpreventiva, {'label': ''}) }}
+            {{form_row(form.penalprisionotros, {'label': ''}) }}
+            {{form_row(form.penallibcondicional, {'label': ''}) }}
+            {{form_row(form.penalmedidaseguridad, {'label': ''}) }}
+            {{form_row(form.penalcausaspendientes, {'label': ''}) }}
+            {{form_row(form.penalpermisopenitenc, {'label': ''}) }}
+            {{form_row(form.penaltercergrado, {'label': ''}) }}
+            {{form_row(form.penaltbc, {'label': ''}) }}
+    </div>  
+<!--          {{form_row(form.fechaIngreso, {'label': ''}) }}
+            {{form_row(form.fechaSalida) }}, {'label': ''}    
+            {{form_row(form.listaEsperaPiso, {'label': ''}) }}
+            {{form_row(form.insertIdUsuario, {'label': ''}) }}
+            {{form_row(form.insertFecha, {'label': ''}) }}
+        -->
+
+    
+    <div class="tab-pane active fade" id="economico">
+         {{form_row(form.ingresospropios, {'label': ''}) }}
+            {{form_row(form.ingresospnc, {'label': ''}) }}
+            {{form_row(form.ingresosotros, {'label': ''}) }}
+            {{form_row(form.ingresosnomina, {'label': ''}) }}
+            {{form_row(form.ingresosrentabas, {'label': ''}) }}
+            {{form_row(form.ingresosprestcontrib, {'label': ''}) }}
+            {{form_row(form.ingresossedesconoce, {'label': ''}) }}
+            {{form_row(form.ingresosayudaindividual, {'label': ''}) }}
+            {{form_row(form.ingresosno, {'label': ''}) }}
+    </div>
+    <div class="tab-pane active fade" id="formativo">
+            {{form_row(form.datosformativosobs, {'label': ''}) }}
+            {{form_row(form.datosformativositem, {'label': ''}) }}
+            {{form_row(form.idioma, {'label': ''}) }}
+            {{form_row(form.edadabandonoestudios, {'label': ''}) }}
+            {{form_row(form.laboralorigen, {'label': ''}) }}
+            {{form_row(form.laboralespana, {'label': ''}) }}
+            
+    </div>
+    <div class="tab-pane active fade" id="laboral">
+        {{form_row(form.tiempotrabajado, {'label': ''}) }}
+            {{form_row(form.trabaja, {'label': ''}) }}
+             {{form_row(form.nivelcastellano, {'label': ''}) }}
+            {{form_row(form.expLaboral, {'label': ''}) }}
+            {{form_row(form.lanbide, {'label': ''}) }}
+            {{form_row(form.fAltaLanbide, {'label': ''}) }}
+            {{form_row(form.fRenovLanbide, {'label': ''}) }}
+            {{form_row(form.inem, {'label': ''}) }}
+            {{form_row(form.fAltaInem, {'label': ''}) }}
+            {{form_row(form.fRenovInem, {'label': ''}) }}
+            {{form_row(form.cursos, {'label': ''}) }}
+    </div>
+    <div class="tab-pane active fade" id="vivienda">
+    </div>
+    <div class="tab-pane active fade" id="social">
+        {{form_row(form.redapoyo, {'label': ''}) }}
+    </div>
+    <div class="tab-pane active fade" id="convivencia">
+    </div>
+    <div class="tab-pane active fade" id="salud">
+          {{form_row(form.tis, {'label': ''}) }}
+        {{form_row(form.autonomia, {'label': ''}) }}
+            {{form_row(form.disminucionfisica, {'label': ''}) }}
+            {{form_row(form.minusvaliaporcentaje, {'label': ''}) }}
+            {{form_row(form.incapacitacion, {'label': ''}) }}
+            {{form_row(form.toxicomania, {'label': ''}) }}
+              {{form_row(form.consumoprinc, {'label': ''}) }}
+            {{form_row(form.antecconsumo, {'label': ''}) }}
+            {{form_row(form.anosconsumo, {'label': ''}) }}
+            {{form_row(form.tratamiento, {'label': ''}) }}
+            {{form_row(form.tratamientotipo, {'label': ''}) }}
+            {{form_row(form.disminucionpsiquica, {'label': ''}) }}
+            {{form_row(form.enfermedadmental, {'label': ''}) }}
+            {{form_row(form.tuberculosis, {'label': ''}) }}
+            {{form_row(form.hepatitis, {'label': ''}) }}
+            {{form_row(form.vih, {'label': ''}) }}
+            {{form_row(form.diabetes, {'label': ''}) }}
+            {{form_row(form.otras, {'label': ''}) }}
+            {{form_row(form.enfermedadescomentarios, {'label': ''}) }}
+            {{form_row(form.medicacion, {'label': ''}) }}
+            {{form_row(form.enfmentaldiagnostico, {'label': ''}) }}
+            {{form_row(form.enfmentalfechadiagn, {'label': ''}) }}
+            {{form_row(form.enfmentaltratamiento, {'label': ''}) }}
+            {{form_row(form.enfmentalingresos, {'label': ''}) }}
+            {{form_row(form.enfmentalpadres, {'label': ''}) }}
+            {{form_row(form.enfmentalhermanos, {'label': ''}) }}
+            {{form_row(form.enfmentalpareja, {'label': ''}) }}
+            {{form_row(form.enfmentalhijos, {'label': ''}) }}
+            {{form_row(form.drogaspadres, {'label': ''}) }}
+            {{form_row(form.drogashermanos, {'label': ''}) }}
+            {{form_row(form.drogaspareja, {'label': ''}) }}
+            {{form_row(form.drogashijos, {'label': ''}) }}
+    </div>
+    <div class="tab-pane active fade" id="competencias">
+    </div>
+    <div class="tab-pane active fade" id="aceptacion">
+    </div>
+    <div class="tab-pane active fade" id="participacion">
+    </div>
+    <div class="tab-pane active fade" id="intervencion">
+            {{form_row(form.procedenciaDemanda, {'label': ''}) }}
+            {{form_row(form.procedenciaDemandaLista , {'label': ''}) }}
+
+            {{form_row(form.tutor, {'label': ''}) }}
+            {{form_row(form.comeLu, {'label': ''}) }}
+            {{form_row(form.comeMa, {'label': ''}) }}
+            {{form_row(form.comeMi, {'label': ''}) }}
+            {{form_row(form.comeJu, {'label': ''}) }}
+            {{form_row(form.comeVi, {'label': ''}) }}
+            {{form_row(form.comeSa, {'label': ''}) }}
+            {{form_row(form.comeDo, {'label': ''}) }}
+            {{form_row(form.comeSaNotas, {'label': ''}) }}
+            {{form_row(form.comeDoNotas, {'label': ''}) }}
+            {{form_row(form.creditrans, {'label': ''}) }}
+                {{form_row(form.ducha, {'label': ''}) }}
+            {{form_row(form.ropero, {'label': ''}) }}
+            {{form_row(form.lavanderia, {'label': ''}) }}
+              {{form_row(form.tlSabado, {'label': ''}) }}
+            {{form_row(form.tlDomingo, {'label': ''}) }}
+            {{form_row(form.salidaVerano, {'label': ''}) }}
+            {{form_row(form.salidaOtro, {'label': ''}) }}
+            {{form_row(form.medicacionCentro, {'label': ''}) }}
+
+    </div>
             {{ form_end(form) }}
     </div>
         </div> <!-- col 8 (izquierda)  -->

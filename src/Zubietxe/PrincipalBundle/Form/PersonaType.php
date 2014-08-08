@@ -29,8 +29,8 @@ class PersonaType extends AbstractType
     //    $er = new EntityRepository('ZubietxePrincipalBundle:Desplegables');
    //     $despl = $er->getRepository;
         $builder
-            ->add('idUnico')
-            ->add('historial')
+//            ->add('idUnico')
+//            ->add('historial')
             ->add('sexo')
             ->add('nombre')
             ->add('apellido1')
