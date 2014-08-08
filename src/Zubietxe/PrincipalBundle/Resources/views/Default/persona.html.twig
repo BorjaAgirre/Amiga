@@ -27,7 +27,11 @@
         <div class="tab-content">
 
             <div class="tab-pane active fade in active" id="identificacion">
-                {{form_row(form.sexo, {'label': 'Sexo', 'label_col': 2, 'widget_col': 2}) }}
+
+                {% for campo in campos %}
+                    {{form_row(form.sexo, {'label': campo.label, 'label_col': 2, 'widget_col': campo.widget}) }}
+                {% endfor %}
+
                 {{form_row(form.nombre, {'label': 'Nombre', 'label_col': 2, 'widget_col': 4}) }}
                 {{form_row(form.apellido1, {'label': 'Primer apellido', 'label_col': 2, 'widget_col': 4}) }}
                 {{form_row(form.apellido2, {'label': 'Segundo apellido'}) }}
@@ -72,7 +76,7 @@
                 {{form_row(form.telefonosInteres, {'label': 'Teléfonos de contacto'}) }}
             </div>    
 
-            <div class="tab-pane active fade" id="juridico">
+            <div class="tab-pane fade" id="juridico">
                 {{form_row(form.permisoresid, {'label': ''}) }}
                 {{form_row(form.permisoresidtr, {'label': ''}) }}
                 {{form_row(form.npasap, {'label': ''}) }}
@@ -119,7 +123,7 @@
                 -->
 
         
-            <div class="tab-pane active fade" id="economico">
+            <div class="tab-pane fade" id="economico">
              {{form_row(form.ingresospropios, {'label': ''}) }}
                 {{form_row(form.ingresospnc, {'label': ''}) }}
                 {{form_row(form.ingresosotros, {'label': ''}) }}
@@ -131,7 +135,7 @@
                 {{form_row(form.ingresosno, {'label': ''}) }}
             </div>
 
-            <div class="tab-pane active fade" id="formativo">
+            <div class="tab-pane fade" id="formativo">
                 {{form_row(form.datosformativosobs, {'label': ''}) }}
                 {{form_row(form.datosformativositem, {'label': ''}) }}
                 {{form_row(form.idioma, {'label': ''}) }}
@@ -140,7 +144,7 @@
                 {{form_row(form.laboralespana, {'label': ''}) }}    
             </div>
 
-            <div class="tab-pane active fade" id="laboral">
+            <div class="tab-pane fade" id="laboral">
                 {{form_row(form.tiempotrabajado, {'label': ''}) }}
                 {{form_row(form.trabaja, {'label': ''}) }}
                 {{form_row(form.nivelcastellano, {'label': ''}) }}
@@ -154,17 +158,17 @@
                 {{form_row(form.cursos, {'label': ''}) }}
             </div>
 
-            <div class="tab-pane active fade" id="vivienda">
+            <div class="tab-pane fade" id="vivienda">
                 </div>
-            <div class="tab-pane active fade" id="social">
+            <div class="tab-pane fade" id="social">
 
                 {{form_row(form.redapoyo, {'label': ''}) }}
             </div>
 
-            <div class="tab-pane active fade" id="convivencia">
+            <div class="tab-pane fade" id="convivencia">
             </div>
             
-            <div class="tab-pane active fade" id="salud">
+            <div class="tab-pane fade" id="salud">
                 {{form_row(form.tis, {'label': ''}) }}
                 {{form_row(form.autonomia, {'label': ''}) }}
                 {{form_row(form.disminucionfisica, {'label': ''}) }}
@@ -199,16 +203,16 @@
                 {{form_row(form.drogashijos, {'label': ''}) }}
             </div>
 
-            <div class="tab-pane active fade" id="competencias">
+            <div class="tab-pane fade" id="competencias">
             </div>
             
-            <div class="tab-pane active fade" id="aceptacion">
+            <div class="tab-pane fade" id="aceptacion">
             </div>
             
-            <div class="tab-pane active fade" id="participacion">
+            <div class="tab-pane fade" id="participacion">
             </div>
             
-            <div class="tab-pane active fade" id="intervencion">
+            <div class="tab-pane fade" id="intervencion">
                     {{form_row(form.procedenciaDemanda, {'label': ''}) }}
                     {{form_row(form.procedenciaDemandaLista , {'label': ''}) }}
                     {{form_row(form.tutor, {'label': ''}) }}
@@ -238,12 +242,3 @@
     {% endblock col_izda %}
 
 
-    {% block col_dcha %}
-        <h2>Indice</h2>
-            <form class="navbar-form navbar-left" role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="">
-                </div>
-                <button type="submit" class="btn btn-default">Buscar</button>
-            </form>
-    {% endblock col_dcha %}
