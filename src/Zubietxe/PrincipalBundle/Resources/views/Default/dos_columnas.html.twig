@@ -1,0 +1,20 @@
+{% extends "ZubietxePrincipalBundle:Default:basico.html.twig" %}
+
+{% block body_row %}
+
+    <div class="row">
+
+        <div class="col-md-9">
+            {% block col_izda %}
+            {% endblock col_izda %}
+        </div> <!-- col 9 (izquierda)  -->
+
+        <div class="col-md-3">
+            {% block col_dcha %}
+            Holaaaaaaa
+            {% endblock col_dcha %}
+        </div> <!-- col 3 (derecha)  -->
+
+    </div>  <!-- row  -->
+
+{% endblock body_row %}
