@@ -31,32 +31,42 @@ class PersonaType extends AbstractType
         $builder
 //            ->add('idUnico')
 //            ->add('historial')
-            ->add('sexo', 'text', array('label' => 'Sexo'))
+/*            ->add('sexo', 'entity', array(
+                'label' => 'Sexo',
+                'class' => 'ZubietxePrincipalBundle:Desplegables',
+                'property' => 'nombre',
+                'choices' => $this->grupo->findByDespl('sexo')
+                ))
+*/
+            ->add('sexo', 'choice', array(
+                'label' => 'Sexo',
+                'choices' => $this->grupo->findDesplegable('sexo')
+                ))
             ->add('nombre', 'text', array('label' => 'Nombre'))
             ->add('apellido1', 'text', array('label' => 'Primer Apellido'))
             ->add('apellido2', 'text', array('label' => 'Segundo Apellido'))
-            ->add('fechanac', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('fechanac', 'date', array('label' => 'Fecha nacimiento', 'widget' => 'single_text', 'format' => 'dd-M-yyyy'))
             ->add('lugarNac', 'text', array('label' => 'Lugar de nacimiento'))
             ->add('dniPas', 'text', array('label' => 'Dni o pasaporte'))
             ->add('numSs', 'text', array('label' => 'Número Seg. Social'))
             ->add('numExpediente', 'text', array('label' => 'Núm. Expediente'))
-            ->add('nacionalidad', 'text', array('label' => 'Nacionalidad'))
+            ->add('nacionalidad', 'choice', array(
+                'label' => 'Nacionalidad',
+                'choices' => $this->grupo->findDesplegable('paises_mundo')
+                ))
             ->add('telefono', 'text', array('label' => 'Teléfono'))
             ->add('direccion', 'text', array('label' => 'Dirección'))
-            ->add('poblacion', 'entity', array(
-                    'class' => 'ZubietxePrincipalBundle:Desplegables',
-                    'property' => 'nombre',
-                    'choices' => $this->grupo->findByDespl('poblaciones')
+            ->add('poblacion', 'choice', array(
+                'label' => 'Población',
+                'choices' => $this->grupo->findDesplegable('poblaciones')
                 ))
-            ->add('poblacionPadron', 'entity', array(
-                    'class' => 'ZubietxePrincipalBundle:Desplegables',
-                    'property' => 'nombre',
-                    'choices' => $this->grupo->findByDespl('poblaciones')
+            ->add('poblacionPadron', 'choice', array(
+                'label' => 'Población Padrón',
+                'choices' => $this->grupo->findDesplegable('poblaciones')
                 ))
-            ->add('nucleoConv', 'entity', array(
-                    'class' => 'ZubietxePrincipalBundle:Desplegables',
-                    'property' => 'nombre',
-                    'choices' => $this->grupo->findByDespl('poblaciones')
+            ->add('nucleoConv', 'choice', array(
+                    'label' => 'Núcleo convivencia',
+                    'choices' => $this->grupo->findDesplegable('poblaciones')
                 ))
             ->add('estadoCivil', 'text', array('label' => 'Estado Civil'))
             ->add('hijos', 'text', array('label' => '¿Hijos?'))

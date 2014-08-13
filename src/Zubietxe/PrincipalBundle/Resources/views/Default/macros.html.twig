@@ -1,21 +1,62 @@
-{% macro tres_campos(form, primero, segundo, tercero, label_inicial) %}
+{% macro tres_campos(form, primero, segundo, tercero, col1, col2, col3, label_todos) %}
     <div class="form-group">
         <!-- <span class="col-md-2 control-label"><b>Nombre: </b></span>  -->
-        {{form_label(form.nombre)}}
-        <div class="col-md-8">
+        {{form_label(primero)}}
+        <div class="col-md-10">
             <div class="form-group row">
-                <div class="col-md-4">
+                <div class="col-md-{{col1}}">
                     <input type="text" class="form-control" name="{{primero.vars.full_name}}" id="{{primero.vars.id}}" value="{{primero.vars.value}}"> 
                 </div>
-
-                <div class="col-md-4">
+                {% if label_todos == true %}
+                    {{form_label(segundo)}}
+                {% endif %}
+                <div class="col-md-{{col2}}">
                     <input type="text" class="form-control" name="{{segundo.vars.full_name}}" id="{{segundo.vars.id}}" value="{{segundo.vars.value}}"> 
                 </div>
-
-                <div class="col-md-4">
+                {% if label_todos == true %}
+                    {{form_label(tercero)}}
+                {% endif %}
+                <div class="col-md-{{col3}}">
                     <input type="text" class="form-control" name="{{tercero.vars.full_name}}" id="{{tercero.vars.id}}" value="{{tercero.vars.value}}">                                 
                 </div>
             </div>
         </div>
     </div>
 {% endmacro %}
+
+
+{% block form_row %}
+    {% spaceless %}
+        <div class="control-group{% if errors|length > 0 %} error{% endif %}">
+            {{ form_label(form, '', { 'label_attr': {'class': 'control-label'} }) }}
+            <div class="controls">
+                {{ form_widget(form) }}
+                {% if form.vars.help is defined %}
+                    <span class="help-block">{{ form.vars.help }}</span>
+                {% endif %}
+            </div>
+            {{ form_errors(form) }}
+        </div>
+    {% endspaceless %}
+{% endblock form_row %}
+
+
+
+
+{% macro dos_campos(form, primero, segundo, col1, col2, label_todos) %}
+    <div class="form-group">
+       {{form_label(primero)}}
+        <div class="col-md-10">
+            <div class="form-group row">
+                <div class="col-md-{{col1}}">
+                    <input type="text" class="form-control" name="{{primero.vars.full_name}}" id="{{primero.vars.id}}" value="{{primero.vars.value}}"> 
+                </div>
+                {% if label_todos == true %}
+                    {{form_label(segundo)}}
+                {% endif %}
+                    {{form_row(segundo, { 'widget_col': col2, 'label': false})}}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+

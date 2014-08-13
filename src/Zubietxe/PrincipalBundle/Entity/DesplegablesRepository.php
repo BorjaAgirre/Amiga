@@ -12,6 +12,10 @@ class DesplegablesRepository extends EntityRepository
             ->createQuery(
                 'SELECT d FROM ZubietxePrincipalBundle:Desplegables d WHERE d.despl = :tabla ORDER BY d.idDespl ASC'
             )->setParameter('tabla', $tabla);
-            return $query->getResult();
+            $result = $query->getResult();
+            foreach ($result as $row)  {
+           		$retorna[$row->getIdDespl()] = $row->getNombre();
+            }
+            return $retorna; 
     }
 }

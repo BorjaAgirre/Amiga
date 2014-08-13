@@ -15,10 +15,10 @@ class personaController extends Controller
     // create a activ and give it some dummy data for this example
     //     $activ = new Actividad();
         $em = $this->getDoctrine();
-        $pers = $em->getRepository('ZubietxePrincipalBundle:Persona')->find('1024');
+        $pers = $em->getRepository('ZubietxePrincipalBundle:Persona')->find($id);
                 if (!$pers) {
                     throw $this->createNotFoundException(
-                        'No se ha encontrado una persona con identificador 1024'
+                        'No se ha encontrado una persona con identificador '.$id
                     );
                 }
 

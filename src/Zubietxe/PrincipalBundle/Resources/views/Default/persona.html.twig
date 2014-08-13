@@ -30,35 +30,27 @@
 
             <div class="tab-pane active fade in active" id="identificacion">
 
-                {{form_row(form.sexo)}}
-                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, true)}}
-<!--
-                {% for campo in campos %}
-                    {{form_row(form.sexo, {'label': campo.label, 'label_col': 2, 'widget_col': campo.widget}) }}
-                {% endfor %}
+                
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
 
-                {{form_row(form.nombre, {'label': 'Nombre', 'label_col': 2, 'widget_col': 4}) }}
-                {{form_row(form.apellido1, {'label': 'Primer apellido', 'label_col': 2, 'widget_col': 4}) }}
-                {{form_row(form.apellido2, {'label': 'Segundo apellido'}) }}
--->
-
-                {{form_row(form.fechanac) }}
-                {{form_row(form.lugarNac) }}
-                {{form_row(form.dniPas) }}
-                {{form_row(form.documentoidentif) }}
-                {{form_row(form.numSs) }}
-                {{form_row(form.numExpediente) }}
-                {{form_row(form.nacionalidad) }}
-                {{form_row(form.telefono) }}
-                {{form_row(form.direccion) }}
-                {{form_row(form.poblacion) }}
-                {{form_row(form.poblacionPadron) }}
-                {{form_row(form.nucleoConv) }}
-                {{form_row(form.estadoCivil) }}
-                {{form_row(form.hijos) }}
-                {{form_row(form.nHijos) }}
-                {{form_row(form.observacionesHijos) }}
-                {{form_row(form.telefonosInteres) }}
+                {{form_row(form.sexo, { 'widget_col': 2}) }}
+                {{form_row(form.nacionalidad, { 'widget_col': 4}) }}
+                {{form_row(form.fechanac, { 'widget_col': 2}) }}
+                {{form_row(form.lugarNac, { 'widget_col': 4}) }}
+                {{form_row(form.documentoidentif, { 'widget_col': 3}) }}
+                {{form_row(form.dniPas, { 'widget_col': 4}) }}
+                {{form_row(form.direccion, { 'widget_col': 8}) }}
+                {{form_row(form.poblacion, { 'widget_col': 4}) }}
+                {{form_row(form.numSs, { 'widget_col': 3}) }}
+                {{form_row(form.numExpediente, { 'widget_col': 3}) }}
+                {{form_row(form.telefono, { 'widget_col': 4}) }}
+                {{form_row(form.nucleoConv, { 'widget_col': 4}) }}
+                {{form_row(form.poblacionPadron, { 'widget_col': 4}) }}
+                {{form_row(form.estadoCivil, { 'widget_col': 2}) }}
+                {{form_row(form.hijos, { 'widget_col': 2}) }}
+                {{form_row(form.nHijos, { 'widget_col': 2}) }}
+                {{form_row(form.observacionesHijos, { 'widget_col': 10}) }}
+                {{form_row(form.telefonosInteres, { 'widget_col': 6}) }}
             </div>    
 
             <div class="tab-pane fade" id="juridico">
@@ -220,10 +212,21 @@
                     {{form_row(form.salidaOtro, {'label': ''}) }}
                     {{form_row(form.medicacionCentro, {'label': ''}) }}
             </div>
-
-            {{ form_end(form) }}
+            {{form_row(form.guardar)}}
+            {{ form_end(form, {'render_rest': false}) }}
         </div>  <!-- tab-content -->
 
     {% endblock col_izda %}
 
-
+    {% block col_dcha %}
+        <h2>Indice</h2>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="">
+                </div>
+                <button type="submit" class="btn btn-default">Buscar</button>
+            </form>
+            <br><a href= 'http://localhost/amiga3/web/app_dev.php/persona/1024'>Alberto P.</a>
+            <br><a href= 'http://localhost/amiga3/web/app_dev.php/persona/1061'>Nadia H.</a>
+            <br><a href= 'http://localhost/amiga3/web/app_dev.php/persona/1032'>Noureddin M.</a>
+    {% endblock col_dcha %}
