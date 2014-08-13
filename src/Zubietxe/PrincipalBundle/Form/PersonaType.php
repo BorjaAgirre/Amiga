@@ -31,33 +31,57 @@ class PersonaType extends AbstractType
         $builder
 //            ->add('idUnico')
 //            ->add('historial')
-            ->add('sexo')
-            ->add('nombre')
-            ->add('apellido1')
-            ->add('apellido2')
-            ->add('fechanac', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('lugarNac')
-            ->add('dniPas')
-            ->add('numSs')
-            ->add('numExpediente')
-            ->add('nacionalidad')
-            ->add('telefono')
+/*            ->add('sexo', 'entity', array(
+                'label' => 'Sexo',
+                'class' => 'ZubietxePrincipalBundle:Desplegables',
+                'property' => 'nombre',
+                'choices' => $this->grupo->findByDespl('sexo')
+                ))
+*/
+            ->add('sexo', 'choice', array(
+                'label' => 'Sexo',
+                'choices' => $this->grupo->findDesplegable('sexo')
+                ))
+            ->add('nombre', 'text', array('label' => 'Nombre'))
+            ->add('apellido1', 'text', array('label' => 'Primer Apellido'))
+            ->add('apellido2', 'text', array('label' => 'Segundo Apellido'))
+            ->add('fechanac', 'date', array('label' => 'Fecha nacimiento', 'widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('lugarNac', 'text', array('label' => 'Lugar de nacimiento'))
+            ->add('dniPas', 'text', array('label' => 'Dni o pasaporte'))
+            ->add('numSs', 'text', array('label' => 'Número Seg. Social'))
+            ->add('numExpediente', 'text', array('label' => 'Núm. Expediente'))
+            ->add('nacionalidad', 'choice', array(
+                'label' => 'Nacionalidad',
+                'choices' => $this->grupo->findDesplegable('paises_mundo')
+                ))
+            ->add('telefono', 'text', array('label' => 'Teléfono'))
             ->add('direccion', 'text', array('label' => 'Dirección'))
-            ->add('poblacion', 'entity', array(
-                    'class' => 'ZubietxePrincipalBundle:Desplegables',
-                    'property' => 'nombre',
-                    'choices' => $this->grupo->findByDespl('poblaciones')
+            ->add('poblacion', 'choice', array(
+                'label' => 'Población',
+                'choices' => $this->grupo->findDesplegable('poblaciones')
                 ))
-            ->add('nucleoConv', 'entity', array(
-                    'class' => 'ZubietxePrincipalBundle:Desplegables',
-                    'property' => 'nombre',
-                    'choices' => $this->grupo->findByDespl('poblaciones')
+            ->add('poblacionPadron', 'choice', array(
+                'label' => 'Población Padrón',
+                'choices' => $this->grupo->findDesplegable('poblaciones')
                 ))
-            ->add('estadoCivil')
-            ->add('hijos')
-            ->add('nHijos')
-            ->add('observacionesHijos')
-            ->add('telefonosInteres')
+            ->add('nucleoConv', 'choice', array(
+                    'label' => 'Núcleo convivencia',
+                    'choices' => $this->grupo->findDesplegable('poblaciones')
+                ))
+            ->add('estadoCivil', 'choice', array(
+                    'label' => 'Estado civil',
+                    'choices' => $this->grupo->findDesplegable('estado_civil')
+                ))
+            ->add('hijos', 'choice', array(
+                'label' => '¿Hijos?',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('documentoidentif', 'text', array('label' => 'Documento identificación'))            
+            ->add('nHijos', 'integer', array('label' => 'Núm. hijos'))
+            ->add('observacionesHijos', 'textarea', array('label' => 'Observaciones Hijos', 'max_length' => 255))
+            ->add('telefonosInteres', 'text', array('label' => 'Teléfonos interés'))
             ->add('fechaIngreso', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
             ->add('fechaSalida', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
             ->add('procedenciaDemanda')
@@ -173,7 +197,6 @@ class PersonaType extends AbstractType
             ->add('fAltaInem', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
             ->add('fRenovInem', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
             ->add('cursos')
-            ->add('poblacionPadron')
             ->add('consumoprinc')
             ->add('insertIdUsuario')
             ->add('insertFecha', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
@@ -181,7 +204,6 @@ class PersonaType extends AbstractType
             ->add('tratamiento')
             ->add('tratamientotipo')
             ->add('procedenciaDemandaLista')
-            ->add('documentoidentif')
             ->add('guardar', 'submit')
 
         ;
