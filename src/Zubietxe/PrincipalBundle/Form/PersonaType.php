@@ -68,11 +68,19 @@ class PersonaType extends AbstractType
                     'label' => 'Núcleo convivencia',
                     'choices' => $this->grupo->findDesplegable('poblaciones')
                 ))
-            ->add('estadoCivil', 'text', array('label' => 'Estado Civil'))
-            ->add('hijos', 'text', array('label' => '¿Hijos?'))
+            ->add('estadoCivil', 'choice', array(
+                    'label' => 'Estado civil',
+                    'choices' => $this->grupo->findDesplegable('estado_civil')
+                ))
+            ->add('hijos', 'choice', array(
+                'label' => '¿Hijos?',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
             ->add('documentoidentif', 'text', array('label' => 'Documento identificación'))            
-            ->add('nHijos', 'text', array('label' => 'Núm. hijos'))
-            ->add('observacionesHijos', 'text', array('label' => 'Observaciones Hijos'))
+            ->add('nHijos', 'integer', array('label' => 'Núm. hijos'))
+            ->add('observacionesHijos', 'textarea', array('label' => 'Observaciones Hijos', 'max_length' => 255))
             ->add('telefonosInteres', 'text', array('label' => 'Teléfonos interés'))
             ->add('fechaIngreso', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
             ->add('fechaSalida', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
