@@ -42,30 +42,6 @@
                 {{form_row(form.apellido2, {'label': 'Segundo apellido'}) }}
 -->
 
-
-
-                <div class="form-group">
-                    <!-- <span class="col-md-2 control-label"><b>Nombre: </b></span>  -->
-                    {{form_label(form.nombre)}}
-
-
-                    <div class="col-md-8">
-                        <div class="form-group row">
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" name="{{form.nombre.vars.full_name}}" id="{{form.nombre.vars.id}}" value="{{form.nombre.vars.value}}"> 
-                            </div>
-
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" name="{{form.apellido1.vars.full_name}}" id="{{form.apellido1.vars.id}}" value="{{form.apellido1.vars.value}}"> 
-                            </div>
-
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" name="{{form.apellido2.vars.full_name}}" id="{{form.apellido2.vars.id}}" value="{{form.apellido2.vars.value}}">                                 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 {{form_row(form.fechanac, {'label': 'Fecha nacimiento'}) }}
                 {{form_row(form.lugarNac, {'label': 'Lugar nacimiento'}) }}
                 {{form_row(form.dniPas, {'label': 'Dni'}) }}
