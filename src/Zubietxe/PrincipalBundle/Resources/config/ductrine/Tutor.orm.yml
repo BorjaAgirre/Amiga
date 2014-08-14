@@ -1,50 +1,44 @@
-Zubietxe\PrincipalBundle\Entity\Desplegables:
+Zubietxe\PrincipalBundle\Entity\Tutor:
     type: entity
-    repositoryClass: Zubietxe\PrincipalBundle\Entity\DesplegablesRepository
-    table: desplegables
+    table: tutor
     id:
-        idGral:
+        idTutor:
             type: integer
             nullable: false
             unsigned: false
             comment: ''
             id: true
-            column: id_gral
+            column: id_tutor
             generator:
                 strategy: IDENTITY
     fields:
-        despl:
+        nombre:
             type: string
             nullable: true
             length: 20
             fixed: false
             comment: ''
-        idDespl:
-            type: integer
-            nullable: true
-            unsigned: false
-            comment: ''
-            column: id_despl
-        nombre:
+        nivel:
             type: string
             nullable: true
-            length: 40
+            length: 20
             fixed: false
             comment: ''
-        dato1:
-            type: integer
-            nullable: true
-            unsigned: false
-            comment: ''
-        dato2:
-            type: integer
-            nullable: true
-            unsigned: false
-            comment: ''
-        datotexto:
+        grupo:
             type: string
             nullable: true
-            length: 45
+            length: 20
             fixed: false
             comment: ''
+        pass:
+            type: string
+            nullable: true
+            length: 33
+            fixed: false
+            comment: ''
+        ultimaCx:
+            type: datetime
+            nullable: false
+            comment: ''
+            column: ultima_cx
     lifecycleCallbacks: {  }

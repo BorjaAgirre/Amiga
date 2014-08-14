@@ -29,7 +29,7 @@ Zubietxe\PrincipalBundle\Entity\AltaBaja:
             type: string
             nullable: true
             length: 1
-            fixed: true
+            fixed: false
             comment: ''
             column: alta_baja
         fecha:
@@ -57,7 +57,6 @@ Zubietxe\PrincipalBundle\Entity\AltaBaja:
             type: datetime
             nullable: true
             comment: ''
-            default: CURRENT_TIMESTAMP
             column: fecha_inserc
     manyToOne:
         idUnico:

@@ -36,4 +36,60 @@ class Servicios
     private $nombre;
 
 
+
+    /**
+     * Get idServicio
+     *
+     * @return integer 
+     */
+    public function getIdServicio()
+    {
+        return $this->idServicio;
+    }
+
+    /**
+     * Set codigo
+     *
+     * @param string $codigo
+     * @return Servicios
+     */
+    public function setCodigo($codigo)
+    {
+        $this->codigo = $codigo;
+
+        return $this;
+    }
+
+    /**
+     * Get codigo
+     *
+     * @return string 
+     */
+    public function getCodigo()
+    {
+        return $this->codigo;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     * @return Servicios
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
 }

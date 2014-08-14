@@ -29,4 +29,37 @@ class ListaActividades
     private $nombreActividad;
 
 
+
+    /**
+     * Get idListaactividad
+     *
+     * @return integer 
+     */
+    public function getIdListaactividad()
+    {
+        return $this->idListaactividad;
+    }
+
+    /**
+     * Set nombreActividad
+     *
+     * @param string $nombreActividad
+     * @return ListaActividades
+     */
+    public function setNombreActividad($nombreActividad)
+    {
+        $this->nombreActividad = $nombreActividad;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreActividad
+     *
+     * @return string 
+     */
+    public function getNombreActividad()
+    {
+        return $this->nombreActividad;
+    }
 }

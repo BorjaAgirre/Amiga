@@ -26,7 +26,6 @@ Zubietxe\PrincipalBundle\Entity\Pei:
             type: datetime
             nullable: false
             comment: ''
-            default: CURRENT_TIMESTAMP
             column: fecha_creacion
         dimension:
             type: integer
