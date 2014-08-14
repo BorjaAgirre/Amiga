@@ -143,7 +143,6 @@ Zubietxe\PrincipalBundle\Entity\Persona:
             length: 512
             fixed: false
             comment: ''
-            default: ' '
             column: telefonos_interes
         fechaIngreso:
             type: date

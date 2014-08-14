@@ -29,4 +29,37 @@ class Hito
     private $nombreHito;
 
 
+
+    /**
+     * Get idHito
+     *
+     * @return integer 
+     */
+    public function getIdHito()
+    {
+        return $this->idHito;
+    }
+
+    /**
+     * Set nombreHito
+     *
+     * @param string $nombreHito
+     * @return Hito
+     */
+    public function setNombreHito($nombreHito)
+    {
+        $this->nombreHito = $nombreHito;
+
+        return $this;
+    }
+
+    /**
+     * Get nombreHito
+     *
+     * @return string 
+     */
+    public function getNombreHito()
+    {
+        return $this->nombreHito;
+    }
 }

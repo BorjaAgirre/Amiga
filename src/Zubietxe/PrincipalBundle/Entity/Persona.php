@@ -21,6 +21,116 @@ class Persona
      */
     private $idPers;
 
+//  NUEVOS A PARTIR DE AQUÍ
+
+    /**
+     * @var date
+     *
+     * @ORM\Column(name="fecha_caduc_tis", type="date", nullable=true)
+     */
+    private $fecha_caduc_tis;
+
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="orden_expulsion", type="integer", nullable=true)
+     */
+    private $orden_expulsion;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresospropios", type="string", nullable=true)
+     */
+    private $cantidad_ingresospropios;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresospnc", type="string", nullable=true)
+     */
+    private $cantidad_ingresospnc;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosotros", type="string", nullable=true)
+     */
+    private $cantidad_ingresosotros;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosnomina", type="string", nullable=true)
+     */
+    private $cantidad_ingresosnomina;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosrentabas", type="string", nullable=true)
+     */
+    private $cantidad_ingresosrentabas;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosprestcontrib", type="string", nullable=true)
+     */
+    private $cantidad_ingresosprestcontrib;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingrsossedesconoce", type="string", nullable=true)
+     */
+    private $cantidad_ingresossedesconoce;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosayudaindividual", type="string", nullable=true)
+     */
+    private $cantidad_ingresosayudaindividual;
+
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="autonomia_economia", type="integer", nullable=true)
+     */
+    private $autonomia_economica;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="observaciones_economia", type="string", nullable=true)
+     */
+    private $observaciones_economia;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="curso_actual", type="string", nullable=true)
+     */
+    private $curso_actual;
+
+
+
+//  NUEVOS HASTA AQUÍ
+
+
     /**
      * @var integer
      *
@@ -4387,5 +4497,328 @@ class Persona
     public function getDocumentoidentif()
     {
         return $this->documentoidentif;
+    }
+
+    /**
+     * Set fecha_caduc_tis
+     *
+     * @param \DateTime $fechaCaducTis
+     * @return Persona
+     */
+    public function setFechaCaducTis($fechaCaducTis)
+    {
+        $this->fecha_caduc_tis = $fechaCaducTis;
+
+        return $this;
+    }
+
+    /**
+     * Get fecha_caduc_tis
+     *
+     * @return \DateTime 
+     */
+    public function getFechaCaducTis()
+    {
+        return $this->fecha_caduc_tis;
+    }
+
+    /**
+     * Set orden_expulsion
+     *
+     * @param integer $ordenExpulsion
+     * @return Persona
+     */
+    public function setOrdenExpulsion($ordenExpulsion)
+    {
+        $this->orden_expulsion = $ordenExpulsion;
+
+        return $this;
+    }
+
+    /**
+     * Get orden_expulsion
+     *
+     * @return integer 
+     */
+    public function getOrdenExpulsion()
+    {
+        return $this->orden_expulsion;
+    }
+
+    /**
+     * Set cantidad_ingresospropios
+     *
+     * @param string $cantidadIngresospropios
+     * @return Persona
+     */
+    public function setCantidadIngresospropios($cantidadIngresospropios)
+    {
+        $this->cantidad_ingresospropios = $cantidadIngresospropios;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad_ingresospropios
+     *
+     * @return string 
+     */
+    public function getCantidadIngresospropios()
+    {
+        return $this->cantidad_ingresospropios;
+    }
+
+    /**
+     * Set cantidad_ingresospnc
+     *
+     * @param string $cantidadIngresospnc
+     * @return Persona
+     */
+    public function setCantidadIngresospnc($cantidadIngresospnc)
+    {
+        $this->cantidad_ingresospnc = $cantidadIngresospnc;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad_ingresospnc
+     *
+     * @return string 
+     */
+    public function getCantidadIngresospnc()
+    {
+        return $this->cantidad_ingresospnc;
+    }
+
+    /**
+     * Set cantidad_ingresosotros
+     *
+     * @param string $cantidadIngresosotros
+     * @return Persona
+     */
+    public function setCantidadIngresosotros($cantidadIngresosotros)
+    {
+        $this->cantidad_ingresosotros = $cantidadIngresosotros;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad_ingresosotros
+     *
+     * @return string 
+     */
+    public function getCantidadIngresosotros()
+    {
+        return $this->cantidad_ingresosotros;
+    }
+
+    /**
+     * Set cantidad_ingresosnomina
+     *
+     * @param string $cantidadIngresosnomina
+     * @return Persona
+     */
+    public function setCantidadIngresosnomina($cantidadIngresosnomina)
+    {
+        $this->cantidad_ingresosnomina = $cantidadIngresosnomina;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad_ingresosnomina
+     *
+     * @return string 
+     */
+    public function getCantidadIngresosnomina()
+    {
+        return $this->cantidad_ingresosnomina;
+    }
+
+    /**
+     * Set cantidad_ingresosrentabas
+     *
+     * @param string $cantidadIngresosrentabas
+     * @return Persona
+     */
+    public function setCantidadIngresosrentabas($cantidadIngresosrentabas)
+    {
+        $this->cantidad_ingresosrentabas = $cantidadIngresosrentabas;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad_ingresosrentabas
+     *
+     * @return string 
+     */
+    public function getCantidadIngresosrentabas()
+    {
+        return $this->cantidad_ingresosrentabas;
+    }
+
+    /**
+     * Set cantidad_ingresosprestcontrib
+     *
+     * @param string $cantidadIngresosprestcontrib
+     * @return Persona
+     */
+    public function setCantidadIngresosprestcontrib($cantidadIngresosprestcontrib)
+    {
+        $this->cantidad_ingresosprestcontrib = $cantidadIngresosprestcontrib;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad_ingresosprestcontrib
+     *
+     * @return string 
+     */
+    public function getCantidadIngresosprestcontrib()
+    {
+        return $this->cantidad_ingresosprestcontrib;
+    }
+
+    /**
+     * Set cantidad_ingresossedesconoce
+     *
+     * @param string $cantidadIngresossedesconoce
+     * @return Persona
+     */
+    public function setCantidadIngresossedesconoce($cantidadIngresossedesconoce)
+    {
+        $this->cantidad_ingresossedesconoce = $cantidadIngresossedesconoce;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad_ingresossedesconoce
+     *
+     * @return string 
+     */
+    public function getCantidadIngresossedesconoce()
+    {
+        return $this->cantidad_ingresossedesconoce;
+    }
+
+    /**
+     * Set cantidad_ingresosayudaindividual
+     *
+     * @param string $cantidadIngresosayudaindividual
+     * @return Persona
+     */
+    public function setCantidadIngresosayudaindividual($cantidadIngresosayudaindividual)
+    {
+        $this->cantidad_ingresosayudaindividual = $cantidadIngresosayudaindividual;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad_ingresosayudaindividual
+     *
+     * @return string 
+     */
+    public function getCantidadIngresosayudaindividual()
+    {
+        return $this->cantidad_ingresosayudaindividual;
+    }
+
+    /**
+     * Set autonomia_economica
+     *
+     * @param integer $autonomiaEconomica
+     * @return Persona
+     */
+    public function setAutonomiaEconomica($autonomiaEconomica)
+    {
+        $this->autonomia_economica = $autonomiaEconomica;
+
+        return $this;
+    }
+
+    /**
+     * Get autonomia_economica
+     *
+     * @return integer 
+     */
+    public function getAutonomiaEconomica()
+    {
+        return $this->autonomia_economica;
+    }
+
+
+    /**
+     * Set curso_actual
+     *
+     * @param string $cursoActual
+     * @return Persona
+     */
+    public function setCursoActual($cursoActual)
+    {
+        $this->curso_actual = $cursoActual;
+
+        return $this;
+    }
+
+    /**
+     * Get curso_actual
+     *
+     * @return string 
+     */
+    public function getCursoActual()
+    {
+        return $this->curso_actual;
+    }
+
+    /**
+     * Set justiciaGratuita
+     *
+     * @param integer $justiciaGratuita
+     * @return Persona
+     */
+    public function setJusticiaGratuita($justiciaGratuita)
+    {
+        $this->justiciaGratuita = $justiciaGratuita;
+
+        return $this;
+    }
+
+    /**
+     * Get justiciaGratuita
+     *
+     * @return integer 
+     */
+    public function getJusticiaGratuita()
+    {
+        return $this->justiciaGratuita;
+    }
+
+    /**
+     * Set observaciones_economia
+     *
+     * @param string $observacionesEconomia
+     * @return Persona
+     */
+    public function setObservacionesEconomia($observacionesEconomia)
+    {
+        $this->observaciones_economia = $observacionesEconomia;
+
+        return $this;
+    }
+
+    /**
+     * Get observaciones_economia
+     *
+     * @return string 
+     */
+    public function getObservacionesEconomia()
+    {
+        return $this->observaciones_economia;
     }
 }

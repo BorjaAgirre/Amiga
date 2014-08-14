@@ -34,6 +34,5 @@ Zubietxe\PrincipalBundle\Entity\Varios:
             type: datetime
             nullable: true
             comment: ''
-            default: '0000-00-00 00:00:00'
             column: fecha_cambio
     lifecycleCallbacks: {  }

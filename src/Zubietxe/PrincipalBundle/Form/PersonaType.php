@@ -38,6 +38,10 @@ class PersonaType extends AbstractType
                 'choices' => $this->grupo->findByDespl('sexo')
                 ))
 */
+
+//
+//  identificacion
+//
             ->add('sexo', 'choice', array(
                 'label' => 'Sexo',
                 'choices' => $this->grupo->findDesplegable('sexo')
@@ -45,28 +49,34 @@ class PersonaType extends AbstractType
             ->add('nombre', 'text', array('label' => 'Nombre'))
             ->add('apellido1', 'text', array('label' => 'Primer Apellido'))
             ->add('apellido2', 'text', array('label' => 'Segundo Apellido'))
-            ->add('fechanac', 'date', array('label' => 'Fecha nacimiento', 'widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('lugarNac', 'text', array('label' => 'Lugar de nacimiento'))
-            ->add('dniPas', 'text', array('label' => 'Dni o pasaporte'))
-            ->add('numSs', 'text', array('label' => 'Número Seg. Social'))
-            ->add('numExpediente', 'text', array('label' => 'Núm. Expediente'))
             ->add('nacionalidad', 'choice', array(
                 'label' => 'Nacionalidad',
                 'choices' => $this->grupo->findDesplegable('paises_mundo')
+                ))           
+            ->add('lugarNac', 'text', array('label' => 'Ciudad de nacimiento'))
+            ->add('fechanac', 'date', array('label' => 'Fecha nacimiento', 'widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('dniPas', 'text', array('label' => 'Dni / Pasaporte / NIE'))
+            ->add('nucleoConv', 'choice', array(
+                    'label' => 'Núcleo convivencia',
+                    'choices' => $this->grupo->findDesplegable('nucleoconv')
                 ))
+
             ->add('telefono', 'text', array('label' => 'Teléfono'))
-            ->add('direccion', 'text', array('label' => 'Dirección'))
+            ->add('direccion', 'text', array('label' => 'Dirección actual'))
             ->add('poblacion', 'choice', array(
-                'label' => 'Población',
+                'label' => 'Población actual',
                 'choices' => $this->grupo->findDesplegable('poblaciones')
                 ))
             ->add('poblacionPadron', 'choice', array(
                 'label' => 'Población Padrón',
                 'choices' => $this->grupo->findDesplegable('poblaciones')
                 ))
-            ->add('nucleoConv', 'choice', array(
-                    'label' => 'Núcleo convivencia',
-                    'choices' => $this->grupo->findDesplegable('poblaciones')
+
+            ->add('empadronamiento', 'text', array('label' => 'Dirección padrón actual'))
+            ->add('fechaempadronamiento', 'date', array(
+                'label' => 'Fecha empadronamiento', 
+                'widget' => 'single_text', 
+                'format' => 'dd-M-yyyy'
                 ))
             ->add('estadoCivil', 'choice', array(
                     'label' => 'Estado civil',
@@ -78,10 +88,91 @@ class PersonaType extends AbstractType
                 'multiple' => false,
                 'expanded' => true
                 ))
-            ->add('documentoidentif', 'text', array('label' => 'Documento identificación'))            
             ->add('nHijos', 'integer', array('label' => 'Núm. hijos'))
             ->add('observacionesHijos', 'textarea', array('label' => 'Observaciones Hijos', 'max_length' => 255))
             ->add('telefonosInteres', 'text', array('label' => 'Teléfonos interés'))
+
+
+//
+//  juridico
+//
+            ->add('tis')            
+            ->add('fecha_caduc_tis')
+            ->add('incapacitacion')
+            ->add('numSs', 'text', array('label' => 'Número Seg. Social'))
+            ->add('numExpediente', 'text', array('label' => 'Núm. Expediente'))
+            ->add('documentoidentif', 'text', array('label' => 'Documento identificación'))            
+            ->add('permisoresid', 'choice', array(
+                'label' => 'Permiso residencia',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))   
+            ->add('permisoresidtr')
+            ->add('npasap')
+            ->add('fpasap', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('ncedula')
+            ->add('fcedula', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('fressol', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('nresconc')
+            ->add('fresconc', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('frestrsol', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('nrestrconc')
+            ->add('frestrconc', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('visado')
+            ->add('asilo')
+            ->add('otrosdoc')
+            ->add('fentrada', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('fprueba', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('abogadootros')
+            ->add('permisoresidrazonesno')
+            ->add('permisosolicitudfecha', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('permisosolicitudlugar')
+            ->add('tiemporesidenciaespanya')
+            ->add('tiemporesidenciabilbao')
+            ->add('permisotrabajo')
+            ->add('permisotrabajorazonesno')
+            ->add('orden_expulsion')
+            ->add('penalantecedentesprision')
+            ->add('penalordenalejamiento')
+            ->add('penalprisionpreventiva')
+            ->add('penalprisionotros')
+            ->add('penallibcondicional')
+            ->add('penalmedidaseguridad')
+            ->add('penalcausaspendientes')
+            ->add('penalpermisopenitenc')
+            ->add('penaltercergrado')
+            ->add('penaltbc')
+
+//
+//  economico
+//
+            ->add('ingresospropios')
+            ->add('ingresospnc')
+            ->add('ingresosotros')
+            ->add('ingresosnomina')
+            ->add('ingresosrentabas')
+            ->add('ingresosprestcontrib')
+            ->add('ingresossedesconoce')
+            ->add('ingresosayudaindividual')
+            ->add('ingresosno')
+            ->add('cantidad_ingresospropios')
+            ->add('cantidad_ingresospnc')
+            ->add('cantidad_ingresosotros')
+            ->add('cantidad_ingresosnomina')
+            ->add('cantidad_ingresosrentabas')
+            ->add('cantidad_ingresosprestcontrib')
+            ->add('cantidad_ingresossedesconoce')
+            ->add('cantidad_ingresosayudaindividual')
+            ->add('autonomia_economica')
+            ->add('observaciones_economia')
+            ->add('curso_actual')
+
+
+//
+//  formativo
+//
+
             ->add('fechaIngreso', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
             ->add('fechaSalida', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
             ->add('procedenciaDemanda')
@@ -108,7 +199,6 @@ class PersonaType extends AbstractType
             ->add('autonomia')
             ->add('disminucionfisica')
             ->add('minusvaliaporcentaje')
-            ->add('incapacitacion')
             ->add('toxicomania')
             ->add('antecconsumo')
             ->add('disminucionpsiquica')
@@ -132,54 +222,11 @@ class PersonaType extends AbstractType
             ->add('drogashermanos')
             ->add('drogaspareja')
             ->add('drogashijos')
-            ->add('permisoresid')
-            ->add('permisoresidtr')
-            ->add('npasap')
-            ->add('fpasap', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('ncedula')
-            ->add('fcedula', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('fressol', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('nresconc')
-            ->add('fresconc', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('frestrsol', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('nrestrconc')
-            ->add('frestrconc', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('visado')
-            ->add('asilo')
-            ->add('otrosdoc')
-            ->add('fentrada', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('fprueba', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('abogadootros')
-            ->add('permisoresidrazonesno')
-            ->add('permisosolicitudfecha', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('permisosolicitudlugar')
-            ->add('tiemporesidenciaespanya')
-            ->add('tiemporesidenciabilbao')
-            ->add('permisotrabajo')
-            ->add('permisotrabajorazonesno')
-            ->add('fechaempadronamiento', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('empadronamiento')
-            ->add('tis')
+
+
             ->add('redapoyo')
-            ->add('ingresospropios')
-            ->add('ingresospnc')
-            ->add('ingresosotros')
-            ->add('ingresosnomina')
-            ->add('ingresosrentabas')
-            ->add('ingresosprestcontrib')
-            ->add('ingresossedesconoce')
-            ->add('ingresosayudaindividual')
-            ->add('ingresosno')
-            ->add('penalantecedentesprision')
-            ->add('penalordenalejamiento')
-            ->add('penalprisionpreventiva')
-            ->add('penalprisionotros')
-            ->add('penallibcondicional')
-            ->add('penalmedidaseguridad')
-            ->add('penalcausaspendientes')
-            ->add('penalpermisopenitenc')
-            ->add('penaltercergrado')
-            ->add('penaltbc')
+
+
             ->add('ducha')
             ->add('ropero')
             ->add('lavanderia')
