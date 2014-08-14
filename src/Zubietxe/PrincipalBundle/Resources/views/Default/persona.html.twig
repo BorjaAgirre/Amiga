@@ -54,37 +54,29 @@
             </div>    
 
             <div class="tab-pane fade" id="juridico">
-                {{form_row(form.tis, { 'widget_col': 4}) }}
-                {{form_row(form.fecha_caduc_tis, { 'widget_col': 4}) }}
+                {{ funciones.dos_campos(form, form.tis, form.fecha_caduc_tis, 3,3, true)}}
                 {{form_row(form.incapacitacion, { 'widget_col': 4}) }}
                 {{form_row(form.numSs, { 'widget_col': 3}) }}
                 {{form_row(form.numExpediente, { 'widget_col': 3}) }}
                 {{form_row(form.documentoidentif, { 'widget_col': 3}) }}
                 {{form_row(form.permisoresid, { 'widget_col': 4}) }}
                 {{form_row(form.permisoresidtr, { 'widget_col': 4}) }}
-                {{form_row(form.npasap, { 'widget_col': 4}) }}
-                {{form_row(form.fpasap, { 'widget_col': 4}) }}
-                {{form_row(form.ncedula, { 'widget_col': 4}) }}
-                {{form_row(form.fcedula, { 'widget_col': 4}) }}
+                {{ funciones.dos_campos(form, form.npasap, form.fpasap, 3,3, true)}}
+                {{ funciones.dos_campos(form, form.ncedula, form.fcedula, 3,3, true)}}
                 {{form_row(form.fressol, { 'widget_col': 4}) }}
-                {{form_row(form.nresconc, { 'widget_col': 4}) }}
-                {{form_row(form.fresconc, { 'widget_col': 4}) }}
+                {{ funciones.dos_campos(form, form.nresconc, form.fresconc, 3,3, true)}}
                 {{form_row(form.frestrsol, { 'widget_col': 4}) }}
-                {{form_row(form.nrestrconc, { 'widget_col': 4}) }}
-                {{form_row(form.frestrconc, { 'widget_col': 4}) }}
+                {{ funciones.dos_campos(form, form.nrestrconc, form.frestrconc, 3,3, true)}}
                 {{form_row(form.visado, { 'widget_col': 4}) }}
                 {{form_row(form.asilo, { 'widget_col': 4}) }}
                 {{form_row(form.otrosdoc, { 'widget_col': 4}) }}
-                {{form_row(form.fentrada, { 'widget_col': 4}) }}
-                {{form_row(form.fprueba, { 'widget_col': 4}) }}
-                {{form_row(form.abogadootros, { 'widget_col': 4}) }}
-                {{form_row(form.permisoresidrazonesno, { 'widget_col': 4}) }}
-                {{form_row(form.permisosolicitudfecha, { 'widget_col': 4}) }}
-                {{form_row(form.permisosolicitudlugar, { 'widget_col': 4}) }}
+                {{form_row(form.fentrada, { 'widget_col': 2}) }}
+                {{form_row(form.fprueba, { 'widget_col': 2}) }}
+                {{form_row(form.abogadootros, { 'widget_col': 6}) }}
+                {{ funciones.dos_campos(form, form.permisoresidrazonesno, form.permisosolicitudfecha, 3,3, true)}}
+              <!--  {{form_row(form.permisosolicitudlugar, { 'widget_col': 4}) }}   -->
                 {{form_row(form.tiemporesidenciaespanya, { 'widget_col': 4}) }}
                 {{form_row(form.tiemporesidenciabilbao, { 'widget_col': 4}) }}
-                {{form_row(form.permisotrabajo, { 'widget_col': 4}) }}
-                {{form_row(form.permisotrabajorazonesno, { 'widget_col': 4}) }}
                 {{form_row(form.orden_expulsion, { 'widget_col': 4}) }}
                 {{form_row(form.penalantecedentesprision, { 'widget_col': 4}) }}
                 {{form_row(form.penalordenalejamiento, { 'widget_col': 4}) }}
@@ -97,7 +89,10 @@
                 {{form_row(form.penaltercergrado, { 'widget_col': 4}) }}
                 {{form_row(form.penaltbc, { 'widget_col': 4}) }}
             </div>  
-                <!-- {{form_row(form.fechaIngreso, {'label': ''}) }}
+                <!-- 
+                              {{form_row(form.permisotrabajo, { 'widget_col': 4}) }}
+                {{form_row(form.permisotrabajorazonesno, { 'widget_col': 4}) }} 
+                {{form_row(form.fechaIngreso, {'label': ''}) }}
                     {{form_row(form.fechaSalida) }}, {'label': ''}    
                     {{form_row(form.listaEsperaPiso, {'label': ''}) }}
                     {{form_row(form.insertIdUsuario, {'label': ''}) }}
@@ -244,7 +239,11 @@
                 </div>
                 <button type="submit" class="btn btn-default">Buscar</button>
             </form>
-            <br><a href= 'http://localhost/amiga3/web/app_dev.php/persona/1024'>Alberto P.</a>
-            <br><a href= 'http://localhost/amiga3/web/app_dev.php/persona/1061'>Nadia H.</a>
-            <br><a href= 'http://localhost/amiga3/web/app_dev.php/persona/1032'>Noureddin M.</a>
+            <br><a href= '1024'>Alberto P.</a>
+            <br><a href= '1061'>Nadia H.</a>
+            <br><a href= '1032'>Noureddin M.</a>
+            <br><a href='2774'>Mohamed F.</a>
+            <br><a href='2883'>Samir R.</a>
+
     {% endblock col_dcha %}
+

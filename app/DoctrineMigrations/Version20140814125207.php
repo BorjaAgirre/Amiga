@@ -16,7 +16,7 @@ class Version20140814125207 extends AbstractMigration
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != "mysql", "Migration can only be executed safely on 'mysql'.");
         
         $this->addSql("ALTER TABLE persona ADD fecha_caduc_tis DATE DEFAULT NULL, 
-            ADD orden_expulsion INT DEFAULT NULL, 
+            ADD orden_expulsion INT(2) DEFAULT NULL, 
             ADD cantidad_ingresospropios VARCHAR(15) DEFAULT NULL, 
             ADD cantidad_ingresospnc VARCHAR(15) DEFAULT NULL, 
             ADD cantidad_ingresosotros VARCHAR(15) DEFAULT NULL, 
