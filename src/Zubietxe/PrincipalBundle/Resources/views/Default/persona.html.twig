@@ -52,6 +52,8 @@
             </div>    
 
             <div class="tab-pane fade" id="juridico">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
                 {{ funciones.dos_campos(form, form.tis, form.fecha_caduc_tis, 3,3, true)}}
                 {{form_row(form.incapacitacion, { 'widget_col': 4}) }}
                 {{form_row(form.numSs, { 'widget_col': 3}) }}
@@ -99,6 +101,8 @@
 
         
             <div class="tab-pane fade" id="economico">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
                 {{form_row(form.ingresospropios, { 'widget_col': 4}) }}
                 {{form_row(form.ingresospnc, { 'widget_col': 4}) }}
                 {{form_row(form.ingresosotros, { 'widget_col': 4}) }}
@@ -124,6 +128,8 @@
             </div>
 
             <div class="tab-pane fade" id="formativo">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
                 {{form_row(form.datosformativositem, { 'widget_col': 4}) }}
                 {{form_row(form.datosformativosobs, { 'widget_col': 4}) }}
                 {{form_row(form.nivelcastellano, { 'widget_col': 4}) }}
@@ -137,6 +143,8 @@
             </div>
 
             <div class="tab-pane fade" id="laboral">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
                 {{form_row(form.tiempotrabajado, { 'widget_col': 4}) }}
                 {{form_row(form.trabaja, { 'widget_col': 4}) }}
                 {{form_row(form.expLaboral, { 'widget_col': 4}) }}
@@ -149,16 +157,24 @@
             </div>
 
             <div class="tab-pane fade" id="vivienda">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
                 </div>
             <div class="tab-pane fade" id="social">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
 
                 {{form_row(form.redapoyo, { 'widget_col': 4}) }}
             </div>
 
             <div class="tab-pane fade" id="convivencia">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
             </div>
             
             <div class="tab-pane fade" id="salud">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
                 {{form_row(form.autonomia, { 'widget_col': 4}) }}
                 {{form_row(form.disminucionfisica, { 'widget_col': 4}) }}
                 {{form_row(form.minusvaliaporcentaje, { 'widget_col': 4}) }}
@@ -192,15 +208,24 @@
             </div>
 
             <div class="tab-pane fade" id="competencias">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
+
             </div>
             
             <div class="tab-pane fade" id="aceptacion">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
             </div>
             
             <div class="tab-pane fade" id="participacion">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
             </div>
             
             <div class="tab-pane fade" id="intervencion">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
                     {{form_row(form.procedenciaDemanda, { 'widget_col': 4}) }}
                     {{form_row(form.procedenciaDemandaLista , { 'widget_col': 4}) }}
                     {{form_row(form.tutor, { 'widget_col': 4}) }}
