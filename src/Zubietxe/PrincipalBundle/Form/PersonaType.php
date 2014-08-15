@@ -250,31 +250,94 @@ class PersonaType extends AbstractType
 //
 //  economico
 //
-            ->add('ingresospropios')
-            ->add('ingresospnc')
-            ->add('ingresosotros')
-            ->add('ingresosnomina')
-            ->add('ingresosrentabas')
-            ->add('ingresosprestcontrib')
-            ->add('ingresossedesconoce')
-            ->add('ingresosayudaindividual')
-            ->add('ingresosno')
-            ->add('cantidad_ingresospropios')
-            ->add('cantidad_ingresospnc')
-            ->add('cantidad_ingresosotros')
-            ->add('cantidad_ingresosnomina')
-            ->add('cantidad_ingresosrentabas')
-            ->add('cantidad_ingresosprestcontrib')
-            ->add('cantidad_ingresossedesconoce')
-            ->add('cantidad_ingresosayudaindividual')
-            ->add('autonomia_economica')
-            ->add('observaciones_economia')
-            ->add('curso_actual')
+            ->add('ingresospropios', 'choice', array(
+                'label' => 'Ingresos Propios',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+            ->add('ingresospnc', 'choice', array(
+                'label' => 'Ingresos PNC',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+            ->add('ingresosotros', 'choice', array(
+                'label' => 'Ingresos Otros',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+            ->add('ingresosnomina', 'choice', array(
+                'label' => 'Ingresos Nómina',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+            ->add('ingresosrentabas', 'choice', array(
+                'label' => 'Ingresos Renta Básica',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+            ->add('ingresosprestcontrib', 'choice', array(
+                'label' => 'Ingresos PC',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+            ->add('ingresossedesconoce', 'choice', array(
+                'label' => 'Ingresos desconocidos',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+            ->add('ingresosayudaindividual', 'choice', array(
+                'label' => 'Ingresos Ayuda Individual',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+            ->add('ingresosno', 'choice', array(
+                'label' => 'Sin ingresos',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+            ->add('cantidad_ingresospropios', 'text', array('label' => 'Cantidad ingresos propios'))
+            ->add('cantidad_ingresospnc', 'text', array('label' => 'Cantidad ingresos PNC'))
+            ->add('cantidad_ingresosotros', 'text', array('label' => 'Cantidad ingresos Otros'))
+            ->add('cantidad_ingresosnomina', 'text', array('label' => 'Cantidad ingresos Nómina'))
+            ->add('cantidad_ingresosrentabas', 'text', array('label' => 'Cantidad ingresos Renta Básica'))
+            ->add('cantidad_ingresosprestcontrib', 'text', array('label' => 'Cantidad ingresos PC'))
+            ->add('cantidad_ingresossedesconoce', 'text', array('label' => 'Cantidad ingresos desconocidos'))
+            ->add('cantidad_ingresosayudaindividual', 'text', array(
+                'attr' => array('simple_col' => '7'),
+                'label' => 'Cantidad ingresos ayuda individual'))
+            ->add('autonomia_economica', 'choice', array(
+                'label' => 'Autonomía económica',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('observaciones_economia', 'textarea', array('label' => 'Observaciones economía'))
+
 
 
 //
 //  formativo
 //
+
+            ->add('curso_actual')
 
             ->add('fechaIngreso', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
             ->add('fechaSalida', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
