@@ -320,9 +320,7 @@ class PersonaType extends AbstractType
             ->add('cantidad_ingresosrentabas', 'text', array('label' => 'Cantidad ingresos Renta Básica'))
             ->add('cantidad_ingresosprestcontrib', 'text', array('label' => 'Cantidad ingresos PC'))
             ->add('cantidad_ingresossedesconoce', 'text', array('label' => 'Cantidad ingresos desconocidos'))
-            ->add('cantidad_ingresosayudaindividual', 'text', array(
-                'attr' => array('simple_col' => '7'),
-                'label' => 'Cantidad ingresos ayuda individual'))
+            ->add('cantidad_ingresosayudaindividual', 'text', array('label' => 'Cantidad ingresos ayuda individual'))
             ->add('autonomia_economica', 'choice', array(
                 'label' => 'Autonomía económica',
                 'choices' => array('0' => 'No', '1' => 'Si'),
