@@ -1,0 +1,73 @@
+diff --git a/app/AppKernel.php b/app/AppKernel.php
+index 1e43fed..804adbe 100644
+--- a/app/AppKernel.php
++++ b/app/AppKernel.php
+@@ -18,7 +18,7 @@ class AppKernel extends Kernel
+             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+             new Zubietxe\PrincipalBundle\ZubietxePrincipalBundle(),
+             new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle(),
+-            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),            
++      //      new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),            
+         );
+ 
+         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+diff --git a/src/Zubietxe/PrincipalBundle/Entity/DesplegablesRepository.php b/src/Zubietxe/PrincipalBundle/Entity/DesplegablesRepository.php
+index d0df4c4..8cf296e 100644
+--- a/src/Zubietxe/PrincipalBundle/Entity/DesplegablesRepository.php
++++ b/src/Zubietxe/PrincipalBundle/Entity/DesplegablesRepository.php
+@@ -13,6 +13,7 @@ class DesplegablesRepository extends EntityRepository
+                 'SELECT d FROM ZubietxePrincipalBundle:Desplegables d WHERE d.despl = :tabla ORDER BY d.idDespl ASC'
+             )->setParameter('tabla', $tabla);
+             $result = $query->getResult();
++            $retorna = array();
+             foreach ($result as $row)  {
+            		$retorna[$row->getIdDespl()] = $row->getNombre();
+             }
+diff --git a/src/Zubietxe/PrincipalBundle/Resources/views/Default/persona.html.twig b/src/Zubietxe/PrincipalBundle/Resources/views/Default/persona.html.twig
+index 94bd115..395a786 100644
+--- a/src/Zubietxe/PrincipalBundle/Resources/views/Default/persona.html.twig
++++ b/src/Zubietxe/PrincipalBundle/Resources/views/Default/persona.html.twig
+@@ -1,43 +1,5 @@
+ {% extends "ZubietxePrincipalBundle:Default:dos_columnas.html.twig" %}
+-<!DOCTYPE html>
+ 
+-<head>
+-
+-    <title>Bootstrap 101 Template</title>
+-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <!-- Bootstrap -->
+-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" media="screen">
+-
+-    <!-- HTML5 Shim and Respond.js add IE8 support of HTML5 elements and media queries -->
+-    {% include 'BraincraftedBootstrapBundle::ie8-support.html.twig' %}
+-
+-</head>
+-
+-<body>
+-
+-
+-    <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
+-    <script src="{{ asset('js/jquery.js') }}"></script>
+-    <!-- Include all JavaScripts, compiled by Assetic -->
+-    <script src="{{ asset('js/bootstrap.js') }}"></script>
+-
+-<div class="container">
+-
+-<nav class="navbar navbar-default" role="navigation">
+-    <!-- Brand and toggle get grouped for better mobile display -->
+-    <div class="navbar-header">
+-        <a class="navbar-brand" href="#">Zubietxe</a>
+-    </div>
+-
+-    <!-- Collect the nav links, forms, and other content for toggling -->
+-    <div class="collapse navbar-collapse navbar-ex1-collapse">
+-        <ul class="nav nav-pills">
+-          <li class="active"><a href="#">Persona</a></li>
+-          <li><a href="#">Seguimiento</a></li>
+-          <li><a href="actividad">Actividad</a></li>
+-        </ul>
+-    </div><!-- /.navbar-collapse -->
+-</nav>
+ 
+     {% block title 'Amiga - Persona' %}
+ 
