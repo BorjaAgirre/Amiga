@@ -40,7 +40,6 @@
                 {{form_row(form.direccion, { 'widget_col': 8}) }}
                 {{form_row(form.poblacion, { 'widget_col': 4}) }}
                 {{form_row(form.telefono, { 'widget_col': 4}) }}
-
                 {{form_row(form.fechaempadronamiento, { 'widget_col': 4}) }}
                 {{form_row(form.empadronamiento, { 'widget_col': 4}) }}
                 {{form_row(form.poblacionPadron, { 'widget_col': 4}) }}
@@ -74,7 +73,6 @@
                 {{form_row(form.fprueba, { 'widget_col': 2}) }}
                 {{form_row(form.abogadootros, { 'widget_col': 6}) }}
                 {{ funciones.dos_campos(form, form.permisoresidrazonesno, form.permisosolicitudfecha, 3,3, true)}}
-              <!--  {{form_row(form.permisosolicitudlugar, { 'widget_col': 4}) }}   -->
                 {{form_row(form.tiemporesidenciaespanya, { 'widget_col': 4}) }}
                 {{form_row(form.tiemporesidenciabilbao, { 'widget_col': 4}) }}
                 {{form_row(form.orden_expulsion) }}
@@ -89,15 +87,6 @@
                 {{form_row(form.penaltercergrado) }}
                 {{form_row(form.penaltbc) }}
             </div>  
-                <!-- 
-                              {{form_row(form.permisotrabajo, { 'widget_col': 4}) }}
-                {{form_row(form.permisotrabajorazonesno, { 'widget_col': 4}) }} 
-                {{form_row(form.fechaIngreso, {'label': ''}) }}
-                    {{form_row(form.fechaSalida) }}, {'label': ''}    
-                    {{form_row(form.listaEsperaPiso, {'label': ''}) }}
-                    {{form_row(form.insertIdUsuario, {'label': ''}) }}
-                    {{form_row(form.insertFecha, {'label': ''}) }}
-                -->
 
         
             <div class="tab-pane fade" id="economico">
@@ -129,74 +118,63 @@
 
             <div class="tab-pane fade" id="formativo">
                 {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
-
                 {{form_row(form.datosformativositem, { 'widget_col': 4}) }}
-                {{form_row(form.datosformativosobs, { 'widget_col': 4}) }}
-                {{form_row(form.nivelcastellano, { 'widget_col': 4}) }}
-                {{form_row(form.idioma, { 'widget_col': 4}) }}
-               <!-- {{form_row(form.edadabandonoestudios, { 'widget_col': 4}) }}
-                {{form_row(form.laboralorigen, { 'widget_col': 4}) }}
-                {{form_row(form.laboralespana, { 'widget_col': 4}) }}  -->
-                {{form_row(form.cursos, { 'widget_col': 4}) }}
-                {{form_row(form.curso_actual, { 'widget_col': 4}) }}
+                {{form_row(form.datosformativosobs, { 'widget_col': 8}) }}
+                {{form_row(form.NivelCastellano, { 'widget_col': 5}) }}
+                {{form_row(form.Idioma, { 'widget_col': 6}) }}
+                {{form_row(form.cursos, { 'widget_col': 8}) }}
+                {{form_row(form.curso_actual, { 'widget_col': 8}) }}
 
             </div>
 
             <div class="tab-pane fade" id="laboral">
                 {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
-
                 {{form_row(form.tiempotrabajado, { 'widget_col': 4}) }}
                 {{form_row(form.trabaja, { 'widget_col': 4}) }}
                 {{form_row(form.expLaboral, { 'widget_col': 4}) }}
                 {{form_row(form.lanbide, { 'widget_col': 4}) }}
-                {{form_row(form.fAltaLanbide, { 'widget_col': 4}) }}
-                {{form_row(form.fRenovLanbide, { 'widget_col': 4}) }}
+                {{ funciones.dos_campos(form, form.fAltaLanbide, form.fRenovLanbide, 4, 4, true)}}
                 {{form_row(form.inem, { 'widget_col': 4}) }}
-                {{form_row(form.fAltaInem, { 'widget_col': 4}) }}
-                {{form_row(form.fRenovInem, { 'widget_col': 4}) }}
+                {{ funciones.dos_campos(form, form.fAltaInem, form.fRenovInem, 4, 4, true)}}
             </div>
 
             <div class="tab-pane fade" id="vivienda">
                 {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+            </div>
 
-                </div>
             <div class="tab-pane fade" id="social">
                 {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
-
-
-                {{form_row(form.redapoyo, { 'widget_col': 4}) }}
+                {{form_row(form.redapoyo, { 'widget_col': 6}) }}
             </div>
 
             <div class="tab-pane fade" id="convivencia">
                 {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
-
             </div>
             
             <div class="tab-pane fade" id="salud">
                 {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
-
                 {{form_row(form.autonomia, { 'widget_col': 4}) }}
                 {{form_row(form.disminucionfisica, { 'widget_col': 4}) }}
-                {{form_row(form.minusvaliaporcentaje, { 'widget_col': 4}) }}
+                {{form_row(form.minusvaliaporcentaje, { 'widget_col': 2}) }}
                 {{form_row(form.toxicomania, { 'widget_col': 4}) }}
-                {{form_row(form.consumoprinc, { 'widget_col': 4}) }}
+                {{form_row(form.ConsumoPrinc, { 'widget_col': 4}) }}
                 {{form_row(form.antecconsumo, { 'widget_col': 4}) }}
                 {{form_row(form.anosconsumo, { 'widget_col': 4}) }}
                 {{form_row(form.tratamiento, { 'widget_col': 4}) }}
                 {{form_row(form.tratamientotipo, { 'widget_col': 4}) }}
                 {{form_row(form.disminucionpsiquica, { 'widget_col': 4}) }}
                 {{form_row(form.enfermedadmental, { 'widget_col': 4}) }}
+                {{form_row(form.enfmentaldiagnostico, { 'widget_col': 8}) }}              
                 {{form_row(form.tuberculosis, { 'widget_col': 4}) }}
                 {{form_row(form.hepatitis, { 'widget_col': 4}) }}
                 {{form_row(form.vih, { 'widget_col': 4}) }}
                 {{form_row(form.diabetes, { 'widget_col': 4}) }}
                 {{form_row(form.otras, { 'widget_col': 4}) }}
-                {{form_row(form.enfermedadescomentarios, { 'widget_col': 4}) }}
-                {{form_row(form.medicacion, { 'widget_col': 4}) }}
-                {{form_row(form.enfmentaldiagnostico, { 'widget_col': 4}) }}
-                {{form_row(form.enfmentalfechadiagn, { 'widget_col': 4}) }}
+                {{form_row(form.enfermedadescomentarios, { 'widget_col': 8}) }}
+                {{form_row(form.medicacion, { 'widget_col': 8}) }}
+                {{form_row(form.enfmentalfechadiagn, { 'widget_col': 2}) }}
                 {{form_row(form.enfmentaltratamiento, { 'widget_col': 4}) }}
-                {{form_row(form.enfmentalingresos, { 'widget_col': 4}) }}
+                {{form_row(form.enfmentalingresos, { 'widget_col': 8}) }}
                 {{form_row(form.enfmentalpadres, { 'widget_col': 4}) }}
                 {{form_row(form.enfmentalhermanos, { 'widget_col': 4}) }}
                 {{form_row(form.enfmentalpareja, { 'widget_col': 4}) }}
@@ -226,8 +204,9 @@
             <div class="tab-pane fade" id="intervencion">
                 {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
 
-                    {{form_row(form.procedenciaDemanda, { 'widget_col': 4}) }}
-                    {{form_row(form.procedenciaDemandaLista , { 'widget_col': 4}) }}
+                    {{form_row(form.procedenciaDemandaLista , { 'widget_col': 8}) }}
+                    {{form_row(form.procedenciaDemanda, { 'widget_col': 8}) }}
+
                     {{form_row(form.tutor, { 'widget_col': 4}) }}
                     {{form_row(form.comeLu, { 'widget_col': 4}) }}
                     {{form_row(form.comeMa, { 'widget_col': 4}) }}
@@ -236,8 +215,6 @@
                     {{form_row(form.comeVi, { 'widget_col': 4}) }}
                     {{form_row(form.comeSa, { 'widget_col': 4}) }}
                     {{form_row(form.comeDo, { 'widget_col': 4}) }}
-                    {{form_row(form.comeSaNotas, { 'widget_col': 4}) }}
-                    {{form_row(form.comeDoNotas, { 'widget_col': 4}) }}
                     {{form_row(form.creditrans, { 'widget_col': 4}) }}
                     {{form_row(form.ducha, { 'widget_col': 4}) }}
                     {{form_row(form.ropero, { 'widget_col': 4}) }}

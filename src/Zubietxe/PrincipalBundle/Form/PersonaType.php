@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Zubietxe\PrincipalBundle\Entity\Desplegables;
 use Zubietxe\PrincipalBundle\Entity\DesplegablesRepository;
+use Zubietxe\PrincipalBundle\Entity\Tutor;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -37,6 +38,19 @@ class PersonaType extends AbstractType
                 'property' => 'nombre',
                 'choices' => $this->grupo->findByDespl('sexo')
                 ))
+            ->add('fechaIngreso', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('fechaSalida', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('listaEsperaPiso', 'text', array('label' => ''))
+            ->add('insertIdUsuario', 'text', array('label' => ''))
+            ->add('insertFecha', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+           ->add('permisotrabajo')  
+            ->add('permisotrabajorazonesno')  
+            ->add('edadabandonoestudios', 'text', array('label' => ''))
+            ->add('laboralorigen', 'text', array('label' => ''))
+            ->add('laboralespana', 'text', array('label' => ''))            
+            ->add('permisosolicitudlugar', 'text', array('label' => 'Lugar solicitud permiso'))
+            ->add('comeSaNotas', 'text', array('label' => 'Notas comedor sábado'))
+            ->add('comeDoNotas', 'text', array('label' => 'Notas comedor domingo'))
 */
 
 //
@@ -175,11 +189,9 @@ class PersonaType extends AbstractType
             ->add('permisosolicitudfecha', 'date', array(
                 'label' => 'Fecha solicitud xx',
                 'widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('permisosolicitudlugar', 'text', array('label' => 'Lugar solicitud permiso'))
             ->add('tiemporesidenciaespanya', 'text', array('label' => 'Tiempo residencia en España'))
             ->add('tiemporesidenciabilbao', 'text', array('label' => 'Tiempo residencia CAPV'))
-           ->add('permisotrabajo')  // PENDIENTE ELIMINAR
-            ->add('permisotrabajorazonesno')  // PENDIENTE ELIMINAR
+
             ->add('orden_expulsion', 'choice', array(
                 'label' => 'Orden expulsión ',
                 'choices' => array('0' => 'No', '1' => 'Si'),
@@ -334,87 +346,349 @@ class PersonaType extends AbstractType
 //
 //  formativo
 //
+            ->add('datosformativositem', 'choice', array(
+                    'label' => 'Estudios',
+                    'choices' => $this->grupo->findDesplegable('estudios')
+                ))
+            ->add('datosformativosobs', 'textarea', array('label' => 'Notas estudios'))
+            ->add('NivelCastellano', 'choice', array(
+                    'label' => 'Nivel Castellano',
+                    'choices' => $this->grupo->findDesplegable('idioma')
+                ))
+            ->add('Idioma', 'text', array('label' => 'Idioma/s'))
+            ->add('cursos', 'textarea', array('label' => 'Cursos realizados'))
+            ->add('curso_actual', 'text', array('label' => 'Curso actual'))
 
-            ->add('curso_actual')
+//
+//  ocupacional-laboral
+//
+            ->add('tiempotrabajado', 'text', array('label' => 'Tiempo trabajado'))
+            ->add('expLaboral', 'choice', array(
+                'label' => 'Experiencia laboral',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('trabaja', 'choice', array(
+                    'label' => 'Trabaja',
+                    'choices' => $this->grupo->findDesplegable('trabaja')
+                ))
+            ->add('lanbide', 'choice', array(
+                'label' => 'Lanbide',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('fAltaLanbide', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy', 
+                    'label' => 'Fecha alta Lanbide'))
+            ->add('fRenovLanbide', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy', 
+                    'label' => 'Fecha renovación Lanbide'))
+            ->add('inem', 'choice', array(
+                'label' => 'Inem',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('fAltaInem', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy', 
+                    'label' => 'Fecha alta Inem'))
+            ->add('fRenovInem', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy', 
+                    'label' => 'Fecha renovación Inem'))
 
-            ->add('fechaIngreso', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('fechaSalida', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('procedenciaDemanda')
-            ->add('tutor')
-            ->add('comeLu')
-            ->add('comeMa')
-            ->add('comeMi')
-            ->add('comeJu')
-            ->add('comeVi')
-            ->add('comeSa')
-            ->add('comeDo')
-            ->add('comeSaNotas')
-            ->add('comeDoNotas')
-            ->add('creditrans')
-            ->add('listaEsperaPiso')
-            ->add('datosformativosobs')
-            ->add('datosformativositem')
-            ->add('idioma')
-            ->add('edadabandonoestudios')
-            ->add('laboralorigen')
-            ->add('laboralespana')
-            ->add('tiempotrabajado')
-            ->add('trabaja')
-            ->add('autonomia')
-            ->add('disminucionfisica')
-            ->add('minusvaliaporcentaje')
-            ->add('toxicomania')
-            ->add('antecconsumo')
-            ->add('disminucionpsiquica')
-            ->add('enfermedadmental')
-            ->add('tuberculosis')
-            ->add('hepatitis')
-            ->add('vih')
-            ->add('diabetes')
-            ->add('otras')
-            ->add('enfermedadescomentarios')
-            ->add('medicacion')
-            ->add('enfmentaldiagnostico')
-            ->add('enfmentalfechadiagn', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('enfmentaltratamiento')
-            ->add('enfmentalingresos')
-            ->add('enfmentalpadres')
-            ->add('enfmentalhermanos')
-            ->add('enfmentalpareja')
-            ->add('enfmentalhijos')
-            ->add('drogaspadres')
-            ->add('drogashermanos')
-            ->add('drogaspareja')
-            ->add('drogashijos')
-
-
-            ->add('redapoyo')
+//
+//  vivienda
+//
 
 
-            ->add('ducha')
-            ->add('ropero')
-            ->add('lavanderia')
-            ->add('tlSabado')
-            ->add('tlDomingo')
-            ->add('salidaVerano')
-            ->add('salidaOtro')
-            ->add('medicacionCentro')
-            ->add('nivelcastellano')
-            ->add('expLaboral')
-            ->add('lanbide')
-            ->add('fAltaLanbide', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('fRenovLanbide', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('inem')
-            ->add('fAltaInem', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('fRenovInem', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('cursos')
-            ->add('consumoprinc')
-            ->add('insertIdUsuario')
-            ->add('insertFecha', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('anosconsumo')
-            ->add('tratamiento')
-            ->add('tratamientotipo')
-            ->add('procedenciaDemandaLista')
+//
+//  social
+//
+            ->add('redapoyo', 'choice', array(
+                'label' => 'Red de apoyo',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+//
+//  convivencia
+//
+
+
+//
+//  salud
+//
+            ->add('autonomia', 'choice', array(
+                'label' => 'Autonomía',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('disminucionfisica', 'choice', array(
+                'label' => 'Disminución física',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('minusvaliaporcentaje', 'text', array('label' => 'Porcentaje minusvalía'))
+            ->add('toxicomania', 'choice', array(
+                'label' => 'Toxicomanía',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('antecconsumo', 'choice', array(
+                'label' => 'Antecedentes consumo',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('ConsumoPrinc', 'choice', array(
+                'label' => 'Consumo principal',
+                'choices' => $this->grupo->findDesplegable('consumoprinc')))
+            ->add('anosconsumo', 'choice', array(
+                    'label' => 'Años Consumo',
+                    'choices' => $this->grupo->findDesplegable('anosconsumo')))
+            ->add('tratamiento', 'choice', array(
+                'label' => 'Tratamiento',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('tratamientotipo', 'choice', array(
+                    'label' => 'Tipo tratamiento',
+                    'choices' => $this->grupo->findDesplegable('tipotrat')))
+            ->add('disminucionpsiquica', 'choice', array(
+                'label' => 'Disminución psíquica',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('enfermedadmental', 'choice', array(
+                'label' => 'Enfermedad mental',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('tuberculosis', 'choice', array(
+                'label' => 'Tuberculosis',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('hepatitis', 'choice', array(
+                'label' => 'Hepatitis',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('vih', 'choice', array(
+                'label' => 'VIH',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('diabetes', 'choice', array(
+                'label' => 'Diabetes',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('otras', 'choice', array(
+                'label' => 'Otras',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('enfermedadescomentarios', 'textarea', array('label' => 'Comentarios enfermedades'))
+            ->add('medicacion', 'textarea', array('label' => 'Medicación'))
+            ->add('enfmentaldiagnostico', 'textarea', array('label' => 'Diagnóstico'))
+            ->add('enfmentalfechadiagn', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy',
+                    'label' => 'Fecha diagnóstico'))
+            ->add('enfmentaltratamiento', 'choice', array(
+                    'label' => 'Centro Tratamiento',
+                    'choices' => $this->grupo->findDesplegable('centrotrat')))
+            ->add('enfmentalingresos', 'textarea', array('label' => 'Ingresos'))
+            ->add('enfmentalpadres', 'choice', array(
+                'label' => 'Enf. mental padres',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('enfmentalhermanos', 'choice', array(
+                'label' => 'Enf. mental hermanos',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('enfmentalpareja', 'choice', array(
+                'label' => 'Enf. mental pareja',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('enfmentalhijos', 'choice', array(
+                'label' => 'Enf. mental hijos',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('drogaspadres', 'choice', array(
+                'label' => 'Drogas padres',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('drogashermanos', 'choice', array(
+                'label' => 'Drogas hermanos/as',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('drogaspareja', 'choice', array(
+                'label' => 'Drogas pareja',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('drogashijos', 'choice', array(
+                'label' => 'Drogas hijos/as',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+
+//
+//  competencias
+//
+
+
+//
+//  aceptacion
+//
+
+
+//
+//  participacion
+//
+
+
+//
+//  intervencion
+//
+            ->add('tutor', 'entity', array(
+                    'label' => 'Persona responsable',
+                    'class' => 'ZubietxePrincipalBundle:Tutor',
+                    'property' => 'nombre'
+                    ))
+            ->add('procedenciaDemandaLista', 'choice', array(
+                    'label' => 'Demanda',
+                    'choices' => $this->grupo->findDesplegable('demanda')))
+            ->add('procedenciaDemanda', 'text', array('label' => 'Concreción demanda'))
+
+            ->add('creditrans', 'choice', array(
+                'label' => 'Creditrans',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))            
+            ->add('ducha', 'choice', array(
+                'label' => 'Ducha',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('ropero', 'choice', array(
+                'label' => 'Ropero',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('lavanderia', 'choice', array(
+                'label' => 'Lavandería',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('tlSabado', 'choice', array(
+                'label' => 'Tiempo libre sábado',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('tlDomingo', 'choice', array(
+                'label' => 'Tiempo libre domingo',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('salidaVerano', 'choice', array(
+                'label' => 'Salida verano',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('salidaOtro', 'choice', array(
+                'label' => 'Otra salida',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('medicacionCentro', 'choice', array(
+                'label' => 'Medicación en centro',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+            ->add('comeLu', 'choice', array(
+                'label' => 'Comedor Lunes',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('comeMa', 'choice', array(
+                'label' => 'Comedor Martes',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('comeMi', 'choice', array(
+                'label' => 'Comedor Miércoles',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('comeJu', 'choice', array(
+                'label' => 'Comedor Jueves',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('comeVi', 'choice', array(
+                'label' => 'Comedor Viernes',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('comeSa', 'choice', array(
+                'label' => 'Comedor Sábado',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+            ->add('comeDo', 'choice', array(
+                'label' => 'Comedor Domingo',
+                'choices' => array('0' => 'No', '1' => 'Si'),
+                'multiple' => false,
+                'expanded' => true
+                ))
+
+
+
+//
+//  botones
+//
             ->add('guardar', 'submit')
 
         ;
