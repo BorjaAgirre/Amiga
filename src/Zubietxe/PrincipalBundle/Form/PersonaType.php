@@ -7,7 +7,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Zubietxe\PrincipalBundle\Entity\Desplegables;
 use Zubietxe\PrincipalBundle\Entity\DesplegablesRepository;
-use Zubietxe\PrincipalBundle\Entity\Tutor;
 
 use Doctrine\ORM\EntityRepository;
 
@@ -579,7 +578,7 @@ class PersonaType extends AbstractType
             ->add('tutor', 'entity', array(
                     'label' => 'Persona responsable',
                     'class' => 'ZubietxePrincipalBundle:Tutor',
-                    'property' => 'nombre'
+                    'property' => 'Nombre'
                     ))
             ->add('procedenciaDemandaLista', 'choice', array(
                     'label' => 'Demanda',
