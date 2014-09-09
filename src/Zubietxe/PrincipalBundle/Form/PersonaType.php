@@ -683,13 +683,6 @@ class PersonaType extends AbstractType
                 'expanded' => true
                 ))
 
-             ->add('indicador1-1 ', 'choice', array('label' => ' Disponibilidad de ingresos de la persona. ', 'choices' => $this->grupo->findDesplegable(' 1-1 ')))
-             ->add('indicador1-1-a ', 'choice', array('label' => ' Disponibilidad de ingresos del grupo de convivencia. ', 'choices' => $this->grupo->findDesplegable(' 1-1-a ')))
-             ->add('indicador1-2 ', 'choice', array('label' => ' Suficiencia de la cuantía de ingresos de la persona ', 'choices' => $this->grupo->findDesplegable(' 1-2 ')))
-             ->add('indicador1-2-a ', 'choice', array('label' => ' Suficiencia de la cuantía de ingresos del grupo de convivencia ', 'choices' => $this->grupo->findDesplegable(' 1-2-a ')))
-             ->add('indicador1-3 ', 'choice', array('label' => ' Fuentes de Ingresos ', 'choices' => $this->grupo->findDesplegable(' 1-3 ')))
-             ->add('indicador1-4 ', 'choice', array('label' => ' Fuentes de ingresos: apoyo económico o material de red primaria, familiar y no familiar ', 'choices' => $this->grupo->findDesplegable(' 1-4 ')))
-             ->add('indicador1-5 ', 'choice', array('label' => ' Gastos en vivienda o alojamiento (persona y su grupo de convivencia) ', 'choices' => $this->grupo->findDesplegable(' 1-5 ')))
 
 
 //
