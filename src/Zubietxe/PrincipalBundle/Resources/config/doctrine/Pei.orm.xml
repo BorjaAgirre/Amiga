@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Zubietxe\PrincipalBundle\Entity\Pei" table="pei">
+    <indexes>
+      <index name="id_unico" columns="id_unico"/>
+    </indexes>
+    <id name="idPei" type="integer" column="id_pei">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idPeiUnico" type="integer" column="id_pei_unico" nullable="true"/>
+    <field name="fechaCreacion" type="datetime" column="fecha_creacion" nullable="false"/>
+    <field name="dimension" type="integer" column="dimension" nullable="true"/>
+    <field name="objetivo" type="integer" column="objetivo" nullable="true"/>
+    <field name="meta" type="string" column="meta" length="255" nullable="true"/>
+    <field name="accion" type="integer" column="accion" nullable="true"/>
+    <field name="tarea" type="string" column="tarea" length="255" nullable="true"/>
+    <field name="recurso" type="string" column="recurso" length="255" nullable="true"/>
+    <field name="fechaIni" type="date" column="fecha_ini" nullable="true"/>
+    <field name="fechaFin" type="date" column="fecha_fin" nullable="true"/>
+    <field name="responsable" type="string" column="responsable" length="255" nullable="true"/>
+    <field name="resultado" type="string" column="resultado" length="255" nullable="true"/>
+    <many-to-one field="idUnico" target-entity="Persona">
+      <join-columns>
+        <join-column name="id_unico" referenced-column-name="id_unico"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
