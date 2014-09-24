@@ -5,21 +5,21 @@ namespace Zubietxe\PrincipalBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tutor
+ * Equipo
  *
- * @ORM\Table(name="tutor")
+ * @ORM\Table(name="equipo")
  * @ORM\Entity
  */
-class Tutor
+class Equipo
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_tutor", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idTutor;
+    private $id;
 
     /**
      * @var string
