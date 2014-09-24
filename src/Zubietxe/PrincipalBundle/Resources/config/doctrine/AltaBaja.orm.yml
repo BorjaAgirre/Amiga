@@ -1,0 +1,81 @@
+Zubietxe\PrincipalBundle\Entity\AltaBaja:
+    type: entity
+    table: alta_baja
+    indexes:
+        id_unico:
+            columns:
+                - id_unico
+        serv:
+            columns:
+                - serv
+    id:
+        idAltabaja:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: id_altabaja
+            generator:
+                strategy: IDENTITY
+    fields:
+        servicio:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+        altaBaja:
+            type: string
+            nullable: true
+            length: 1
+            fixed: true
+            comment: ''
+            column: alta_baja
+        fecha:
+            type: date
+            nullable: true
+            comment: ''
+        fechaCorrel:
+            type: date
+            nullable: true
+            comment: ''
+            column: fecha_correl
+        motivoBaja:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: motivo_baja
+        autorInserc:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: autor_inserc
+        fechaInserc:
+            type: datetime
+            nullable: true
+            comment: ''
+            default: CURRENT_TIMESTAMP
+            column: fecha_inserc
+    manyToOne:
+        idUnico:
+            targetEntity: Persona
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_unico:
+                    referencedColumnName: id_unico
+            orphanRemoval: false
+        serv:
+            targetEntity: Servicios
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                serv:
+                    referencedColumnName: id_servicio
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

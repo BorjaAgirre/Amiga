@@ -1,0 +1,22 @@
+Zubietxe\PrincipalBundle\Entity\Hito:
+    type: entity
+    table: hito
+    id:
+        idHito:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: id_hito
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombreHito:
+            type: string
+            nullable: true
+            length: 30
+            fixed: false
+            comment: ''
+            column: nombre_hito
+    lifecycleCallbacks: {  }

@@ -1,0 +1,49 @@
+Zubietxe\PrincipalBundle\Entity\Desplegables:
+    type: entity
+    table: desplegables
+    id:
+        idGral:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: id_gral
+            generator:
+                strategy: IDENTITY
+    fields:
+        despl:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+        idDespl:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+            column: id_despl
+        nombre:
+            type: string
+            nullable: true
+            length: 40
+            fixed: false
+            comment: ''
+        dato1:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        dato2:
+            type: integer
+            nullable: true
+            unsigned: false
+            comment: ''
+        datotexto:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            comment: ''
+    lifecycleCallbacks: {  }
