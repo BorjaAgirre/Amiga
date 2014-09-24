@@ -8,8 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * Desplegables
  *
  * @ORM\Table(name="desplegables")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Zubietxe\PrincipalBundle\Entity\DesplegablesRepository")
  */
+
 class Desplegables
 {
     /**

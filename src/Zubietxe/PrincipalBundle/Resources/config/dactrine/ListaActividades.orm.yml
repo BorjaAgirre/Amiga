@@ -1,0 +1,22 @@
+Zubietxe\PrincipalBundle\Entity\ListaActividades:
+    type: entity
+    table: lista_actividades
+    id:
+        idListaactividad:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            column: id_listaactividad
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombreActividad:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+            column: nombre_actividad
+    lifecycleCallbacks: {  }

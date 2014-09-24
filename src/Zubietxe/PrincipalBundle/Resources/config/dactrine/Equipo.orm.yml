@@ -1,0 +1,45 @@
+Zubietxe\PrincipalBundle\Entity\Equipo:
+    type: entity
+    table: equipo
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombre:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+        nivel:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+        grupo:
+            type: string
+            nullable: true
+            length: 20
+            fixed: false
+            comment: ''
+        pass:
+            type: string
+            nullable: true
+            length: 33
+            fixed: false
+            comment: ''
+        ultimaCx:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: '0000-00-00 00:00:00'
+            column: ultima_cx
+    lifecycleCallbacks: {  }

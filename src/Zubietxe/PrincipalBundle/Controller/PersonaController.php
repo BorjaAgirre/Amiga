@@ -23,7 +23,7 @@ class personaController extends Controller
                 }
 
         $grupo = $em->getRepository('ZubietxePrincipalBundle:Desplegables'); 
-        $grupo2 = $em->getRepository('ZubietxePrincipalBundle:Desplegables')->findDesplegable('anosconsumo'); 
+        //$grupo2 = $em->getRepository('ZubietxePrincipalBundle:Desplegables')->findDesplegable('anosconsumo'); 
 
 
     	$form = $this->createForm(new PersonaType($grupo), $pers);            
