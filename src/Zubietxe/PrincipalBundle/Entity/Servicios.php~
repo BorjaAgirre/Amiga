@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Servicios
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_servicio", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idServicio;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="codigo", type="string", length=20, nullable=true)
@@ -34,6 +25,15 @@ class Servicios
      * @ORM\Column(name="nombre", type="string", length=30, nullable=true)
      */
     private $nombre;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_servicio", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idServicio;
 
 
 }

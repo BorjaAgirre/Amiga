@@ -15,15 +15,6 @@ class Pei
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_pei", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idPei;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="id_pei_unico", type="integer", nullable=true)
      */
     private $idPeiUnico;
@@ -104,6 +95,15 @@ class Pei
      * @ORM\Column(name="resultado", type="string", length=255, nullable=true)
      */
     private $resultado;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pei", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPei;
 
     /**
      * @var \Zubietxe\PrincipalBundle\Entity\Persona

@@ -1,0 +1,74 @@
+<?php
+
+namespace Zubietxe\PrincipalBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Indicadores
+ *
+ * @ORM\Table(name="indicadores")
+ * @ORM\Entity
+ */
+class Indicadores
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="indicador", type="string", length=15, nullable=true)
+     */
+    private $indicador;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="texto", type="string", length=255, nullable=true)
+     */
+    private $texto;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="valorIndicador", type="integer", nullable=true)
+     */
+    private $valorindicador;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="valorable", type="string", length=1, nullable=true)
+     */
+    private $valorable;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="valorInstrum", type="integer", nullable=true)
+     */
+    private $valorinstrum;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="subvalorInstrum", type="integer", nullable=true)
+     */
+    private $subvalorinstrum;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="otro", type="string", length=2, nullable=true)
+     */
+    private $otro;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+
+}

@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Varios
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_varios", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idVarios;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="variable", type="string", length=30, nullable=true)
@@ -48,6 +39,15 @@ class Varios
      * @ORM\Column(name="fecha_cambio", type="datetime", nullable=true)
      */
     private $fechaCambio;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_varios", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idVarios;
 
 
 }

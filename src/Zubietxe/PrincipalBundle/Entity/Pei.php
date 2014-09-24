@@ -15,15 +15,6 @@ class Pei
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_pei", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idPei;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="id_pei_unico", type="integer", nullable=true)
      */
     private $idPeiUnico;
@@ -106,6 +97,15 @@ class Pei
     private $resultado;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pei", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPei;
+
+    /**
      * @var \Zubietxe\PrincipalBundle\Entity\Persona
      *
      * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Persona")
@@ -116,16 +116,6 @@ class Pei
     private $idUnico;
 
 
-
-    /**
-     * Get idPei
-     *
-     * @return integer 
-     */
-    public function getIdPei()
-    {
-        return $this->idPei;
-    }
 
     /**
      * Set idPeiUnico
@@ -401,6 +391,16 @@ class Pei
     public function getResultado()
     {
         return $this->resultado;
+    }
+
+    /**
+     * Get idPei
+     *
+     * @return integer 
+     */
+    public function getIdPei()
+    {
+        return $this->idPei;
     }
 
     /**

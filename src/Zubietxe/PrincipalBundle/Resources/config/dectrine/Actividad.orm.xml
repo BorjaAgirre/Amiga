@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Zubietxe\PrincipalBundle\Entity\Actividad" table="actividad">
+    <indexes>
+      <index name="tipo_activ" columns="tipo_activ"/>
+      <index name="responsable" columns="responsable"/>
+    </indexes>
+    <id name="idActiv" type="integer" column="id_activ">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="responsable2" type="integer" column="responsable2" nullable="true"/>
+    <field name="volunt" type="string" column="volunt" length="40" nullable="true"/>
+    <field name="fechaActividad" type="date" column="fecha_actividad" nullable="true"/>
+    <field name="comentarioActividad" type="string" column="comentario_actividad" length="255" nullable="true"/>
+    <field name="observacionesActividad" type="string" column="observaciones_actividad" length="255" nullable="true"/>
+    <many-to-one field="responsable" target-entity="Tutor">
+      <join-columns>
+        <join-column name="responsable" referenced-column-name="id_tutor"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="tipoActiv" target-entity="ListaActividades">
+      <join-columns>
+        <join-column name="tipo_activ" referenced-column-name="id_listaactividad"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

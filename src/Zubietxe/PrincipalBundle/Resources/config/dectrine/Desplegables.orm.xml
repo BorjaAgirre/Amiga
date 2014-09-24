@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Zubietxe\PrincipalBundle\Entity\Desplegables" table="desplegables">
+    <id name="idGral" type="integer" column="id_gral">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="despl" type="string" column="despl" length="20" nullable="true"/>
+    <field name="idDespl" type="integer" column="id_despl" nullable="true"/>
+    <field name="nombre" type="string" column="nombre" length="40" nullable="true"/>
+    <field name="dato1" type="integer" column="dato1" nullable="true"/>
+    <field name="dato2" type="integer" column="dato2" nullable="true"/>
+    <field name="datotexto" type="string" column="datotexto" length="45" nullable="true"/>
+  </entity>
+</doctrine-mapping>

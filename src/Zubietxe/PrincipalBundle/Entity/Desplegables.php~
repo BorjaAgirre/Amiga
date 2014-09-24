@@ -8,20 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
  * Desplegables
  *
  * @ORM\Table(name="desplegables")
- * @ORM\Entity(repositoryClass="Zubietxe\PrincipalBundle\Entity\DesplegablesRepository")
+ * @ORM\Entity
  */
-
 class Desplegables
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_gral", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idGral;
-
     /**
      * @var string
      *
@@ -64,153 +54,14 @@ class Desplegables
      */
     private $datotexto;
 
-
-
     /**
-     * Get idGral
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="id_gral", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public function getIdGral()
-    {
-        return $this->idGral;
-    }
+    private $idGral;
 
-    /**
-     * Set despl
-     *
-     * @param string $despl
-     * @return Desplegables
-     */
-    public function setDespl($despl)
-    {
-        $this->despl = $despl;
 
-        return $this;
-    }
-
-    /**
-     * Get despl
-     *
-     * @return string 
-     */
-    public function getDespl()
-    {
-        return $this->despl;
-    }
-
-    /**
-     * Set idDespl
-     *
-     * @param integer $idDespl
-     * @return Desplegables
-     */
-    public function setIdDespl($idDespl)
-    {
-        $this->idDespl = $idDespl;
-
-        return $this;
-    }
-
-    /**
-     * Get idDespl
-     *
-     * @return integer 
-     */
-    public function getIdDespl()
-    {
-        return $this->idDespl;
-    }
-
-    /**
-     * Set nombre
-     *
-     * @param string $nombre
-     * @return Desplegables
-     */
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-
-        return $this;
-    }
-
-    /**
-     * Get nombre
-     *
-     * @return string 
-     */
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    /**
-     * Set dato1
-     *
-     * @param integer $dato1
-     * @return Desplegables
-     */
-    public function setDato1($dato1)
-    {
-        $this->dato1 = $dato1;
-
-        return $this;
-    }
-
-    /**
-     * Get dato1
-     *
-     * @return integer 
-     */
-    public function getDato1()
-    {
-        return $this->dato1;
-    }
-
-    /**
-     * Set dato2
-     *
-     * @param integer $dato2
-     * @return Desplegables
-     */
-    public function setDato2($dato2)
-    {
-        $this->dato2 = $dato2;
-
-        return $this;
-    }
-
-    /**
-     * Get dato2
-     *
-     * @return integer 
-     */
-    public function getDato2()
-    {
-        return $this->dato2;
-    }
-
-    /**
-     * Set datotexto
-     *
-     * @param string $datotexto
-     * @return Desplegables
-     */
-    public function setDatotexto($datotexto)
-    {
-        $this->datotexto = $datotexto;
-
-        return $this;
-    }
-
-    /**
-     * Get datotexto
-     *
-     * @return string 
-     */
-    public function getDatotexto()
-    {
-        return $this->datotexto;
-    }
 }

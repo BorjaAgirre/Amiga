@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Zubietxe\PrincipalBundle\Entity\Persona" table="persona">
+    <indexes>
+      <index name="id_unico" columns="id_unico"/>
+    </indexes>
+    <id name="idPers" type="integer" column="id_pers">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idUnico" type="integer" column="id_unico" nullable="true"/>
+    <field name="historial" type="string" column="historial" length="9" nullable="true"/>
+    <field name="sexo" type="string" column="sexo" length="5" nullable="true"/>
+    <field name="nombre" type="string" column="nombre" length="30" nullable="true"/>
+    <field name="apellido1" type="string" column="apellido1" length="30" nullable="true"/>
+    <field name="apellido2" type="string" column="apellido2" length="30" nullable="true"/>
+    <field name="fechanac" type="date" column="fechanac" nullable="true"/>
+    <field name="lugarNac" type="string" column="lugar_nac" length="30" nullable="true"/>
+    <field name="dniPas" type="string" column="dni_pas" length="15" nullable="true"/>
+    <field name="numSs" type="string" column="num_ss" length="20" nullable="true"/>
+    <field name="numExpediente" type="string" column="num_expediente" length="10" nullable="true"/>
+    <field name="nacionalidad" type="integer" column="nacionalidad" nullable="true"/>
+    <field name="telefono" type="string" column="telefono" length="30" nullable="true"/>
+    <field name="direccion" type="string" column="direccion" length="40" nullable="true"/>
+    <field name="poblacion" type="integer" column="poblacion" nullable="true"/>
+    <field name="nucleoConv" type="integer" column="nucleo_conv" nullable="true"/>
+    <field name="estadoCivil" type="integer" column="estado_civil" nullable="true"/>
+    <field name="hijos" type="string" column="hijos" length="4" nullable="true"/>
+    <field name="nHijos" type="integer" column="n_hijos" nullable="true"/>
+    <field name="observacionesHijos" type="string" column="observaciones_hijos" length="255" nullable="true"/>
+    <field name="telefonosInteres" type="string" column="telefonos_interes" length="512" nullable="true"/>
+    <field name="fechaIngreso" type="date" column="fecha_ingreso" nullable="true"/>
+    <field name="fechaSalida" type="date" column="fecha_salida" nullable="true"/>
+    <field name="procedenciaDemanda" type="string" column="procedencia_demanda" length="120" nullable="true"/>
+    <field name="tutor" type="integer" column="tutor" nullable="true"/>
+    <field name="comeLu" type="integer" column="come_lu" nullable="true"/>
+    <field name="comeMa" type="integer" column="come_ma" nullable="true"/>
+    <field name="comeMi" type="integer" column="come_mi" nullable="true"/>
+    <field name="comeJu" type="integer" column="come_ju" nullable="true"/>
+    <field name="comeVi" type="integer" column="come_vi" nullable="true"/>
+    <field name="comeSa" type="integer" column="come_sa" nullable="true"/>
+    <field name="comeDo" type="integer" column="come_do" nullable="true"/>
+    <field name="comeSaNotas" type="string" column="come_sa_notas" length="30" nullable="true"/>
+    <field name="comeDoNotas" type="string" column="come_do_notas" length="30" nullable="true"/>
+    <field name="creditrans" type="integer" column="creditrans" nullable="true"/>
+    <field name="listaEsperaPiso" type="string" column="lista_espera_piso" length="20" nullable="true"/>
+    <field name="datosformativosobs" type="string" column="DatosFormativosObs" length="100" nullable="true"/>
+    <field name="datosformativositem" type="string" column="DatosFormativosItem" length="30" nullable="true"/>
+    <field name="idioma" type="string" column="Idioma" length="50" nullable="true"/>
+    <field name="edadabandonoestudios" type="string" column="EdadAbandonoEstudios" length="5" nullable="true"/>
+    <field name="laboralorigen" type="string" column="LaboralOrigen" length="20" nullable="true"/>
+    <field name="laboralespana" type="string" column="LaboralEspana" length="20" nullable="true"/>
+    <field name="tiempotrabajado" type="string" column="TiempoTrabajado" length="20" nullable="true"/>
+    <field name="trabaja" type="integer" column="Trabaja" nullable="true"/>
+    <field name="autonomia" type="integer" column="Autonomia" nullable="true"/>
+    <field name="disminucionfisica" type="integer" column="DisminucionFisica" nullable="true"/>
+    <field name="minusvaliaporcentaje" type="integer" column="MinusvaliaPorcentaje" nullable="true"/>
+    <field name="incapacitacion" type="integer" column="Incapacitacion" nullable="true"/>
+    <field name="toxicomania" type="integer" column="Toxicomania" nullable="true"/>
+    <field name="antecconsumo" type="integer" column="AntecConsumo" nullable="true"/>
+    <field name="disminucionpsiquica" type="integer" column="DisminucionPsiquica" nullable="true"/>
+    <field name="enfermedadmental" type="integer" column="EnfermedadMental" nullable="true"/>
+    <field name="tuberculosis" type="integer" column="Tuberculosis" nullable="true"/>
+    <field name="hepatitis" type="integer" column="Hepatitis" nullable="true"/>
+    <field name="vih" type="integer" column="VIH" nullable="true"/>
+    <field name="diabetes" type="string" column="diabetes" length="2" nullable="true"/>
+    <field name="otras" type="integer" column="Otras" nullable="true"/>
+    <field name="enfermedadescomentarios" type="string" column="EnfermedadesComentarios" length="200" nullable="true"/>
+    <field name="medicacion" type="string" column="Medicacion" length="200" nullable="true"/>
+    <field name="enfmentaldiagnostico" type="string" column="EnfMentalDiagnostico" length="120" nullable="true"/>
+    <field name="enfmentalfechadiagn" type="date" column="EnfMentalFechaDiagn" nullable="true"/>
+    <field name="enfmentaltratamiento" type="integer" column="EnfMentalTratamiento" nullable="true"/>
+    <field name="enfmentalingresos" type="string" column="EnfMentalIngresos" length="30" nullable="true"/>
+    <field name="enfmentalpadres" type="integer" column="EnfMentalPadres" nullable="true"/>
+    <field name="enfmentalhermanos" type="integer" column="EnfMentalHermanos" nullable="true"/>
+    <field name="enfmentalpareja" type="integer" column="EnfMentalPareja" nullable="true"/>
+    <field name="enfmentalhijos" type="integer" column="EnfMentalHijos" nullable="true"/>
+    <field name="drogaspadres" type="integer" column="DrogasPadres" nullable="true"/>
+    <field name="drogashermanos" type="integer" column="DrogasHermanos" nullable="true"/>
+    <field name="drogaspareja" type="integer" column="DrogasPareja" nullable="true"/>
+    <field name="drogashijos" type="integer" column="DrogasHijos" nullable="true"/>
+    <field name="permisoresid" type="integer" column="PermisoResid" nullable="true"/>
+    <field name="permisoresidtr" type="integer" column="PermisoResidTr" nullable="true"/>
+    <field name="npasap" type="string" column="npasap" length="20" nullable="true"/>
+    <field name="fpasap" type="date" column="fpasap" nullable="true"/>
+    <field name="ncedula" type="string" column="ncedula" length="20" nullable="true"/>
+    <field name="fcedula" type="date" column="fcedula" nullable="true"/>
+    <field name="fressol" type="date" column="fressol" nullable="true"/>
+    <field name="nresconc" type="string" column="nresconc" length="20" nullable="true"/>
+    <field name="fresconc" type="date" column="fresconc" nullable="true"/>
+    <field name="frestrsol" type="date" column="frestrsol" nullable="true"/>
+    <field name="nrestrconc" type="string" column="nrestrconc" length="20" nullable="true"/>
+    <field name="frestrconc" type="date" column="frestrconc" nullable="true"/>
+    <field name="visado" type="integer" column="visado" nullable="true"/>
+    <field name="asilo" type="integer" column="asilo" nullable="true"/>
+    <field name="otrosdoc" type="string" column="otrosdoc" length="40" nullable="true"/>
+    <field name="fentrada" type="date" column="fentrada" nullable="true"/>
+    <field name="fprueba" type="date" column="fprueba" nullable="true"/>
+    <field name="abogadootros" type="string" column="abogadootros" length="40" nullable="true"/>
+    <field name="permisoresidrazonesno" type="string" column="PermisoResidRazonesNo" length="20" nullable="true"/>
+    <field name="permisosolicitudfecha" type="date" column="PermisoSolicitudFecha" nullable="true"/>
+    <field name="permisosolicitudlugar" type="string" column="PermisoSolicitudLugar" length="20" nullable="true"/>
+    <field name="tiemporesidenciaespanya" type="string" column="TiempoResidenciaEspanya" length="20" nullable="true"/>
+    <field name="tiemporesidenciabilbao" type="string" column="TiempoResidenciaBilbao" length="20" nullable="true"/>
+    <field name="permisotrabajo" type="string" column="PermisoTrabajo" length="20" nullable="true"/>
+    <field name="permisotrabajorazonesno" type="string" column="PermisoTrabajoRazonesNo" length="20" nullable="true"/>
+    <field name="fechaempadronamiento" type="date" column="FechaEmpadronamiento" nullable="true"/>
+    <field name="empadronamiento" type="string" column="Empadronamiento" length="50" nullable="true"/>
+    <field name="tis" type="integer" column="Tis" nullable="true"/>
+    <field name="redapoyo" type="integer" column="RedApoyo" nullable="true"/>
+    <field name="ingresospropios" type="integer" column="IngresosPropios" nullable="true"/>
+    <field name="ingresospnc" type="integer" column="IngresosPnc" nullable="true"/>
+    <field name="ingresosotros" type="integer" column="IngresosOtros" nullable="true"/>
+    <field name="ingresosnomina" type="integer" column="IngresosNomina" nullable="true"/>
+    <field name="ingresosrentabas" type="integer" column="IngresosRentaBas" nullable="true"/>
+    <field name="ingresosprestcontrib" type="integer" column="IngresosPrestContrib" nullable="true"/>
+    <field name="ingresossedesconoce" type="integer" column="IngresosSeDesconoce" nullable="true"/>
+    <field name="ingresosayudaindividual" type="integer" column="IngresosAyudaIndividual" nullable="true"/>
+    <field name="ingresosno" type="integer" column="IngresosNo" nullable="true"/>
+    <field name="penalantecedentesprision" type="integer" column="PenalAntecedentesPrision" nullable="true"/>
+    <field name="penalordenalejamiento" type="integer" column="PenalOrdenAlejamiento" nullable="true"/>
+    <field name="penalprisionpreventiva" type="integer" column="PenalPrisionPreventiva" nullable="true"/>
+    <field name="penalprisionotros" type="integer" column="PenalPrisionOtros" nullable="true"/>
+    <field name="penallibcondicional" type="integer" column="PenalLibCondicional" nullable="true"/>
+    <field name="penalmedidaseguridad" type="integer" column="PenalMedidaSeguridad" nullable="true"/>
+    <field name="penalcausaspendientes" type="integer" column="PenalCausasPendientes" nullable="true"/>
+    <field name="penalpermisopenitenc" type="integer" column="PenalPermisoPenitenc" nullable="true"/>
+    <field name="penaltercergrado" type="integer" column="PenalTercerGrado" nullable="true"/>
+    <field name="penaltbc" type="integer" column="PenalTbc" nullable="true"/>
+    <field name="ducha" type="integer" column="ducha" nullable="true"/>
+    <field name="ropero" type="integer" column="ropero" nullable="true"/>
+    <field name="lavanderia" type="integer" column="lavanderia" nullable="true"/>
+    <field name="tlSabado" type="integer" column="tl_sabado" nullable="true"/>
+    <field name="tlDomingo" type="integer" column="tl_domingo" nullable="true"/>
+    <field name="salidaVerano" type="integer" column="salida_verano" nullable="true"/>
+    <field name="salidaOtro" type="integer" column="salida_otro" nullable="true"/>
+    <field name="medicacionCentro" type="integer" column="medicacion_centro" nullable="true"/>
+    <field name="nivelcastellano" type="integer" column="NivelCastellano" nullable="true"/>
+    <field name="expLaboral" type="integer" column="exp_laboral" nullable="true"/>
+    <field name="lanbide" type="integer" column="lanbide" nullable="true"/>
+    <field name="fAltaLanbide" type="date" column="F_alta_lanbide" nullable="true"/>
+    <field name="fRenovLanbide" type="date" column="F_renov_lanbide" nullable="true"/>
+    <field name="inem" type="integer" column="inem" nullable="true"/>
+    <field name="fAltaInem" type="date" column="F_alta_inem" nullable="true"/>
+    <field name="fRenovInem" type="date" column="F_renov_inem" nullable="true"/>
+    <field name="cursos" type="string" column="cursos" length="100" nullable="true"/>
+    <field name="poblacionPadron" type="integer" column="poblacion_padron" nullable="true"/>
+    <field name="consumoprinc" type="integer" column="ConsumoPrinc" nullable="true"/>
+    <field name="insertIdUsuario" type="integer" column="insert_id_usuario" nullable="true"/>
+    <field name="insertFecha" type="date" column="insert_fecha" nullable="true"/>
+    <field name="anosconsumo" type="integer" column="AnosConsumo" nullable="true"/>
+    <field name="tratamiento" type="integer" column="Tratamiento" nullable="true"/>
+    <field name="tratamientotipo" type="integer" column="TratamientoTipo" nullable="true"/>
+    <field name="procedenciaDemandaLista" type="integer" column="procedencia_demanda_lista" nullable="true"/>
+    <field name="documentoidentif" type="integer" column="DocumentoIdentif" nullable="true"/>
+    <field name="fechaCaducTis" type="date" column="fecha_caduc_tis" nullable="true"/>
+    <field name="ordenExpulsion" type="integer" column="orden_expulsion" nullable="true"/>
+    <field name="cantidadIngresospropios" type="string" column="cantidad_ingresospropios" length="15" nullable="true"/>
+    <field name="cantidadIngresospnc" type="string" column="cantidad_ingresospnc" length="15" nullable="true"/>
+    <field name="cantidadIngresosotros" type="string" column="cantidad_ingresosotros" length="15" nullable="true"/>
+    <field name="cantidadIngresosnomina" type="string" column="cantidad_ingresosnomina" length="15" nullable="true"/>
+    <field name="cantidadIngresosrentabas" type="string" column="cantidad_ingresosrentabas" length="15" nullable="true"/>
+    <field name="cantidadIngresosprestcontrib" type="string" column="cantidad_ingresosprestcontrib" length="15" nullable="true"/>
+    <field name="cantidadIngrsossedesconoce" type="string" column="cantidad_ingrsossedesconoce" length="15" nullable="true"/>
+    <field name="cantidadIngresosayudaindividual" type="string" column="cantidad_ingresosayudaindividual" length="15" nullable="true"/>
+    <field name="autonomiaEconomia" type="integer" column="autonomia_economia" nullable="true"/>
+    <field name="observacionesEconomia" type="string" column="observaciones_economia" length="255" nullable="true"/>
+    <field name="cursoActual" type="string" column="curso_actual" length="255" nullable="true"/>
+    <field name="justiciagratuita" type="integer" column="JusticiaGratuita" nullable="true"/>
+    <field name="indicador11" type="smallint" column="indicador_1_1" nullable="true"/>
+    <field name="indicador11A" type="smallint" column="indicador_1_1_a" nullable="true"/>
+    <field name="indicador12" type="smallint" column="indicador_1_2" nullable="true"/>
+    <field name="indicador12A" type="smallint" column="indicador_1_2_a" nullable="true"/>
+    <field name="indicador13" type="smallint" column="indicador_1_3" nullable="true"/>
+    <field name="indicador14" type="smallint" column="indicador_1_4" nullable="true"/>
+    <field name="indicador15" type="smallint" column="indicador_1_5" nullable="true"/>
+  </entity>
+</doctrine-mapping>

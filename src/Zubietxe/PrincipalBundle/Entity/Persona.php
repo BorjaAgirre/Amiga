@@ -15,15 +15,6 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_pers", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idPers;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="id_unico", type="integer", nullable=true)
      */
     private $idUnico;
@@ -73,44 +64,30 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="lugarNac", type="string", length=30, nullable=true)
+     * @ORM\Column(name="lugar_nac", type="string", length=30, nullable=true)
      */
-    private $lugarnac;
+    private $lugarNac;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="dni", type="string", length=15, nullable=true)
+     * @ORM\Column(name="dni_pas", type="string", length=15, nullable=true)
      */
-    private $dni;
+    private $dniPas;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="pasaporte", type="string", length=15, nullable=true)
+     * @ORM\Column(name="num_ss", type="string", length=20, nullable=true)
      */
-    private $pasaporte;
+    private $numSs;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nie", type="string", length=15, nullable=true)
+     * @ORM\Column(name="num_expediente", type="string", length=10, nullable=true)
      */
-    private $nie;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="numSegSoc", type="string", length=20, nullable=true)
-     */
-    private $numsegsoc;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="numExpediente", type="string", length=10, nullable=true)
-     */
-    private $numexpediente;
+    private $numExpediente;
 
     /**
      * @var integer
@@ -129,9 +106,9 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="direccionActual", type="string", length=40, nullable=true)
+     * @ORM\Column(name="direccion", type="string", length=40, nullable=true)
      */
-    private $direccionactual;
+    private $direccion;
 
     /**
      * @var integer
@@ -143,16 +120,16 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="nucleoConv", type="integer", nullable=true)
+     * @ORM\Column(name="nucleo_conv", type="integer", nullable=true)
      */
-    private $nucleoconv;
+    private $nucleoConv;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="estadoCivil", type="integer", nullable=true)
+     * @ORM\Column(name="estado_civil", type="integer", nullable=true)
      */
-    private $estadocivil;
+    private $estadoCivil;
 
     /**
      * @var string
@@ -164,121 +141,149 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="numHijos", type="integer", nullable=true)
+     * @ORM\Column(name="n_hijos", type="integer", nullable=true)
      */
-    private $numhijos;
+    private $nHijos;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="observacionesHijos", type="string", length=255, nullable=true)
+     * @ORM\Column(name="observaciones_hijos", type="string", length=255, nullable=true)
      */
-    private $observacioneshijos;
+    private $observacionesHijos;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="telefonosInteres", type="string", length=512, nullable=true)
+     * @ORM\Column(name="telefonos_interes", type="string", length=512, nullable=true)
      */
-    private $telefonosinteres;
+    private $telefonosInteres;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaIngreso", type="date", nullable=true)
+     * @ORM\Column(name="fecha_ingreso", type="date", nullable=true)
      */
-    private $fechaingreso;
+    private $fechaIngreso;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaSalida", type="date", nullable=true)
+     * @ORM\Column(name="fecha_salida", type="date", nullable=true)
      */
-    private $fechasalida;
+    private $fechaSalida;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="procedenciaDemanda", type="string", length=120, nullable=true)
+     * @ORM\Column(name="procedencia_demanda", type="string", length=120, nullable=true)
      */
-    private $procedenciademanda;
+    private $procedenciaDemanda;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="responsable", type="integer", nullable=true)
+     * @ORM\Column(name="tutor", type="integer", nullable=true)
      */
-    private $responsable;
+    private $tutor;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="comedorLun", type="integer", nullable=true)
+     * @ORM\Column(name="come_lu", type="integer", nullable=true)
      */
-    private $comedorlun;
+    private $comeLu;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="comedorMar", type="integer", nullable=true)
+     * @ORM\Column(name="come_ma", type="integer", nullable=true)
      */
-    private $comedormar;
+    private $comeMa;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="comedorMie", type="integer", nullable=true)
+     * @ORM\Column(name="come_mi", type="integer", nullable=true)
      */
-    private $comedormie;
+    private $comeMi;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="comedorJue", type="integer", nullable=true)
+     * @ORM\Column(name="come_ju", type="integer", nullable=true)
      */
-    private $comedorjue;
+    private $comeJu;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="comedorVie", type="integer", nullable=true)
+     * @ORM\Column(name="come_vi", type="integer", nullable=true)
      */
-    private $comedorvie;
+    private $comeVi;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="transporte", type="integer", nullable=true)
+     * @ORM\Column(name="come_sa", type="integer", nullable=true)
      */
-    private $transporte;
+    private $comeSa;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="come_do", type="integer", nullable=true)
+     */
+    private $comeDo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="listaEspera", type="string", length=20, nullable=true)
+     * @ORM\Column(name="come_sa_notas", type="string", length=30, nullable=true)
      */
-    private $listaespera;
+    private $comeSaNotas;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="observacionesNivelFormativo", type="string", length=100, nullable=true)
+     * @ORM\Column(name="come_do_notas", type="string", length=30, nullable=true)
      */
-    private $observacionesnivelformativo;
+    private $comeDoNotas;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="creditrans", type="integer", nullable=true)
+     */
+    private $creditrans;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nivelFormativo", type="string", length=30, nullable=true)
+     * @ORM\Column(name="lista_espera_piso", type="string", length=20, nullable=true)
      */
-    private $nivelformativo;
+    private $listaEsperaPiso;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="observacionesIdioma", type="string", length=50, nullable=true)
+     * @ORM\Column(name="DatosFormativosObs", type="string", length=100, nullable=true)
      */
-    private $observacionesidioma;
+    private $datosformativosobs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DatosFormativosItem", type="string", length=30, nullable=true)
+     */
+    private $datosformativositem;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Idioma", type="string", length=50, nullable=true)
+     */
+    private $idioma;
 
     /**
      * @var string
@@ -521,72 +526,72 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="numPasap", type="string", length=20, nullable=true)
+     * @ORM\Column(name="npasap", type="string", length=20, nullable=true)
      */
-    private $numpasap;
+    private $npasap;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaPasap", type="date", nullable=true)
+     * @ORM\Column(name="fpasap", type="date", nullable=true)
      */
-    private $fechapasap;
+    private $fpasap;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numCedula", type="string", length=20, nullable=true)
+     * @ORM\Column(name="ncedula", type="string", length=20, nullable=true)
      */
-    private $numcedula;
+    private $ncedula;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaCaducCedula", type="date", nullable=true)
+     * @ORM\Column(name="fcedula", type="date", nullable=true)
      */
-    private $fechacaduccedula;
+    private $fcedula;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaResidSolicit", type="date", nullable=true)
+     * @ORM\Column(name="fressol", type="date", nullable=true)
      */
-    private $fecharesidsolicit;
+    private $fressol;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numResidConced", type="string", length=20, nullable=true)
+     * @ORM\Column(name="nresconc", type="string", length=20, nullable=true)
      */
-    private $numresidconced;
+    private $nresconc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaResidConced", type="date", nullable=true)
+     * @ORM\Column(name="fresconc", type="date", nullable=true)
      */
-    private $fecharesidconced;
+    private $fresconc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaResidTrabSolicit", type="date", nullable=true)
+     * @ORM\Column(name="frestrsol", type="date", nullable=true)
      */
-    private $fecharesidtrabsolicit;
+    private $frestrsol;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numResidTrabConc", type="string", length=20, nullable=true)
+     * @ORM\Column(name="nrestrconc", type="string", length=20, nullable=true)
      */
-    private $numresidtrabconc;
+    private $nrestrconc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaResidTrabConc", type="date", nullable=true)
+     * @ORM\Column(name="frestrconc", type="date", nullable=true)
      */
-    private $fecharesidtrabconc;
+    private $frestrconc;
 
     /**
      * @var integer
@@ -605,23 +610,23 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="otrosDoc", type="string", length=40, nullable=true)
+     * @ORM\Column(name="otrosdoc", type="string", length=40, nullable=true)
      */
     private $otrosdoc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaEntrada", type="date", nullable=true)
+     * @ORM\Column(name="fentrada", type="date", nullable=true)
      */
-    private $fechaentrada;
+    private $fentrada;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaPrueba", type="date", nullable=true)
+     * @ORM\Column(name="fprueba", type="date", nullable=true)
      */
-    private $fechaprueba;
+    private $fprueba;
 
     /**
      * @var string
@@ -636,6 +641,13 @@ class Persona
      * @ORM\Column(name="PermisoResidRazonesNo", type="string", length=20, nullable=true)
      */
     private $permisoresidrazonesno;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="PermisoSolicitudFecha", type="date", nullable=true)
+     */
+    private $permisosolicitudfecha;
 
     /**
      * @var string
@@ -682,9 +694,9 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="direccionPadronActual", type="string", length=50, nullable=true)
+     * @ORM\Column(name="Empadronamiento", type="string", length=50, nullable=true)
      */
-    private $direccionpadronactual;
+    private $empadronamiento;
 
     /**
      * @var integer
@@ -731,9 +743,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="IngresosRGI", type="integer", nullable=true)
+     * @ORM\Column(name="IngresosRentaBas", type="integer", nullable=true)
      */
-    private $ingresosrgi;
+    private $ingresosrentabas;
 
     /**
      * @var integer
@@ -857,37 +869,37 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="tlSabado", type="integer", nullable=true)
+     * @ORM\Column(name="tl_sabado", type="integer", nullable=true)
      */
-    private $tlsabado;
+    private $tlSabado;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="tlDomingo", type="integer", nullable=true)
+     * @ORM\Column(name="tl_domingo", type="integer", nullable=true)
      */
-    private $tldomingo;
+    private $tlDomingo;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="salidaVerano", type="integer", nullable=true)
+     * @ORM\Column(name="salida_verano", type="integer", nullable=true)
      */
-    private $salidaverano;
+    private $salidaVerano;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="salidaOtro", type="integer", nullable=true)
+     * @ORM\Column(name="salida_otro", type="integer", nullable=true)
      */
-    private $salidaotro;
+    private $salidaOtro;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="medicacionCentro", type="integer", nullable=true)
+     * @ORM\Column(name="medicacion_centro", type="integer", nullable=true)
      */
-    private $medicacioncentro;
+    private $medicacionCentro;
 
     /**
      * @var integer
@@ -899,9 +911,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="expLaboral", type="integer", nullable=true)
+     * @ORM\Column(name="exp_laboral", type="integer", nullable=true)
      */
-    private $explaboral;
+    private $expLaboral;
 
     /**
      * @var integer
@@ -913,16 +925,16 @@ class Persona
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaAltaLanbide", type="date", nullable=true)
+     * @ORM\Column(name="F_alta_lanbide", type="date", nullable=true)
      */
-    private $fechaaltalanbide;
+    private $fAltaLanbide;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaRenovLanbide", type="date", nullable=true)
+     * @ORM\Column(name="F_renov_lanbide", type="date", nullable=true)
      */
-    private $fecharenovlanbide;
+    private $fRenovLanbide;
 
     /**
      * @var integer
@@ -934,16 +946,16 @@ class Persona
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaAltaInem", type="date", nullable=true)
+     * @ORM\Column(name="F_alta_inem", type="date", nullable=true)
      */
-    private $fechaaltainem;
+    private $fAltaInem;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaRenovInem", type="date", nullable=true)
+     * @ORM\Column(name="F_renov_inem", type="date", nullable=true)
      */
-    private $fecharenovinem;
+    private $fRenovInem;
 
     /**
      * @var string
@@ -955,9 +967,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="poblacionPadron", type="integer", nullable=true)
+     * @ORM\Column(name="poblacion_padron", type="integer", nullable=true)
      */
-    private $poblacionpadron;
+    private $poblacionPadron;
 
     /**
      * @var integer
@@ -969,16 +981,16 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="insertIdUsuario", type="integer", nullable=true)
+     * @ORM\Column(name="insert_id_usuario", type="integer", nullable=true)
      */
-    private $insertidusuario;
+    private $insertIdUsuario;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaInsert", type="date", nullable=true)
+     * @ORM\Column(name="insert_fecha", type="date", nullable=true)
      */
-    private $fechainsert;
+    private $insertFecha;
 
     /**
      * @var integer
@@ -1004,35 +1016,174 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="procedenciaDemandaLista", type="integer", nullable=true)
+     * @ORM\Column(name="procedencia_demanda_lista", type="integer", nullable=true)
      */
-    private $procedenciademandalista;
+    private $procedenciaDemandaLista;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="situacionAdministrativa", type="integer", nullable=true)
+     * @ORM\Column(name="DocumentoIdentif", type="integer", nullable=true)
      */
-    private $situacionadministrativa;
+    private $documentoidentif;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaCaducTis", type="date", nullable=true)
+     * @ORM\Column(name="fecha_caduc_tis", type="date", nullable=true)
      */
-    private $fechacaductis;
-
-
+    private $fechaCaducTis;
 
     /**
-     * Get idPers
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="orden_expulsion", type="integer", nullable=true)
      */
-    public function getIdPers()
-    {
-        return $this->idPers;
-    }
+    private $ordenExpulsion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresospropios", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresospropios;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresospnc", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresospnc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosotros", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresosotros;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosnomina", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresosnomina;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosrentabas", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresosrentabas;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosprestcontrib", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresosprestcontrib;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingrsossedesconoce", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngrsossedesconoce;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosayudaindividual", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresosayudaindividual;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="autonomia_economia", type="integer", nullable=true)
+     */
+    private $autonomiaEconomia;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="observaciones_economia", type="string", length=255, nullable=true)
+     */
+    private $observacionesEconomia;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="curso_actual", type="string", length=255, nullable=true)
+     */
+    private $cursoActual;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="JusticiaGratuita", type="integer", nullable=true)
+     */
+    private $justiciagratuita;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_1", type="smallint", nullable=true)
+     */
+    private $indicador11;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_1_a", type="smallint", nullable=true)
+     */
+    private $indicador11A;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_2", type="smallint", nullable=true)
+     */
+    private $indicador12;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_2_a", type="smallint", nullable=true)
+     */
+    private $indicador12A;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_3", type="smallint", nullable=true)
+     */
+    private $indicador13;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_4", type="smallint", nullable=true)
+     */
+    private $indicador14;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_5", type="smallint", nullable=true)
+     */
+    private $indicador15;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pers", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPers;
+
+
 
     /**
      * Set idUnico
@@ -1196,141 +1347,95 @@ class Persona
     }
 
     /**
-     * Set lugarnac
+     * Set lugarNac
      *
-     * @param string $lugarnac
+     * @param string $lugarNac
      * @return Persona
      */
-    public function setLugarnac($lugarnac)
+    public function setLugarNac($lugarNac)
     {
-        $this->lugarnac = $lugarnac;
+        $this->lugarNac = $lugarNac;
 
         return $this;
     }
 
     /**
-     * Get lugarnac
+     * Get lugarNac
      *
      * @return string 
      */
-    public function getLugarnac()
+    public function getLugarNac()
     {
-        return $this->lugarnac;
+        return $this->lugarNac;
     }
 
     /**
-     * Set dni
+     * Set dniPas
      *
-     * @param string $dni
+     * @param string $dniPas
      * @return Persona
      */
-    public function setDni($dni)
+    public function setDniPas($dniPas)
     {
-        $this->dni = $dni;
+        $this->dniPas = $dniPas;
 
         return $this;
     }
 
     /**
-     * Get dni
+     * Get dniPas
      *
      * @return string 
      */
-    public function getDni()
+    public function getDniPas()
     {
-        return $this->dni;
+        return $this->dniPas;
     }
 
     /**
-     * Set pasaporte
+     * Set numSs
      *
-     * @param string $pasaporte
+     * @param string $numSs
      * @return Persona
      */
-    public function setPasaporte($pasaporte)
+    public function setNumSs($numSs)
     {
-        $this->pasaporte = $pasaporte;
+        $this->numSs = $numSs;
 
         return $this;
     }
 
     /**
-     * Get pasaporte
+     * Get numSs
      *
      * @return string 
      */
-    public function getPasaporte()
+    public function getNumSs()
     {
-        return $this->pasaporte;
+        return $this->numSs;
     }
 
     /**
-     * Set nie
+     * Set numExpediente
      *
-     * @param string $nie
+     * @param string $numExpediente
      * @return Persona
      */
-    public function setNie($nie)
+    public function setNumExpediente($numExpediente)
     {
-        $this->nie = $nie;
+        $this->numExpediente = $numExpediente;
 
         return $this;
     }
 
     /**
-     * Get nie
+     * Get numExpediente
      *
      * @return string 
      */
-    public function getNie()
+    public function getNumExpediente()
     {
-        return $this->nie;
-    }
-
-    /**
-     * Set numsegsoc
-     *
-     * @param string $numsegsoc
-     * @return Persona
-     */
-    public function setNumsegsoc($numsegsoc)
-    {
-        $this->numsegsoc = $numsegsoc;
-
-        return $this;
-    }
-
-    /**
-     * Get numsegsoc
-     *
-     * @return string 
-     */
-    public function getNumsegsoc()
-    {
-        return $this->numsegsoc;
-    }
-
-    /**
-     * Set numexpediente
-     *
-     * @param string $numexpediente
-     * @return Persona
-     */
-    public function setNumexpediente($numexpediente)
-    {
-        $this->numexpediente = $numexpediente;
-
-        return $this;
-    }
-
-    /**
-     * Get numexpediente
-     *
-     * @return string 
-     */
-    public function getNumexpediente()
-    {
-        return $this->numexpediente;
+        return $this->numExpediente;
     }
 
     /**
@@ -1380,26 +1485,26 @@ class Persona
     }
 
     /**
-     * Set direccionactual
+     * Set direccion
      *
-     * @param string $direccionactual
+     * @param string $direccion
      * @return Persona
      */
-    public function setDireccionactual($direccionactual)
+    public function setDireccion($direccion)
     {
-        $this->direccionactual = $direccionactual;
+        $this->direccion = $direccion;
 
         return $this;
     }
 
     /**
-     * Get direccionactual
+     * Get direccion
      *
      * @return string 
      */
-    public function getDireccionactual()
+    public function getDireccion()
     {
-        return $this->direccionactual;
+        return $this->direccion;
     }
 
     /**
@@ -1426,49 +1531,49 @@ class Persona
     }
 
     /**
-     * Set nucleoconv
+     * Set nucleoConv
      *
-     * @param integer $nucleoconv
+     * @param integer $nucleoConv
      * @return Persona
      */
-    public function setNucleoconv($nucleoconv)
+    public function setNucleoConv($nucleoConv)
     {
-        $this->nucleoconv = $nucleoconv;
+        $this->nucleoConv = $nucleoConv;
 
         return $this;
     }
 
     /**
-     * Get nucleoconv
+     * Get nucleoConv
      *
      * @return integer 
      */
-    public function getNucleoconv()
+    public function getNucleoConv()
     {
-        return $this->nucleoconv;
+        return $this->nucleoConv;
     }
 
     /**
-     * Set estadocivil
+     * Set estadoCivil
      *
-     * @param integer $estadocivil
+     * @param integer $estadoCivil
      * @return Persona
      */
-    public function setEstadocivil($estadocivil)
+    public function setEstadoCivil($estadoCivil)
     {
-        $this->estadocivil = $estadocivil;
+        $this->estadoCivil = $estadoCivil;
 
         return $this;
     }
 
     /**
-     * Get estadocivil
+     * Get estadoCivil
      *
      * @return integer 
      */
-    public function getEstadocivil()
+    public function getEstadoCivil()
     {
-        return $this->estadocivil;
+        return $this->estadoCivil;
     }
 
     /**
@@ -1495,394 +1600,486 @@ class Persona
     }
 
     /**
-     * Set numhijos
+     * Set nHijos
      *
-     * @param integer $numhijos
+     * @param integer $nHijos
      * @return Persona
      */
-    public function setNumhijos($numhijos)
+    public function setNHijos($nHijos)
     {
-        $this->numhijos = $numhijos;
+        $this->nHijos = $nHijos;
 
         return $this;
     }
 
     /**
-     * Get numhijos
+     * Get nHijos
      *
      * @return integer 
      */
-    public function getNumhijos()
+    public function getNHijos()
     {
-        return $this->numhijos;
+        return $this->nHijos;
     }
 
     /**
-     * Set observacioneshijos
+     * Set observacionesHijos
      *
-     * @param string $observacioneshijos
+     * @param string $observacionesHijos
      * @return Persona
      */
-    public function setObservacioneshijos($observacioneshijos)
+    public function setObservacionesHijos($observacionesHijos)
     {
-        $this->observacioneshijos = $observacioneshijos;
+        $this->observacionesHijos = $observacionesHijos;
 
         return $this;
     }
 
     /**
-     * Get observacioneshijos
+     * Get observacionesHijos
      *
      * @return string 
      */
-    public function getObservacioneshijos()
+    public function getObservacionesHijos()
     {
-        return $this->observacioneshijos;
+        return $this->observacionesHijos;
     }
 
     /**
-     * Set telefonosinteres
+     * Set telefonosInteres
      *
-     * @param string $telefonosinteres
+     * @param string $telefonosInteres
      * @return Persona
      */
-    public function setTelefonosinteres($telefonosinteres)
+    public function setTelefonosInteres($telefonosInteres)
     {
-        $this->telefonosinteres = $telefonosinteres;
+        $this->telefonosInteres = $telefonosInteres;
 
         return $this;
     }
 
     /**
-     * Get telefonosinteres
+     * Get telefonosInteres
      *
      * @return string 
      */
-    public function getTelefonosinteres()
+    public function getTelefonosInteres()
     {
-        return $this->telefonosinteres;
+        return $this->telefonosInteres;
     }
 
     /**
-     * Set fechaingreso
+     * Set fechaIngreso
      *
-     * @param \DateTime $fechaingreso
+     * @param \DateTime $fechaIngreso
      * @return Persona
      */
-    public function setFechaingreso($fechaingreso)
+    public function setFechaIngreso($fechaIngreso)
     {
-        $this->fechaingreso = $fechaingreso;
+        $this->fechaIngreso = $fechaIngreso;
 
         return $this;
     }
 
     /**
-     * Get fechaingreso
+     * Get fechaIngreso
      *
      * @return \DateTime 
      */
-    public function getFechaingreso()
+    public function getFechaIngreso()
     {
-        return $this->fechaingreso;
+        return $this->fechaIngreso;
     }
 
     /**
-     * Set fechasalida
+     * Set fechaSalida
      *
-     * @param \DateTime $fechasalida
+     * @param \DateTime $fechaSalida
      * @return Persona
      */
-    public function setFechasalida($fechasalida)
+    public function setFechaSalida($fechaSalida)
     {
-        $this->fechasalida = $fechasalida;
+        $this->fechaSalida = $fechaSalida;
 
         return $this;
     }
 
     /**
-     * Get fechasalida
+     * Get fechaSalida
      *
      * @return \DateTime 
      */
-    public function getFechasalida()
+    public function getFechaSalida()
     {
-        return $this->fechasalida;
+        return $this->fechaSalida;
     }
 
     /**
-     * Set procedenciademanda
+     * Set procedenciaDemanda
      *
-     * @param string $procedenciademanda
+     * @param string $procedenciaDemanda
      * @return Persona
      */
-    public function setProcedenciademanda($procedenciademanda)
+    public function setProcedenciaDemanda($procedenciaDemanda)
     {
-        $this->procedenciademanda = $procedenciademanda;
+        $this->procedenciaDemanda = $procedenciaDemanda;
 
         return $this;
     }
 
     /**
-     * Get procedenciademanda
+     * Get procedenciaDemanda
      *
      * @return string 
      */
-    public function getProcedenciademanda()
+    public function getProcedenciaDemanda()
     {
-        return $this->procedenciademanda;
+        return $this->procedenciaDemanda;
     }
 
     /**
-     * Set responsable
+     * Set tutor
      *
-     * @param integer $responsable
+     * @param integer $tutor
      * @return Persona
      */
-    public function setResponsable($responsable)
+    public function setTutor($tutor)
     {
-        $this->responsable = $responsable;
+        $this->tutor = $tutor;
 
         return $this;
     }
 
     /**
-     * Get responsable
+     * Get tutor
      *
      * @return integer 
      */
-    public function getResponsable()
+    public function getTutor()
     {
-        return $this->responsable;
+        return $this->tutor;
     }
 
     /**
-     * Set comedorlun
+     * Set comeLu
      *
-     * @param integer $comedorlun
+     * @param integer $comeLu
      * @return Persona
      */
-    public function setComedorlun($comedorlun)
+    public function setComeLu($comeLu)
     {
-        $this->comedorlun = $comedorlun;
+        $this->comeLu = $comeLu;
 
         return $this;
     }
 
     /**
-     * Get comedorlun
+     * Get comeLu
      *
      * @return integer 
      */
-    public function getComedorlun()
+    public function getComeLu()
     {
-        return $this->comedorlun;
+        return $this->comeLu;
     }
 
     /**
-     * Set comedormar
+     * Set comeMa
      *
-     * @param integer $comedormar
+     * @param integer $comeMa
      * @return Persona
      */
-    public function setComedormar($comedormar)
+    public function setComeMa($comeMa)
     {
-        $this->comedormar = $comedormar;
+        $this->comeMa = $comeMa;
 
         return $this;
     }
 
     /**
-     * Get comedormar
+     * Get comeMa
      *
      * @return integer 
      */
-    public function getComedormar()
+    public function getComeMa()
     {
-        return $this->comedormar;
+        return $this->comeMa;
     }
 
     /**
-     * Set comedormie
+     * Set comeMi
      *
-     * @param integer $comedormie
+     * @param integer $comeMi
      * @return Persona
      */
-    public function setComedormie($comedormie)
+    public function setComeMi($comeMi)
     {
-        $this->comedormie = $comedormie;
+        $this->comeMi = $comeMi;
 
         return $this;
     }
 
     /**
-     * Get comedormie
+     * Get comeMi
      *
      * @return integer 
      */
-    public function getComedormie()
+    public function getComeMi()
     {
-        return $this->comedormie;
+        return $this->comeMi;
     }
 
     /**
-     * Set comedorjue
+     * Set comeJu
      *
-     * @param integer $comedorjue
+     * @param integer $comeJu
      * @return Persona
      */
-    public function setComedorjue($comedorjue)
+    public function setComeJu($comeJu)
     {
-        $this->comedorjue = $comedorjue;
+        $this->comeJu = $comeJu;
 
         return $this;
     }
 
     /**
-     * Get comedorjue
+     * Get comeJu
      *
      * @return integer 
      */
-    public function getComedorjue()
+    public function getComeJu()
     {
-        return $this->comedorjue;
+        return $this->comeJu;
     }
 
     /**
-     * Set comedorvie
+     * Set comeVi
      *
-     * @param integer $comedorvie
+     * @param integer $comeVi
      * @return Persona
      */
-    public function setComedorvie($comedorvie)
+    public function setComeVi($comeVi)
     {
-        $this->comedorvie = $comedorvie;
+        $this->comeVi = $comeVi;
 
         return $this;
     }
 
     /**
-     * Get comedorvie
+     * Get comeVi
      *
      * @return integer 
      */
-    public function getComedorvie()
+    public function getComeVi()
     {
-        return $this->comedorvie;
+        return $this->comeVi;
     }
 
     /**
-     * Set transporte
+     * Set comeSa
      *
-     * @param integer $transporte
+     * @param integer $comeSa
      * @return Persona
      */
-    public function setTransporte($transporte)
+    public function setComeSa($comeSa)
     {
-        $this->transporte = $transporte;
+        $this->comeSa = $comeSa;
 
         return $this;
     }
 
     /**
-     * Get transporte
+     * Get comeSa
      *
      * @return integer 
      */
-    public function getTransporte()
+    public function getComeSa()
     {
-        return $this->transporte;
+        return $this->comeSa;
     }
 
     /**
-     * Set listaespera
+     * Set comeDo
      *
-     * @param string $listaespera
+     * @param integer $comeDo
      * @return Persona
      */
-    public function setListaespera($listaespera)
+    public function setComeDo($comeDo)
     {
-        $this->listaespera = $listaespera;
+        $this->comeDo = $comeDo;
 
         return $this;
     }
 
     /**
-     * Get listaespera
+     * Get comeDo
+     *
+     * @return integer 
+     */
+    public function getComeDo()
+    {
+        return $this->comeDo;
+    }
+
+    /**
+     * Set comeSaNotas
+     *
+     * @param string $comeSaNotas
+     * @return Persona
+     */
+    public function setComeSaNotas($comeSaNotas)
+    {
+        $this->comeSaNotas = $comeSaNotas;
+
+        return $this;
+    }
+
+    /**
+     * Get comeSaNotas
      *
      * @return string 
      */
-    public function getListaespera()
+    public function getComeSaNotas()
     {
-        return $this->listaespera;
+        return $this->comeSaNotas;
     }
 
     /**
-     * Set observacionesnivelformativo
+     * Set comeDoNotas
      *
-     * @param string $observacionesnivelformativo
+     * @param string $comeDoNotas
      * @return Persona
      */
-    public function setObservacionesnivelformativo($observacionesnivelformativo)
+    public function setComeDoNotas($comeDoNotas)
     {
-        $this->observacionesnivelformativo = $observacionesnivelformativo;
+        $this->comeDoNotas = $comeDoNotas;
 
         return $this;
     }
 
     /**
-     * Get observacionesnivelformativo
+     * Get comeDoNotas
      *
      * @return string 
      */
-    public function getObservacionesnivelformativo()
+    public function getComeDoNotas()
     {
-        return $this->observacionesnivelformativo;
+        return $this->comeDoNotas;
     }
 
     /**
-     * Set nivelformativo
+     * Set creditrans
      *
-     * @param string $nivelformativo
+     * @param integer $creditrans
      * @return Persona
      */
-    public function setNivelformativo($nivelformativo)
+    public function setCreditrans($creditrans)
     {
-        $this->nivelformativo = $nivelformativo;
+        $this->creditrans = $creditrans;
 
         return $this;
     }
 
     /**
-     * Get nivelformativo
+     * Get creditrans
      *
-     * @return string 
+     * @return integer 
      */
-    public function getNivelformativo()
+    public function getCreditrans()
     {
-        return $this->nivelformativo;
+        return $this->creditrans;
     }
 
     /**
-     * Set observacionesidioma
+     * Set listaEsperaPiso
      *
-     * @param string $observacionesidioma
+     * @param string $listaEsperaPiso
      * @return Persona
      */
-    public function setObservacionesidioma($observacionesidioma)
+    public function setListaEsperaPiso($listaEsperaPiso)
     {
-        $this->observacionesidioma = $observacionesidioma;
+        $this->listaEsperaPiso = $listaEsperaPiso;
 
         return $this;
     }
 
     /**
-     * Get observacionesidioma
+     * Get listaEsperaPiso
      *
      * @return string 
      */
-    public function getObservacionesidioma()
+    public function getListaEsperaPiso()
     {
-        return $this->observacionesidioma;
+        return $this->listaEsperaPiso;
+    }
+
+    /**
+     * Set datosformativosobs
+     *
+     * @param string $datosformativosobs
+     * @return Persona
+     */
+    public function setDatosformativosobs($datosformativosobs)
+    {
+        $this->datosformativosobs = $datosformativosobs;
+
+        return $this;
+    }
+
+    /**
+     * Get datosformativosobs
+     *
+     * @return string 
+     */
+    public function getDatosformativosobs()
+    {
+        return $this->datosformativosobs;
+    }
+
+    /**
+     * Set datosformativositem
+     *
+     * @param string $datosformativositem
+     * @return Persona
+     */
+    public function setDatosformativositem($datosformativositem)
+    {
+        $this->datosformativositem = $datosformativositem;
+
+        return $this;
+    }
+
+    /**
+     * Get datosformativositem
+     *
+     * @return string 
+     */
+    public function getDatosformativositem()
+    {
+        return $this->datosformativositem;
+    }
+
+    /**
+     * Set idioma
+     *
+     * @param string $idioma
+     * @return Persona
+     */
+    public function setIdioma($idioma)
+    {
+        $this->idioma = $idioma;
+
+        return $this;
+    }
+
+    /**
+     * Get idioma
+     *
+     * @return string 
+     */
+    public function getIdioma()
+    {
+        return $this->idioma;
     }
 
     /**
@@ -2668,233 +2865,233 @@ class Persona
     }
 
     /**
-     * Set numpasap
+     * Set npasap
      *
-     * @param string $numpasap
+     * @param string $npasap
      * @return Persona
      */
-    public function setNumpasap($numpasap)
+    public function setNpasap($npasap)
     {
-        $this->numpasap = $numpasap;
+        $this->npasap = $npasap;
 
         return $this;
     }
 
     /**
-     * Get numpasap
+     * Get npasap
      *
      * @return string 
      */
-    public function getNumpasap()
+    public function getNpasap()
     {
-        return $this->numpasap;
+        return $this->npasap;
     }
 
     /**
-     * Set fechapasap
+     * Set fpasap
      *
-     * @param \DateTime $fechapasap
+     * @param \DateTime $fpasap
      * @return Persona
      */
-    public function setFechapasap($fechapasap)
+    public function setFpasap($fpasap)
     {
-        $this->fechapasap = $fechapasap;
+        $this->fpasap = $fpasap;
 
         return $this;
     }
 
     /**
-     * Get fechapasap
+     * Get fpasap
      *
      * @return \DateTime 
      */
-    public function getFechapasap()
+    public function getFpasap()
     {
-        return $this->fechapasap;
+        return $this->fpasap;
     }
 
     /**
-     * Set numcedula
+     * Set ncedula
      *
-     * @param string $numcedula
+     * @param string $ncedula
      * @return Persona
      */
-    public function setNumcedula($numcedula)
+    public function setNcedula($ncedula)
     {
-        $this->numcedula = $numcedula;
+        $this->ncedula = $ncedula;
 
         return $this;
     }
 
     /**
-     * Get numcedula
+     * Get ncedula
      *
      * @return string 
      */
-    public function getNumcedula()
+    public function getNcedula()
     {
-        return $this->numcedula;
+        return $this->ncedula;
     }
 
     /**
-     * Set fechacaduccedula
+     * Set fcedula
      *
-     * @param \DateTime $fechacaduccedula
+     * @param \DateTime $fcedula
      * @return Persona
      */
-    public function setFechacaduccedula($fechacaduccedula)
+    public function setFcedula($fcedula)
     {
-        $this->fechacaduccedula = $fechacaduccedula;
+        $this->fcedula = $fcedula;
 
         return $this;
     }
 
     /**
-     * Get fechacaduccedula
+     * Get fcedula
      *
      * @return \DateTime 
      */
-    public function getFechacaduccedula()
+    public function getFcedula()
     {
-        return $this->fechacaduccedula;
+        return $this->fcedula;
     }
 
     /**
-     * Set fecharesidsolicit
+     * Set fressol
      *
-     * @param \DateTime $fecharesidsolicit
+     * @param \DateTime $fressol
      * @return Persona
      */
-    public function setFecharesidsolicit($fecharesidsolicit)
+    public function setFressol($fressol)
     {
-        $this->fecharesidsolicit = $fecharesidsolicit;
+        $this->fressol = $fressol;
 
         return $this;
     }
 
     /**
-     * Get fecharesidsolicit
+     * Get fressol
      *
      * @return \DateTime 
      */
-    public function getFecharesidsolicit()
+    public function getFressol()
     {
-        return $this->fecharesidsolicit;
+        return $this->fressol;
     }
 
     /**
-     * Set numresidconced
+     * Set nresconc
      *
-     * @param string $numresidconced
+     * @param string $nresconc
      * @return Persona
      */
-    public function setNumresidconced($numresidconced)
+    public function setNresconc($nresconc)
     {
-        $this->numresidconced = $numresidconced;
+        $this->nresconc = $nresconc;
 
         return $this;
     }
 
     /**
-     * Get numresidconced
+     * Get nresconc
      *
      * @return string 
      */
-    public function getNumresidconced()
+    public function getNresconc()
     {
-        return $this->numresidconced;
+        return $this->nresconc;
     }
 
     /**
-     * Set fecharesidconced
+     * Set fresconc
      *
-     * @param \DateTime $fecharesidconced
+     * @param \DateTime $fresconc
      * @return Persona
      */
-    public function setFecharesidconced($fecharesidconced)
+    public function setFresconc($fresconc)
     {
-        $this->fecharesidconced = $fecharesidconced;
+        $this->fresconc = $fresconc;
 
         return $this;
     }
 
     /**
-     * Get fecharesidconced
+     * Get fresconc
      *
      * @return \DateTime 
      */
-    public function getFecharesidconced()
+    public function getFresconc()
     {
-        return $this->fecharesidconced;
+        return $this->fresconc;
     }
 
     /**
-     * Set fecharesidtrabsolicit
+     * Set frestrsol
      *
-     * @param \DateTime $fecharesidtrabsolicit
+     * @param \DateTime $frestrsol
      * @return Persona
      */
-    public function setFecharesidtrabsolicit($fecharesidtrabsolicit)
+    public function setFrestrsol($frestrsol)
     {
-        $this->fecharesidtrabsolicit = $fecharesidtrabsolicit;
+        $this->frestrsol = $frestrsol;
 
         return $this;
     }
 
     /**
-     * Get fecharesidtrabsolicit
+     * Get frestrsol
      *
      * @return \DateTime 
      */
-    public function getFecharesidtrabsolicit()
+    public function getFrestrsol()
     {
-        return $this->fecharesidtrabsolicit;
+        return $this->frestrsol;
     }
 
     /**
-     * Set numresidtrabconc
+     * Set nrestrconc
      *
-     * @param string $numresidtrabconc
+     * @param string $nrestrconc
      * @return Persona
      */
-    public function setNumresidtrabconc($numresidtrabconc)
+    public function setNrestrconc($nrestrconc)
     {
-        $this->numresidtrabconc = $numresidtrabconc;
+        $this->nrestrconc = $nrestrconc;
 
         return $this;
     }
 
     /**
-     * Get numresidtrabconc
+     * Get nrestrconc
      *
      * @return string 
      */
-    public function getNumresidtrabconc()
+    public function getNrestrconc()
     {
-        return $this->numresidtrabconc;
+        return $this->nrestrconc;
     }
 
     /**
-     * Set fecharesidtrabconc
+     * Set frestrconc
      *
-     * @param \DateTime $fecharesidtrabconc
+     * @param \DateTime $frestrconc
      * @return Persona
      */
-    public function setFecharesidtrabconc($fecharesidtrabconc)
+    public function setFrestrconc($frestrconc)
     {
-        $this->fecharesidtrabconc = $fecharesidtrabconc;
+        $this->frestrconc = $frestrconc;
 
         return $this;
     }
 
     /**
-     * Get fecharesidtrabconc
+     * Get frestrconc
      *
      * @return \DateTime 
      */
-    public function getFecharesidtrabconc()
+    public function getFrestrconc()
     {
-        return $this->fecharesidtrabconc;
+        return $this->frestrconc;
     }
 
     /**
@@ -2967,49 +3164,49 @@ class Persona
     }
 
     /**
-     * Set fechaentrada
+     * Set fentrada
      *
-     * @param \DateTime $fechaentrada
+     * @param \DateTime $fentrada
      * @return Persona
      */
-    public function setFechaentrada($fechaentrada)
+    public function setFentrada($fentrada)
     {
-        $this->fechaentrada = $fechaentrada;
+        $this->fentrada = $fentrada;
 
         return $this;
     }
 
     /**
-     * Get fechaentrada
+     * Get fentrada
      *
      * @return \DateTime 
      */
-    public function getFechaentrada()
+    public function getFentrada()
     {
-        return $this->fechaentrada;
+        return $this->fentrada;
     }
 
     /**
-     * Set fechaprueba
+     * Set fprueba
      *
-     * @param \DateTime $fechaprueba
+     * @param \DateTime $fprueba
      * @return Persona
      */
-    public function setFechaprueba($fechaprueba)
+    public function setFprueba($fprueba)
     {
-        $this->fechaprueba = $fechaprueba;
+        $this->fprueba = $fprueba;
 
         return $this;
     }
 
     /**
-     * Get fechaprueba
+     * Get fprueba
      *
      * @return \DateTime 
      */
-    public function getFechaprueba()
+    public function getFprueba()
     {
-        return $this->fechaprueba;
+        return $this->fprueba;
     }
 
     /**
@@ -3056,6 +3253,29 @@ class Persona
     public function getPermisoresidrazonesno()
     {
         return $this->permisoresidrazonesno;
+    }
+
+    /**
+     * Set permisosolicitudfecha
+     *
+     * @param \DateTime $permisosolicitudfecha
+     * @return Persona
+     */
+    public function setPermisosolicitudfecha($permisosolicitudfecha)
+    {
+        $this->permisosolicitudfecha = $permisosolicitudfecha;
+
+        return $this;
+    }
+
+    /**
+     * Get permisosolicitudfecha
+     *
+     * @return \DateTime 
+     */
+    public function getPermisosolicitudfecha()
+    {
+        return $this->permisosolicitudfecha;
     }
 
     /**
@@ -3197,26 +3417,26 @@ class Persona
     }
 
     /**
-     * Set direccionpadronactual
+     * Set empadronamiento
      *
-     * @param string $direccionpadronactual
+     * @param string $empadronamiento
      * @return Persona
      */
-    public function setDireccionpadronactual($direccionpadronactual)
+    public function setEmpadronamiento($empadronamiento)
     {
-        $this->direccionpadronactual = $direccionpadronactual;
+        $this->empadronamiento = $empadronamiento;
 
         return $this;
     }
 
     /**
-     * Get direccionpadronactual
+     * Get empadronamiento
      *
      * @return string 
      */
-    public function getDireccionpadronactual()
+    public function getEmpadronamiento()
     {
-        return $this->direccionpadronactual;
+        return $this->empadronamiento;
     }
 
     /**
@@ -3358,26 +3578,26 @@ class Persona
     }
 
     /**
-     * Set ingresosrgi
+     * Set ingresosrentabas
      *
-     * @param integer $ingresosrgi
+     * @param integer $ingresosrentabas
      * @return Persona
      */
-    public function setIngresosrgi($ingresosrgi)
+    public function setIngresosrentabas($ingresosrentabas)
     {
-        $this->ingresosrgi = $ingresosrgi;
+        $this->ingresosrentabas = $ingresosrentabas;
 
         return $this;
     }
 
     /**
-     * Get ingresosrgi
+     * Get ingresosrentabas
      *
      * @return integer 
      */
-    public function getIngresosrgi()
+    public function getIngresosrentabas()
     {
-        return $this->ingresosrgi;
+        return $this->ingresosrentabas;
     }
 
     /**
@@ -3772,118 +3992,118 @@ class Persona
     }
 
     /**
-     * Set tlsabado
+     * Set tlSabado
      *
-     * @param integer $tlsabado
+     * @param integer $tlSabado
      * @return Persona
      */
-    public function setTlsabado($tlsabado)
+    public function setTlSabado($tlSabado)
     {
-        $this->tlsabado = $tlsabado;
+        $this->tlSabado = $tlSabado;
 
         return $this;
     }
 
     /**
-     * Get tlsabado
+     * Get tlSabado
      *
      * @return integer 
      */
-    public function getTlsabado()
+    public function getTlSabado()
     {
-        return $this->tlsabado;
+        return $this->tlSabado;
     }
 
     /**
-     * Set tldomingo
+     * Set tlDomingo
      *
-     * @param integer $tldomingo
+     * @param integer $tlDomingo
      * @return Persona
      */
-    public function setTldomingo($tldomingo)
+    public function setTlDomingo($tlDomingo)
     {
-        $this->tldomingo = $tldomingo;
+        $this->tlDomingo = $tlDomingo;
 
         return $this;
     }
 
     /**
-     * Get tldomingo
+     * Get tlDomingo
      *
      * @return integer 
      */
-    public function getTldomingo()
+    public function getTlDomingo()
     {
-        return $this->tldomingo;
+        return $this->tlDomingo;
     }
 
     /**
-     * Set salidaverano
+     * Set salidaVerano
      *
-     * @param integer $salidaverano
+     * @param integer $salidaVerano
      * @return Persona
      */
-    public function setSalidaverano($salidaverano)
+    public function setSalidaVerano($salidaVerano)
     {
-        $this->salidaverano = $salidaverano;
+        $this->salidaVerano = $salidaVerano;
 
         return $this;
     }
 
     /**
-     * Get salidaverano
+     * Get salidaVerano
      *
      * @return integer 
      */
-    public function getSalidaverano()
+    public function getSalidaVerano()
     {
-        return $this->salidaverano;
+        return $this->salidaVerano;
     }
 
     /**
-     * Set salidaotro
+     * Set salidaOtro
      *
-     * @param integer $salidaotro
+     * @param integer $salidaOtro
      * @return Persona
      */
-    public function setSalidaotro($salidaotro)
+    public function setSalidaOtro($salidaOtro)
     {
-        $this->salidaotro = $salidaotro;
+        $this->salidaOtro = $salidaOtro;
 
         return $this;
     }
 
     /**
-     * Get salidaotro
+     * Get salidaOtro
      *
      * @return integer 
      */
-    public function getSalidaotro()
+    public function getSalidaOtro()
     {
-        return $this->salidaotro;
+        return $this->salidaOtro;
     }
 
     /**
-     * Set medicacioncentro
+     * Set medicacionCentro
      *
-     * @param integer $medicacioncentro
+     * @param integer $medicacionCentro
      * @return Persona
      */
-    public function setMedicacioncentro($medicacioncentro)
+    public function setMedicacionCentro($medicacionCentro)
     {
-        $this->medicacioncentro = $medicacioncentro;
+        $this->medicacionCentro = $medicacionCentro;
 
         return $this;
     }
 
     /**
-     * Get medicacioncentro
+     * Get medicacionCentro
      *
      * @return integer 
      */
-    public function getMedicacioncentro()
+    public function getMedicacionCentro()
     {
-        return $this->medicacioncentro;
+        return $this->medicacionCentro;
     }
 
     /**
@@ -3910,26 +4130,26 @@ class Persona
     }
 
     /**
-     * Set explaboral
+     * Set expLaboral
      *
-     * @param integer $explaboral
+     * @param integer $expLaboral
      * @return Persona
      */
-    public function setExplaboral($explaboral)
+    public function setExpLaboral($expLaboral)
     {
-        $this->explaboral = $explaboral;
+        $this->expLaboral = $expLaboral;
 
         return $this;
     }
 
     /**
-     * Get explaboral
+     * Get expLaboral
      *
      * @return integer 
      */
-    public function getExplaboral()
+    public function getExpLaboral()
     {
-        return $this->explaboral;
+        return $this->expLaboral;
     }
 
     /**
@@ -3956,49 +4176,49 @@ class Persona
     }
 
     /**
-     * Set fechaaltalanbide
+     * Set fAltaLanbide
      *
-     * @param \DateTime $fechaaltalanbide
+     * @param \DateTime $fAltaLanbide
      * @return Persona
      */
-    public function setFechaaltalanbide($fechaaltalanbide)
+    public function setFAltaLanbide($fAltaLanbide)
     {
-        $this->fechaaltalanbide = $fechaaltalanbide;
+        $this->fAltaLanbide = $fAltaLanbide;
 
         return $this;
     }
 
     /**
-     * Get fechaaltalanbide
+     * Get fAltaLanbide
      *
      * @return \DateTime 
      */
-    public function getFechaaltalanbide()
+    public function getFAltaLanbide()
     {
-        return $this->fechaaltalanbide;
+        return $this->fAltaLanbide;
     }
 
     /**
-     * Set fecharenovlanbide
+     * Set fRenovLanbide
      *
-     * @param \DateTime $fecharenovlanbide
+     * @param \DateTime $fRenovLanbide
      * @return Persona
      */
-    public function setFecharenovlanbide($fecharenovlanbide)
+    public function setFRenovLanbide($fRenovLanbide)
     {
-        $this->fecharenovlanbide = $fecharenovlanbide;
+        $this->fRenovLanbide = $fRenovLanbide;
 
         return $this;
     }
 
     /**
-     * Get fecharenovlanbide
+     * Get fRenovLanbide
      *
      * @return \DateTime 
      */
-    public function getFecharenovlanbide()
+    public function getFRenovLanbide()
     {
-        return $this->fecharenovlanbide;
+        return $this->fRenovLanbide;
     }
 
     /**
@@ -4025,49 +4245,49 @@ class Persona
     }
 
     /**
-     * Set fechaaltainem
+     * Set fAltaInem
      *
-     * @param \DateTime $fechaaltainem
+     * @param \DateTime $fAltaInem
      * @return Persona
      */
-    public function setFechaaltainem($fechaaltainem)
+    public function setFAltaInem($fAltaInem)
     {
-        $this->fechaaltainem = $fechaaltainem;
+        $this->fAltaInem = $fAltaInem;
 
         return $this;
     }
 
     /**
-     * Get fechaaltainem
+     * Get fAltaInem
      *
      * @return \DateTime 
      */
-    public function getFechaaltainem()
+    public function getFAltaInem()
     {
-        return $this->fechaaltainem;
+        return $this->fAltaInem;
     }
 
     /**
-     * Set fecharenovinem
+     * Set fRenovInem
      *
-     * @param \DateTime $fecharenovinem
+     * @param \DateTime $fRenovInem
      * @return Persona
      */
-    public function setFecharenovinem($fecharenovinem)
+    public function setFRenovInem($fRenovInem)
     {
-        $this->fecharenovinem = $fecharenovinem;
+        $this->fRenovInem = $fRenovInem;
 
         return $this;
     }
 
     /**
-     * Get fecharenovinem
+     * Get fRenovInem
      *
      * @return \DateTime 
      */
-    public function getFecharenovinem()
+    public function getFRenovInem()
     {
-        return $this->fecharenovinem;
+        return $this->fRenovInem;
     }
 
     /**
@@ -4094,26 +4314,26 @@ class Persona
     }
 
     /**
-     * Set poblacionpadron
+     * Set poblacionPadron
      *
-     * @param integer $poblacionpadron
+     * @param integer $poblacionPadron
      * @return Persona
      */
-    public function setPoblacionpadron($poblacionpadron)
+    public function setPoblacionPadron($poblacionPadron)
     {
-        $this->poblacionpadron = $poblacionpadron;
+        $this->poblacionPadron = $poblacionPadron;
 
         return $this;
     }
 
     /**
-     * Get poblacionpadron
+     * Get poblacionPadron
      *
      * @return integer 
      */
-    public function getPoblacionpadron()
+    public function getPoblacionPadron()
     {
-        return $this->poblacionpadron;
+        return $this->poblacionPadron;
     }
 
     /**
@@ -4140,49 +4360,49 @@ class Persona
     }
 
     /**
-     * Set insertidusuario
+     * Set insertIdUsuario
      *
-     * @param integer $insertidusuario
+     * @param integer $insertIdUsuario
      * @return Persona
      */
-    public function setInsertidusuario($insertidusuario)
+    public function setInsertIdUsuario($insertIdUsuario)
     {
-        $this->insertidusuario = $insertidusuario;
+        $this->insertIdUsuario = $insertIdUsuario;
 
         return $this;
     }
 
     /**
-     * Get insertidusuario
+     * Get insertIdUsuario
      *
      * @return integer 
      */
-    public function getInsertidusuario()
+    public function getInsertIdUsuario()
     {
-        return $this->insertidusuario;
+        return $this->insertIdUsuario;
     }
 
     /**
-     * Set fechainsert
+     * Set insertFecha
      *
-     * @param \DateTime $fechainsert
+     * @param \DateTime $insertFecha
      * @return Persona
      */
-    public function setFechainsert($fechainsert)
+    public function setInsertFecha($insertFecha)
     {
-        $this->fechainsert = $fechainsert;
+        $this->insertFecha = $insertFecha;
 
         return $this;
     }
 
     /**
-     * Get fechainsert
+     * Get insertFecha
      *
      * @return \DateTime 
      */
-    public function getFechainsert()
+    public function getInsertFecha()
     {
-        return $this->fechainsert;
+        return $this->insertFecha;
     }
 
     /**
@@ -4255,71 +4475,541 @@ class Persona
     }
 
     /**
-     * Set procedenciademandalista
+     * Set procedenciaDemandaLista
      *
-     * @param integer $procedenciademandalista
+     * @param integer $procedenciaDemandaLista
      * @return Persona
      */
-    public function setProcedenciademandalista($procedenciademandalista)
+    public function setProcedenciaDemandaLista($procedenciaDemandaLista)
     {
-        $this->procedenciademandalista = $procedenciademandalista;
+        $this->procedenciaDemandaLista = $procedenciaDemandaLista;
 
         return $this;
     }
 
     /**
-     * Get procedenciademandalista
+     * Get procedenciaDemandaLista
      *
      * @return integer 
      */
-    public function getProcedenciademandalista()
+    public function getProcedenciaDemandaLista()
     {
-        return $this->procedenciademandalista;
+        return $this->procedenciaDemandaLista;
     }
 
     /**
-     * Set situacionadministrativa
+     * Set documentoidentif
      *
-     * @param integer $situacionadministrativa
+     * @param integer $documentoidentif
      * @return Persona
      */
-    public function setSituacionadministrativa($situacionadministrativa)
+    public function setDocumentoidentif($documentoidentif)
     {
-        $this->situacionadministrativa = $situacionadministrativa;
+        $this->documentoidentif = $documentoidentif;
 
         return $this;
     }
 
     /**
-     * Get situacionadministrativa
+     * Get documentoidentif
      *
      * @return integer 
      */
-    public function getSituacionadministrativa()
+    public function getDocumentoidentif()
     {
-        return $this->situacionadministrativa;
+        return $this->documentoidentif;
     }
 
     /**
-     * Set fechacaductis
+     * Set fechaCaducTis
      *
-     * @param \DateTime $fechacaductis
+     * @param \DateTime $fechaCaducTis
      * @return Persona
      */
-    public function setFechacaductis($fechacaductis)
+    public function setFechaCaducTis($fechaCaducTis)
     {
-        $this->fechacaductis = $fechacaductis;
+        $this->fechaCaducTis = $fechaCaducTis;
 
         return $this;
     }
 
     /**
-     * Get fechacaductis
+     * Get fechaCaducTis
      *
      * @return \DateTime 
      */
-    public function getFechacaductis()
+    public function getFechaCaducTis()
     {
-        return $this->fechacaductis;
+        return $this->fechaCaducTis;
+    }
+
+    /**
+     * Set ordenExpulsion
+     *
+     * @param integer $ordenExpulsion
+     * @return Persona
+     */
+    public function setOrdenExpulsion($ordenExpulsion)
+    {
+        $this->ordenExpulsion = $ordenExpulsion;
+
+        return $this;
+    }
+
+    /**
+     * Get ordenExpulsion
+     *
+     * @return integer 
+     */
+    public function getOrdenExpulsion()
+    {
+        return $this->ordenExpulsion;
+    }
+
+    /**
+     * Set cantidadIngresospropios
+     *
+     * @param string $cantidadIngresospropios
+     * @return Persona
+     */
+    public function setCantidadIngresospropios($cantidadIngresospropios)
+    {
+        $this->cantidadIngresospropios = $cantidadIngresospropios;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidadIngresospropios
+     *
+     * @return string 
+     */
+    public function getCantidadIngresospropios()
+    {
+        return $this->cantidadIngresospropios;
+    }
+
+    /**
+     * Set cantidadIngresospnc
+     *
+     * @param string $cantidadIngresospnc
+     * @return Persona
+     */
+    public function setCantidadIngresospnc($cantidadIngresospnc)
+    {
+        $this->cantidadIngresospnc = $cantidadIngresospnc;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidadIngresospnc
+     *
+     * @return string 
+     */
+    public function getCantidadIngresospnc()
+    {
+        return $this->cantidadIngresospnc;
+    }
+
+    /**
+     * Set cantidadIngresosotros
+     *
+     * @param string $cantidadIngresosotros
+     * @return Persona
+     */
+    public function setCantidadIngresosotros($cantidadIngresosotros)
+    {
+        $this->cantidadIngresosotros = $cantidadIngresosotros;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidadIngresosotros
+     *
+     * @return string 
+     */
+    public function getCantidadIngresosotros()
+    {
+        return $this->cantidadIngresosotros;
+    }
+
+    /**
+     * Set cantidadIngresosnomina
+     *
+     * @param string $cantidadIngresosnomina
+     * @return Persona
+     */
+    public function setCantidadIngresosnomina($cantidadIngresosnomina)
+    {
+        $this->cantidadIngresosnomina = $cantidadIngresosnomina;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidadIngresosnomina
+     *
+     * @return string 
+     */
+    public function getCantidadIngresosnomina()
+    {
+        return $this->cantidadIngresosnomina;
+    }
+
+    /**
+     * Set cantidadIngresosrentabas
+     *
+     * @param string $cantidadIngresosrentabas
+     * @return Persona
+     */
+    public function setCantidadIngresosrentabas($cantidadIngresosrentabas)
+    {
+        $this->cantidadIngresosrentabas = $cantidadIngresosrentabas;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidadIngresosrentabas
+     *
+     * @return string 
+     */
+    public function getCantidadIngresosrentabas()
+    {
+        return $this->cantidadIngresosrentabas;
+    }
+
+    /**
+     * Set cantidadIngresosprestcontrib
+     *
+     * @param string $cantidadIngresosprestcontrib
+     * @return Persona
+     */
+    public function setCantidadIngresosprestcontrib($cantidadIngresosprestcontrib)
+    {
+        $this->cantidadIngresosprestcontrib = $cantidadIngresosprestcontrib;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidadIngresosprestcontrib
+     *
+     * @return string 
+     */
+    public function getCantidadIngresosprestcontrib()
+    {
+        return $this->cantidadIngresosprestcontrib;
+    }
+
+    /**
+     * Set cantidadIngrsossedesconoce
+     *
+     * @param string $cantidadIngrsossedesconoce
+     * @return Persona
+     */
+    public function setCantidadIngrsossedesconoce($cantidadIngrsossedesconoce)
+    {
+        $this->cantidadIngrsossedesconoce = $cantidadIngrsossedesconoce;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidadIngrsossedesconoce
+     *
+     * @return string 
+     */
+    public function getCantidadIngrsossedesconoce()
+    {
+        return $this->cantidadIngrsossedesconoce;
+    }
+
+    /**
+     * Set cantidadIngresosayudaindividual
+     *
+     * @param string $cantidadIngresosayudaindividual
+     * @return Persona
+     */
+    public function setCantidadIngresosayudaindividual($cantidadIngresosayudaindividual)
+    {
+        $this->cantidadIngresosayudaindividual = $cantidadIngresosayudaindividual;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidadIngresosayudaindividual
+     *
+     * @return string 
+     */
+    public function getCantidadIngresosayudaindividual()
+    {
+        return $this->cantidadIngresosayudaindividual;
+    }
+
+    /**
+     * Set autonomiaEconomia
+     *
+     * @param integer $autonomiaEconomia
+     * @return Persona
+     */
+    public function setAutonomiaEconomia($autonomiaEconomia)
+    {
+        $this->autonomiaEconomia = $autonomiaEconomia;
+
+        return $this;
+    }
+
+    /**
+     * Get autonomiaEconomia
+     *
+     * @return integer 
+     */
+    public function getAutonomiaEconomia()
+    {
+        return $this->autonomiaEconomia;
+    }
+
+    /**
+     * Set observacionesEconomia
+     *
+     * @param string $observacionesEconomia
+     * @return Persona
+     */
+    public function setObservacionesEconomia($observacionesEconomia)
+    {
+        $this->observacionesEconomia = $observacionesEconomia;
+
+        return $this;
+    }
+
+    /**
+     * Get observacionesEconomia
+     *
+     * @return string 
+     */
+    public function getObservacionesEconomia()
+    {
+        return $this->observacionesEconomia;
+    }
+
+    /**
+     * Set cursoActual
+     *
+     * @param string $cursoActual
+     * @return Persona
+     */
+    public function setCursoActual($cursoActual)
+    {
+        $this->cursoActual = $cursoActual;
+
+        return $this;
+    }
+
+    /**
+     * Get cursoActual
+     *
+     * @return string 
+     */
+    public function getCursoActual()
+    {
+        return $this->cursoActual;
+    }
+
+    /**
+     * Set justiciagratuita
+     *
+     * @param integer $justiciagratuita
+     * @return Persona
+     */
+    public function setJusticiagratuita($justiciagratuita)
+    {
+        $this->justiciagratuita = $justiciagratuita;
+
+        return $this;
+    }
+
+    /**
+     * Get justiciagratuita
+     *
+     * @return integer 
+     */
+    public function getJusticiagratuita()
+    {
+        return $this->justiciagratuita;
+    }
+
+    /**
+     * Set indicador11
+     *
+     * @param integer $indicador11
+     * @return Persona
+     */
+    public function setIndicador11($indicador11)
+    {
+        $this->indicador11 = $indicador11;
+
+        return $this;
+    }
+
+    /**
+     * Get indicador11
+     *
+     * @return integer 
+     */
+    public function getIndicador11()
+    {
+        return $this->indicador11;
+    }
+
+    /**
+     * Set indicador11A
+     *
+     * @param integer $indicador11A
+     * @return Persona
+     */
+    public function setIndicador11A($indicador11A)
+    {
+        $this->indicador11A = $indicador11A;
+
+        return $this;
+    }
+
+    /**
+     * Get indicador11A
+     *
+     * @return integer 
+     */
+    public function getIndicador11A()
+    {
+        return $this->indicador11A;
+    }
+
+    /**
+     * Set indicador12
+     *
+     * @param integer $indicador12
+     * @return Persona
+     */
+    public function setIndicador12($indicador12)
+    {
+        $this->indicador12 = $indicador12;
+
+        return $this;
+    }
+
+    /**
+     * Get indicador12
+     *
+     * @return integer 
+     */
+    public function getIndicador12()
+    {
+        return $this->indicador12;
+    }
+
+    /**
+     * Set indicador12A
+     *
+     * @param integer $indicador12A
+     * @return Persona
+     */
+    public function setIndicador12A($indicador12A)
+    {
+        $this->indicador12A = $indicador12A;
+
+        return $this;
+    }
+
+    /**
+     * Get indicador12A
+     *
+     * @return integer 
+     */
+    public function getIndicador12A()
+    {
+        return $this->indicador12A;
+    }
+
+    /**
+     * Set indicador13
+     *
+     * @param integer $indicador13
+     * @return Persona
+     */
+    public function setIndicador13($indicador13)
+    {
+        $this->indicador13 = $indicador13;
+
+        return $this;
+    }
+
+    /**
+     * Get indicador13
+     *
+     * @return integer 
+     */
+    public function getIndicador13()
+    {
+        return $this->indicador13;
+    }
+
+    /**
+     * Set indicador14
+     *
+     * @param integer $indicador14
+     * @return Persona
+     */
+    public function setIndicador14($indicador14)
+    {
+        $this->indicador14 = $indicador14;
+
+        return $this;
+    }
+
+    /**
+     * Get indicador14
+     *
+     * @return integer 
+     */
+    public function getIndicador14()
+    {
+        return $this->indicador14;
+    }
+
+    /**
+     * Set indicador15
+     *
+     * @param integer $indicador15
+     * @return Persona
+     */
+    public function setIndicador15($indicador15)
+    {
+        $this->indicador15 = $indicador15;
+
+        return $this;
+    }
+
+    /**
+     * Get indicador15
+     *
+     * @return integer 
+     */
+    public function getIndicador15()
+    {
+        return $this->indicador15;
+    }
+
+    /**
+     * Get idPers
+     *
+     * @return integer 
+     */
+    public function getIdPers()
+    {
+        return $this->idPers;
     }
 }

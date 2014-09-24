@@ -15,15 +15,6 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_pers", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idPers;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="id_unico", type="integer", nullable=true)
      */
     private $idUnico;
@@ -73,44 +64,30 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="lugarNac", type="string", length=30, nullable=true)
+     * @ORM\Column(name="lugar_nac", type="string", length=30, nullable=true)
      */
-    private $lugarnac;
+    private $lugarNac;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="dni", type="string", length=15, nullable=true)
+     * @ORM\Column(name="dni_pas", type="string", length=15, nullable=true)
      */
-    private $dni;
+    private $dniPas;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="pasaporte", type="string", length=15, nullable=true)
+     * @ORM\Column(name="num_ss", type="string", length=20, nullable=true)
      */
-    private $pasaporte;
+    private $numSs;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nie", type="string", length=15, nullable=true)
+     * @ORM\Column(name="num_expediente", type="string", length=10, nullable=true)
      */
-    private $nie;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="numSegSoc", type="string", length=20, nullable=true)
-     */
-    private $numsegsoc;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="numExpediente", type="string", length=10, nullable=true)
-     */
-    private $numexpediente;
+    private $numExpediente;
 
     /**
      * @var integer
@@ -129,9 +106,9 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="direccionActual", type="string", length=40, nullable=true)
+     * @ORM\Column(name="direccion", type="string", length=40, nullable=true)
      */
-    private $direccionactual;
+    private $direccion;
 
     /**
      * @var integer
@@ -143,16 +120,16 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="nucleoConv", type="integer", nullable=true)
+     * @ORM\Column(name="nucleo_conv", type="integer", nullable=true)
      */
-    private $nucleoconv;
+    private $nucleoConv;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="estadoCivil", type="integer", nullable=true)
+     * @ORM\Column(name="estado_civil", type="integer", nullable=true)
      */
-    private $estadocivil;
+    private $estadoCivil;
 
     /**
      * @var string
@@ -164,121 +141,149 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="numHijos", type="integer", nullable=true)
+     * @ORM\Column(name="n_hijos", type="integer", nullable=true)
      */
-    private $numhijos;
+    private $nHijos;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="observacionesHijos", type="string", length=255, nullable=true)
+     * @ORM\Column(name="observaciones_hijos", type="string", length=255, nullable=true)
      */
-    private $observacioneshijos;
+    private $observacionesHijos;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="telefonosInteres", type="string", length=512, nullable=true)
+     * @ORM\Column(name="telefonos_interes", type="string", length=512, nullable=true)
      */
-    private $telefonosinteres;
+    private $telefonosInteres;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaIngreso", type="date", nullable=true)
+     * @ORM\Column(name="fecha_ingreso", type="date", nullable=true)
      */
-    private $fechaingreso;
+    private $fechaIngreso;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaSalida", type="date", nullable=true)
+     * @ORM\Column(name="fecha_salida", type="date", nullable=true)
      */
-    private $fechasalida;
+    private $fechaSalida;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="procedenciaDemanda", type="string", length=120, nullable=true)
+     * @ORM\Column(name="procedencia_demanda", type="string", length=120, nullable=true)
      */
-    private $procedenciademanda;
+    private $procedenciaDemanda;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="responsable", type="integer", nullable=true)
+     * @ORM\Column(name="tutor", type="integer", nullable=true)
      */
-    private $responsable;
+    private $tutor;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="comedorLun", type="integer", nullable=true)
+     * @ORM\Column(name="come_lu", type="integer", nullable=true)
      */
-    private $comedorlun;
+    private $comeLu;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="comedorMar", type="integer", nullable=true)
+     * @ORM\Column(name="come_ma", type="integer", nullable=true)
      */
-    private $comedormar;
+    private $comeMa;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="comedorMie", type="integer", nullable=true)
+     * @ORM\Column(name="come_mi", type="integer", nullable=true)
      */
-    private $comedormie;
+    private $comeMi;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="comedorJue", type="integer", nullable=true)
+     * @ORM\Column(name="come_ju", type="integer", nullable=true)
      */
-    private $comedorjue;
+    private $comeJu;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="comedorVie", type="integer", nullable=true)
+     * @ORM\Column(name="come_vi", type="integer", nullable=true)
      */
-    private $comedorvie;
+    private $comeVi;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="transporte", type="integer", nullable=true)
+     * @ORM\Column(name="come_sa", type="integer", nullable=true)
      */
-    private $transporte;
+    private $comeSa;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="come_do", type="integer", nullable=true)
+     */
+    private $comeDo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="listaEspera", type="string", length=20, nullable=true)
+     * @ORM\Column(name="come_sa_notas", type="string", length=30, nullable=true)
      */
-    private $listaespera;
+    private $comeSaNotas;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="observacionesNivelFormativo", type="string", length=100, nullable=true)
+     * @ORM\Column(name="come_do_notas", type="string", length=30, nullable=true)
      */
-    private $observacionesnivelformativo;
+    private $comeDoNotas;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="creditrans", type="integer", nullable=true)
+     */
+    private $creditrans;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nivelFormativo", type="string", length=30, nullable=true)
+     * @ORM\Column(name="lista_espera_piso", type="string", length=20, nullable=true)
      */
-    private $nivelformativo;
+    private $listaEsperaPiso;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="observacionesIdioma", type="string", length=50, nullable=true)
+     * @ORM\Column(name="DatosFormativosObs", type="string", length=100, nullable=true)
      */
-    private $observacionesidioma;
+    private $datosformativosobs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="DatosFormativosItem", type="string", length=30, nullable=true)
+     */
+    private $datosformativositem;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Idioma", type="string", length=50, nullable=true)
+     */
+    private $idioma;
 
     /**
      * @var string
@@ -521,72 +526,72 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="numPasap", type="string", length=20, nullable=true)
+     * @ORM\Column(name="npasap", type="string", length=20, nullable=true)
      */
-    private $numpasap;
+    private $npasap;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaPasap", type="date", nullable=true)
+     * @ORM\Column(name="fpasap", type="date", nullable=true)
      */
-    private $fechapasap;
+    private $fpasap;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numCedula", type="string", length=20, nullable=true)
+     * @ORM\Column(name="ncedula", type="string", length=20, nullable=true)
      */
-    private $numcedula;
+    private $ncedula;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaCaducCedula", type="date", nullable=true)
+     * @ORM\Column(name="fcedula", type="date", nullable=true)
      */
-    private $fechacaduccedula;
+    private $fcedula;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaResidSolicit", type="date", nullable=true)
+     * @ORM\Column(name="fressol", type="date", nullable=true)
      */
-    private $fecharesidsolicit;
+    private $fressol;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numResidConced", type="string", length=20, nullable=true)
+     * @ORM\Column(name="nresconc", type="string", length=20, nullable=true)
      */
-    private $numresidconced;
+    private $nresconc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaResidConced", type="date", nullable=true)
+     * @ORM\Column(name="fresconc", type="date", nullable=true)
      */
-    private $fecharesidconced;
+    private $fresconc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaResidTrabSolicit", type="date", nullable=true)
+     * @ORM\Column(name="frestrsol", type="date", nullable=true)
      */
-    private $fecharesidtrabsolicit;
+    private $frestrsol;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numResidTrabConc", type="string", length=20, nullable=true)
+     * @ORM\Column(name="nrestrconc", type="string", length=20, nullable=true)
      */
-    private $numresidtrabconc;
+    private $nrestrconc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaResidTrabConc", type="date", nullable=true)
+     * @ORM\Column(name="frestrconc", type="date", nullable=true)
      */
-    private $fecharesidtrabconc;
+    private $frestrconc;
 
     /**
      * @var integer
@@ -605,23 +610,23 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="otrosDoc", type="string", length=40, nullable=true)
+     * @ORM\Column(name="otrosdoc", type="string", length=40, nullable=true)
      */
     private $otrosdoc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaEntrada", type="date", nullable=true)
+     * @ORM\Column(name="fentrada", type="date", nullable=true)
      */
-    private $fechaentrada;
+    private $fentrada;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaPrueba", type="date", nullable=true)
+     * @ORM\Column(name="fprueba", type="date", nullable=true)
      */
-    private $fechaprueba;
+    private $fprueba;
 
     /**
      * @var string
@@ -636,6 +641,13 @@ class Persona
      * @ORM\Column(name="PermisoResidRazonesNo", type="string", length=20, nullable=true)
      */
     private $permisoresidrazonesno;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="PermisoSolicitudFecha", type="date", nullable=true)
+     */
+    private $permisosolicitudfecha;
 
     /**
      * @var string
@@ -682,9 +694,9 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="direccionPadronActual", type="string", length=50, nullable=true)
+     * @ORM\Column(name="Empadronamiento", type="string", length=50, nullable=true)
      */
-    private $direccionpadronactual;
+    private $empadronamiento;
 
     /**
      * @var integer
@@ -731,9 +743,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="IngresosRGI", type="integer", nullable=true)
+     * @ORM\Column(name="IngresosRentaBas", type="integer", nullable=true)
      */
-    private $ingresosrgi;
+    private $ingresosrentabas;
 
     /**
      * @var integer
@@ -857,37 +869,37 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="tlSabado", type="integer", nullable=true)
+     * @ORM\Column(name="tl_sabado", type="integer", nullable=true)
      */
-    private $tlsabado;
+    private $tlSabado;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="tlDomingo", type="integer", nullable=true)
+     * @ORM\Column(name="tl_domingo", type="integer", nullable=true)
      */
-    private $tldomingo;
+    private $tlDomingo;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="salidaVerano", type="integer", nullable=true)
+     * @ORM\Column(name="salida_verano", type="integer", nullable=true)
      */
-    private $salidaverano;
+    private $salidaVerano;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="salidaOtro", type="integer", nullable=true)
+     * @ORM\Column(name="salida_otro", type="integer", nullable=true)
      */
-    private $salidaotro;
+    private $salidaOtro;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="medicacionCentro", type="integer", nullable=true)
+     * @ORM\Column(name="medicacion_centro", type="integer", nullable=true)
      */
-    private $medicacioncentro;
+    private $medicacionCentro;
 
     /**
      * @var integer
@@ -899,9 +911,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="expLaboral", type="integer", nullable=true)
+     * @ORM\Column(name="exp_laboral", type="integer", nullable=true)
      */
-    private $explaboral;
+    private $expLaboral;
 
     /**
      * @var integer
@@ -913,16 +925,16 @@ class Persona
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaAltaLanbide", type="date", nullable=true)
+     * @ORM\Column(name="F_alta_lanbide", type="date", nullable=true)
      */
-    private $fechaaltalanbide;
+    private $fAltaLanbide;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaRenovLanbide", type="date", nullable=true)
+     * @ORM\Column(name="F_renov_lanbide", type="date", nullable=true)
      */
-    private $fecharenovlanbide;
+    private $fRenovLanbide;
 
     /**
      * @var integer
@@ -934,16 +946,16 @@ class Persona
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaAltaInem", type="date", nullable=true)
+     * @ORM\Column(name="F_alta_inem", type="date", nullable=true)
      */
-    private $fechaaltainem;
+    private $fAltaInem;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaRenovInem", type="date", nullable=true)
+     * @ORM\Column(name="F_renov_inem", type="date", nullable=true)
      */
-    private $fecharenovinem;
+    private $fRenovInem;
 
     /**
      * @var string
@@ -955,9 +967,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="poblacionPadron", type="integer", nullable=true)
+     * @ORM\Column(name="poblacion_padron", type="integer", nullable=true)
      */
-    private $poblacionpadron;
+    private $poblacionPadron;
 
     /**
      * @var integer
@@ -969,16 +981,16 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="insertIdUsuario", type="integer", nullable=true)
+     * @ORM\Column(name="insert_id_usuario", type="integer", nullable=true)
      */
-    private $insertidusuario;
+    private $insertIdUsuario;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaInsert", type="date", nullable=true)
+     * @ORM\Column(name="insert_fecha", type="date", nullable=true)
      */
-    private $fechainsert;
+    private $insertFecha;
 
     /**
      * @var integer
@@ -1004,23 +1016,172 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="procedenciaDemandaLista", type="integer", nullable=true)
+     * @ORM\Column(name="procedencia_demanda_lista", type="integer", nullable=true)
      */
-    private $procedenciademandalista;
+    private $procedenciaDemandaLista;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="situacionAdministrativa", type="integer", nullable=true)
+     * @ORM\Column(name="DocumentoIdentif", type="integer", nullable=true)
      */
-    private $situacionadministrativa;
+    private $documentoidentif;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fechaCaducTis", type="date", nullable=true)
+     * @ORM\Column(name="fecha_caduc_tis", type="date", nullable=true)
      */
-    private $fechacaductis;
+    private $fechaCaducTis;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="orden_expulsion", type="integer", nullable=true)
+     */
+    private $ordenExpulsion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresospropios", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresospropios;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresospnc", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresospnc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosotros", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresosotros;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosnomina", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresosnomina;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosrentabas", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresosrentabas;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosprestcontrib", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresosprestcontrib;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingrsossedesconoce", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngrsossedesconoce;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cantidad_ingresosayudaindividual", type="string", length=15, nullable=true)
+     */
+    private $cantidadIngresosayudaindividual;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="autonomia_economia", type="integer", nullable=true)
+     */
+    private $autonomiaEconomia;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="observaciones_economia", type="string", length=255, nullable=true)
+     */
+    private $observacionesEconomia;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="curso_actual", type="string", length=255, nullable=true)
+     */
+    private $cursoActual;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="JusticiaGratuita", type="integer", nullable=true)
+     */
+    private $justiciagratuita;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_1", type="smallint", nullable=true)
+     */
+    private $indicador11;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_1_a", type="smallint", nullable=true)
+     */
+    private $indicador11A;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_2", type="smallint", nullable=true)
+     */
+    private $indicador12;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_2_a", type="smallint", nullable=true)
+     */
+    private $indicador12A;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_3", type="smallint", nullable=true)
+     */
+    private $indicador13;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_4", type="smallint", nullable=true)
+     */
+    private $indicador14;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="indicador_1_5", type="smallint", nullable=true)
+     */
+    private $indicador15;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pers", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPers;
 
 
 }
