@@ -68,7 +68,7 @@ class PersonaType extends AbstractType
                 ))           
             ->add('lugarNac', 'text', array('label' => 'Ciudad de nacimiento'))
             ->add('fechanac', 'date', array('label' => 'Fecha nacimiento', 'widget' => 'single_text', 'format' => 'dd-M-yyyy'))
-            ->add('dniPas', 'text', array('label' => 'Dni / Pasaporte / NIE'))
+            ->add('dni', 'text', array('label' => 'Dni'))
             ->add('nucleoConv', 'choice', array(
                     'label' => 'Núcleo convivencia',
                     'choices' => $this->grupo->findDesplegable('nucleoconv')
