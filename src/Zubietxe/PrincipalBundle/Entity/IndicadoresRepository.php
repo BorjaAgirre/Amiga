@@ -1,21 +1,21 @@
 <?php
-// src/Zubietxe/PrincipalBundle/Entity/DesplegablesRepository.php
+// src/Zubietxe/PrincipalBundle/Entity/IndicadoresRepository.php
 namespace Zubietxe\PrincipalBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
-class DesplegablesRepository extends EntityRepository
+class IndicadoresRepository extends EntityRepository
 {
-    public function findDesplegable($tabla)
+    public function findRespuestas($indicador)
     {
         $query = $this->getEntityManager()
             ->createQuery(
-                'SELECT d FROM ZubietxePrincipalBundle:Desplegables d WHERE d.despl = :tabla ORDER BY d.idDespl ASC'
-            )->setParameter('tabla', $tabla);
+                'SELECT d FROM ZubietxePrincipalBundle:Indicadores d WHERE d.indicador = :indicador ORDER BY d.id ASC'
+            )->setParameter('indicador', $indicador);
             $result = $query->getResult();
             $retorna[0] = "";
             foreach ($result as $row)  {
-           		$retorna[$row->getIdDespl()] = $row->getNombre();
+           		$retorna[$row->getValorindicador()] = $row->getTexto();
             }
             return $retorna; 
     }

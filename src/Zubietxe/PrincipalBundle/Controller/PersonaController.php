@@ -22,7 +22,9 @@ class personaController extends Controller
                     );
                 }
 
-        $grupo = $em->getRepository('ZubietxePrincipalBundle:Desplegables'); 
+        $grupo2 = $em->getRepository('ZubietxePrincipalBundle:Desplegables'); 
+        $grupo = $em->getRepository('ZubietxePrincipalBundle:Indicadores'); 
+
         //$grupo2 = $em->getRepository('ZubietxePrincipalBundle:Desplegables')->findDesplegable('anosconsumo'); 
 
 

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Indicadores
  *
  * @ORM\Table(name="indicadores")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Zubietxe\PrincipalBundle\Entity\IndicadoresRepository")
  */
 class Indicadores
 {
