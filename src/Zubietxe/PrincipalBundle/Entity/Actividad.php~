@@ -15,6 +15,15 @@ class Actividad
     /**
      * @var integer
      *
+     * @ORM\Column(name="id_activ", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idActiv;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="responsable2", type="integer", nullable=true)
      */
     private $responsable2;
@@ -48,13 +57,14 @@ class Actividad
     private $observacionesActividad;
 
     /**
-     * @var integer
+     * @var \Zubietxe\PrincipalBundle\Entity\ListaActividades
      *
-     * @ORM\Column(name="id_activ", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\ListaActividades")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="tipo_activ", referencedColumnName="id_listaactividad")
+     * })
      */
-    private $idActiv;
+    private $tipoActiv;
 
     /**
      * @var \Zubietxe\PrincipalBundle\Entity\Tutor
@@ -65,16 +75,6 @@ class Actividad
      * })
      */
     private $responsable;
-
-    /**
-     * @var \Zubietxe\PrincipalBundle\Entity\ListaActividades
-     *
-     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\ListaActividades")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="tipo_activ", referencedColumnName="id_listaactividad")
-     * })
-     */
-    private $tipoActiv;
 
 
 }

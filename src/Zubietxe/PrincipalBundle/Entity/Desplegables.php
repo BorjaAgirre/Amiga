@@ -8,10 +8,19 @@ use Doctrine\ORM\Mapping as ORM;
  * Desplegables
  *
  * @ORM\Table(name="desplegables")
- * @ORM\Entity(repositoryClass="Zubietxe\PrincipalBundle\Entity\DesplegablesRepository")
+ * @ORM\Entity
  */
 class Desplegables
 {
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_gral", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idGral;
+
     /**
      * @var string
      *
@@ -54,16 +63,17 @@ class Desplegables
      */
     private $datotexto;
 
+
+
     /**
-     * @var integer
+     * Get idGral
      *
-     * @ORM\Column(name="id_gral", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer 
      */
-    private $idGral;
-
-
+    public function getIdGral()
+    {
+        return $this->idGral;
+    }
 
     /**
      * Set despl
@@ -201,15 +211,5 @@ class Desplegables
     public function getDatotexto()
     {
         return $this->datotexto;
-    }
-
-    /**
-     * Get idGral
-     *
-     * @return integer 
-     */
-    public function getIdGral()
-    {
-        return $this->idGral;
     }
 }

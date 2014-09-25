@@ -13,6 +13,15 @@ use Doctrine\ORM\Mapping as ORM;
 class Comentario
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_coment", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idComent;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="comentario", type="text", nullable=true)
@@ -62,23 +71,14 @@ class Comentario
     private $hitoActiv;
 
     /**
-     * @var integer
+     * @var \Zubietxe\PrincipalBundle\Entity\Actividad
      *
-     * @ORM\Column(name="id_coment", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idComent;
-
-    /**
-     * @var \Zubietxe\PrincipalBundle\Entity\Hito
-     *
-     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Hito")
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Actividad")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="hito", referencedColumnName="id_hito")
+     *   @ORM\JoinColumn(name="id_actividad", referencedColumnName="id_activ")
      * })
      */
-    private $hito;
+    private $idActividad;
 
     /**
      * @var \Zubietxe\PrincipalBundle\Entity\Persona
@@ -91,14 +91,14 @@ class Comentario
     private $idUnico;
 
     /**
-     * @var \Zubietxe\PrincipalBundle\Entity\Actividad
+     * @var \Zubietxe\PrincipalBundle\Entity\Hito
      *
-     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Actividad")
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Hito")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_actividad", referencedColumnName="id_activ")
+     *   @ORM\JoinColumn(name="hito", referencedColumnName="id_hito")
      * })
      */
-    private $idActividad;
+    private $hito;
 
 
 }

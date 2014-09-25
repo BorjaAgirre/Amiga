@@ -13,13 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class ListaActividades
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="nombre_actividad", type="string", length=20, nullable=true)
-     */
-    private $nombreActividad;
-
-    /**
      * @var integer
      *
      * @ORM\Column(name="id_listaactividad", type="integer")
@@ -28,7 +21,24 @@ class ListaActividades
      */
     private $idListaactividad;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_actividad", type="string", length=20, nullable=true)
+     */
+    private $nombreActividad;
 
+
+
+    /**
+     * Get idListaactividad
+     *
+     * @return integer 
+     */
+    public function getIdListaactividad()
+    {
+        return $this->idListaactividad;
+    }
 
     /**
      * Set nombreActividad
@@ -51,15 +61,5 @@ class ListaActividades
     public function getNombreActividad()
     {
         return $this->nombreActividad;
-    }
-
-    /**
-     * Get idListaactividad
-     *
-     * @return integer 
-     */
-    public function getIdListaactividad()
-    {
-        return $this->idListaactividad;
     }
 }

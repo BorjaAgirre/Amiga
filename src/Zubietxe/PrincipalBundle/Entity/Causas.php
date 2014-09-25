@@ -15,6 +15,15 @@ class Causas
     /**
      * @var integer
      *
+     * @ORM\Column(name="id_causa", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCausa;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="id_unico", type="integer", nullable=true)
      */
     private $idUnico;
@@ -75,16 +84,17 @@ class Causas
      */
     private $informes2;
 
+
+
     /**
-     * @var integer
+     * Get idCausa
      *
-     * @ORM\Column(name="id_causa", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer 
      */
-    private $idCausa;
-
-
+    public function getIdCausa()
+    {
+        return $this->idCausa;
+    }
 
     /**
      * Set idUnico
@@ -291,15 +301,5 @@ class Causas
     public function getInformes2()
     {
         return $this->informes2;
-    }
-
-    /**
-     * Get idCausa
-     *
-     * @return integer 
-     */
-    public function getIdCausa()
-    {
-        return $this->idCausa;
     }
 }

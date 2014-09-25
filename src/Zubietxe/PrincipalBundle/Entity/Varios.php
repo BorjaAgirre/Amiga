@@ -13,6 +13,15 @@ use Doctrine\ORM\Mapping as ORM;
 class Varios
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_varios", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idVarios;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="variable", type="string", length=30, nullable=true)
@@ -40,16 +49,17 @@ class Varios
      */
     private $fechaCambio;
 
+
+
     /**
-     * @var integer
+     * Get idVarios
      *
-     * @ORM\Column(name="id_varios", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer 
      */
-    private $idVarios;
-
-
+    public function getIdVarios()
+    {
+        return $this->idVarios;
+    }
 
     /**
      * Set variable
@@ -141,15 +151,5 @@ class Varios
     public function getFechaCambio()
     {
         return $this->fechaCambio;
-    }
-
-    /**
-     * Get idVarios
-     *
-     * @return integer 
-     */
-    public function getIdVarios()
-    {
-        return $this->idVarios;
     }
 }

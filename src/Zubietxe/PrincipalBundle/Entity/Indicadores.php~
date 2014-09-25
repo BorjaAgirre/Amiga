@@ -13,6 +13,15 @@ use Doctrine\ORM\Mapping as ORM;
 class Indicadores
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="indicador", type="string", length=15, nullable=true)
@@ -60,15 +69,6 @@ class Indicadores
      * @ORM\Column(name="otro", type="string", length=2, nullable=true)
      */
     private $otro;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
 
 
 }

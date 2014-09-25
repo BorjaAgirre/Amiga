@@ -13,6 +13,15 @@ use Doctrine\ORM\Mapping as ORM;
 class AltaBaja
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_altabaja", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAltabaja;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="servicio", type="string", length=20, nullable=true)
@@ -62,13 +71,14 @@ class AltaBaja
     private $fechaInserc;
 
     /**
-     * @var integer
+     * @var \Zubietxe\PrincipalBundle\Entity\Persona
      *
-     * @ORM\Column(name="id_altabaja", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Persona")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_unico", referencedColumnName="id_unico")
+     * })
      */
-    private $idAltabaja;
+    private $idUnico;
 
     /**
      * @var \Zubietxe\PrincipalBundle\Entity\Servicios
@@ -80,17 +90,17 @@ class AltaBaja
      */
     private $serv;
 
+
+
     /**
-     * @var \Zubietxe\PrincipalBundle\Entity\Persona
+     * Get idAltabaja
      *
-     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Persona")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_unico", referencedColumnName="id_unico")
-     * })
+     * @return integer 
      */
-    private $idUnico;
-
-
+    public function getIdAltabaja()
+    {
+        return $this->idAltabaja;
+    }
 
     /**
      * Set servicio
@@ -254,13 +264,26 @@ class AltaBaja
     }
 
     /**
-     * Get idAltabaja
+     * Set idUnico
      *
-     * @return integer 
+     * @param \Zubietxe\PrincipalBundle\Entity\Persona $idUnico
+     * @return AltaBaja
      */
-    public function getIdAltabaja()
+    public function setIdUnico(\Zubietxe\PrincipalBundle\Entity\Persona $idUnico = null)
     {
-        return $this->idAltabaja;
+        $this->idUnico = $idUnico;
+
+        return $this;
+    }
+
+    /**
+     * Get idUnico
+     *
+     * @return \Zubietxe\PrincipalBundle\Entity\Persona 
+     */
+    public function getIdUnico()
+    {
+        return $this->idUnico;
     }
 
     /**
@@ -284,28 +307,5 @@ class AltaBaja
     public function getServ()
     {
         return $this->serv;
-    }
-
-    /**
-     * Set idUnico
-     *
-     * @param \Zubietxe\PrincipalBundle\Entity\Persona $idUnico
-     * @return AltaBaja
-     */
-    public function setIdUnico(\Zubietxe\PrincipalBundle\Entity\Persona $idUnico = null)
-    {
-        $this->idUnico = $idUnico;
-
-        return $this;
-    }
-
-    /**
-     * Get idUnico
-     *
-     * @return \Zubietxe\PrincipalBundle\Entity\Persona 
-     */
-    public function getIdUnico()
-    {
-        return $this->idUnico;
     }
 }

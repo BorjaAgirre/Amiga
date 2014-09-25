@@ -13,6 +13,15 @@ use Doctrine\ORM\Mapping as ORM;
 class Servicios
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_servicio", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idServicio;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="codigo", type="string", length=20, nullable=true)
@@ -26,16 +35,17 @@ class Servicios
      */
     private $nombre;
 
+
+
     /**
-     * @var integer
+     * Get idServicio
      *
-     * @ORM\Column(name="id_servicio", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @return integer 
      */
-    private $idServicio;
-
-
+    public function getIdServicio()
+    {
+        return $this->idServicio;
+    }
 
     /**
      * Set codigo
@@ -81,15 +91,5 @@ class Servicios
     public function getNombre()
     {
         return $this->nombre;
-    }
-
-    /**
-     * Get idServicio
-     *
-     * @return integer 
-     */
-    public function getIdServicio()
-    {
-        return $this->idServicio;
     }
 }

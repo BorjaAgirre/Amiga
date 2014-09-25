@@ -5,21 +5,21 @@ namespace Zubietxe\PrincipalBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Tutor
+ * Equipo
  *
- * @ORM\Table(name="tutor")
+ * @ORM\Table(name="equipo")
  * @ORM\Entity
  */
-class Tutor
+class Equipo
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_tutor", type="integer")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idTutor;
+    private $id;
 
     /**
      * @var string
@@ -59,20 +59,20 @@ class Tutor
 
 
     /**
-     * Get idTutor
+     * Get id
      *
      * @return integer 
      */
-    public function getIdTutor()
+    public function getId()
     {
-        return $this->idTutor;
+        return $this->id;
     }
 
     /**
      * Set nombre
      *
      * @param string $nombre
-     * @return Tutor
+     * @return Equipo
      */
     public function setNombre($nombre)
     {
@@ -95,7 +95,7 @@ class Tutor
      * Set nivel
      *
      * @param string $nivel
-     * @return Tutor
+     * @return Equipo
      */
     public function setNivel($nivel)
     {
@@ -118,7 +118,7 @@ class Tutor
      * Set grupo
      *
      * @param string $grupo
-     * @return Tutor
+     * @return Equipo
      */
     public function setGrupo($grupo)
     {
@@ -141,7 +141,7 @@ class Tutor
      * Set pass
      *
      * @param string $pass
-     * @return Tutor
+     * @return Equipo
      */
     public function setPass($pass)
     {
@@ -164,7 +164,7 @@ class Tutor
      * Set ultimaCx
      *
      * @param \DateTime $ultimaCx
-     * @return Tutor
+     * @return Equipo
      */
     public function setUltimaCx($ultimaCx)
     {

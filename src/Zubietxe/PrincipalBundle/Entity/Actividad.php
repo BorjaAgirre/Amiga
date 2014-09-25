@@ -15,6 +15,15 @@ class Actividad
     /**
      * @var integer
      *
+     * @ORM\Column(name="id_activ", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idActiv;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="responsable2", type="integer", nullable=true)
      */
     private $responsable2;
@@ -48,13 +57,14 @@ class Actividad
     private $observacionesActividad;
 
     /**
-     * @var integer
+     * @var \Zubietxe\PrincipalBundle\Entity\ListaActividades
      *
-     * @ORM\Column(name="id_activ", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\ListaActividades")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="tipo_activ", referencedColumnName="id_listaactividad")
+     * })
      */
-    private $idActiv;
+    private $tipoActiv;
 
     /**
      * @var \Zubietxe\PrincipalBundle\Entity\Tutor
@@ -66,17 +76,17 @@ class Actividad
      */
     private $responsable;
 
+
+
     /**
-     * @var \Zubietxe\PrincipalBundle\Entity\ListaActividades
+     * Get idActiv
      *
-     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\ListaActividades")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="tipo_activ", referencedColumnName="id_listaactividad")
-     * })
+     * @return integer 
      */
-    private $tipoActiv;
-
-
+    public function getIdActiv()
+    {
+        return $this->idActiv;
+    }
 
     /**
      * Set responsable2
@@ -194,13 +204,26 @@ class Actividad
     }
 
     /**
-     * Get idActiv
+     * Set tipoActiv
      *
-     * @return integer 
+     * @param \Zubietxe\PrincipalBundle\Entity\ListaActividades $tipoActiv
+     * @return Actividad
      */
-    public function getIdActiv()
+    public function setTipoActiv(\Zubietxe\PrincipalBundle\Entity\ListaActividades $tipoActiv = null)
     {
-        return $this->idActiv;
+        $this->tipoActiv = $tipoActiv;
+
+        return $this;
+    }
+
+    /**
+     * Get tipoActiv
+     *
+     * @return \Zubietxe\PrincipalBundle\Entity\ListaActividades 
+     */
+    public function getTipoActiv()
+    {
+        return $this->tipoActiv;
     }
 
     /**
@@ -224,28 +247,5 @@ class Actividad
     public function getResponsable()
     {
         return $this->responsable;
-    }
-
-    /**
-     * Set tipoActiv
-     *
-     * @param \Zubietxe\PrincipalBundle\Entity\ListaActividades $tipoActiv
-     * @return Actividad
-     */
-    public function setTipoActiv(\Zubietxe\PrincipalBundle\Entity\ListaActividades $tipoActiv = null)
-    {
-        $this->tipoActiv = $tipoActiv;
-
-        return $this;
-    }
-
-    /**
-     * Get tipoActiv
-     *
-     * @return \Zubietxe\PrincipalBundle\Entity\ListaActividades 
-     */
-    public function getTipoActiv()
-    {
-        return $this->tipoActiv;
     }
 }

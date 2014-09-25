@@ -13,6 +13,15 @@ use Doctrine\ORM\Mapping as ORM;
 class Comentario
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_coment", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idComent;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="comentario", type="text", nullable=true)
@@ -62,23 +71,14 @@ class Comentario
     private $hitoActiv;
 
     /**
-     * @var integer
+     * @var \Zubietxe\PrincipalBundle\Entity\Actividad
      *
-     * @ORM\Column(name="id_coment", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idComent;
-
-    /**
-     * @var \Zubietxe\PrincipalBundle\Entity\Hito
-     *
-     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Hito")
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Actividad")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="hito", referencedColumnName="id_hito")
+     *   @ORM\JoinColumn(name="id_actividad", referencedColumnName="id_activ")
      * })
      */
-    private $hito;
+    private $idActividad;
 
     /**
      * @var \Zubietxe\PrincipalBundle\Entity\Persona
@@ -91,16 +91,26 @@ class Comentario
     private $idUnico;
 
     /**
-     * @var \Zubietxe\PrincipalBundle\Entity\Actividad
+     * @var \Zubietxe\PrincipalBundle\Entity\Hito
      *
-     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Actividad")
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Hito")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_actividad", referencedColumnName="id_activ")
+     *   @ORM\JoinColumn(name="hito", referencedColumnName="id_hito")
      * })
      */
-    private $idActividad;
+    private $hito;
 
 
+
+    /**
+     * Get idComent
+     *
+     * @return integer 
+     */
+    public function getIdComent()
+    {
+        return $this->idComent;
+    }
 
     /**
      * Set comentario
@@ -264,36 +274,26 @@ class Comentario
     }
 
     /**
-     * Get idComent
+     * Set idActividad
      *
-     * @return integer 
-     */
-    public function getIdComent()
-    {
-        return $this->idComent;
-    }
-
-    /**
-     * Set hito
-     *
-     * @param \Zubietxe\PrincipalBundle\Entity\Hito $hito
+     * @param \Zubietxe\PrincipalBundle\Entity\Actividad $idActividad
      * @return Comentario
      */
-    public function setHito(\Zubietxe\PrincipalBundle\Entity\Hito $hito = null)
+    public function setIdActividad(\Zubietxe\PrincipalBundle\Entity\Actividad $idActividad = null)
     {
-        $this->hito = $hito;
+        $this->idActividad = $idActividad;
 
         return $this;
     }
 
     /**
-     * Get hito
+     * Get idActividad
      *
-     * @return \Zubietxe\PrincipalBundle\Entity\Hito 
+     * @return \Zubietxe\PrincipalBundle\Entity\Actividad 
      */
-    public function getHito()
+    public function getIdActividad()
     {
-        return $this->hito;
+        return $this->idActividad;
     }
 
     /**
@@ -320,25 +320,25 @@ class Comentario
     }
 
     /**
-     * Set idActividad
+     * Set hito
      *
-     * @param \Zubietxe\PrincipalBundle\Entity\Actividad $idActividad
+     * @param \Zubietxe\PrincipalBundle\Entity\Hito $hito
      * @return Comentario
      */
-    public function setIdActividad(\Zubietxe\PrincipalBundle\Entity\Actividad $idActividad = null)
+    public function setHito(\Zubietxe\PrincipalBundle\Entity\Hito $hito = null)
     {
-        $this->idActividad = $idActividad;
+        $this->hito = $hito;
 
         return $this;
     }
 
     /**
-     * Get idActividad
+     * Get hito
      *
-     * @return \Zubietxe\PrincipalBundle\Entity\Actividad 
+     * @return \Zubietxe\PrincipalBundle\Entity\Hito 
      */
-    public function getIdActividad()
+    public function getHito()
     {
-        return $this->idActividad;
+        return $this->hito;
     }
 }

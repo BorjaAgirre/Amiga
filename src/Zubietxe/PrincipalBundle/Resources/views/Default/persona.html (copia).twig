@@ -1,0 +1,249 @@
+{% extends "ZubietxePrincipalBundle:Default:dos_columnas.html.twig" %}
+
+
+    {% block title 'Amiga - Persona' %}
+
+    {% block col_izda %}
+
+    {% import "ZubietxePrincipalBundle:Default:macros.html.twig" as funciones %}
+
+        <h3>Formulario persona: </h3>
+
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#identificacion" role="tab" data-toggle="tab">Identificación</a></li>
+            <li><a href="#juridico" role="tab" data-toggle="tab">Jurídico-Administrativa</a></li>
+            <li><a href="#economico" role="tab" data-toggle="tab">Económica</a></li>
+            <li><a href="#formativo" role="tab" data-toggle="tab">Formativa</a></li>
+            <li><a href="#laboral" role="tab" data-toggle="tab">Ocupacional-laboral</a></li>
+            <li><a href="#vivienda" role="tab" data-toggle="tab">Vivienda</a></li>
+            <li><a href="#social" role="tab" data-toggle="tab">Apoyo social</a></li>
+            <li><a href="#convivencia" role="tab" data-toggle="tab">Convivencia</a></li>
+            <li><a href="#salud" role="tab" data-toggle="tab">Salud y autonomía</a></li>
+            <li><a href="#competencias" role="tab" data-toggle="tab">Competencias</a></li>
+            <li><a href="#aceptacion" role="tab" data-toggle="tab">Aceptación social</a></li>
+            <li><a href="#participacion" role="tab" data-toggle="tab">Participación social</a></li>
+            <li><a href="#intervencion" role="tab" data-toggle="tab">Intervención</a></li>
+        </ul>
+
+        {{ form_start(form, { 'style': 'horizontal' }) }}
+
+        <div class="tab-content">
+            <div class="tab-pane active fade in active" id="identificacion">
+                
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+                {{form_row(form.sexo, { 'widget_col': 2}) }}
+                {{form_row(form.nacionalidad, { 'widget_col': 4}) }}
+                {{form_row(form.fechanac, { 'widget_col': 2}) }}
+                {{form_row(form.lugarNac, { 'widget_col': 4}) }}
+                {{form_row(form.dniPas, { 'widget_col': 4}) }}
+                {{form_row(form.nucleoConv, { 'widget_col': 4}) }}
+                {{form_row(form.direccion, { 'widget_col': 8}) }}
+                {{form_row(form.poblacion, { 'widget_col': 4}) }}
+                {{form_row(form.telefono, { 'widget_col': 4}) }}
+                {{form_row(form.fechaempadronamiento, { 'widget_col': 4}) }}
+                {{form_row(form.empadronamiento, { 'widget_col': 4}) }}
+                {{form_row(form.poblacionPadron, { 'widget_col': 4}) }}
+                {{form_row(form.estadoCivil, { 'widget_col': 2}) }}
+                {{form_row(form.hijos, { 'widget_col': 2}) }}
+                {{form_row(form.nHijos, { 'widget_col': 2}) }}
+                {{form_row(form.observacionesHijos, { 'widget_col': 10}) }}
+                {{form_row(form.telefonosInteres, { 'widget_col': 6}) }}
+            </div>    
+
+            <div class="tab-pane fade" id="juridico">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
+                {{ funciones.dos_campos(form, form.tis, form.fecha_caduc_tis, 3,3, true)}}
+                {{form_row(form.incapacitacion, { 'widget_col': 4}) }}
+                {{form_row(form.numSs, { 'widget_col': 3}) }}
+                {{form_row(form.numExpediente, { 'widget_col': 3}) }}
+                {{form_row(form.documentoidentif, { 'widget_col': 3}) }}
+                {{form_row(form.permisoresid, { 'widget_col': 4}) }}
+                {{form_row(form.permisoresidtr, { 'widget_col': 4}) }}
+                {{ funciones.dos_campos(form, form.npasap, form.fpasap, 3,3, true)}}
+                {{ funciones.dos_campos(form, form.ncedula, form.fcedula, 3,3, true)}}
+                {{form_row(form.fressol, { 'widget_col': 4}) }}
+                {{ funciones.dos_campos(form, form.nresconc, form.fresconc, 3,3, true)}}
+                {{form_row(form.frestrsol, { 'widget_col': 4}) }}
+                {{ funciones.dos_campos(form, form.nrestrconc, form.frestrconc, 3,3, true)}}
+                {{form_row(form.visado, { 'widget_col': 4}) }}
+                {{form_row(form.asilo, { 'widget_col': 4}) }}
+                {{form_row(form.otrosdoc, { 'widget_col': 4}) }}
+                {{form_row(form.fentrada, { 'widget_col': 2}) }}
+                {{form_row(form.fprueba, { 'widget_col': 2}) }}
+                {{form_row(form.abogadootros, { 'widget_col': 6}) }}
+                {{ funciones.dos_campos(form, form.permisoresidrazonesno, form.permisosolicitudfecha, 3,3, true)}}
+                {{form_row(form.tiemporesidenciaespanya, { 'widget_col': 4}) }}
+                {{form_row(form.tiemporesidenciabilbao, { 'widget_col': 4}) }}
+                {{form_row(form.orden_expulsion) }}
+                {{form_row(form.penalantecedentesprision) }}
+                {{form_row(form.penalordenalejamiento) }}
+                {{form_row(form.penalprisionpreventiva) }}
+                {{form_row(form.penalprisionotros) }}
+                {{form_row(form.penallibcondicional) }}
+                {{form_row(form.penalmedidaseguridad) }}
+                {{form_row(form.penalcausaspendientes) }}
+                {{form_row(form.penalpermisopenitenc) }}
+                {{form_row(form.penaltercergrado) }}
+                {{form_row(form.penaltbc) }}
+            </div>  
+
+        
+            <div class="tab-pane fade" id="economico">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
+                {{form_row(form.ingresospropios) }}
+                {{form_row(form.cantidad_ingresospropios, { 'widget_col': 3}) }}
+                {{form_row(form.ingresospnc) }}
+                {{form_row(form.cantidad_ingresospnc, { 'widget_col': 3}) }}
+                {{form_row(form.ingresosotros) }}
+                {{form_row(form.cantidad_ingresosotros, { 'widget_col': 3}) }}
+                {{form_row(form.ingresosnomina) }}
+                {{form_row(form.cantidad_ingresosnomina, { 'widget_col': 3}) }}
+                {{form_row(form.ingresosrentabas) }}
+                {{form_row(form.cantidad_ingresosrentabas, { 'widget_col': 3}) }}
+                {{form_row(form.ingresosprestcontrib) }}
+                {{form_row(form.cantidad_ingresosprestcontrib, { 'widget_col': 3}) }}
+                {{form_row(form.ingresossedesconoce) }}
+                {{form_row(form.cantidad_ingresossedesconoce, { 'widget_col': 3}) }}
+                {{form_row(form.ingresosayudaindividual) }}
+                {{form_row(form.cantidad_ingresosayudaindividual, { 'widget_col': 3}) }}
+                {{form_row(form.ingresosno) }}
+                {{form_row(form.autonomia_economica) }}
+                {{form_row(form.observaciones_economia, { 'widget_col': 6}) }}
+
+
+
+            </div>
+
+            <div class="tab-pane fade" id="formativo">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+                {{form_row(form.datosformativositem, { 'widget_col': 4}) }}
+                {{form_row(form.datosformativosobs, { 'widget_col': 8}) }}
+                {{form_row(form.NivelCastellano, { 'widget_col': 5}) }}
+                {{form_row(form.Idioma, { 'widget_col': 6}) }}
+                {{form_row(form.cursos, { 'widget_col': 8}) }}
+                {{form_row(form.curso_actual, { 'widget_col': 8}) }}
+
+            </div>
+
+            <div class="tab-pane fade" id="laboral">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+                {{form_row(form.tiempotrabajado, { 'widget_col': 4}) }}
+                {{form_row(form.trabaja, { 'widget_col': 4}) }}
+                {{form_row(form.expLaboral, { 'widget_col': 4}) }}
+                {{form_row(form.lanbide, { 'widget_col': 4}) }}
+                {{ funciones.dos_campos(form, form.fAltaLanbide, form.fRenovLanbide, 4, 4, true)}}
+                {{form_row(form.inem, { 'widget_col': 4}) }}
+                {{ funciones.dos_campos(form, form.fAltaInem, form.fRenovInem, 4, 4, true)}}
+            </div>
+
+            <div class="tab-pane fade" id="vivienda">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+            </div>
+
+            <div class="tab-pane fade" id="social">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+                {{form_row(form.redapoyo, { 'widget_col': 6}) }}
+            </div>
+
+            <div class="tab-pane fade" id="convivencia">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+            </div>
+            
+            <div class="tab-pane fade" id="salud">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+                {{form_row(form.autonomia, { 'widget_col': 4}) }}
+                {{form_row(form.disminucionfisica, { 'widget_col': 4}) }}
+                {{form_row(form.minusvaliaporcentaje, { 'widget_col': 2}) }}
+                {{form_row(form.toxicomania, { 'widget_col': 4}) }}
+                {{form_row(form.ConsumoPrinc, { 'widget_col': 4}) }}
+                {{form_row(form.antecconsumo, { 'widget_col': 4}) }}
+                {{form_row(form.anosconsumo, { 'widget_col': 4}) }}
+                {{form_row(form.tratamiento, { 'widget_col': 4}) }}
+                {{form_row(form.tratamientotipo, { 'widget_col': 4}) }}
+                {{form_row(form.disminucionpsiquica, { 'widget_col': 4}) }}
+                {{form_row(form.enfermedadmental, { 'widget_col': 4}) }}
+                {{form_row(form.enfmentaldiagnostico, { 'widget_col': 8}) }}              
+                {{form_row(form.tuberculosis, { 'widget_col': 4}) }}
+                {{form_row(form.hepatitis, { 'widget_col': 4}) }}
+                {{form_row(form.vih, { 'widget_col': 4}) }}
+                {{form_row(form.diabetes, { 'widget_col': 4}) }}
+                {{form_row(form.otras, { 'widget_col': 4}) }}
+                {{form_row(form.enfermedadescomentarios, { 'widget_col': 8}) }}
+                {{form_row(form.medicacion, { 'widget_col': 8}) }}
+                {{form_row(form.enfmentalfechadiagn, { 'widget_col': 2}) }}
+                {{form_row(form.enfmentaltratamiento, { 'widget_col': 4}) }}
+                {{form_row(form.enfmentalingresos, { 'widget_col': 8}) }}
+                {{form_row(form.enfmentalpadres, { 'widget_col': 4}) }}
+                {{form_row(form.enfmentalhermanos, { 'widget_col': 4}) }}
+                {{form_row(form.enfmentalpareja, { 'widget_col': 4}) }}
+                {{form_row(form.enfmentalhijos, { 'widget_col': 4}) }}
+                {{form_row(form.drogaspadres, { 'widget_col': 4}) }}
+                {{form_row(form.drogashermanos, { 'widget_col': 4}) }}
+                {{form_row(form.drogaspareja, { 'widget_col': 4}) }}
+                {{form_row(form.drogashijos, { 'widget_col': 4}) }}
+            </div>
+
+            <div class="tab-pane fade" id="competencias">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
+
+            </div>
+            
+            <div class="tab-pane fade" id="aceptacion">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
+            </div>
+            
+            <div class="tab-pane fade" id="participacion">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
+            </div>
+            
+            <div class="tab-pane fade" id="intervencion">
+                {{ funciones.tres_campos(form, form.nombre, form.apellido1, form.apellido2, 4, 4, 4, false)}}
+
+                    {{form_row(form.procedenciaDemandaLista , { 'widget_col': 8}) }}
+                    {{form_row(form.procedenciaDemanda, { 'widget_col': 8}) }}
+
+                    {{form_row(form.tutor, { 'widget_col': 4}) }}
+                    {{form_row(form.comeLu, { 'widget_col': 4}) }}
+                    {{form_row(form.comeMa, { 'widget_col': 4}) }}
+                    {{form_row(form.comeMi, { 'widget_col': 4}) }}
+                    {{form_row(form.comeJu, { 'widget_col': 4}) }}
+                    {{form_row(form.comeVi, { 'widget_col': 4}) }}
+                    {{form_row(form.comeSa, { 'widget_col': 4}) }}
+                    {{form_row(form.comeDo, { 'widget_col': 4}) }}
+                    {{form_row(form.creditrans, { 'widget_col': 4}) }}
+                    {{form_row(form.ducha, { 'widget_col': 4}) }}
+                    {{form_row(form.ropero, { 'widget_col': 4}) }}
+                    {{form_row(form.lavanderia, { 'widget_col': 4}) }}
+                    {{form_row(form.tlSabado, { 'widget_col': 4}) }}
+                    {{form_row(form.tlDomingo, { 'widget_col': 4}) }}
+                    {{form_row(form.salidaVerano, { 'widget_col': 4}) }}
+                    {{form_row(form.salidaOtro, { 'widget_col': 4}) }}
+                    {{form_row(form.medicacionCentro, { 'widget_col': 4}) }}
+            </div>
+            {{form_row(form.guardar)}}
+            {{ form_end(form, {'render_rest': false}) }}
+        </div>  <!-- tab-content -->
+
+    {% endblock col_izda %}
+
+    {% block col_dcha %}
+        <h2>Indice</h2>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="">
+                </div>
+                <button type="submit" class="btn btn-default">Buscar</button>
+            </form>
+            <br><a href= '1024'>Alberto P.</a>
+            <br><a href= '1061'>Nadia H.</a>
+            <br><a href= '1032'>Noureddin M.</a>
+            <br><a href='2774'>Mohamed F.</a>
+            <br><a href='2883'>Samir R.</a>
+
+    {% endblock col_dcha %}
+

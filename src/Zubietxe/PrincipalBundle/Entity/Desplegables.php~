@@ -13,6 +13,15 @@ use Doctrine\ORM\Mapping as ORM;
 class Desplegables
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_gral", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idGral;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="despl", type="string", length=20, nullable=true)
@@ -53,15 +62,6 @@ class Desplegables
      * @ORM\Column(name="datotexto", type="string", length=45, nullable=true)
      */
     private $datotexto;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_gral", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idGral;
 
 
 }

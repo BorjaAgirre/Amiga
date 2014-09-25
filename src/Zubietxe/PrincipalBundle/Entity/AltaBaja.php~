@@ -13,6 +13,15 @@ use Doctrine\ORM\Mapping as ORM;
 class AltaBaja
 {
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_altabaja", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idAltabaja;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="servicio", type="string", length=20, nullable=true)
@@ -62,13 +71,14 @@ class AltaBaja
     private $fechaInserc;
 
     /**
-     * @var integer
+     * @var \Zubietxe\PrincipalBundle\Entity\Persona
      *
-     * @ORM\Column(name="id_altabaja", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Persona")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_unico", referencedColumnName="id_unico")
+     * })
      */
-    private $idAltabaja;
+    private $idUnico;
 
     /**
      * @var \Zubietxe\PrincipalBundle\Entity\Servicios
@@ -79,16 +89,6 @@ class AltaBaja
      * })
      */
     private $serv;
-
-    /**
-     * @var \Zubietxe\PrincipalBundle\Entity\Persona
-     *
-     * @ORM\ManyToOne(targetEntity="Zubietxe\PrincipalBundle\Entity\Persona")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_unico", referencedColumnName="id_unico")
-     * })
-     */
-    private $idUnico;
 
 
 }

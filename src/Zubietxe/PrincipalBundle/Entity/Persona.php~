@@ -15,6 +15,15 @@ class Persona
     /**
      * @var integer
      *
+     * @ORM\Column(name="id_pers", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPers;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="id_unico", type="integer", nullable=true)
      */
     private $idUnico;
@@ -64,30 +73,44 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="lugar_nac", type="string", length=30, nullable=true)
+     * @ORM\Column(name="lugarNac", type="string", length=30, nullable=true)
      */
-    private $lugarNac;
+    private $lugarnac;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="dni_pas", type="string", length=15, nullable=true)
+     * @ORM\Column(name="dni", type="string", length=15, nullable=true)
      */
-    private $dniPas;
+    private $dni;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="num_ss", type="string", length=20, nullable=true)
+     * @ORM\Column(name="pasaporte", type="string", length=15, nullable=true)
      */
-    private $numSs;
+    private $pasaporte;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="num_expediente", type="string", length=10, nullable=true)
+     * @ORM\Column(name="nie", type="string", length=15, nullable=true)
      */
-    private $numExpediente;
+    private $nie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numSegSoc", type="string", length=20, nullable=true)
+     */
+    private $numsegsoc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numExpediente", type="string", length=10, nullable=true)
+     */
+    private $numexpediente;
 
     /**
      * @var integer
@@ -106,9 +129,9 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="direccion", type="string", length=40, nullable=true)
+     * @ORM\Column(name="direccionActual", type="string", length=40, nullable=true)
      */
-    private $direccion;
+    private $direccionactual;
 
     /**
      * @var integer
@@ -120,16 +143,16 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="nucleo_conv", type="integer", nullable=true)
+     * @ORM\Column(name="nucleoConv", type="integer", nullable=true)
      */
-    private $nucleoConv;
+    private $nucleoconv;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="estado_civil", type="integer", nullable=true)
+     * @ORM\Column(name="estadoCivil", type="integer", nullable=true)
      */
-    private $estadoCivil;
+    private $estadocivil;
 
     /**
      * @var string
@@ -141,149 +164,121 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="n_hijos", type="integer", nullable=true)
+     * @ORM\Column(name="numHijos", type="integer", nullable=true)
      */
-    private $nHijos;
+    private $numhijos;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="observaciones_hijos", type="string", length=255, nullable=true)
+     * @ORM\Column(name="observacionesHijos", type="string", length=255, nullable=true)
      */
-    private $observacionesHijos;
+    private $observacioneshijos;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="telefonos_interes", type="string", length=512, nullable=true)
+     * @ORM\Column(name="telefonosInteres", type="string", length=512, nullable=true)
      */
-    private $telefonosInteres;
+    private $telefonosinteres;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha_ingreso", type="date", nullable=true)
+     * @ORM\Column(name="fechaIngreso", type="date", nullable=true)
      */
-    private $fechaIngreso;
+    private $fechaingreso;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha_salida", type="date", nullable=true)
+     * @ORM\Column(name="fechaSalida", type="date", nullable=true)
      */
-    private $fechaSalida;
+    private $fechasalida;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="procedencia_demanda", type="string", length=120, nullable=true)
+     * @ORM\Column(name="procedenciaDemanda", type="string", length=120, nullable=true)
      */
-    private $procedenciaDemanda;
+    private $procedenciademanda;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="tutor", type="integer", nullable=true)
+     * @ORM\Column(name="responsable", type="integer", nullable=true)
      */
-    private $tutor;
+    private $responsable;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_lu", type="integer", nullable=true)
+     * @ORM\Column(name="comedorLun", type="integer", nullable=true)
      */
-    private $comeLu;
+    private $comedorlun;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_ma", type="integer", nullable=true)
+     * @ORM\Column(name="comedorMar", type="integer", nullable=true)
      */
-    private $comeMa;
+    private $comedormar;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_mi", type="integer", nullable=true)
+     * @ORM\Column(name="comedorMie", type="integer", nullable=true)
      */
-    private $comeMi;
+    private $comedormie;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_ju", type="integer", nullable=true)
+     * @ORM\Column(name="comedorJue", type="integer", nullable=true)
      */
-    private $comeJu;
+    private $comedorjue;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_vi", type="integer", nullable=true)
+     * @ORM\Column(name="comedorVie", type="integer", nullable=true)
      */
-    private $comeVi;
+    private $comedorvie;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_sa", type="integer", nullable=true)
+     * @ORM\Column(name="transporte", type="integer", nullable=true)
      */
-    private $comeSa;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="come_do", type="integer", nullable=true)
-     */
-    private $comeDo;
+    private $transporte;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="come_sa_notas", type="string", length=30, nullable=true)
+     * @ORM\Column(name="listaEspera", type="string", length=20, nullable=true)
      */
-    private $comeSaNotas;
+    private $listaespera;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="come_do_notas", type="string", length=30, nullable=true)
+     * @ORM\Column(name="observacionesNivelFormativo", type="string", length=100, nullable=true)
      */
-    private $comeDoNotas;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="creditrans", type="integer", nullable=true)
-     */
-    private $creditrans;
+    private $observacionesnivelformativo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lista_espera_piso", type="string", length=20, nullable=true)
+     * @ORM\Column(name="nivelFormativo", type="string", length=30, nullable=true)
      */
-    private $listaEsperaPiso;
+    private $nivelformativo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="DatosFormativosObs", type="string", length=100, nullable=true)
+     * @ORM\Column(name="observacionesIdioma", type="string", length=50, nullable=true)
      */
-    private $datosformativosobs;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="DatosFormativosItem", type="string", length=30, nullable=true)
-     */
-    private $datosformativositem;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Idioma", type="string", length=50, nullable=true)
-     */
-    private $idioma;
+    private $observacionesidioma;
 
     /**
      * @var string
@@ -526,72 +521,72 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="npasap", type="string", length=20, nullable=true)
+     * @ORM\Column(name="numPasap", type="string", length=20, nullable=true)
      */
-    private $npasap;
+    private $numpasap;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fpasap", type="date", nullable=true)
+     * @ORM\Column(name="fechaPasap", type="date", nullable=true)
      */
-    private $fpasap;
+    private $fechapasap;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ncedula", type="string", length=20, nullable=true)
+     * @ORM\Column(name="numCedula", type="string", length=20, nullable=true)
      */
-    private $ncedula;
+    private $numcedula;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fcedula", type="date", nullable=true)
+     * @ORM\Column(name="fechaCaducCedula", type="date", nullable=true)
      */
-    private $fcedula;
+    private $fechacaduccedula;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fressol", type="date", nullable=true)
+     * @ORM\Column(name="fechaResidSolicit", type="date", nullable=true)
      */
-    private $fressol;
+    private $fecharesidsolicit;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nresconc", type="string", length=20, nullable=true)
+     * @ORM\Column(name="numResidConced", type="string", length=20, nullable=true)
      */
-    private $nresconc;
+    private $numresidconced;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fresconc", type="date", nullable=true)
+     * @ORM\Column(name="fechaResidConced", type="date", nullable=true)
      */
-    private $fresconc;
+    private $fecharesidconced;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="frestrsol", type="date", nullable=true)
+     * @ORM\Column(name="fechaResidTrabSolicit", type="date", nullable=true)
      */
-    private $frestrsol;
+    private $fecharesidtrabsolicit;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nrestrconc", type="string", length=20, nullable=true)
+     * @ORM\Column(name="numResidTrabConc", type="string", length=20, nullable=true)
      */
-    private $nrestrconc;
+    private $numresidtrabconc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="frestrconc", type="date", nullable=true)
+     * @ORM\Column(name="fechaResidTrabConc", type="date", nullable=true)
      */
-    private $frestrconc;
+    private $fecharesidtrabconc;
 
     /**
      * @var integer
@@ -610,23 +605,23 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="otrosdoc", type="string", length=40, nullable=true)
+     * @ORM\Column(name="otrosDoc", type="string", length=40, nullable=true)
      */
     private $otrosdoc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fentrada", type="date", nullable=true)
+     * @ORM\Column(name="fechaEntrada", type="date", nullable=true)
      */
-    private $fentrada;
+    private $fechaentrada;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fprueba", type="date", nullable=true)
+     * @ORM\Column(name="fechaPrueba", type="date", nullable=true)
      */
-    private $fprueba;
+    private $fechaprueba;
 
     /**
      * @var string
@@ -641,13 +636,6 @@ class Persona
      * @ORM\Column(name="PermisoResidRazonesNo", type="string", length=20, nullable=true)
      */
     private $permisoresidrazonesno;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="PermisoSolicitudFecha", type="date", nullable=true)
-     */
-    private $permisosolicitudfecha;
 
     /**
      * @var string
@@ -694,9 +682,9 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="Empadronamiento", type="string", length=50, nullable=true)
+     * @ORM\Column(name="direccionPadronActual", type="string", length=50, nullable=true)
      */
-    private $empadronamiento;
+    private $direccionpadronactual;
 
     /**
      * @var integer
@@ -743,9 +731,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="IngresosRentaBas", type="integer", nullable=true)
+     * @ORM\Column(name="IngresosRGI", type="integer", nullable=true)
      */
-    private $ingresosrentabas;
+    private $ingresosrgi;
 
     /**
      * @var integer
@@ -869,37 +857,37 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="tl_sabado", type="integer", nullable=true)
+     * @ORM\Column(name="tlSabado", type="integer", nullable=true)
      */
-    private $tlSabado;
+    private $tlsabado;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="tl_domingo", type="integer", nullable=true)
+     * @ORM\Column(name="tlDomingo", type="integer", nullable=true)
      */
-    private $tlDomingo;
+    private $tldomingo;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="salida_verano", type="integer", nullable=true)
+     * @ORM\Column(name="salidaVerano", type="integer", nullable=true)
      */
-    private $salidaVerano;
+    private $salidaverano;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="salida_otro", type="integer", nullable=true)
+     * @ORM\Column(name="salidaOtro", type="integer", nullable=true)
      */
-    private $salidaOtro;
+    private $salidaotro;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="medicacion_centro", type="integer", nullable=true)
+     * @ORM\Column(name="medicacionCentro", type="integer", nullable=true)
      */
-    private $medicacionCentro;
+    private $medicacioncentro;
 
     /**
      * @var integer
@@ -911,9 +899,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="exp_laboral", type="integer", nullable=true)
+     * @ORM\Column(name="expLaboral", type="integer", nullable=true)
      */
-    private $expLaboral;
+    private $explaboral;
 
     /**
      * @var integer
@@ -925,16 +913,16 @@ class Persona
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="F_alta_lanbide", type="date", nullable=true)
+     * @ORM\Column(name="fechaAltaLanbide", type="date", nullable=true)
      */
-    private $fAltaLanbide;
+    private $fechaaltalanbide;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="F_renov_lanbide", type="date", nullable=true)
+     * @ORM\Column(name="fechaRenovLanbide", type="date", nullable=true)
      */
-    private $fRenovLanbide;
+    private $fecharenovlanbide;
 
     /**
      * @var integer
@@ -946,16 +934,16 @@ class Persona
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="F_alta_inem", type="date", nullable=true)
+     * @ORM\Column(name="fechaAltaInem", type="date", nullable=true)
      */
-    private $fAltaInem;
+    private $fechaaltainem;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="F_renov_inem", type="date", nullable=true)
+     * @ORM\Column(name="fechaRenovInem", type="date", nullable=true)
      */
-    private $fRenovInem;
+    private $fecharenovinem;
 
     /**
      * @var string
@@ -967,9 +955,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="poblacion_padron", type="integer", nullable=true)
+     * @ORM\Column(name="poblacionPadron", type="integer", nullable=true)
      */
-    private $poblacionPadron;
+    private $poblacionpadron;
 
     /**
      * @var integer
@@ -981,16 +969,16 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="insert_id_usuario", type="integer", nullable=true)
+     * @ORM\Column(name="insertIdUsuario", type="integer", nullable=true)
      */
-    private $insertIdUsuario;
+    private $insertidusuario;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="insert_fecha", type="date", nullable=true)
+     * @ORM\Column(name="fechaInsert", type="date", nullable=true)
      */
-    private $insertFecha;
+    private $fechainsert;
 
     /**
      * @var integer
@@ -1016,172 +1004,1283 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="procedencia_demanda_lista", type="integer", nullable=true)
+     * @ORM\Column(name="procedenciaDemandaLista", type="integer", nullable=true)
      */
-    private $procedenciaDemandaLista;
+    private $procedenciademandalista;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="DocumentoIdentif", type="integer", nullable=true)
+     * @ORM\Column(name="situacionAdministrativa", type="integer", nullable=true)
      */
-    private $documentoidentif;
+    private $situacionadministrativa;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha_caduc_tis", type="date", nullable=true)
+     * @ORM\Column(name="fechaCaducTis", type="date", nullable=true)
      */
-    private $fechaCaducTis;
+    private $fechacaductis;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="orden_expulsion", type="integer", nullable=true)
+     * @ORM\Column(name="ind1x1", type="boolean", nullable=true)
      */
-    private $ordenExpulsion;
+    private $ind1x1;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresospropios", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x1xA", type="boolean", nullable=true)
      */
-    private $cantidadIngresospropios;
+    private $ind1x1xa;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresospnc", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x2", type="boolean", nullable=true)
      */
-    private $cantidadIngresospnc;
+    private $ind1x2;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresosotros", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x2xA", type="boolean", nullable=true)
      */
-    private $cantidadIngresosotros;
+    private $ind1x2xa;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresosnomina", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x3", type="boolean", nullable=true)
      */
-    private $cantidadIngresosnomina;
+    private $ind1x3;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresosrentabas", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x4", type="boolean", nullable=true)
      */
-    private $cantidadIngresosrentabas;
+    private $ind1x4;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresosprestcontrib", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x5", type="boolean", nullable=true)
      */
-    private $cantidadIngresosprestcontrib;
+    private $ind1x5;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingrsossedesconoce", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x5xA", type="boolean", nullable=true)
      */
-    private $cantidadIngrsossedesconoce;
+    private $ind1x5xa;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresosayudaindividual", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x6", type="boolean", nullable=true)
      */
-    private $cantidadIngresosayudaindividual;
+    private $ind1x6;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="autonomia_economia", type="integer", nullable=true)
+     * @ORM\Column(name="ind1x7", type="boolean", nullable=true)
      */
-    private $autonomiaEconomia;
+    private $ind1x7;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="observaciones_economia", type="string", length=255, nullable=true)
+     * @ORM\Column(name="ind2x1", type="boolean", nullable=true)
      */
-    private $observacionesEconomia;
+    private $ind2x1;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="curso_actual", type="string", length=255, nullable=true)
+     * @ORM\Column(name="ind2xAx1", type="boolean", nullable=true)
      */
-    private $cursoActual;
+    private $ind2xax1;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="JusticiaGratuita", type="integer", nullable=true)
+     * @ORM\Column(name="ind2xAx2", type="boolean", nullable=true)
      */
-    private $justiciagratuita;
+    private $ind2xax2;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_1", type="smallint", nullable=true)
+     * @ORM\Column(name="ind2xAx3", type="boolean", nullable=true)
      */
-    private $indicador11;
+    private $ind2xax3;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_1_a", type="smallint", nullable=true)
+     * @ORM\Column(name="ind2xAx4", type="boolean", nullable=true)
      */
-    private $indicador11A;
+    private $ind2xax4;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_2", type="smallint", nullable=true)
+     * @ORM\Column(name="ind2xBx1", type="boolean", nullable=true)
      */
-    private $indicador12;
+    private $ind2xbx1;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_2_a", type="smallint", nullable=true)
+     * @ORM\Column(name="ind2xBx2", type="boolean", nullable=true)
      */
-    private $indicador12A;
+    private $ind2xbx2;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_3", type="smallint", nullable=true)
+     * @ORM\Column(name="ind3x1", type="boolean", nullable=true)
      */
-    private $indicador13;
+    private $ind3x1;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_4", type="smallint", nullable=true)
+     * @ORM\Column(name="ind3x1xA", type="boolean", nullable=true)
      */
-    private $indicador14;
+    private $ind3x1xa;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_5", type="smallint", nullable=true)
+     * @ORM\Column(name="ind3x2", type="boolean", nullable=true)
      */
-    private $indicador15;
+    private $ind3x2;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="id_pers", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="ind3x2xE", type="boolean", nullable=true)
      */
-    private $idPers;
+    private $ind3x2xe;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind3x2xD", type="boolean", nullable=true)
+     */
+    private $ind3x2xd;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind3x2xR", type="boolean", nullable=true)
+     */
+    private $ind3x2xr;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind3x3", type="boolean", nullable=true)
+     */
+    private $ind3x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind3x3xT", type="boolean", nullable=true)
+     */
+    private $ind3x3xt;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind3x4", type="boolean", nullable=true)
+     */
+    private $ind3x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx1", type="boolean", nullable=true)
+     */
+    private $indtx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx2", type="boolean", nullable=true)
+     */
+    private $indtx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx3", type="boolean", nullable=true)
+     */
+    private $indtx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx4", type="boolean", nullable=true)
+     */
+    private $indtx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x1", type="boolean", nullable=true)
+     */
+    private $ind4x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x2", type="boolean", nullable=true)
+     */
+    private $ind4x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x2xA", type="boolean", nullable=true)
+     */
+    private $ind4x2xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x2xB", type="boolean", nullable=true)
+     */
+    private $ind4x2xb;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x2xC", type="boolean", nullable=true)
+     */
+    private $ind4x2xc;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x3", type="boolean", nullable=true)
+     */
+    private $ind4x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x3x1", type="boolean", nullable=true)
+     */
+    private $ind4x3x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x3x2", type="boolean", nullable=true)
+     */
+    private $ind4x3x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x3x3", type="boolean", nullable=true)
+     */
+    private $ind4x3x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx1", type="boolean", nullable=true)
+     */
+    private $ind4xax1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx2", type="boolean", nullable=true)
+     */
+    private $ind4xax2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx3", type="boolean", nullable=true)
+     */
+    private $ind4xax3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx4", type="boolean", nullable=true)
+     */
+    private $ind4xax4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx5", type="boolean", nullable=true)
+     */
+    private $ind4xax5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx6", type="boolean", nullable=true)
+     */
+    private $ind4xax6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xBx1", type="boolean", nullable=true)
+     */
+    private $ind4xbx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xBx2", type="boolean", nullable=true)
+     */
+    private $ind4xbx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xCx1", type="boolean", nullable=true)
+     */
+    private $ind4xcx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xCx2", type="boolean", nullable=true)
+     */
+    private $ind4xcx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xCx3", type="boolean", nullable=true)
+     */
+    private $ind4xcx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xCx4", type="boolean", nullable=true)
+     */
+    private $ind4xcx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind5x1", type="boolean", nullable=true)
+     */
+    private $ind5x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind5x2", type="boolean", nullable=true)
+     */
+    private $ind5x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind5x3", type="boolean", nullable=true)
+     */
+    private $ind5x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind5x4", type="boolean", nullable=true)
+     */
+    private $ind5x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind5x5", type="boolean", nullable=true)
+     */
+    private $ind5x5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x1", type="boolean", nullable=true)
+     */
+    private $ind6x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x1x1", type="boolean", nullable=true)
+     */
+    private $ind6x1x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x1x2", type="boolean", nullable=true)
+     */
+    private $ind6x1x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x1x3", type="boolean", nullable=true)
+     */
+    private $ind6x1x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x2", type="boolean", nullable=true)
+     */
+    private $ind6x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x3", type="boolean", nullable=true)
+     */
+    private $ind6x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x4", type="boolean", nullable=true)
+     */
+    private $ind6x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx1", type="boolean", nullable=true)
+     */
+    private $ind7xax1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx2", type="boolean", nullable=true)
+     */
+    private $ind7xax2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx3", type="boolean", nullable=true)
+     */
+    private $ind7xax3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx4", type="boolean", nullable=true)
+     */
+    private $ind7xax4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx5", type="boolean", nullable=true)
+     */
+    private $ind7xax5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx6", type="boolean", nullable=true)
+     */
+    private $ind7xax6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx7", type="boolean", nullable=true)
+     */
+    private $ind7xax7;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xBx1", type="boolean", nullable=true)
+     */
+    private $ind7xbx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xBx2", type="boolean", nullable=true)
+     */
+    private $ind7xbx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xBx3", type="boolean", nullable=true)
+     */
+    private $ind7xbx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xBx4", type="boolean", nullable=true)
+     */
+    private $ind7xbx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xBx5", type="boolean", nullable=true)
+     */
+    private $ind7xbx5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind8x1", type="boolean", nullable=true)
+     */
+    private $ind8x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind8x2", type="boolean", nullable=true)
+     */
+    private $ind8x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind8x3", type="boolean", nullable=true)
+     */
+    private $ind8x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind8x4", type="boolean", nullable=true)
+     */
+    private $ind8x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx5", type="boolean", nullable=true)
+     */
+    private $indtx5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx6", type="boolean", nullable=true)
+     */
+    private $indtx6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx7", type="boolean", nullable=true)
+     */
+    private $indtx7;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx8", type="boolean", nullable=true)
+     */
+    private $indtx8;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx9", type="boolean", nullable=true)
+     */
+    private $indtx9;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx10", type="boolean", nullable=true)
+     */
+    private $indtx10;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx11", type="boolean", nullable=true)
+     */
+    private $indtx11;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx12", type="boolean", nullable=true)
+     */
+    private $indtx12;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx13", type="boolean", nullable=true)
+     */
+    private $indtx13;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx14", type="boolean", nullable=true)
+     */
+    private $indtx14;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx15", type="boolean", nullable=true)
+     */
+    private $indtx15;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx16", type="boolean", nullable=true)
+     */
+    private $indtx16;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xAx1", type="boolean", nullable=true)
+     */
+    private $ind9xax1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xAx2", type="boolean", nullable=true)
+     */
+    private $ind9xax2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xAx3", type="boolean", nullable=true)
+     */
+    private $ind9xax3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xAx4", type="boolean", nullable=true)
+     */
+    private $ind9xax4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xAx5", type="boolean", nullable=true)
+     */
+    private $ind9xax5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xBx1", type="boolean", nullable=true)
+     */
+    private $ind9xbx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xBx2", type="boolean", nullable=true)
+     */
+    private $ind9xbx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xBx3", type="boolean", nullable=true)
+     */
+    private $ind9xbx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xBx4", type="boolean", nullable=true)
+     */
+    private $ind9xbx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xBx5", type="boolean", nullable=true)
+     */
+    private $ind9xbx5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx1", type="boolean", nullable=true)
+     */
+    private $ind9xcx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx2", type="boolean", nullable=true)
+     */
+    private $ind9xcx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx3", type="boolean", nullable=true)
+     */
+    private $ind9xcx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx4", type="boolean", nullable=true)
+     */
+    private $ind9xcx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx5", type="boolean", nullable=true)
+     */
+    private $ind9xcx5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx6", type="boolean", nullable=true)
+     */
+    private $ind9xcx6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx1", type="boolean", nullable=true)
+     */
+    private $ind9xdx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx2", type="boolean", nullable=true)
+     */
+    private $ind9xdx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx3", type="boolean", nullable=true)
+     */
+    private $ind9xdx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx4", type="boolean", nullable=true)
+     */
+    private $ind9xdx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx5", type="boolean", nullable=true)
+     */
+    private $ind9xdx5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx6", type="boolean", nullable=true)
+     */
+    private $ind9xdx6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx7", type="boolean", nullable=true)
+     */
+    private $ind9xdx7;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx8", type="boolean", nullable=true)
+     */
+    private $ind9xdx8;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x1", type="boolean", nullable=true)
+     */
+    private $ind10x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x2", type="boolean", nullable=true)
+     */
+    private $ind10x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x2x1", type="boolean", nullable=true)
+     */
+    private $ind10x2x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x2x1xA", type="boolean", nullable=true)
+     */
+    private $ind10x2x1xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x2x2", type="boolean", nullable=true)
+     */
+    private $ind10x2x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x3", type="boolean", nullable=true)
+     */
+    private $ind10x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x4", type="boolean", nullable=true)
+     */
+    private $ind10x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x5", type="boolean", nullable=true)
+     */
+    private $ind10x5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x6", type="boolean", nullable=true)
+     */
+    private $ind10x6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x7", type="boolean", nullable=true)
+     */
+    private $ind10x7;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x8", type="boolean", nullable=true)
+     */
+    private $ind10x8;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10xAx1", type="boolean", nullable=true)
+     */
+    private $ind10xax1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10xAx2", type="boolean", nullable=true)
+     */
+    private $ind10xax2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10xAx3", type="boolean", nullable=true)
+     */
+    private $ind10xax3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10xAx4", type="boolean", nullable=true)
+     */
+    private $ind10xax4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x1", type="boolean", nullable=true)
+     */
+    private $ind11x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x2", type="boolean", nullable=true)
+     */
+    private $ind11x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x3", type="boolean", nullable=true)
+     */
+    private $ind11x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x4", type="boolean", nullable=true)
+     */
+    private $ind11x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x5", type="boolean", nullable=true)
+     */
+    private $ind11x5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x6", type="boolean", nullable=true)
+     */
+    private $ind11x6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x7", type="boolean", nullable=true)
+     */
+    private $ind11x7;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind12x1", type="boolean", nullable=true)
+     */
+    private $ind12x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind12x2", type="boolean", nullable=true)
+     */
+    private $ind12x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind12x3", type="boolean", nullable=true)
+     */
+    private $ind12x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx17", type="boolean", nullable=true)
+     */
+    private $indtx17;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx17xA", type="boolean", nullable=true)
+     */
+    private $indtx17xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx17xB", type="boolean", nullable=true)
+     */
+    private $indtx17xb;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx18", type="boolean", nullable=true)
+     */
+    private $indtx18;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx19", type="boolean", nullable=true)
+     */
+    private $indtx19;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13x1", type="boolean", nullable=true)
+     */
+    private $ind13x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13x2", type="boolean", nullable=true)
+     */
+    private $ind13x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13x3", type="boolean", nullable=true)
+     */
+    private $ind13x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13x3xA", type="boolean", nullable=true)
+     */
+    private $ind13x3xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xAx1", type="boolean", nullable=true)
+     */
+    private $ind13xax1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xAx2", type="boolean", nullable=true)
+     */
+    private $ind13xax2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xBx1", type="boolean", nullable=true)
+     */
+    private $ind13xbx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xBx1xA", type="boolean", nullable=true)
+     */
+    private $ind13xbx1xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xBx2", type="boolean", nullable=true)
+     */
+    private $ind13xbx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xBx3", type="boolean", nullable=true)
+     */
+    private $ind13xbx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xCx1", type="boolean", nullable=true)
+     */
+    private $ind13xcx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xCx2", type="boolean", nullable=true)
+     */
+    private $ind13xcx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xCx3", type="boolean", nullable=true)
+     */
+    private $ind13xcx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind14x1", type="boolean", nullable=true)
+     */
+    private $ind14x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind14x2", type="boolean", nullable=true)
+     */
+    private $ind14x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind14x3", type="boolean", nullable=true)
+     */
+    private $ind14x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind14x4", type="boolean", nullable=true)
+     */
+    private $ind14x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx20", type="boolean", nullable=true)
+     */
+    private $indtx20;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx21", type="boolean", nullable=true)
+     */
+    private $indtx21;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx22", type="boolean", nullable=true)
+     */
+    private $indtx22;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind15x1", type="boolean", nullable=true)
+     */
+    private $ind15x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind15x2", type="boolean", nullable=true)
+     */
+    private $ind15x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind16x1", type="boolean", nullable=true)
+     */
+    private $ind16x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind16x2", type="boolean", nullable=true)
+     */
+    private $ind16x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x1", type="boolean", nullable=true)
+     */
+    private $ind17x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x1xA", type="boolean", nullable=true)
+     */
+    private $ind17x1xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x2", type="boolean", nullable=true)
+     */
+    private $ind17x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x2xA", type="boolean", nullable=true)
+     */
+    private $ind17x2xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x3", type="boolean", nullable=true)
+     */
+    private $ind17x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x3xA", type="boolean", nullable=true)
+     */
+    private $ind17x3xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x4", type="boolean", nullable=true)
+     */
+    private $ind17x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x5", type="boolean", nullable=true)
+     */
+    private $ind17x5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x5xA", type="boolean", nullable=true)
+     */
+    private $ind17x5xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x6", type="boolean", nullable=true)
+     */
+    private $ind17x6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x7", type="boolean", nullable=true)
+     */
+    private $ind17x7;
 
 
 }

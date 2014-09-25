@@ -15,6 +15,15 @@ class Persona
     /**
      * @var integer
      *
+     * @ORM\Column(name="id_pers", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPers;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="id_unico", type="integer", nullable=true)
      */
     private $idUnico;
@@ -64,30 +73,44 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="lugar_nac", type="string", length=30, nullable=true)
+     * @ORM\Column(name="lugarNac", type="string", length=30, nullable=true)
      */
-    private $lugarNac;
+    private $lugarnac;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="dni_pas", type="string", length=15, nullable=true)
+     * @ORM\Column(name="dni", type="string", length=15, nullable=true)
      */
-    private $dniPas;
+    private $dni;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="num_ss", type="string", length=20, nullable=true)
+     * @ORM\Column(name="pasaporte", type="string", length=15, nullable=true)
      */
-    private $numSs;
+    private $pasaporte;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="num_expediente", type="string", length=10, nullable=true)
+     * @ORM\Column(name="nie", type="string", length=15, nullable=true)
      */
-    private $numExpediente;
+    private $nie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numSegSoc", type="string", length=20, nullable=true)
+     */
+    private $numsegsoc;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numExpediente", type="string", length=10, nullable=true)
+     */
+    private $numexpediente;
 
     /**
      * @var integer
@@ -106,9 +129,9 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="direccion", type="string", length=40, nullable=true)
+     * @ORM\Column(name="direccionActual", type="string", length=40, nullable=true)
      */
-    private $direccion;
+    private $direccionactual;
 
     /**
      * @var integer
@@ -120,16 +143,16 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="nucleo_conv", type="integer", nullable=true)
+     * @ORM\Column(name="nucleoConv", type="integer", nullable=true)
      */
-    private $nucleoConv;
+    private $nucleoconv;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="estado_civil", type="integer", nullable=true)
+     * @ORM\Column(name="estadoCivil", type="integer", nullable=true)
      */
-    private $estadoCivil;
+    private $estadocivil;
 
     /**
      * @var string
@@ -141,149 +164,121 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="n_hijos", type="integer", nullable=true)
+     * @ORM\Column(name="numHijos", type="integer", nullable=true)
      */
-    private $nHijos;
+    private $numhijos;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="observaciones_hijos", type="string", length=255, nullable=true)
+     * @ORM\Column(name="observacionesHijos", type="string", length=255, nullable=true)
      */
-    private $observacionesHijos;
+    private $observacioneshijos;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="telefonos_interes", type="string", length=512, nullable=true)
+     * @ORM\Column(name="telefonosInteres", type="string", length=512, nullable=true)
      */
-    private $telefonosInteres;
+    private $telefonosinteres;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha_ingreso", type="date", nullable=true)
+     * @ORM\Column(name="fechaIngreso", type="date", nullable=true)
      */
-    private $fechaIngreso;
+    private $fechaingreso;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha_salida", type="date", nullable=true)
+     * @ORM\Column(name="fechaSalida", type="date", nullable=true)
      */
-    private $fechaSalida;
+    private $fechasalida;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="procedencia_demanda", type="string", length=120, nullable=true)
+     * @ORM\Column(name="procedenciaDemanda", type="string", length=120, nullable=true)
      */
-    private $procedenciaDemanda;
+    private $procedenciademanda;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="tutor", type="integer", nullable=true)
+     * @ORM\Column(name="responsable", type="integer", nullable=true)
      */
-    private $tutor;
+    private $responsable;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_lu", type="integer", nullable=true)
+     * @ORM\Column(name="comedorLun", type="integer", nullable=true)
      */
-    private $comeLu;
+    private $comedorlun;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_ma", type="integer", nullable=true)
+     * @ORM\Column(name="comedorMar", type="integer", nullable=true)
      */
-    private $comeMa;
+    private $comedormar;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_mi", type="integer", nullable=true)
+     * @ORM\Column(name="comedorMie", type="integer", nullable=true)
      */
-    private $comeMi;
+    private $comedormie;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_ju", type="integer", nullable=true)
+     * @ORM\Column(name="comedorJue", type="integer", nullable=true)
      */
-    private $comeJu;
+    private $comedorjue;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_vi", type="integer", nullable=true)
+     * @ORM\Column(name="comedorVie", type="integer", nullable=true)
      */
-    private $comeVi;
+    private $comedorvie;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="come_sa", type="integer", nullable=true)
+     * @ORM\Column(name="transporte", type="integer", nullable=true)
      */
-    private $comeSa;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="come_do", type="integer", nullable=true)
-     */
-    private $comeDo;
+    private $transporte;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="come_sa_notas", type="string", length=30, nullable=true)
+     * @ORM\Column(name="listaEspera", type="string", length=20, nullable=true)
      */
-    private $comeSaNotas;
+    private $listaespera;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="come_do_notas", type="string", length=30, nullable=true)
+     * @ORM\Column(name="observacionesNivelFormativo", type="string", length=100, nullable=true)
      */
-    private $comeDoNotas;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="creditrans", type="integer", nullable=true)
-     */
-    private $creditrans;
+    private $observacionesnivelformativo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lista_espera_piso", type="string", length=20, nullable=true)
+     * @ORM\Column(name="nivelFormativo", type="string", length=30, nullable=true)
      */
-    private $listaEsperaPiso;
+    private $nivelformativo;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="DatosFormativosObs", type="string", length=100, nullable=true)
+     * @ORM\Column(name="observacionesIdioma", type="string", length=50, nullable=true)
      */
-    private $datosformativosobs;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="DatosFormativosItem", type="string", length=30, nullable=true)
-     */
-    private $datosformativositem;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Idioma", type="string", length=50, nullable=true)
-     */
-    private $idioma;
+    private $observacionesidioma;
 
     /**
      * @var string
@@ -526,72 +521,72 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="npasap", type="string", length=20, nullable=true)
+     * @ORM\Column(name="numPasap", type="string", length=20, nullable=true)
      */
-    private $npasap;
+    private $numpasap;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fpasap", type="date", nullable=true)
+     * @ORM\Column(name="fechaPasap", type="date", nullable=true)
      */
-    private $fpasap;
+    private $fechapasap;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ncedula", type="string", length=20, nullable=true)
+     * @ORM\Column(name="numCedula", type="string", length=20, nullable=true)
      */
-    private $ncedula;
+    private $numcedula;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fcedula", type="date", nullable=true)
+     * @ORM\Column(name="fechaCaducCedula", type="date", nullable=true)
      */
-    private $fcedula;
+    private $fechacaduccedula;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fressol", type="date", nullable=true)
+     * @ORM\Column(name="fechaResidSolicit", type="date", nullable=true)
      */
-    private $fressol;
+    private $fecharesidsolicit;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nresconc", type="string", length=20, nullable=true)
+     * @ORM\Column(name="numResidConced", type="string", length=20, nullable=true)
      */
-    private $nresconc;
+    private $numresidconced;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fresconc", type="date", nullable=true)
+     * @ORM\Column(name="fechaResidConced", type="date", nullable=true)
      */
-    private $fresconc;
+    private $fecharesidconced;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="frestrsol", type="date", nullable=true)
+     * @ORM\Column(name="fechaResidTrabSolicit", type="date", nullable=true)
      */
-    private $frestrsol;
+    private $fecharesidtrabsolicit;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nrestrconc", type="string", length=20, nullable=true)
+     * @ORM\Column(name="numResidTrabConc", type="string", length=20, nullable=true)
      */
-    private $nrestrconc;
+    private $numresidtrabconc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="frestrconc", type="date", nullable=true)
+     * @ORM\Column(name="fechaResidTrabConc", type="date", nullable=true)
      */
-    private $frestrconc;
+    private $fecharesidtrabconc;
 
     /**
      * @var integer
@@ -610,23 +605,23 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="otrosdoc", type="string", length=40, nullable=true)
+     * @ORM\Column(name="otrosDoc", type="string", length=40, nullable=true)
      */
     private $otrosdoc;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fentrada", type="date", nullable=true)
+     * @ORM\Column(name="fechaEntrada", type="date", nullable=true)
      */
-    private $fentrada;
+    private $fechaentrada;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fprueba", type="date", nullable=true)
+     * @ORM\Column(name="fechaPrueba", type="date", nullable=true)
      */
-    private $fprueba;
+    private $fechaprueba;
 
     /**
      * @var string
@@ -641,13 +636,6 @@ class Persona
      * @ORM\Column(name="PermisoResidRazonesNo", type="string", length=20, nullable=true)
      */
     private $permisoresidrazonesno;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="PermisoSolicitudFecha", type="date", nullable=true)
-     */
-    private $permisosolicitudfecha;
 
     /**
      * @var string
@@ -694,9 +682,9 @@ class Persona
     /**
      * @var string
      *
-     * @ORM\Column(name="Empadronamiento", type="string", length=50, nullable=true)
+     * @ORM\Column(name="direccionPadronActual", type="string", length=50, nullable=true)
      */
-    private $empadronamiento;
+    private $direccionpadronactual;
 
     /**
      * @var integer
@@ -743,9 +731,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="IngresosRentaBas", type="integer", nullable=true)
+     * @ORM\Column(name="IngresosRGI", type="integer", nullable=true)
      */
-    private $ingresosrentabas;
+    private $ingresosrgi;
 
     /**
      * @var integer
@@ -869,37 +857,37 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="tl_sabado", type="integer", nullable=true)
+     * @ORM\Column(name="tlSabado", type="integer", nullable=true)
      */
-    private $tlSabado;
+    private $tlsabado;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="tl_domingo", type="integer", nullable=true)
+     * @ORM\Column(name="tlDomingo", type="integer", nullable=true)
      */
-    private $tlDomingo;
+    private $tldomingo;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="salida_verano", type="integer", nullable=true)
+     * @ORM\Column(name="salidaVerano", type="integer", nullable=true)
      */
-    private $salidaVerano;
+    private $salidaverano;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="salida_otro", type="integer", nullable=true)
+     * @ORM\Column(name="salidaOtro", type="integer", nullable=true)
      */
-    private $salidaOtro;
+    private $salidaotro;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="medicacion_centro", type="integer", nullable=true)
+     * @ORM\Column(name="medicacionCentro", type="integer", nullable=true)
      */
-    private $medicacionCentro;
+    private $medicacioncentro;
 
     /**
      * @var integer
@@ -911,9 +899,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="exp_laboral", type="integer", nullable=true)
+     * @ORM\Column(name="expLaboral", type="integer", nullable=true)
      */
-    private $expLaboral;
+    private $explaboral;
 
     /**
      * @var integer
@@ -925,16 +913,16 @@ class Persona
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="F_alta_lanbide", type="date", nullable=true)
+     * @ORM\Column(name="fechaAltaLanbide", type="date", nullable=true)
      */
-    private $fAltaLanbide;
+    private $fechaaltalanbide;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="F_renov_lanbide", type="date", nullable=true)
+     * @ORM\Column(name="fechaRenovLanbide", type="date", nullable=true)
      */
-    private $fRenovLanbide;
+    private $fecharenovlanbide;
 
     /**
      * @var integer
@@ -946,16 +934,16 @@ class Persona
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="F_alta_inem", type="date", nullable=true)
+     * @ORM\Column(name="fechaAltaInem", type="date", nullable=true)
      */
-    private $fAltaInem;
+    private $fechaaltainem;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="F_renov_inem", type="date", nullable=true)
+     * @ORM\Column(name="fechaRenovInem", type="date", nullable=true)
      */
-    private $fRenovInem;
+    private $fecharenovinem;
 
     /**
      * @var string
@@ -967,9 +955,9 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="poblacion_padron", type="integer", nullable=true)
+     * @ORM\Column(name="poblacionPadron", type="integer", nullable=true)
      */
-    private $poblacionPadron;
+    private $poblacionpadron;
 
     /**
      * @var integer
@@ -981,16 +969,16 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="insert_id_usuario", type="integer", nullable=true)
+     * @ORM\Column(name="insertIdUsuario", type="integer", nullable=true)
      */
-    private $insertIdUsuario;
+    private $insertidusuario;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="insert_fecha", type="date", nullable=true)
+     * @ORM\Column(name="fechaInsert", type="date", nullable=true)
      */
-    private $insertFecha;
+    private $fechainsert;
 
     /**
      * @var integer
@@ -1016,174 +1004,1295 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="procedencia_demanda_lista", type="integer", nullable=true)
+     * @ORM\Column(name="procedenciaDemandaLista", type="integer", nullable=true)
      */
-    private $procedenciaDemandaLista;
+    private $procedenciademandalista;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="DocumentoIdentif", type="integer", nullable=true)
+     * @ORM\Column(name="situacionAdministrativa", type="integer", nullable=true)
      */
-    private $documentoidentif;
+    private $situacionadministrativa;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="fecha_caduc_tis", type="date", nullable=true)
+     * @ORM\Column(name="fechaCaducTis", type="date", nullable=true)
      */
-    private $fechaCaducTis;
+    private $fechacaductis;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="orden_expulsion", type="integer", nullable=true)
+     * @ORM\Column(name="ind1x1", type="boolean", nullable=true)
      */
-    private $ordenExpulsion;
+    private $ind1x1;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresospropios", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x1xA", type="boolean", nullable=true)
      */
-    private $cantidadIngresospropios;
+    private $ind1x1xa;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresospnc", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x2", type="boolean", nullable=true)
      */
-    private $cantidadIngresospnc;
+    private $ind1x2;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresosotros", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x2xA", type="boolean", nullable=true)
      */
-    private $cantidadIngresosotros;
+    private $ind1x2xa;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresosnomina", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x3", type="boolean", nullable=true)
      */
-    private $cantidadIngresosnomina;
+    private $ind1x3;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresosrentabas", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x4", type="boolean", nullable=true)
      */
-    private $cantidadIngresosrentabas;
+    private $ind1x4;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresosprestcontrib", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x5", type="boolean", nullable=true)
      */
-    private $cantidadIngresosprestcontrib;
+    private $ind1x5;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingrsossedesconoce", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x5xA", type="boolean", nullable=true)
      */
-    private $cantidadIngrsossedesconoce;
+    private $ind1x5xa;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="cantidad_ingresosayudaindividual", type="string", length=15, nullable=true)
+     * @ORM\Column(name="ind1x6", type="boolean", nullable=true)
      */
-    private $cantidadIngresosayudaindividual;
+    private $ind1x6;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="autonomia_economia", type="integer", nullable=true)
+     * @ORM\Column(name="ind1x7", type="boolean", nullable=true)
      */
-    private $autonomiaEconomia;
+    private $ind1x7;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="observaciones_economia", type="string", length=255, nullable=true)
+     * @ORM\Column(name="ind2x1", type="boolean", nullable=true)
      */
-    private $observacionesEconomia;
+    private $ind2x1;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="curso_actual", type="string", length=255, nullable=true)
+     * @ORM\Column(name="ind2xAx1", type="boolean", nullable=true)
      */
-    private $cursoActual;
+    private $ind2xax1;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="JusticiaGratuita", type="integer", nullable=true)
+     * @ORM\Column(name="ind2xAx2", type="boolean", nullable=true)
      */
-    private $justiciagratuita;
+    private $ind2xax2;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_1", type="smallint", nullable=true)
+     * @ORM\Column(name="ind2xAx3", type="boolean", nullable=true)
      */
-    private $indicador11;
+    private $ind2xax3;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_1_a", type="smallint", nullable=true)
+     * @ORM\Column(name="ind2xAx4", type="boolean", nullable=true)
      */
-    private $indicador11A;
+    private $ind2xax4;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_2", type="smallint", nullable=true)
+     * @ORM\Column(name="ind2xBx1", type="boolean", nullable=true)
      */
-    private $indicador12;
+    private $ind2xbx1;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_2_a", type="smallint", nullable=true)
+     * @ORM\Column(name="ind2xBx2", type="boolean", nullable=true)
      */
-    private $indicador12A;
+    private $ind2xbx2;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_3", type="smallint", nullable=true)
+     * @ORM\Column(name="ind3x1", type="boolean", nullable=true)
      */
-    private $indicador13;
+    private $ind3x1;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_4", type="smallint", nullable=true)
+     * @ORM\Column(name="ind3x1xA", type="boolean", nullable=true)
      */
-    private $indicador14;
+    private $ind3x1xa;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="indicador_1_5", type="smallint", nullable=true)
+     * @ORM\Column(name="ind3x2", type="boolean", nullable=true)
      */
-    private $indicador15;
+    private $ind3x2;
 
     /**
-     * @var integer
+     * @var boolean
      *
-     * @ORM\Column(name="id_pers", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\Column(name="ind3x2xE", type="boolean", nullable=true)
      */
-    private $idPers;
+    private $ind3x2xe;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind3x2xD", type="boolean", nullable=true)
+     */
+    private $ind3x2xd;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind3x2xR", type="boolean", nullable=true)
+     */
+    private $ind3x2xr;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind3x3", type="boolean", nullable=true)
+     */
+    private $ind3x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind3x3xT", type="boolean", nullable=true)
+     */
+    private $ind3x3xt;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind3x4", type="boolean", nullable=true)
+     */
+    private $ind3x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx1", type="boolean", nullable=true)
+     */
+    private $indtx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx2", type="boolean", nullable=true)
+     */
+    private $indtx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx3", type="boolean", nullable=true)
+     */
+    private $indtx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx4", type="boolean", nullable=true)
+     */
+    private $indtx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x1", type="boolean", nullable=true)
+     */
+    private $ind4x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x2", type="boolean", nullable=true)
+     */
+    private $ind4x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x2xA", type="boolean", nullable=true)
+     */
+    private $ind4x2xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x2xB", type="boolean", nullable=true)
+     */
+    private $ind4x2xb;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x2xC", type="boolean", nullable=true)
+     */
+    private $ind4x2xc;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x3", type="boolean", nullable=true)
+     */
+    private $ind4x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x3x1", type="boolean", nullable=true)
+     */
+    private $ind4x3x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x3x2", type="boolean", nullable=true)
+     */
+    private $ind4x3x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4x3x3", type="boolean", nullable=true)
+     */
+    private $ind4x3x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx1", type="boolean", nullable=true)
+     */
+    private $ind4xax1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx2", type="boolean", nullable=true)
+     */
+    private $ind4xax2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx3", type="boolean", nullable=true)
+     */
+    private $ind4xax3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx4", type="boolean", nullable=true)
+     */
+    private $ind4xax4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx5", type="boolean", nullable=true)
+     */
+    private $ind4xax5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xAx6", type="boolean", nullable=true)
+     */
+    private $ind4xax6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xBx1", type="boolean", nullable=true)
+     */
+    private $ind4xbx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xBx2", type="boolean", nullable=true)
+     */
+    private $ind4xbx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xCx1", type="boolean", nullable=true)
+     */
+    private $ind4xcx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xCx2", type="boolean", nullable=true)
+     */
+    private $ind4xcx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xCx3", type="boolean", nullable=true)
+     */
+    private $ind4xcx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind4xCx4", type="boolean", nullable=true)
+     */
+    private $ind4xcx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind5x1", type="boolean", nullable=true)
+     */
+    private $ind5x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind5x2", type="boolean", nullable=true)
+     */
+    private $ind5x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind5x3", type="boolean", nullable=true)
+     */
+    private $ind5x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind5x4", type="boolean", nullable=true)
+     */
+    private $ind5x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind5x5", type="boolean", nullable=true)
+     */
+    private $ind5x5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x1", type="boolean", nullable=true)
+     */
+    private $ind6x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x1x1", type="boolean", nullable=true)
+     */
+    private $ind6x1x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x1x2", type="boolean", nullable=true)
+     */
+    private $ind6x1x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x1x3", type="boolean", nullable=true)
+     */
+    private $ind6x1x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x2", type="boolean", nullable=true)
+     */
+    private $ind6x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x3", type="boolean", nullable=true)
+     */
+    private $ind6x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind6x4", type="boolean", nullable=true)
+     */
+    private $ind6x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx1", type="boolean", nullable=true)
+     */
+    private $ind7xax1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx2", type="boolean", nullable=true)
+     */
+    private $ind7xax2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx3", type="boolean", nullable=true)
+     */
+    private $ind7xax3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx4", type="boolean", nullable=true)
+     */
+    private $ind7xax4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx5", type="boolean", nullable=true)
+     */
+    private $ind7xax5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx6", type="boolean", nullable=true)
+     */
+    private $ind7xax6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xAx7", type="boolean", nullable=true)
+     */
+    private $ind7xax7;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xBx1", type="boolean", nullable=true)
+     */
+    private $ind7xbx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xBx2", type="boolean", nullable=true)
+     */
+    private $ind7xbx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xBx3", type="boolean", nullable=true)
+     */
+    private $ind7xbx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xBx4", type="boolean", nullable=true)
+     */
+    private $ind7xbx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind7xBx5", type="boolean", nullable=true)
+     */
+    private $ind7xbx5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind8x1", type="boolean", nullable=true)
+     */
+    private $ind8x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind8x2", type="boolean", nullable=true)
+     */
+    private $ind8x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind8x3", type="boolean", nullable=true)
+     */
+    private $ind8x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind8x4", type="boolean", nullable=true)
+     */
+    private $ind8x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx5", type="boolean", nullable=true)
+     */
+    private $indtx5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx6", type="boolean", nullable=true)
+     */
+    private $indtx6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx7", type="boolean", nullable=true)
+     */
+    private $indtx7;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx8", type="boolean", nullable=true)
+     */
+    private $indtx8;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx9", type="boolean", nullable=true)
+     */
+    private $indtx9;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx10", type="boolean", nullable=true)
+     */
+    private $indtx10;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx11", type="boolean", nullable=true)
+     */
+    private $indtx11;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx12", type="boolean", nullable=true)
+     */
+    private $indtx12;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx13", type="boolean", nullable=true)
+     */
+    private $indtx13;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx14", type="boolean", nullable=true)
+     */
+    private $indtx14;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx15", type="boolean", nullable=true)
+     */
+    private $indtx15;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx16", type="boolean", nullable=true)
+     */
+    private $indtx16;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xAx1", type="boolean", nullable=true)
+     */
+    private $ind9xax1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xAx2", type="boolean", nullable=true)
+     */
+    private $ind9xax2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xAx3", type="boolean", nullable=true)
+     */
+    private $ind9xax3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xAx4", type="boolean", nullable=true)
+     */
+    private $ind9xax4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xAx5", type="boolean", nullable=true)
+     */
+    private $ind9xax5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xBx1", type="boolean", nullable=true)
+     */
+    private $ind9xbx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xBx2", type="boolean", nullable=true)
+     */
+    private $ind9xbx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xBx3", type="boolean", nullable=true)
+     */
+    private $ind9xbx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xBx4", type="boolean", nullable=true)
+     */
+    private $ind9xbx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xBx5", type="boolean", nullable=true)
+     */
+    private $ind9xbx5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx1", type="boolean", nullable=true)
+     */
+    private $ind9xcx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx2", type="boolean", nullable=true)
+     */
+    private $ind9xcx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx3", type="boolean", nullable=true)
+     */
+    private $ind9xcx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx4", type="boolean", nullable=true)
+     */
+    private $ind9xcx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx5", type="boolean", nullable=true)
+     */
+    private $ind9xcx5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xCx6", type="boolean", nullable=true)
+     */
+    private $ind9xcx6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx1", type="boolean", nullable=true)
+     */
+    private $ind9xdx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx2", type="boolean", nullable=true)
+     */
+    private $ind9xdx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx3", type="boolean", nullable=true)
+     */
+    private $ind9xdx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx4", type="boolean", nullable=true)
+     */
+    private $ind9xdx4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx5", type="boolean", nullable=true)
+     */
+    private $ind9xdx5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx6", type="boolean", nullable=true)
+     */
+    private $ind9xdx6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx7", type="boolean", nullable=true)
+     */
+    private $ind9xdx7;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind9xDx8", type="boolean", nullable=true)
+     */
+    private $ind9xdx8;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x1", type="boolean", nullable=true)
+     */
+    private $ind10x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x2", type="boolean", nullable=true)
+     */
+    private $ind10x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x2x1", type="boolean", nullable=true)
+     */
+    private $ind10x2x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x2x1xA", type="boolean", nullable=true)
+     */
+    private $ind10x2x1xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x2x2", type="boolean", nullable=true)
+     */
+    private $ind10x2x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x3", type="boolean", nullable=true)
+     */
+    private $ind10x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x4", type="boolean", nullable=true)
+     */
+    private $ind10x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x5", type="boolean", nullable=true)
+     */
+    private $ind10x5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x6", type="boolean", nullable=true)
+     */
+    private $ind10x6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x7", type="boolean", nullable=true)
+     */
+    private $ind10x7;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10x8", type="boolean", nullable=true)
+     */
+    private $ind10x8;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10xAx1", type="boolean", nullable=true)
+     */
+    private $ind10xax1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10xAx2", type="boolean", nullable=true)
+     */
+    private $ind10xax2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10xAx3", type="boolean", nullable=true)
+     */
+    private $ind10xax3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind10xAx4", type="boolean", nullable=true)
+     */
+    private $ind10xax4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x1", type="boolean", nullable=true)
+     */
+    private $ind11x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x2", type="boolean", nullable=true)
+     */
+    private $ind11x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x3", type="boolean", nullable=true)
+     */
+    private $ind11x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x4", type="boolean", nullable=true)
+     */
+    private $ind11x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x5", type="boolean", nullable=true)
+     */
+    private $ind11x5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x6", type="boolean", nullable=true)
+     */
+    private $ind11x6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind11x7", type="boolean", nullable=true)
+     */
+    private $ind11x7;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind12x1", type="boolean", nullable=true)
+     */
+    private $ind12x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind12x2", type="boolean", nullable=true)
+     */
+    private $ind12x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind12x3", type="boolean", nullable=true)
+     */
+    private $ind12x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx17", type="boolean", nullable=true)
+     */
+    private $indtx17;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx17xA", type="boolean", nullable=true)
+     */
+    private $indtx17xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx17xB", type="boolean", nullable=true)
+     */
+    private $indtx17xb;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx18", type="boolean", nullable=true)
+     */
+    private $indtx18;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx19", type="boolean", nullable=true)
+     */
+    private $indtx19;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13x1", type="boolean", nullable=true)
+     */
+    private $ind13x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13x2", type="boolean", nullable=true)
+     */
+    private $ind13x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13x3", type="boolean", nullable=true)
+     */
+    private $ind13x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13x3xA", type="boolean", nullable=true)
+     */
+    private $ind13x3xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xAx1", type="boolean", nullable=true)
+     */
+    private $ind13xax1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xAx2", type="boolean", nullable=true)
+     */
+    private $ind13xax2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xBx1", type="boolean", nullable=true)
+     */
+    private $ind13xbx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xBx1xA", type="boolean", nullable=true)
+     */
+    private $ind13xbx1xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xBx2", type="boolean", nullable=true)
+     */
+    private $ind13xbx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xBx3", type="boolean", nullable=true)
+     */
+    private $ind13xbx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xCx1", type="boolean", nullable=true)
+     */
+    private $ind13xcx1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xCx2", type="boolean", nullable=true)
+     */
+    private $ind13xcx2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind13xCx3", type="boolean", nullable=true)
+     */
+    private $ind13xcx3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind14x1", type="boolean", nullable=true)
+     */
+    private $ind14x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind14x2", type="boolean", nullable=true)
+     */
+    private $ind14x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind14x3", type="boolean", nullable=true)
+     */
+    private $ind14x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind14x4", type="boolean", nullable=true)
+     */
+    private $ind14x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx20", type="boolean", nullable=true)
+     */
+    private $indtx20;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx21", type="boolean", nullable=true)
+     */
+    private $indtx21;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="indTx22", type="boolean", nullable=true)
+     */
+    private $indtx22;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind15x1", type="boolean", nullable=true)
+     */
+    private $ind15x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind15x2", type="boolean", nullable=true)
+     */
+    private $ind15x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind16x1", type="boolean", nullable=true)
+     */
+    private $ind16x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind16x2", type="boolean", nullable=true)
+     */
+    private $ind16x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x1", type="boolean", nullable=true)
+     */
+    private $ind17x1;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x1xA", type="boolean", nullable=true)
+     */
+    private $ind17x1xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x2", type="boolean", nullable=true)
+     */
+    private $ind17x2;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x2xA", type="boolean", nullable=true)
+     */
+    private $ind17x2xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x3", type="boolean", nullable=true)
+     */
+    private $ind17x3;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x3xA", type="boolean", nullable=true)
+     */
+    private $ind17x3xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x4", type="boolean", nullable=true)
+     */
+    private $ind17x4;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x5", type="boolean", nullable=true)
+     */
+    private $ind17x5;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x5xA", type="boolean", nullable=true)
+     */
+    private $ind17x5xa;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x6", type="boolean", nullable=true)
+     */
+    private $ind17x6;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="ind17x7", type="boolean", nullable=true)
+     */
+    private $ind17x7;
 
 
+
+    /**
+     * Get idPers
+     *
+     * @return integer 
+     */
+    public function getIdPers()
+    {
+        return $this->idPers;
+    }
 
     /**
      * Set idUnico
@@ -1347,95 +2456,141 @@ class Persona
     }
 
     /**
-     * Set lugarNac
+     * Set lugarnac
      *
-     * @param string $lugarNac
+     * @param string $lugarnac
      * @return Persona
      */
-    public function setLugarNac($lugarNac)
+    public function setLugarnac($lugarnac)
     {
-        $this->lugarNac = $lugarNac;
+        $this->lugarnac = $lugarnac;
 
         return $this;
     }
 
     /**
-     * Get lugarNac
+     * Get lugarnac
      *
      * @return string 
      */
-    public function getLugarNac()
+    public function getLugarnac()
     {
-        return $this->lugarNac;
+        return $this->lugarnac;
     }
 
     /**
-     * Set dniPas
+     * Set dni
      *
-     * @param string $dniPas
+     * @param string $dni
      * @return Persona
      */
-    public function setDniPas($dniPas)
+    public function setDni($dni)
     {
-        $this->dniPas = $dniPas;
+        $this->dni = $dni;
 
         return $this;
     }
 
     /**
-     * Get dniPas
+     * Get dni
      *
      * @return string 
      */
-    public function getDniPas()
+    public function getDni()
     {
-        return $this->dniPas;
+        return $this->dni;
     }
 
     /**
-     * Set numSs
+     * Set pasaporte
      *
-     * @param string $numSs
+     * @param string $pasaporte
      * @return Persona
      */
-    public function setNumSs($numSs)
+    public function setPasaporte($pasaporte)
     {
-        $this->numSs = $numSs;
+        $this->pasaporte = $pasaporte;
 
         return $this;
     }
 
     /**
-     * Get numSs
+     * Get pasaporte
      *
      * @return string 
      */
-    public function getNumSs()
+    public function getPasaporte()
     {
-        return $this->numSs;
+        return $this->pasaporte;
     }
 
     /**
-     * Set numExpediente
+     * Set nie
      *
-     * @param string $numExpediente
+     * @param string $nie
      * @return Persona
      */
-    public function setNumExpediente($numExpediente)
+    public function setNie($nie)
     {
-        $this->numExpediente = $numExpediente;
+        $this->nie = $nie;
 
         return $this;
     }
 
     /**
-     * Get numExpediente
+     * Get nie
      *
      * @return string 
      */
-    public function getNumExpediente()
+    public function getNie()
     {
-        return $this->numExpediente;
+        return $this->nie;
+    }
+
+    /**
+     * Set numsegsoc
+     *
+     * @param string $numsegsoc
+     * @return Persona
+     */
+    public function setNumsegsoc($numsegsoc)
+    {
+        $this->numsegsoc = $numsegsoc;
+
+        return $this;
+    }
+
+    /**
+     * Get numsegsoc
+     *
+     * @return string 
+     */
+    public function getNumsegsoc()
+    {
+        return $this->numsegsoc;
+    }
+
+    /**
+     * Set numexpediente
+     *
+     * @param string $numexpediente
+     * @return Persona
+     */
+    public function setNumexpediente($numexpediente)
+    {
+        $this->numexpediente = $numexpediente;
+
+        return $this;
+    }
+
+    /**
+     * Get numexpediente
+     *
+     * @return string 
+     */
+    public function getNumexpediente()
+    {
+        return $this->numexpediente;
     }
 
     /**
@@ -1485,26 +2640,26 @@ class Persona
     }
 
     /**
-     * Set direccion
+     * Set direccionactual
      *
-     * @param string $direccion
+     * @param string $direccionactual
      * @return Persona
      */
-    public function setDireccion($direccion)
+    public function setDireccionactual($direccionactual)
     {
-        $this->direccion = $direccion;
+        $this->direccionactual = $direccionactual;
 
         return $this;
     }
 
     /**
-     * Get direccion
+     * Get direccionactual
      *
      * @return string 
      */
-    public function getDireccion()
+    public function getDireccionactual()
     {
-        return $this->direccion;
+        return $this->direccionactual;
     }
 
     /**
@@ -1531,49 +2686,49 @@ class Persona
     }
 
     /**
-     * Set nucleoConv
+     * Set nucleoconv
      *
-     * @param integer $nucleoConv
+     * @param integer $nucleoconv
      * @return Persona
      */
-    public function setNucleoConv($nucleoConv)
+    public function setNucleoconv($nucleoconv)
     {
-        $this->nucleoConv = $nucleoConv;
+        $this->nucleoconv = $nucleoconv;
 
         return $this;
     }
 
     /**
-     * Get nucleoConv
+     * Get nucleoconv
      *
      * @return integer 
      */
-    public function getNucleoConv()
+    public function getNucleoconv()
     {
-        return $this->nucleoConv;
+        return $this->nucleoconv;
     }
 
     /**
-     * Set estadoCivil
+     * Set estadocivil
      *
-     * @param integer $estadoCivil
+     * @param integer $estadocivil
      * @return Persona
      */
-    public function setEstadoCivil($estadoCivil)
+    public function setEstadocivil($estadocivil)
     {
-        $this->estadoCivil = $estadoCivil;
+        $this->estadocivil = $estadocivil;
 
         return $this;
     }
 
     /**
-     * Get estadoCivil
+     * Get estadocivil
      *
      * @return integer 
      */
-    public function getEstadoCivil()
+    public function getEstadocivil()
     {
-        return $this->estadoCivil;
+        return $this->estadocivil;
     }
 
     /**
@@ -1600,486 +2755,394 @@ class Persona
     }
 
     /**
-     * Set nHijos
+     * Set numhijos
      *
-     * @param integer $nHijos
+     * @param integer $numhijos
      * @return Persona
      */
-    public function setNHijos($nHijos)
+    public function setNumhijos($numhijos)
     {
-        $this->nHijos = $nHijos;
+        $this->numhijos = $numhijos;
 
         return $this;
     }
 
     /**
-     * Get nHijos
+     * Get numhijos
      *
      * @return integer 
      */
-    public function getNHijos()
+    public function getNumhijos()
     {
-        return $this->nHijos;
+        return $this->numhijos;
     }
 
     /**
-     * Set observacionesHijos
+     * Set observacioneshijos
      *
-     * @param string $observacionesHijos
+     * @param string $observacioneshijos
      * @return Persona
      */
-    public function setObservacionesHijos($observacionesHijos)
+    public function setObservacioneshijos($observacioneshijos)
     {
-        $this->observacionesHijos = $observacionesHijos;
+        $this->observacioneshijos = $observacioneshijos;
 
         return $this;
     }
 
     /**
-     * Get observacionesHijos
+     * Get observacioneshijos
      *
      * @return string 
      */
-    public function getObservacionesHijos()
+    public function getObservacioneshijos()
     {
-        return $this->observacionesHijos;
+        return $this->observacioneshijos;
     }
 
     /**
-     * Set telefonosInteres
+     * Set telefonosinteres
      *
-     * @param string $telefonosInteres
+     * @param string $telefonosinteres
      * @return Persona
      */
-    public function setTelefonosInteres($telefonosInteres)
+    public function setTelefonosinteres($telefonosinteres)
     {
-        $this->telefonosInteres = $telefonosInteres;
+        $this->telefonosinteres = $telefonosinteres;
 
         return $this;
     }
 
     /**
-     * Get telefonosInteres
+     * Get telefonosinteres
      *
      * @return string 
      */
-    public function getTelefonosInteres()
+    public function getTelefonosinteres()
     {
-        return $this->telefonosInteres;
+        return $this->telefonosinteres;
     }
 
     /**
-     * Set fechaIngreso
+     * Set fechaingreso
      *
-     * @param \DateTime $fechaIngreso
+     * @param \DateTime $fechaingreso
      * @return Persona
      */
-    public function setFechaIngreso($fechaIngreso)
+    public function setFechaingreso($fechaingreso)
     {
-        $this->fechaIngreso = $fechaIngreso;
+        $this->fechaingreso = $fechaingreso;
 
         return $this;
     }
 
     /**
-     * Get fechaIngreso
+     * Get fechaingreso
      *
      * @return \DateTime 
      */
-    public function getFechaIngreso()
+    public function getFechaingreso()
     {
-        return $this->fechaIngreso;
+        return $this->fechaingreso;
     }
 
     /**
-     * Set fechaSalida
+     * Set fechasalida
      *
-     * @param \DateTime $fechaSalida
+     * @param \DateTime $fechasalida
      * @return Persona
      */
-    public function setFechaSalida($fechaSalida)
+    public function setFechasalida($fechasalida)
     {
-        $this->fechaSalida = $fechaSalida;
+        $this->fechasalida = $fechasalida;
 
         return $this;
     }
 
     /**
-     * Get fechaSalida
+     * Get fechasalida
      *
      * @return \DateTime 
      */
-    public function getFechaSalida()
+    public function getFechasalida()
     {
-        return $this->fechaSalida;
+        return $this->fechasalida;
     }
 
     /**
-     * Set procedenciaDemanda
+     * Set procedenciademanda
      *
-     * @param string $procedenciaDemanda
+     * @param string $procedenciademanda
      * @return Persona
      */
-    public function setProcedenciaDemanda($procedenciaDemanda)
+    public function setProcedenciademanda($procedenciademanda)
     {
-        $this->procedenciaDemanda = $procedenciaDemanda;
+        $this->procedenciademanda = $procedenciademanda;
 
         return $this;
     }
 
     /**
-     * Get procedenciaDemanda
+     * Get procedenciademanda
      *
      * @return string 
      */
-    public function getProcedenciaDemanda()
+    public function getProcedenciademanda()
     {
-        return $this->procedenciaDemanda;
+        return $this->procedenciademanda;
     }
 
     /**
-     * Set tutor
+     * Set responsable
      *
-     * @param integer $tutor
+     * @param integer $responsable
      * @return Persona
      */
-    public function setTutor($tutor)
+    public function setResponsable($responsable)
     {
-        $this->tutor = $tutor;
+        $this->responsable = $responsable;
 
         return $this;
     }
 
     /**
-     * Get tutor
+     * Get responsable
      *
      * @return integer 
      */
-    public function getTutor()
+    public function getResponsable()
     {
-        return $this->tutor;
+        return $this->responsable;
     }
 
     /**
-     * Set comeLu
+     * Set comedorlun
      *
-     * @param integer $comeLu
+     * @param integer $comedorlun
      * @return Persona
      */
-    public function setComeLu($comeLu)
+    public function setComedorlun($comedorlun)
     {
-        $this->comeLu = $comeLu;
+        $this->comedorlun = $comedorlun;
 
         return $this;
     }
 
     /**
-     * Get comeLu
+     * Get comedorlun
      *
      * @return integer 
      */
-    public function getComeLu()
+    public function getComedorlun()
     {
-        return $this->comeLu;
+        return $this->comedorlun;
     }
 
     /**
-     * Set comeMa
+     * Set comedormar
      *
-     * @param integer $comeMa
+     * @param integer $comedormar
      * @return Persona
      */
-    public function setComeMa($comeMa)
+    public function setComedormar($comedormar)
     {
-        $this->comeMa = $comeMa;
+        $this->comedormar = $comedormar;
 
         return $this;
     }
 
     /**
-     * Get comeMa
+     * Get comedormar
      *
      * @return integer 
      */
-    public function getComeMa()
+    public function getComedormar()
     {
-        return $this->comeMa;
+        return $this->comedormar;
     }
 
     /**
-     * Set comeMi
+     * Set comedormie
      *
-     * @param integer $comeMi
+     * @param integer $comedormie
      * @return Persona
      */
-    public function setComeMi($comeMi)
+    public function setComedormie($comedormie)
     {
-        $this->comeMi = $comeMi;
+        $this->comedormie = $comedormie;
 
         return $this;
     }
 
     /**
-     * Get comeMi
+     * Get comedormie
      *
      * @return integer 
      */
-    public function getComeMi()
+    public function getComedormie()
     {
-        return $this->comeMi;
+        return $this->comedormie;
     }
 
     /**
-     * Set comeJu
+     * Set comedorjue
      *
-     * @param integer $comeJu
+     * @param integer $comedorjue
      * @return Persona
      */
-    public function setComeJu($comeJu)
+    public function setComedorjue($comedorjue)
     {
-        $this->comeJu = $comeJu;
+        $this->comedorjue = $comedorjue;
 
         return $this;
     }
 
     /**
-     * Get comeJu
+     * Get comedorjue
      *
      * @return integer 
      */
-    public function getComeJu()
+    public function getComedorjue()
     {
-        return $this->comeJu;
+        return $this->comedorjue;
     }
 
     /**
-     * Set comeVi
+     * Set comedorvie
      *
-     * @param integer $comeVi
+     * @param integer $comedorvie
      * @return Persona
      */
-    public function setComeVi($comeVi)
+    public function setComedorvie($comedorvie)
     {
-        $this->comeVi = $comeVi;
+        $this->comedorvie = $comedorvie;
 
         return $this;
     }
 
     /**
-     * Get comeVi
+     * Get comedorvie
      *
      * @return integer 
      */
-    public function getComeVi()
+    public function getComedorvie()
     {
-        return $this->comeVi;
+        return $this->comedorvie;
     }
 
     /**
-     * Set comeSa
+     * Set transporte
      *
-     * @param integer $comeSa
+     * @param integer $transporte
      * @return Persona
      */
-    public function setComeSa($comeSa)
+    public function setTransporte($transporte)
     {
-        $this->comeSa = $comeSa;
+        $this->transporte = $transporte;
 
         return $this;
     }
 
     /**
-     * Get comeSa
+     * Get transporte
      *
      * @return integer 
      */
-    public function getComeSa()
+    public function getTransporte()
     {
-        return $this->comeSa;
+        return $this->transporte;
     }
 
     /**
-     * Set comeDo
+     * Set listaespera
      *
-     * @param integer $comeDo
+     * @param string $listaespera
      * @return Persona
      */
-    public function setComeDo($comeDo)
+    public function setListaespera($listaespera)
     {
-        $this->comeDo = $comeDo;
+        $this->listaespera = $listaespera;
 
         return $this;
     }
 
     /**
-     * Get comeDo
-     *
-     * @return integer 
-     */
-    public function getComeDo()
-    {
-        return $this->comeDo;
-    }
-
-    /**
-     * Set comeSaNotas
-     *
-     * @param string $comeSaNotas
-     * @return Persona
-     */
-    public function setComeSaNotas($comeSaNotas)
-    {
-        $this->comeSaNotas = $comeSaNotas;
-
-        return $this;
-    }
-
-    /**
-     * Get comeSaNotas
+     * Get listaespera
      *
      * @return string 
      */
-    public function getComeSaNotas()
+    public function getListaespera()
     {
-        return $this->comeSaNotas;
+        return $this->listaespera;
     }
 
     /**
-     * Set comeDoNotas
+     * Set observacionesnivelformativo
      *
-     * @param string $comeDoNotas
+     * @param string $observacionesnivelformativo
      * @return Persona
      */
-    public function setComeDoNotas($comeDoNotas)
+    public function setObservacionesnivelformativo($observacionesnivelformativo)
     {
-        $this->comeDoNotas = $comeDoNotas;
+        $this->observacionesnivelformativo = $observacionesnivelformativo;
 
         return $this;
     }
 
     /**
-     * Get comeDoNotas
+     * Get observacionesnivelformativo
      *
      * @return string 
      */
-    public function getComeDoNotas()
+    public function getObservacionesnivelformativo()
     {
-        return $this->comeDoNotas;
+        return $this->observacionesnivelformativo;
     }
 
     /**
-     * Set creditrans
+     * Set nivelformativo
      *
-     * @param integer $creditrans
+     * @param string $nivelformativo
      * @return Persona
      */
-    public function setCreditrans($creditrans)
+    public function setNivelformativo($nivelformativo)
     {
-        $this->creditrans = $creditrans;
+        $this->nivelformativo = $nivelformativo;
 
         return $this;
     }
 
     /**
-     * Get creditrans
-     *
-     * @return integer 
-     */
-    public function getCreditrans()
-    {
-        return $this->creditrans;
-    }
-
-    /**
-     * Set listaEsperaPiso
-     *
-     * @param string $listaEsperaPiso
-     * @return Persona
-     */
-    public function setListaEsperaPiso($listaEsperaPiso)
-    {
-        $this->listaEsperaPiso = $listaEsperaPiso;
-
-        return $this;
-    }
-
-    /**
-     * Get listaEsperaPiso
+     * Get nivelformativo
      *
      * @return string 
      */
-    public function getListaEsperaPiso()
+    public function getNivelformativo()
     {
-        return $this->listaEsperaPiso;
+        return $this->nivelformativo;
     }
 
     /**
-     * Set datosformativosobs
+     * Set observacionesidioma
      *
-     * @param string $datosformativosobs
+     * @param string $observacionesidioma
      * @return Persona
      */
-    public function setDatosformativosobs($datosformativosobs)
+    public function setObservacionesidioma($observacionesidioma)
     {
-        $this->datosformativosobs = $datosformativosobs;
+        $this->observacionesidioma = $observacionesidioma;
 
         return $this;
     }
 
     /**
-     * Get datosformativosobs
+     * Get observacionesidioma
      *
      * @return string 
      */
-    public function getDatosformativosobs()
+    public function getObservacionesidioma()
     {
-        return $this->datosformativosobs;
-    }
-
-    /**
-     * Set datosformativositem
-     *
-     * @param string $datosformativositem
-     * @return Persona
-     */
-    public function setDatosformativositem($datosformativositem)
-    {
-        $this->datosformativositem = $datosformativositem;
-
-        return $this;
-    }
-
-    /**
-     * Get datosformativositem
-     *
-     * @return string 
-     */
-    public function getDatosformativositem()
-    {
-        return $this->datosformativositem;
-    }
-
-    /**
-     * Set idioma
-     *
-     * @param string $idioma
-     * @return Persona
-     */
-    public function setIdioma($idioma)
-    {
-        $this->idioma = $idioma;
-
-        return $this;
-    }
-
-    /**
-     * Get idioma
-     *
-     * @return string 
-     */
-    public function getIdioma()
-    {
-        return $this->idioma;
+        return $this->observacionesidioma;
     }
 
     /**
@@ -2865,233 +3928,233 @@ class Persona
     }
 
     /**
-     * Set npasap
+     * Set numpasap
      *
-     * @param string $npasap
+     * @param string $numpasap
      * @return Persona
      */
-    public function setNpasap($npasap)
+    public function setNumpasap($numpasap)
     {
-        $this->npasap = $npasap;
+        $this->numpasap = $numpasap;
 
         return $this;
     }
 
     /**
-     * Get npasap
+     * Get numpasap
      *
      * @return string 
      */
-    public function getNpasap()
+    public function getNumpasap()
     {
-        return $this->npasap;
+        return $this->numpasap;
     }
 
     /**
-     * Set fpasap
+     * Set fechapasap
      *
-     * @param \DateTime $fpasap
+     * @param \DateTime $fechapasap
      * @return Persona
      */
-    public function setFpasap($fpasap)
+    public function setFechapasap($fechapasap)
     {
-        $this->fpasap = $fpasap;
+        $this->fechapasap = $fechapasap;
 
         return $this;
     }
 
     /**
-     * Get fpasap
+     * Get fechapasap
      *
      * @return \DateTime 
      */
-    public function getFpasap()
+    public function getFechapasap()
     {
-        return $this->fpasap;
+        return $this->fechapasap;
     }
 
     /**
-     * Set ncedula
+     * Set numcedula
      *
-     * @param string $ncedula
+     * @param string $numcedula
      * @return Persona
      */
-    public function setNcedula($ncedula)
+    public function setNumcedula($numcedula)
     {
-        $this->ncedula = $ncedula;
+        $this->numcedula = $numcedula;
 
         return $this;
     }
 
     /**
-     * Get ncedula
+     * Get numcedula
      *
      * @return string 
      */
-    public function getNcedula()
+    public function getNumcedula()
     {
-        return $this->ncedula;
+        return $this->numcedula;
     }
 
     /**
-     * Set fcedula
+     * Set fechacaduccedula
      *
-     * @param \DateTime $fcedula
+     * @param \DateTime $fechacaduccedula
      * @return Persona
      */
-    public function setFcedula($fcedula)
+    public function setFechacaduccedula($fechacaduccedula)
     {
-        $this->fcedula = $fcedula;
+        $this->fechacaduccedula = $fechacaduccedula;
 
         return $this;
     }
 
     /**
-     * Get fcedula
+     * Get fechacaduccedula
      *
      * @return \DateTime 
      */
-    public function getFcedula()
+    public function getFechacaduccedula()
     {
-        return $this->fcedula;
+        return $this->fechacaduccedula;
     }
 
     /**
-     * Set fressol
+     * Set fecharesidsolicit
      *
-     * @param \DateTime $fressol
+     * @param \DateTime $fecharesidsolicit
      * @return Persona
      */
-    public function setFressol($fressol)
+    public function setFecharesidsolicit($fecharesidsolicit)
     {
-        $this->fressol = $fressol;
+        $this->fecharesidsolicit = $fecharesidsolicit;
 
         return $this;
     }
 
     /**
-     * Get fressol
+     * Get fecharesidsolicit
      *
      * @return \DateTime 
      */
-    public function getFressol()
+    public function getFecharesidsolicit()
     {
-        return $this->fressol;
+        return $this->fecharesidsolicit;
     }
 
     /**
-     * Set nresconc
+     * Set numresidconced
      *
-     * @param string $nresconc
+     * @param string $numresidconced
      * @return Persona
      */
-    public function setNresconc($nresconc)
+    public function setNumresidconced($numresidconced)
     {
-        $this->nresconc = $nresconc;
+        $this->numresidconced = $numresidconced;
 
         return $this;
     }
 
     /**
-     * Get nresconc
+     * Get numresidconced
      *
      * @return string 
      */
-    public function getNresconc()
+    public function getNumresidconced()
     {
-        return $this->nresconc;
+        return $this->numresidconced;
     }
 
     /**
-     * Set fresconc
+     * Set fecharesidconced
      *
-     * @param \DateTime $fresconc
+     * @param \DateTime $fecharesidconced
      * @return Persona
      */
-    public function setFresconc($fresconc)
+    public function setFecharesidconced($fecharesidconced)
     {
-        $this->fresconc = $fresconc;
+        $this->fecharesidconced = $fecharesidconced;
 
         return $this;
     }
 
     /**
-     * Get fresconc
+     * Get fecharesidconced
      *
      * @return \DateTime 
      */
-    public function getFresconc()
+    public function getFecharesidconced()
     {
-        return $this->fresconc;
+        return $this->fecharesidconced;
     }
 
     /**
-     * Set frestrsol
+     * Set fecharesidtrabsolicit
      *
-     * @param \DateTime $frestrsol
+     * @param \DateTime $fecharesidtrabsolicit
      * @return Persona
      */
-    public function setFrestrsol($frestrsol)
+    public function setFecharesidtrabsolicit($fecharesidtrabsolicit)
     {
-        $this->frestrsol = $frestrsol;
+        $this->fecharesidtrabsolicit = $fecharesidtrabsolicit;
 
         return $this;
     }
 
     /**
-     * Get frestrsol
+     * Get fecharesidtrabsolicit
      *
      * @return \DateTime 
      */
-    public function getFrestrsol()
+    public function getFecharesidtrabsolicit()
     {
-        return $this->frestrsol;
+        return $this->fecharesidtrabsolicit;
     }
 
     /**
-     * Set nrestrconc
+     * Set numresidtrabconc
      *
-     * @param string $nrestrconc
+     * @param string $numresidtrabconc
      * @return Persona
      */
-    public function setNrestrconc($nrestrconc)
+    public function setNumresidtrabconc($numresidtrabconc)
     {
-        $this->nrestrconc = $nrestrconc;
+        $this->numresidtrabconc = $numresidtrabconc;
 
         return $this;
     }
 
     /**
-     * Get nrestrconc
+     * Get numresidtrabconc
      *
      * @return string 
      */
-    public function getNrestrconc()
+    public function getNumresidtrabconc()
     {
-        return $this->nrestrconc;
+        return $this->numresidtrabconc;
     }
 
     /**
-     * Set frestrconc
+     * Set fecharesidtrabconc
      *
-     * @param \DateTime $frestrconc
+     * @param \DateTime $fecharesidtrabconc
      * @return Persona
      */
-    public function setFrestrconc($frestrconc)
+    public function setFecharesidtrabconc($fecharesidtrabconc)
     {
-        $this->frestrconc = $frestrconc;
+        $this->fecharesidtrabconc = $fecharesidtrabconc;
 
         return $this;
     }
 
     /**
-     * Get frestrconc
+     * Get fecharesidtrabconc
      *
      * @return \DateTime 
      */
-    public function getFrestrconc()
+    public function getFecharesidtrabconc()
     {
-        return $this->frestrconc;
+        return $this->fecharesidtrabconc;
     }
 
     /**
@@ -3164,49 +4227,49 @@ class Persona
     }
 
     /**
-     * Set fentrada
+     * Set fechaentrada
      *
-     * @param \DateTime $fentrada
+     * @param \DateTime $fechaentrada
      * @return Persona
      */
-    public function setFentrada($fentrada)
+    public function setFechaentrada($fechaentrada)
     {
-        $this->fentrada = $fentrada;
+        $this->fechaentrada = $fechaentrada;
 
         return $this;
     }
 
     /**
-     * Get fentrada
+     * Get fechaentrada
      *
      * @return \DateTime 
      */
-    public function getFentrada()
+    public function getFechaentrada()
     {
-        return $this->fentrada;
+        return $this->fechaentrada;
     }
 
     /**
-     * Set fprueba
+     * Set fechaprueba
      *
-     * @param \DateTime $fprueba
+     * @param \DateTime $fechaprueba
      * @return Persona
      */
-    public function setFprueba($fprueba)
+    public function setFechaprueba($fechaprueba)
     {
-        $this->fprueba = $fprueba;
+        $this->fechaprueba = $fechaprueba;
 
         return $this;
     }
 
     /**
-     * Get fprueba
+     * Get fechaprueba
      *
      * @return \DateTime 
      */
-    public function getFprueba()
+    public function getFechaprueba()
     {
-        return $this->fprueba;
+        return $this->fechaprueba;
     }
 
     /**
@@ -3253,29 +4316,6 @@ class Persona
     public function getPermisoresidrazonesno()
     {
         return $this->permisoresidrazonesno;
-    }
-
-    /**
-     * Set permisosolicitudfecha
-     *
-     * @param \DateTime $permisosolicitudfecha
-     * @return Persona
-     */
-    public function setPermisosolicitudfecha($permisosolicitudfecha)
-    {
-        $this->permisosolicitudfecha = $permisosolicitudfecha;
-
-        return $this;
-    }
-
-    /**
-     * Get permisosolicitudfecha
-     *
-     * @return \DateTime 
-     */
-    public function getPermisosolicitudfecha()
-    {
-        return $this->permisosolicitudfecha;
     }
 
     /**
@@ -3417,26 +4457,26 @@ class Persona
     }
 
     /**
-     * Set empadronamiento
+     * Set direccionpadronactual
      *
-     * @param string $empadronamiento
+     * @param string $direccionpadronactual
      * @return Persona
      */
-    public function setEmpadronamiento($empadronamiento)
+    public function setDireccionpadronactual($direccionpadronactual)
     {
-        $this->empadronamiento = $empadronamiento;
+        $this->direccionpadronactual = $direccionpadronactual;
 
         return $this;
     }
 
     /**
-     * Get empadronamiento
+     * Get direccionpadronactual
      *
      * @return string 
      */
-    public function getEmpadronamiento()
+    public function getDireccionpadronactual()
     {
-        return $this->empadronamiento;
+        return $this->direccionpadronactual;
     }
 
     /**
@@ -3578,26 +4618,26 @@ class Persona
     }
 
     /**
-     * Set ingresosrentabas
+     * Set ingresosrgi
      *
-     * @param integer $ingresosrentabas
+     * @param integer $ingresosrgi
      * @return Persona
      */
-    public function setIngresosrentabas($ingresosrentabas)
+    public function setIngresosrgi($ingresosrgi)
     {
-        $this->ingresosrentabas = $ingresosrentabas;
+        $this->ingresosrgi = $ingresosrgi;
 
         return $this;
     }
 
     /**
-     * Get ingresosrentabas
+     * Get ingresosrgi
      *
      * @return integer 
      */
-    public function getIngresosrentabas()
+    public function getIngresosrgi()
     {
-        return $this->ingresosrentabas;
+        return $this->ingresosrgi;
     }
 
     /**
@@ -3992,118 +5032,118 @@ class Persona
     }
 
     /**
-     * Set tlSabado
+     * Set tlsabado
      *
-     * @param integer $tlSabado
+     * @param integer $tlsabado
      * @return Persona
      */
-    public function setTlSabado($tlSabado)
+    public function setTlsabado($tlsabado)
     {
-        $this->tlSabado = $tlSabado;
+        $this->tlsabado = $tlsabado;
 
         return $this;
     }
 
     /**
-     * Get tlSabado
+     * Get tlsabado
      *
      * @return integer 
      */
-    public function getTlSabado()
+    public function getTlsabado()
     {
-        return $this->tlSabado;
+        return $this->tlsabado;
     }
 
     /**
-     * Set tlDomingo
+     * Set tldomingo
      *
-     * @param integer $tlDomingo
+     * @param integer $tldomingo
      * @return Persona
      */
-    public function setTlDomingo($tlDomingo)
+    public function setTldomingo($tldomingo)
     {
-        $this->tlDomingo = $tlDomingo;
+        $this->tldomingo = $tldomingo;
 
         return $this;
     }
 
     /**
-     * Get tlDomingo
+     * Get tldomingo
      *
      * @return integer 
      */
-    public function getTlDomingo()
+    public function getTldomingo()
     {
-        return $this->tlDomingo;
+        return $this->tldomingo;
     }
 
     /**
-     * Set salidaVerano
+     * Set salidaverano
      *
-     * @param integer $salidaVerano
+     * @param integer $salidaverano
      * @return Persona
      */
-    public function setSalidaVerano($salidaVerano)
+    public function setSalidaverano($salidaverano)
     {
-        $this->salidaVerano = $salidaVerano;
+        $this->salidaverano = $salidaverano;
 
         return $this;
     }
 
     /**
-     * Get salidaVerano
+     * Get salidaverano
      *
      * @return integer 
      */
-    public function getSalidaVerano()
+    public function getSalidaverano()
     {
-        return $this->salidaVerano;
+        return $this->salidaverano;
     }
 
     /**
-     * Set salidaOtro
+     * Set salidaotro
      *
-     * @param integer $salidaOtro
+     * @param integer $salidaotro
      * @return Persona
      */
-    public function setSalidaOtro($salidaOtro)
+    public function setSalidaotro($salidaotro)
     {
-        $this->salidaOtro = $salidaOtro;
+        $this->salidaotro = $salidaotro;
 
         return $this;
     }
 
     /**
-     * Get salidaOtro
+     * Get salidaotro
      *
      * @return integer 
      */
-    public function getSalidaOtro()
+    public function getSalidaotro()
     {
-        return $this->salidaOtro;
+        return $this->salidaotro;
     }
 
     /**
-     * Set medicacionCentro
+     * Set medicacioncentro
      *
-     * @param integer $medicacionCentro
+     * @param integer $medicacioncentro
      * @return Persona
      */
-    public function setMedicacionCentro($medicacionCentro)
+    public function setMedicacioncentro($medicacioncentro)
     {
-        $this->medicacionCentro = $medicacionCentro;
+        $this->medicacioncentro = $medicacioncentro;
 
         return $this;
     }
 
     /**
-     * Get medicacionCentro
+     * Get medicacioncentro
      *
      * @return integer 
      */
-    public function getMedicacionCentro()
+    public function getMedicacioncentro()
     {
-        return $this->medicacionCentro;
+        return $this->medicacioncentro;
     }
 
     /**
@@ -4130,26 +5170,26 @@ class Persona
     }
 
     /**
-     * Set expLaboral
+     * Set explaboral
      *
-     * @param integer $expLaboral
+     * @param integer $explaboral
      * @return Persona
      */
-    public function setExpLaboral($expLaboral)
+    public function setExplaboral($explaboral)
     {
-        $this->expLaboral = $expLaboral;
+        $this->explaboral = $explaboral;
 
         return $this;
     }
 
     /**
-     * Get expLaboral
+     * Get explaboral
      *
      * @return integer 
      */
-    public function getExpLaboral()
+    public function getExplaboral()
     {
-        return $this->expLaboral;
+        return $this->explaboral;
     }
 
     /**
@@ -4176,49 +5216,49 @@ class Persona
     }
 
     /**
-     * Set fAltaLanbide
+     * Set fechaaltalanbide
      *
-     * @param \DateTime $fAltaLanbide
+     * @param \DateTime $fechaaltalanbide
      * @return Persona
      */
-    public function setFAltaLanbide($fAltaLanbide)
+    public function setFechaaltalanbide($fechaaltalanbide)
     {
-        $this->fAltaLanbide = $fAltaLanbide;
+        $this->fechaaltalanbide = $fechaaltalanbide;
 
         return $this;
     }
 
     /**
-     * Get fAltaLanbide
+     * Get fechaaltalanbide
      *
      * @return \DateTime 
      */
-    public function getFAltaLanbide()
+    public function getFechaaltalanbide()
     {
-        return $this->fAltaLanbide;
+        return $this->fechaaltalanbide;
     }
 
     /**
-     * Set fRenovLanbide
+     * Set fecharenovlanbide
      *
-     * @param \DateTime $fRenovLanbide
+     * @param \DateTime $fecharenovlanbide
      * @return Persona
      */
-    public function setFRenovLanbide($fRenovLanbide)
+    public function setFecharenovlanbide($fecharenovlanbide)
     {
-        $this->fRenovLanbide = $fRenovLanbide;
+        $this->fecharenovlanbide = $fecharenovlanbide;
 
         return $this;
     }
 
     /**
-     * Get fRenovLanbide
+     * Get fecharenovlanbide
      *
      * @return \DateTime 
      */
-    public function getFRenovLanbide()
+    public function getFecharenovlanbide()
     {
-        return $this->fRenovLanbide;
+        return $this->fecharenovlanbide;
     }
 
     /**
@@ -4245,49 +5285,49 @@ class Persona
     }
 
     /**
-     * Set fAltaInem
+     * Set fechaaltainem
      *
-     * @param \DateTime $fAltaInem
+     * @param \DateTime $fechaaltainem
      * @return Persona
      */
-    public function setFAltaInem($fAltaInem)
+    public function setFechaaltainem($fechaaltainem)
     {
-        $this->fAltaInem = $fAltaInem;
+        $this->fechaaltainem = $fechaaltainem;
 
         return $this;
     }
 
     /**
-     * Get fAltaInem
+     * Get fechaaltainem
      *
      * @return \DateTime 
      */
-    public function getFAltaInem()
+    public function getFechaaltainem()
     {
-        return $this->fAltaInem;
+        return $this->fechaaltainem;
     }
 
     /**
-     * Set fRenovInem
+     * Set fecharenovinem
      *
-     * @param \DateTime $fRenovInem
+     * @param \DateTime $fecharenovinem
      * @return Persona
      */
-    public function setFRenovInem($fRenovInem)
+    public function setFecharenovinem($fecharenovinem)
     {
-        $this->fRenovInem = $fRenovInem;
+        $this->fecharenovinem = $fecharenovinem;
 
         return $this;
     }
 
     /**
-     * Get fRenovInem
+     * Get fecharenovinem
      *
      * @return \DateTime 
      */
-    public function getFRenovInem()
+    public function getFecharenovinem()
     {
-        return $this->fRenovInem;
+        return $this->fecharenovinem;
     }
 
     /**
@@ -4314,26 +5354,26 @@ class Persona
     }
 
     /**
-     * Set poblacionPadron
+     * Set poblacionpadron
      *
-     * @param integer $poblacionPadron
+     * @param integer $poblacionpadron
      * @return Persona
      */
-    public function setPoblacionPadron($poblacionPadron)
+    public function setPoblacionpadron($poblacionpadron)
     {
-        $this->poblacionPadron = $poblacionPadron;
+        $this->poblacionpadron = $poblacionpadron;
 
         return $this;
     }
 
     /**
-     * Get poblacionPadron
+     * Get poblacionpadron
      *
      * @return integer 
      */
-    public function getPoblacionPadron()
+    public function getPoblacionpadron()
     {
-        return $this->poblacionPadron;
+        return $this->poblacionpadron;
     }
 
     /**
@@ -4360,49 +5400,49 @@ class Persona
     }
 
     /**
-     * Set insertIdUsuario
+     * Set insertidusuario
      *
-     * @param integer $insertIdUsuario
+     * @param integer $insertidusuario
      * @return Persona
      */
-    public function setInsertIdUsuario($insertIdUsuario)
+    public function setInsertidusuario($insertidusuario)
     {
-        $this->insertIdUsuario = $insertIdUsuario;
+        $this->insertidusuario = $insertidusuario;
 
         return $this;
     }
 
     /**
-     * Get insertIdUsuario
+     * Get insertidusuario
      *
      * @return integer 
      */
-    public function getInsertIdUsuario()
+    public function getInsertidusuario()
     {
-        return $this->insertIdUsuario;
+        return $this->insertidusuario;
     }
 
     /**
-     * Set insertFecha
+     * Set fechainsert
      *
-     * @param \DateTime $insertFecha
+     * @param \DateTime $fechainsert
      * @return Persona
      */
-    public function setInsertFecha($insertFecha)
+    public function setFechainsert($fechainsert)
     {
-        $this->insertFecha = $insertFecha;
+        $this->fechainsert = $fechainsert;
 
         return $this;
     }
 
     /**
-     * Get insertFecha
+     * Get fechainsert
      *
      * @return \DateTime 
      */
-    public function getInsertFecha()
+    public function getFechainsert()
     {
-        return $this->insertFecha;
+        return $this->fechainsert;
     }
 
     /**
@@ -4475,541 +5515,4211 @@ class Persona
     }
 
     /**
-     * Set procedenciaDemandaLista
+     * Set procedenciademandalista
      *
-     * @param integer $procedenciaDemandaLista
+     * @param integer $procedenciademandalista
      * @return Persona
      */
-    public function setProcedenciaDemandaLista($procedenciaDemandaLista)
+    public function setProcedenciademandalista($procedenciademandalista)
     {
-        $this->procedenciaDemandaLista = $procedenciaDemandaLista;
+        $this->procedenciademandalista = $procedenciademandalista;
 
         return $this;
     }
 
     /**
-     * Get procedenciaDemandaLista
+     * Get procedenciademandalista
      *
      * @return integer 
      */
-    public function getProcedenciaDemandaLista()
+    public function getProcedenciademandalista()
     {
-        return $this->procedenciaDemandaLista;
+        return $this->procedenciademandalista;
     }
 
     /**
-     * Set documentoidentif
+     * Set situacionadministrativa
      *
-     * @param integer $documentoidentif
+     * @param integer $situacionadministrativa
      * @return Persona
      */
-    public function setDocumentoidentif($documentoidentif)
+    public function setSituacionadministrativa($situacionadministrativa)
     {
-        $this->documentoidentif = $documentoidentif;
+        $this->situacionadministrativa = $situacionadministrativa;
 
         return $this;
     }
 
     /**
-     * Get documentoidentif
+     * Get situacionadministrativa
      *
      * @return integer 
      */
-    public function getDocumentoidentif()
+    public function getSituacionadministrativa()
     {
-        return $this->documentoidentif;
+        return $this->situacionadministrativa;
     }
 
     /**
-     * Set fechaCaducTis
+     * Set fechacaductis
      *
-     * @param \DateTime $fechaCaducTis
+     * @param \DateTime $fechacaductis
      * @return Persona
      */
-    public function setFechaCaducTis($fechaCaducTis)
+    public function setFechacaductis($fechacaductis)
     {
-        $this->fechaCaducTis = $fechaCaducTis;
+        $this->fechacaductis = $fechacaductis;
 
         return $this;
     }
 
     /**
-     * Get fechaCaducTis
+     * Get fechacaductis
      *
      * @return \DateTime 
      */
-    public function getFechaCaducTis()
+    public function getFechacaductis()
     {
-        return $this->fechaCaducTis;
+        return $this->fechacaductis;
     }
 
     /**
-     * Set ordenExpulsion
+     * Set ind1x1
      *
-     * @param integer $ordenExpulsion
+     * @param boolean $ind1x1
      * @return Persona
      */
-    public function setOrdenExpulsion($ordenExpulsion)
+    public function setInd1x1($ind1x1)
     {
-        $this->ordenExpulsion = $ordenExpulsion;
+        $this->ind1x1 = $ind1x1;
 
         return $this;
     }
 
     /**
-     * Get ordenExpulsion
+     * Get ind1x1
      *
-     * @return integer 
+     * @return boolean 
      */
-    public function getOrdenExpulsion()
+    public function getInd1x1()
     {
-        return $this->ordenExpulsion;
+        return $this->ind1x1;
     }
 
     /**
-     * Set cantidadIngresospropios
+     * Set ind1x1xa
      *
-     * @param string $cantidadIngresospropios
+     * @param boolean $ind1x1xa
      * @return Persona
      */
-    public function setCantidadIngresospropios($cantidadIngresospropios)
+    public function setInd1x1xa($ind1x1xa)
     {
-        $this->cantidadIngresospropios = $cantidadIngresospropios;
+        $this->ind1x1xa = $ind1x1xa;
 
         return $this;
     }
 
     /**
-     * Get cantidadIngresospropios
+     * Get ind1x1xa
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getCantidadIngresospropios()
+    public function getInd1x1xa()
     {
-        return $this->cantidadIngresospropios;
+        return $this->ind1x1xa;
     }
 
     /**
-     * Set cantidadIngresospnc
+     * Set ind1x2
      *
-     * @param string $cantidadIngresospnc
+     * @param boolean $ind1x2
      * @return Persona
      */
-    public function setCantidadIngresospnc($cantidadIngresospnc)
+    public function setInd1x2($ind1x2)
     {
-        $this->cantidadIngresospnc = $cantidadIngresospnc;
+        $this->ind1x2 = $ind1x2;
 
         return $this;
     }
 
     /**
-     * Get cantidadIngresospnc
+     * Get ind1x2
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getCantidadIngresospnc()
+    public function getInd1x2()
     {
-        return $this->cantidadIngresospnc;
+        return $this->ind1x2;
     }
 
     /**
-     * Set cantidadIngresosotros
+     * Set ind1x2xa
      *
-     * @param string $cantidadIngresosotros
+     * @param boolean $ind1x2xa
      * @return Persona
      */
-    public function setCantidadIngresosotros($cantidadIngresosotros)
+    public function setInd1x2xa($ind1x2xa)
     {
-        $this->cantidadIngresosotros = $cantidadIngresosotros;
+        $this->ind1x2xa = $ind1x2xa;
 
         return $this;
     }
 
     /**
-     * Get cantidadIngresosotros
+     * Get ind1x2xa
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getCantidadIngresosotros()
+    public function getInd1x2xa()
     {
-        return $this->cantidadIngresosotros;
+        return $this->ind1x2xa;
     }
 
     /**
-     * Set cantidadIngresosnomina
+     * Set ind1x3
      *
-     * @param string $cantidadIngresosnomina
+     * @param boolean $ind1x3
      * @return Persona
      */
-    public function setCantidadIngresosnomina($cantidadIngresosnomina)
+    public function setInd1x3($ind1x3)
     {
-        $this->cantidadIngresosnomina = $cantidadIngresosnomina;
+        $this->ind1x3 = $ind1x3;
 
         return $this;
     }
 
     /**
-     * Get cantidadIngresosnomina
+     * Get ind1x3
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getCantidadIngresosnomina()
+    public function getInd1x3()
     {
-        return $this->cantidadIngresosnomina;
+        return $this->ind1x3;
     }
 
     /**
-     * Set cantidadIngresosrentabas
+     * Set ind1x4
      *
-     * @param string $cantidadIngresosrentabas
+     * @param boolean $ind1x4
      * @return Persona
      */
-    public function setCantidadIngresosrentabas($cantidadIngresosrentabas)
+    public function setInd1x4($ind1x4)
     {
-        $this->cantidadIngresosrentabas = $cantidadIngresosrentabas;
+        $this->ind1x4 = $ind1x4;
 
         return $this;
     }
 
     /**
-     * Get cantidadIngresosrentabas
+     * Get ind1x4
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getCantidadIngresosrentabas()
+    public function getInd1x4()
     {
-        return $this->cantidadIngresosrentabas;
+        return $this->ind1x4;
     }
 
     /**
-     * Set cantidadIngresosprestcontrib
+     * Set ind1x5
      *
-     * @param string $cantidadIngresosprestcontrib
+     * @param boolean $ind1x5
      * @return Persona
      */
-    public function setCantidadIngresosprestcontrib($cantidadIngresosprestcontrib)
+    public function setInd1x5($ind1x5)
     {
-        $this->cantidadIngresosprestcontrib = $cantidadIngresosprestcontrib;
+        $this->ind1x5 = $ind1x5;
 
         return $this;
     }
 
     /**
-     * Get cantidadIngresosprestcontrib
+     * Get ind1x5
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getCantidadIngresosprestcontrib()
+    public function getInd1x5()
     {
-        return $this->cantidadIngresosprestcontrib;
+        return $this->ind1x5;
     }
 
     /**
-     * Set cantidadIngrsossedesconoce
+     * Set ind1x5xa
      *
-     * @param string $cantidadIngrsossedesconoce
+     * @param boolean $ind1x5xa
      * @return Persona
      */
-    public function setCantidadIngrsossedesconoce($cantidadIngrsossedesconoce)
+    public function setInd1x5xa($ind1x5xa)
     {
-        $this->cantidadIngrsossedesconoce = $cantidadIngrsossedesconoce;
+        $this->ind1x5xa = $ind1x5xa;
 
         return $this;
     }
 
     /**
-     * Get cantidadIngrsossedesconoce
+     * Get ind1x5xa
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getCantidadIngrsossedesconoce()
+    public function getInd1x5xa()
     {
-        return $this->cantidadIngrsossedesconoce;
+        return $this->ind1x5xa;
     }
 
     /**
-     * Set cantidadIngresosayudaindividual
+     * Set ind1x6
      *
-     * @param string $cantidadIngresosayudaindividual
+     * @param boolean $ind1x6
      * @return Persona
      */
-    public function setCantidadIngresosayudaindividual($cantidadIngresosayudaindividual)
+    public function setInd1x6($ind1x6)
     {
-        $this->cantidadIngresosayudaindividual = $cantidadIngresosayudaindividual;
+        $this->ind1x6 = $ind1x6;
 
         return $this;
     }
 
     /**
-     * Get cantidadIngresosayudaindividual
+     * Get ind1x6
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getCantidadIngresosayudaindividual()
+    public function getInd1x6()
     {
-        return $this->cantidadIngresosayudaindividual;
+        return $this->ind1x6;
     }
 
     /**
-     * Set autonomiaEconomia
+     * Set ind1x7
      *
-     * @param integer $autonomiaEconomia
+     * @param boolean $ind1x7
      * @return Persona
      */
-    public function setAutonomiaEconomia($autonomiaEconomia)
+    public function setInd1x7($ind1x7)
     {
-        $this->autonomiaEconomia = $autonomiaEconomia;
+        $this->ind1x7 = $ind1x7;
 
         return $this;
     }
 
     /**
-     * Get autonomiaEconomia
+     * Get ind1x7
      *
-     * @return integer 
+     * @return boolean 
      */
-    public function getAutonomiaEconomia()
+    public function getInd1x7()
     {
-        return $this->autonomiaEconomia;
+        return $this->ind1x7;
     }
 
     /**
-     * Set observacionesEconomia
+     * Set ind2x1
      *
-     * @param string $observacionesEconomia
+     * @param boolean $ind2x1
      * @return Persona
      */
-    public function setObservacionesEconomia($observacionesEconomia)
+    public function setInd2x1($ind2x1)
     {
-        $this->observacionesEconomia = $observacionesEconomia;
+        $this->ind2x1 = $ind2x1;
 
         return $this;
     }
 
     /**
-     * Get observacionesEconomia
+     * Get ind2x1
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getObservacionesEconomia()
+    public function getInd2x1()
     {
-        return $this->observacionesEconomia;
+        return $this->ind2x1;
     }
 
     /**
-     * Set cursoActual
+     * Set ind2xax1
      *
-     * @param string $cursoActual
+     * @param boolean $ind2xax1
      * @return Persona
      */
-    public function setCursoActual($cursoActual)
+    public function setInd2xax1($ind2xax1)
     {
-        $this->cursoActual = $cursoActual;
+        $this->ind2xax1 = $ind2xax1;
 
         return $this;
     }
 
     /**
-     * Get cursoActual
+     * Get ind2xax1
      *
-     * @return string 
+     * @return boolean 
      */
-    public function getCursoActual()
+    public function getInd2xax1()
     {
-        return $this->cursoActual;
+        return $this->ind2xax1;
     }
 
     /**
-     * Set justiciagratuita
+     * Set ind2xax2
      *
-     * @param integer $justiciagratuita
+     * @param boolean $ind2xax2
      * @return Persona
      */
-    public function setJusticiagratuita($justiciagratuita)
+    public function setInd2xax2($ind2xax2)
     {
-        $this->justiciagratuita = $justiciagratuita;
+        $this->ind2xax2 = $ind2xax2;
 
         return $this;
     }
 
     /**
-     * Get justiciagratuita
+     * Get ind2xax2
      *
-     * @return integer 
+     * @return boolean 
      */
-    public function getJusticiagratuita()
+    public function getInd2xax2()
     {
-        return $this->justiciagratuita;
+        return $this->ind2xax2;
     }
 
     /**
-     * Set indicador11
+     * Set ind2xax3
      *
-     * @param integer $indicador11
+     * @param boolean $ind2xax3
      * @return Persona
      */
-    public function setIndicador11($indicador11)
+    public function setInd2xax3($ind2xax3)
     {
-        $this->indicador11 = $indicador11;
+        $this->ind2xax3 = $ind2xax3;
 
         return $this;
     }
 
     /**
-     * Get indicador11
+     * Get ind2xax3
      *
-     * @return integer 
+     * @return boolean 
      */
-    public function getIndicador11()
+    public function getInd2xax3()
     {
-        return $this->indicador11;
+        return $this->ind2xax3;
     }
 
     /**
-     * Set indicador11A
+     * Set ind2xax4
      *
-     * @param integer $indicador11A
+     * @param boolean $ind2xax4
      * @return Persona
      */
-    public function setIndicador11A($indicador11A)
+    public function setInd2xax4($ind2xax4)
     {
-        $this->indicador11A = $indicador11A;
+        $this->ind2xax4 = $ind2xax4;
 
         return $this;
     }
 
     /**
-     * Get indicador11A
+     * Get ind2xax4
      *
-     * @return integer 
+     * @return boolean 
      */
-    public function getIndicador11A()
+    public function getInd2xax4()
     {
-        return $this->indicador11A;
+        return $this->ind2xax4;
     }
 
     /**
-     * Set indicador12
+     * Set ind2xbx1
      *
-     * @param integer $indicador12
+     * @param boolean $ind2xbx1
      * @return Persona
      */
-    public function setIndicador12($indicador12)
+    public function setInd2xbx1($ind2xbx1)
     {
-        $this->indicador12 = $indicador12;
+        $this->ind2xbx1 = $ind2xbx1;
 
         return $this;
     }
 
     /**
-     * Get indicador12
+     * Get ind2xbx1
      *
-     * @return integer 
+     * @return boolean 
      */
-    public function getIndicador12()
+    public function getInd2xbx1()
     {
-        return $this->indicador12;
+        return $this->ind2xbx1;
     }
 
     /**
-     * Set indicador12A
+     * Set ind2xbx2
      *
-     * @param integer $indicador12A
+     * @param boolean $ind2xbx2
      * @return Persona
      */
-    public function setIndicador12A($indicador12A)
+    public function setInd2xbx2($ind2xbx2)
     {
-        $this->indicador12A = $indicador12A;
+        $this->ind2xbx2 = $ind2xbx2;
 
         return $this;
     }
 
     /**
-     * Get indicador12A
+     * Get ind2xbx2
      *
-     * @return integer 
+     * @return boolean 
      */
-    public function getIndicador12A()
+    public function getInd2xbx2()
     {
-        return $this->indicador12A;
+        return $this->ind2xbx2;
     }
 
     /**
-     * Set indicador13
+     * Set ind3x1
      *
-     * @param integer $indicador13
+     * @param boolean $ind3x1
      * @return Persona
      */
-    public function setIndicador13($indicador13)
+    public function setInd3x1($ind3x1)
     {
-        $this->indicador13 = $indicador13;
+        $this->ind3x1 = $ind3x1;
 
         return $this;
     }
 
     /**
-     * Get indicador13
+     * Get ind3x1
      *
-     * @return integer 
+     * @return boolean 
      */
-    public function getIndicador13()
+    public function getInd3x1()
     {
-        return $this->indicador13;
+        return $this->ind3x1;
     }
 
     /**
-     * Set indicador14
+     * Set ind3x1xa
      *
-     * @param integer $indicador14
+     * @param boolean $ind3x1xa
      * @return Persona
      */
-    public function setIndicador14($indicador14)
+    public function setInd3x1xa($ind3x1xa)
     {
-        $this->indicador14 = $indicador14;
+        $this->ind3x1xa = $ind3x1xa;
 
         return $this;
     }
 
     /**
-     * Get indicador14
+     * Get ind3x1xa
      *
-     * @return integer 
+     * @return boolean 
      */
-    public function getIndicador14()
+    public function getInd3x1xa()
     {
-        return $this->indicador14;
+        return $this->ind3x1xa;
     }
 
     /**
-     * Set indicador15
+     * Set ind3x2
      *
-     * @param integer $indicador15
+     * @param boolean $ind3x2
      * @return Persona
      */
-    public function setIndicador15($indicador15)
+    public function setInd3x2($ind3x2)
     {
-        $this->indicador15 = $indicador15;
+        $this->ind3x2 = $ind3x2;
 
         return $this;
     }
 
     /**
-     * Get indicador15
+     * Get ind3x2
      *
-     * @return integer 
+     * @return boolean 
      */
-    public function getIndicador15()
+    public function getInd3x2()
     {
-        return $this->indicador15;
+        return $this->ind3x2;
     }
 
     /**
-     * Get idPers
+     * Set ind3x2xe
      *
-     * @return integer 
+     * @param boolean $ind3x2xe
+     * @return Persona
      */
-    public function getIdPers()
+    public function setInd3x2xe($ind3x2xe)
     {
-        return $this->idPers;
+        $this->ind3x2xe = $ind3x2xe;
+
+        return $this;
+    }
+
+    /**
+     * Get ind3x2xe
+     *
+     * @return boolean 
+     */
+    public function getInd3x2xe()
+    {
+        return $this->ind3x2xe;
+    }
+
+    /**
+     * Set ind3x2xd
+     *
+     * @param boolean $ind3x2xd
+     * @return Persona
+     */
+    public function setInd3x2xd($ind3x2xd)
+    {
+        $this->ind3x2xd = $ind3x2xd;
+
+        return $this;
+    }
+
+    /**
+     * Get ind3x2xd
+     *
+     * @return boolean 
+     */
+    public function getInd3x2xd()
+    {
+        return $this->ind3x2xd;
+    }
+
+    /**
+     * Set ind3x2xr
+     *
+     * @param boolean $ind3x2xr
+     * @return Persona
+     */
+    public function setInd3x2xr($ind3x2xr)
+    {
+        $this->ind3x2xr = $ind3x2xr;
+
+        return $this;
+    }
+
+    /**
+     * Get ind3x2xr
+     *
+     * @return boolean 
+     */
+    public function getInd3x2xr()
+    {
+        return $this->ind3x2xr;
+    }
+
+    /**
+     * Set ind3x3
+     *
+     * @param boolean $ind3x3
+     * @return Persona
+     */
+    public function setInd3x3($ind3x3)
+    {
+        $this->ind3x3 = $ind3x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind3x3
+     *
+     * @return boolean 
+     */
+    public function getInd3x3()
+    {
+        return $this->ind3x3;
+    }
+
+    /**
+     * Set ind3x3xt
+     *
+     * @param boolean $ind3x3xt
+     * @return Persona
+     */
+    public function setInd3x3xt($ind3x3xt)
+    {
+        $this->ind3x3xt = $ind3x3xt;
+
+        return $this;
+    }
+
+    /**
+     * Get ind3x3xt
+     *
+     * @return boolean 
+     */
+    public function getInd3x3xt()
+    {
+        return $this->ind3x3xt;
+    }
+
+    /**
+     * Set ind3x4
+     *
+     * @param boolean $ind3x4
+     * @return Persona
+     */
+    public function setInd3x4($ind3x4)
+    {
+        $this->ind3x4 = $ind3x4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind3x4
+     *
+     * @return boolean 
+     */
+    public function getInd3x4()
+    {
+        return $this->ind3x4;
+    }
+
+    /**
+     * Set indtx1
+     *
+     * @param boolean $indtx1
+     * @return Persona
+     */
+    public function setIndtx1($indtx1)
+    {
+        $this->indtx1 = $indtx1;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx1
+     *
+     * @return boolean 
+     */
+    public function getIndtx1()
+    {
+        return $this->indtx1;
+    }
+
+    /**
+     * Set indtx2
+     *
+     * @param boolean $indtx2
+     * @return Persona
+     */
+    public function setIndtx2($indtx2)
+    {
+        $this->indtx2 = $indtx2;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx2
+     *
+     * @return boolean 
+     */
+    public function getIndtx2()
+    {
+        return $this->indtx2;
+    }
+
+    /**
+     * Set indtx3
+     *
+     * @param boolean $indtx3
+     * @return Persona
+     */
+    public function setIndtx3($indtx3)
+    {
+        $this->indtx3 = $indtx3;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx3
+     *
+     * @return boolean 
+     */
+    public function getIndtx3()
+    {
+        return $this->indtx3;
+    }
+
+    /**
+     * Set indtx4
+     *
+     * @param boolean $indtx4
+     * @return Persona
+     */
+    public function setIndtx4($indtx4)
+    {
+        $this->indtx4 = $indtx4;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx4
+     *
+     * @return boolean 
+     */
+    public function getIndtx4()
+    {
+        return $this->indtx4;
+    }
+
+    /**
+     * Set ind4x1
+     *
+     * @param boolean $ind4x1
+     * @return Persona
+     */
+    public function setInd4x1($ind4x1)
+    {
+        $this->ind4x1 = $ind4x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4x1
+     *
+     * @return boolean 
+     */
+    public function getInd4x1()
+    {
+        return $this->ind4x1;
+    }
+
+    /**
+     * Set ind4x2
+     *
+     * @param boolean $ind4x2
+     * @return Persona
+     */
+    public function setInd4x2($ind4x2)
+    {
+        $this->ind4x2 = $ind4x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4x2
+     *
+     * @return boolean 
+     */
+    public function getInd4x2()
+    {
+        return $this->ind4x2;
+    }
+
+    /**
+     * Set ind4x2xa
+     *
+     * @param boolean $ind4x2xa
+     * @return Persona
+     */
+    public function setInd4x2xa($ind4x2xa)
+    {
+        $this->ind4x2xa = $ind4x2xa;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4x2xa
+     *
+     * @return boolean 
+     */
+    public function getInd4x2xa()
+    {
+        return $this->ind4x2xa;
+    }
+
+    /**
+     * Set ind4x2xb
+     *
+     * @param boolean $ind4x2xb
+     * @return Persona
+     */
+    public function setInd4x2xb($ind4x2xb)
+    {
+        $this->ind4x2xb = $ind4x2xb;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4x2xb
+     *
+     * @return boolean 
+     */
+    public function getInd4x2xb()
+    {
+        return $this->ind4x2xb;
+    }
+
+    /**
+     * Set ind4x2xc
+     *
+     * @param boolean $ind4x2xc
+     * @return Persona
+     */
+    public function setInd4x2xc($ind4x2xc)
+    {
+        $this->ind4x2xc = $ind4x2xc;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4x2xc
+     *
+     * @return boolean 
+     */
+    public function getInd4x2xc()
+    {
+        return $this->ind4x2xc;
+    }
+
+    /**
+     * Set ind4x3
+     *
+     * @param boolean $ind4x3
+     * @return Persona
+     */
+    public function setInd4x3($ind4x3)
+    {
+        $this->ind4x3 = $ind4x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4x3
+     *
+     * @return boolean 
+     */
+    public function getInd4x3()
+    {
+        return $this->ind4x3;
+    }
+
+    /**
+     * Set ind4x3x1
+     *
+     * @param boolean $ind4x3x1
+     * @return Persona
+     */
+    public function setInd4x3x1($ind4x3x1)
+    {
+        $this->ind4x3x1 = $ind4x3x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4x3x1
+     *
+     * @return boolean 
+     */
+    public function getInd4x3x1()
+    {
+        return $this->ind4x3x1;
+    }
+
+    /**
+     * Set ind4x3x2
+     *
+     * @param boolean $ind4x3x2
+     * @return Persona
+     */
+    public function setInd4x3x2($ind4x3x2)
+    {
+        $this->ind4x3x2 = $ind4x3x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4x3x2
+     *
+     * @return boolean 
+     */
+    public function getInd4x3x2()
+    {
+        return $this->ind4x3x2;
+    }
+
+    /**
+     * Set ind4x3x3
+     *
+     * @param boolean $ind4x3x3
+     * @return Persona
+     */
+    public function setInd4x3x3($ind4x3x3)
+    {
+        $this->ind4x3x3 = $ind4x3x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4x3x3
+     *
+     * @return boolean 
+     */
+    public function getInd4x3x3()
+    {
+        return $this->ind4x3x3;
+    }
+
+    /**
+     * Set ind4xax1
+     *
+     * @param boolean $ind4xax1
+     * @return Persona
+     */
+    public function setInd4xax1($ind4xax1)
+    {
+        $this->ind4xax1 = $ind4xax1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xax1
+     *
+     * @return boolean 
+     */
+    public function getInd4xax1()
+    {
+        return $this->ind4xax1;
+    }
+
+    /**
+     * Set ind4xax2
+     *
+     * @param boolean $ind4xax2
+     * @return Persona
+     */
+    public function setInd4xax2($ind4xax2)
+    {
+        $this->ind4xax2 = $ind4xax2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xax2
+     *
+     * @return boolean 
+     */
+    public function getInd4xax2()
+    {
+        return $this->ind4xax2;
+    }
+
+    /**
+     * Set ind4xax3
+     *
+     * @param boolean $ind4xax3
+     * @return Persona
+     */
+    public function setInd4xax3($ind4xax3)
+    {
+        $this->ind4xax3 = $ind4xax3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xax3
+     *
+     * @return boolean 
+     */
+    public function getInd4xax3()
+    {
+        return $this->ind4xax3;
+    }
+
+    /**
+     * Set ind4xax4
+     *
+     * @param boolean $ind4xax4
+     * @return Persona
+     */
+    public function setInd4xax4($ind4xax4)
+    {
+        $this->ind4xax4 = $ind4xax4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xax4
+     *
+     * @return boolean 
+     */
+    public function getInd4xax4()
+    {
+        return $this->ind4xax4;
+    }
+
+    /**
+     * Set ind4xax5
+     *
+     * @param boolean $ind4xax5
+     * @return Persona
+     */
+    public function setInd4xax5($ind4xax5)
+    {
+        $this->ind4xax5 = $ind4xax5;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xax5
+     *
+     * @return boolean 
+     */
+    public function getInd4xax5()
+    {
+        return $this->ind4xax5;
+    }
+
+    /**
+     * Set ind4xax6
+     *
+     * @param boolean $ind4xax6
+     * @return Persona
+     */
+    public function setInd4xax6($ind4xax6)
+    {
+        $this->ind4xax6 = $ind4xax6;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xax6
+     *
+     * @return boolean 
+     */
+    public function getInd4xax6()
+    {
+        return $this->ind4xax6;
+    }
+
+    /**
+     * Set ind4xbx1
+     *
+     * @param boolean $ind4xbx1
+     * @return Persona
+     */
+    public function setInd4xbx1($ind4xbx1)
+    {
+        $this->ind4xbx1 = $ind4xbx1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xbx1
+     *
+     * @return boolean 
+     */
+    public function getInd4xbx1()
+    {
+        return $this->ind4xbx1;
+    }
+
+    /**
+     * Set ind4xbx2
+     *
+     * @param boolean $ind4xbx2
+     * @return Persona
+     */
+    public function setInd4xbx2($ind4xbx2)
+    {
+        $this->ind4xbx2 = $ind4xbx2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xbx2
+     *
+     * @return boolean 
+     */
+    public function getInd4xbx2()
+    {
+        return $this->ind4xbx2;
+    }
+
+    /**
+     * Set ind4xcx1
+     *
+     * @param boolean $ind4xcx1
+     * @return Persona
+     */
+    public function setInd4xcx1($ind4xcx1)
+    {
+        $this->ind4xcx1 = $ind4xcx1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xcx1
+     *
+     * @return boolean 
+     */
+    public function getInd4xcx1()
+    {
+        return $this->ind4xcx1;
+    }
+
+    /**
+     * Set ind4xcx2
+     *
+     * @param boolean $ind4xcx2
+     * @return Persona
+     */
+    public function setInd4xcx2($ind4xcx2)
+    {
+        $this->ind4xcx2 = $ind4xcx2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xcx2
+     *
+     * @return boolean 
+     */
+    public function getInd4xcx2()
+    {
+        return $this->ind4xcx2;
+    }
+
+    /**
+     * Set ind4xcx3
+     *
+     * @param boolean $ind4xcx3
+     * @return Persona
+     */
+    public function setInd4xcx3($ind4xcx3)
+    {
+        $this->ind4xcx3 = $ind4xcx3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xcx3
+     *
+     * @return boolean 
+     */
+    public function getInd4xcx3()
+    {
+        return $this->ind4xcx3;
+    }
+
+    /**
+     * Set ind4xcx4
+     *
+     * @param boolean $ind4xcx4
+     * @return Persona
+     */
+    public function setInd4xcx4($ind4xcx4)
+    {
+        $this->ind4xcx4 = $ind4xcx4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind4xcx4
+     *
+     * @return boolean 
+     */
+    public function getInd4xcx4()
+    {
+        return $this->ind4xcx4;
+    }
+
+    /**
+     * Set ind5x1
+     *
+     * @param boolean $ind5x1
+     * @return Persona
+     */
+    public function setInd5x1($ind5x1)
+    {
+        $this->ind5x1 = $ind5x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind5x1
+     *
+     * @return boolean 
+     */
+    public function getInd5x1()
+    {
+        return $this->ind5x1;
+    }
+
+    /**
+     * Set ind5x2
+     *
+     * @param boolean $ind5x2
+     * @return Persona
+     */
+    public function setInd5x2($ind5x2)
+    {
+        $this->ind5x2 = $ind5x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind5x2
+     *
+     * @return boolean 
+     */
+    public function getInd5x2()
+    {
+        return $this->ind5x2;
+    }
+
+    /**
+     * Set ind5x3
+     *
+     * @param boolean $ind5x3
+     * @return Persona
+     */
+    public function setInd5x3($ind5x3)
+    {
+        $this->ind5x3 = $ind5x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind5x3
+     *
+     * @return boolean 
+     */
+    public function getInd5x3()
+    {
+        return $this->ind5x3;
+    }
+
+    /**
+     * Set ind5x4
+     *
+     * @param boolean $ind5x4
+     * @return Persona
+     */
+    public function setInd5x4($ind5x4)
+    {
+        $this->ind5x4 = $ind5x4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind5x4
+     *
+     * @return boolean 
+     */
+    public function getInd5x4()
+    {
+        return $this->ind5x4;
+    }
+
+    /**
+     * Set ind5x5
+     *
+     * @param boolean $ind5x5
+     * @return Persona
+     */
+    public function setInd5x5($ind5x5)
+    {
+        $this->ind5x5 = $ind5x5;
+
+        return $this;
+    }
+
+    /**
+     * Get ind5x5
+     *
+     * @return boolean 
+     */
+    public function getInd5x5()
+    {
+        return $this->ind5x5;
+    }
+
+    /**
+     * Set ind6x1
+     *
+     * @param boolean $ind6x1
+     * @return Persona
+     */
+    public function setInd6x1($ind6x1)
+    {
+        $this->ind6x1 = $ind6x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind6x1
+     *
+     * @return boolean 
+     */
+    public function getInd6x1()
+    {
+        return $this->ind6x1;
+    }
+
+    /**
+     * Set ind6x1x1
+     *
+     * @param boolean $ind6x1x1
+     * @return Persona
+     */
+    public function setInd6x1x1($ind6x1x1)
+    {
+        $this->ind6x1x1 = $ind6x1x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind6x1x1
+     *
+     * @return boolean 
+     */
+    public function getInd6x1x1()
+    {
+        return $this->ind6x1x1;
+    }
+
+    /**
+     * Set ind6x1x2
+     *
+     * @param boolean $ind6x1x2
+     * @return Persona
+     */
+    public function setInd6x1x2($ind6x1x2)
+    {
+        $this->ind6x1x2 = $ind6x1x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind6x1x2
+     *
+     * @return boolean 
+     */
+    public function getInd6x1x2()
+    {
+        return $this->ind6x1x2;
+    }
+
+    /**
+     * Set ind6x1x3
+     *
+     * @param boolean $ind6x1x3
+     * @return Persona
+     */
+    public function setInd6x1x3($ind6x1x3)
+    {
+        $this->ind6x1x3 = $ind6x1x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind6x1x3
+     *
+     * @return boolean 
+     */
+    public function getInd6x1x3()
+    {
+        return $this->ind6x1x3;
+    }
+
+    /**
+     * Set ind6x2
+     *
+     * @param boolean $ind6x2
+     * @return Persona
+     */
+    public function setInd6x2($ind6x2)
+    {
+        $this->ind6x2 = $ind6x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind6x2
+     *
+     * @return boolean 
+     */
+    public function getInd6x2()
+    {
+        return $this->ind6x2;
+    }
+
+    /**
+     * Set ind6x3
+     *
+     * @param boolean $ind6x3
+     * @return Persona
+     */
+    public function setInd6x3($ind6x3)
+    {
+        $this->ind6x3 = $ind6x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind6x3
+     *
+     * @return boolean 
+     */
+    public function getInd6x3()
+    {
+        return $this->ind6x3;
+    }
+
+    /**
+     * Set ind6x4
+     *
+     * @param boolean $ind6x4
+     * @return Persona
+     */
+    public function setInd6x4($ind6x4)
+    {
+        $this->ind6x4 = $ind6x4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind6x4
+     *
+     * @return boolean 
+     */
+    public function getInd6x4()
+    {
+        return $this->ind6x4;
+    }
+
+    /**
+     * Set ind7xax1
+     *
+     * @param boolean $ind7xax1
+     * @return Persona
+     */
+    public function setInd7xax1($ind7xax1)
+    {
+        $this->ind7xax1 = $ind7xax1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xax1
+     *
+     * @return boolean 
+     */
+    public function getInd7xax1()
+    {
+        return $this->ind7xax1;
+    }
+
+    /**
+     * Set ind7xax2
+     *
+     * @param boolean $ind7xax2
+     * @return Persona
+     */
+    public function setInd7xax2($ind7xax2)
+    {
+        $this->ind7xax2 = $ind7xax2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xax2
+     *
+     * @return boolean 
+     */
+    public function getInd7xax2()
+    {
+        return $this->ind7xax2;
+    }
+
+    /**
+     * Set ind7xax3
+     *
+     * @param boolean $ind7xax3
+     * @return Persona
+     */
+    public function setInd7xax3($ind7xax3)
+    {
+        $this->ind7xax3 = $ind7xax3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xax3
+     *
+     * @return boolean 
+     */
+    public function getInd7xax3()
+    {
+        return $this->ind7xax3;
+    }
+
+    /**
+     * Set ind7xax4
+     *
+     * @param boolean $ind7xax4
+     * @return Persona
+     */
+    public function setInd7xax4($ind7xax4)
+    {
+        $this->ind7xax4 = $ind7xax4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xax4
+     *
+     * @return boolean 
+     */
+    public function getInd7xax4()
+    {
+        return $this->ind7xax4;
+    }
+
+    /**
+     * Set ind7xax5
+     *
+     * @param boolean $ind7xax5
+     * @return Persona
+     */
+    public function setInd7xax5($ind7xax5)
+    {
+        $this->ind7xax5 = $ind7xax5;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xax5
+     *
+     * @return boolean 
+     */
+    public function getInd7xax5()
+    {
+        return $this->ind7xax5;
+    }
+
+    /**
+     * Set ind7xax6
+     *
+     * @param boolean $ind7xax6
+     * @return Persona
+     */
+    public function setInd7xax6($ind7xax6)
+    {
+        $this->ind7xax6 = $ind7xax6;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xax6
+     *
+     * @return boolean 
+     */
+    public function getInd7xax6()
+    {
+        return $this->ind7xax6;
+    }
+
+    /**
+     * Set ind7xax7
+     *
+     * @param boolean $ind7xax7
+     * @return Persona
+     */
+    public function setInd7xax7($ind7xax7)
+    {
+        $this->ind7xax7 = $ind7xax7;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xax7
+     *
+     * @return boolean 
+     */
+    public function getInd7xax7()
+    {
+        return $this->ind7xax7;
+    }
+
+    /**
+     * Set ind7xbx1
+     *
+     * @param boolean $ind7xbx1
+     * @return Persona
+     */
+    public function setInd7xbx1($ind7xbx1)
+    {
+        $this->ind7xbx1 = $ind7xbx1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xbx1
+     *
+     * @return boolean 
+     */
+    public function getInd7xbx1()
+    {
+        return $this->ind7xbx1;
+    }
+
+    /**
+     * Set ind7xbx2
+     *
+     * @param boolean $ind7xbx2
+     * @return Persona
+     */
+    public function setInd7xbx2($ind7xbx2)
+    {
+        $this->ind7xbx2 = $ind7xbx2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xbx2
+     *
+     * @return boolean 
+     */
+    public function getInd7xbx2()
+    {
+        return $this->ind7xbx2;
+    }
+
+    /**
+     * Set ind7xbx3
+     *
+     * @param boolean $ind7xbx3
+     * @return Persona
+     */
+    public function setInd7xbx3($ind7xbx3)
+    {
+        $this->ind7xbx3 = $ind7xbx3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xbx3
+     *
+     * @return boolean 
+     */
+    public function getInd7xbx3()
+    {
+        return $this->ind7xbx3;
+    }
+
+    /**
+     * Set ind7xbx4
+     *
+     * @param boolean $ind7xbx4
+     * @return Persona
+     */
+    public function setInd7xbx4($ind7xbx4)
+    {
+        $this->ind7xbx4 = $ind7xbx4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xbx4
+     *
+     * @return boolean 
+     */
+    public function getInd7xbx4()
+    {
+        return $this->ind7xbx4;
+    }
+
+    /**
+     * Set ind7xbx5
+     *
+     * @param boolean $ind7xbx5
+     * @return Persona
+     */
+    public function setInd7xbx5($ind7xbx5)
+    {
+        $this->ind7xbx5 = $ind7xbx5;
+
+        return $this;
+    }
+
+    /**
+     * Get ind7xbx5
+     *
+     * @return boolean 
+     */
+    public function getInd7xbx5()
+    {
+        return $this->ind7xbx5;
+    }
+
+    /**
+     * Set ind8x1
+     *
+     * @param boolean $ind8x1
+     * @return Persona
+     */
+    public function setInd8x1($ind8x1)
+    {
+        $this->ind8x1 = $ind8x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind8x1
+     *
+     * @return boolean 
+     */
+    public function getInd8x1()
+    {
+        return $this->ind8x1;
+    }
+
+    /**
+     * Set ind8x2
+     *
+     * @param boolean $ind8x2
+     * @return Persona
+     */
+    public function setInd8x2($ind8x2)
+    {
+        $this->ind8x2 = $ind8x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind8x2
+     *
+     * @return boolean 
+     */
+    public function getInd8x2()
+    {
+        return $this->ind8x2;
+    }
+
+    /**
+     * Set ind8x3
+     *
+     * @param boolean $ind8x3
+     * @return Persona
+     */
+    public function setInd8x3($ind8x3)
+    {
+        $this->ind8x3 = $ind8x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind8x3
+     *
+     * @return boolean 
+     */
+    public function getInd8x3()
+    {
+        return $this->ind8x3;
+    }
+
+    /**
+     * Set ind8x4
+     *
+     * @param boolean $ind8x4
+     * @return Persona
+     */
+    public function setInd8x4($ind8x4)
+    {
+        $this->ind8x4 = $ind8x4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind8x4
+     *
+     * @return boolean 
+     */
+    public function getInd8x4()
+    {
+        return $this->ind8x4;
+    }
+
+    /**
+     * Set indtx5
+     *
+     * @param boolean $indtx5
+     * @return Persona
+     */
+    public function setIndtx5($indtx5)
+    {
+        $this->indtx5 = $indtx5;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx5
+     *
+     * @return boolean 
+     */
+    public function getIndtx5()
+    {
+        return $this->indtx5;
+    }
+
+    /**
+     * Set indtx6
+     *
+     * @param boolean $indtx6
+     * @return Persona
+     */
+    public function setIndtx6($indtx6)
+    {
+        $this->indtx6 = $indtx6;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx6
+     *
+     * @return boolean 
+     */
+    public function getIndtx6()
+    {
+        return $this->indtx6;
+    }
+
+    /**
+     * Set indtx7
+     *
+     * @param boolean $indtx7
+     * @return Persona
+     */
+    public function setIndtx7($indtx7)
+    {
+        $this->indtx7 = $indtx7;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx7
+     *
+     * @return boolean 
+     */
+    public function getIndtx7()
+    {
+        return $this->indtx7;
+    }
+
+    /**
+     * Set indtx8
+     *
+     * @param boolean $indtx8
+     * @return Persona
+     */
+    public function setIndtx8($indtx8)
+    {
+        $this->indtx8 = $indtx8;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx8
+     *
+     * @return boolean 
+     */
+    public function getIndtx8()
+    {
+        return $this->indtx8;
+    }
+
+    /**
+     * Set indtx9
+     *
+     * @param boolean $indtx9
+     * @return Persona
+     */
+    public function setIndtx9($indtx9)
+    {
+        $this->indtx9 = $indtx9;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx9
+     *
+     * @return boolean 
+     */
+    public function getIndtx9()
+    {
+        return $this->indtx9;
+    }
+
+    /**
+     * Set indtx10
+     *
+     * @param boolean $indtx10
+     * @return Persona
+     */
+    public function setIndtx10($indtx10)
+    {
+        $this->indtx10 = $indtx10;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx10
+     *
+     * @return boolean 
+     */
+    public function getIndtx10()
+    {
+        return $this->indtx10;
+    }
+
+    /**
+     * Set indtx11
+     *
+     * @param boolean $indtx11
+     * @return Persona
+     */
+    public function setIndtx11($indtx11)
+    {
+        $this->indtx11 = $indtx11;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx11
+     *
+     * @return boolean 
+     */
+    public function getIndtx11()
+    {
+        return $this->indtx11;
+    }
+
+    /**
+     * Set indtx12
+     *
+     * @param boolean $indtx12
+     * @return Persona
+     */
+    public function setIndtx12($indtx12)
+    {
+        $this->indtx12 = $indtx12;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx12
+     *
+     * @return boolean 
+     */
+    public function getIndtx12()
+    {
+        return $this->indtx12;
+    }
+
+    /**
+     * Set indtx13
+     *
+     * @param boolean $indtx13
+     * @return Persona
+     */
+    public function setIndtx13($indtx13)
+    {
+        $this->indtx13 = $indtx13;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx13
+     *
+     * @return boolean 
+     */
+    public function getIndtx13()
+    {
+        return $this->indtx13;
+    }
+
+    /**
+     * Set indtx14
+     *
+     * @param boolean $indtx14
+     * @return Persona
+     */
+    public function setIndtx14($indtx14)
+    {
+        $this->indtx14 = $indtx14;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx14
+     *
+     * @return boolean 
+     */
+    public function getIndtx14()
+    {
+        return $this->indtx14;
+    }
+
+    /**
+     * Set indtx15
+     *
+     * @param boolean $indtx15
+     * @return Persona
+     */
+    public function setIndtx15($indtx15)
+    {
+        $this->indtx15 = $indtx15;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx15
+     *
+     * @return boolean 
+     */
+    public function getIndtx15()
+    {
+        return $this->indtx15;
+    }
+
+    /**
+     * Set indtx16
+     *
+     * @param boolean $indtx16
+     * @return Persona
+     */
+    public function setIndtx16($indtx16)
+    {
+        $this->indtx16 = $indtx16;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx16
+     *
+     * @return boolean 
+     */
+    public function getIndtx16()
+    {
+        return $this->indtx16;
+    }
+
+    /**
+     * Set ind9xax1
+     *
+     * @param boolean $ind9xax1
+     * @return Persona
+     */
+    public function setInd9xax1($ind9xax1)
+    {
+        $this->ind9xax1 = $ind9xax1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xax1
+     *
+     * @return boolean 
+     */
+    public function getInd9xax1()
+    {
+        return $this->ind9xax1;
+    }
+
+    /**
+     * Set ind9xax2
+     *
+     * @param boolean $ind9xax2
+     * @return Persona
+     */
+    public function setInd9xax2($ind9xax2)
+    {
+        $this->ind9xax2 = $ind9xax2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xax2
+     *
+     * @return boolean 
+     */
+    public function getInd9xax2()
+    {
+        return $this->ind9xax2;
+    }
+
+    /**
+     * Set ind9xax3
+     *
+     * @param boolean $ind9xax3
+     * @return Persona
+     */
+    public function setInd9xax3($ind9xax3)
+    {
+        $this->ind9xax3 = $ind9xax3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xax3
+     *
+     * @return boolean 
+     */
+    public function getInd9xax3()
+    {
+        return $this->ind9xax3;
+    }
+
+    /**
+     * Set ind9xax4
+     *
+     * @param boolean $ind9xax4
+     * @return Persona
+     */
+    public function setInd9xax4($ind9xax4)
+    {
+        $this->ind9xax4 = $ind9xax4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xax4
+     *
+     * @return boolean 
+     */
+    public function getInd9xax4()
+    {
+        return $this->ind9xax4;
+    }
+
+    /**
+     * Set ind9xax5
+     *
+     * @param boolean $ind9xax5
+     * @return Persona
+     */
+    public function setInd9xax5($ind9xax5)
+    {
+        $this->ind9xax5 = $ind9xax5;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xax5
+     *
+     * @return boolean 
+     */
+    public function getInd9xax5()
+    {
+        return $this->ind9xax5;
+    }
+
+    /**
+     * Set ind9xbx1
+     *
+     * @param boolean $ind9xbx1
+     * @return Persona
+     */
+    public function setInd9xbx1($ind9xbx1)
+    {
+        $this->ind9xbx1 = $ind9xbx1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xbx1
+     *
+     * @return boolean 
+     */
+    public function getInd9xbx1()
+    {
+        return $this->ind9xbx1;
+    }
+
+    /**
+     * Set ind9xbx2
+     *
+     * @param boolean $ind9xbx2
+     * @return Persona
+     */
+    public function setInd9xbx2($ind9xbx2)
+    {
+        $this->ind9xbx2 = $ind9xbx2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xbx2
+     *
+     * @return boolean 
+     */
+    public function getInd9xbx2()
+    {
+        return $this->ind9xbx2;
+    }
+
+    /**
+     * Set ind9xbx3
+     *
+     * @param boolean $ind9xbx3
+     * @return Persona
+     */
+    public function setInd9xbx3($ind9xbx3)
+    {
+        $this->ind9xbx3 = $ind9xbx3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xbx3
+     *
+     * @return boolean 
+     */
+    public function getInd9xbx3()
+    {
+        return $this->ind9xbx3;
+    }
+
+    /**
+     * Set ind9xbx4
+     *
+     * @param boolean $ind9xbx4
+     * @return Persona
+     */
+    public function setInd9xbx4($ind9xbx4)
+    {
+        $this->ind9xbx4 = $ind9xbx4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xbx4
+     *
+     * @return boolean 
+     */
+    public function getInd9xbx4()
+    {
+        return $this->ind9xbx4;
+    }
+
+    /**
+     * Set ind9xbx5
+     *
+     * @param boolean $ind9xbx5
+     * @return Persona
+     */
+    public function setInd9xbx5($ind9xbx5)
+    {
+        $this->ind9xbx5 = $ind9xbx5;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xbx5
+     *
+     * @return boolean 
+     */
+    public function getInd9xbx5()
+    {
+        return $this->ind9xbx5;
+    }
+
+    /**
+     * Set ind9xcx1
+     *
+     * @param boolean $ind9xcx1
+     * @return Persona
+     */
+    public function setInd9xcx1($ind9xcx1)
+    {
+        $this->ind9xcx1 = $ind9xcx1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xcx1
+     *
+     * @return boolean 
+     */
+    public function getInd9xcx1()
+    {
+        return $this->ind9xcx1;
+    }
+
+    /**
+     * Set ind9xcx2
+     *
+     * @param boolean $ind9xcx2
+     * @return Persona
+     */
+    public function setInd9xcx2($ind9xcx2)
+    {
+        $this->ind9xcx2 = $ind9xcx2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xcx2
+     *
+     * @return boolean 
+     */
+    public function getInd9xcx2()
+    {
+        return $this->ind9xcx2;
+    }
+
+    /**
+     * Set ind9xcx3
+     *
+     * @param boolean $ind9xcx3
+     * @return Persona
+     */
+    public function setInd9xcx3($ind9xcx3)
+    {
+        $this->ind9xcx3 = $ind9xcx3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xcx3
+     *
+     * @return boolean 
+     */
+    public function getInd9xcx3()
+    {
+        return $this->ind9xcx3;
+    }
+
+    /**
+     * Set ind9xcx4
+     *
+     * @param boolean $ind9xcx4
+     * @return Persona
+     */
+    public function setInd9xcx4($ind9xcx4)
+    {
+        $this->ind9xcx4 = $ind9xcx4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xcx4
+     *
+     * @return boolean 
+     */
+    public function getInd9xcx4()
+    {
+        return $this->ind9xcx4;
+    }
+
+    /**
+     * Set ind9xcx5
+     *
+     * @param boolean $ind9xcx5
+     * @return Persona
+     */
+    public function setInd9xcx5($ind9xcx5)
+    {
+        $this->ind9xcx5 = $ind9xcx5;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xcx5
+     *
+     * @return boolean 
+     */
+    public function getInd9xcx5()
+    {
+        return $this->ind9xcx5;
+    }
+
+    /**
+     * Set ind9xcx6
+     *
+     * @param boolean $ind9xcx6
+     * @return Persona
+     */
+    public function setInd9xcx6($ind9xcx6)
+    {
+        $this->ind9xcx6 = $ind9xcx6;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xcx6
+     *
+     * @return boolean 
+     */
+    public function getInd9xcx6()
+    {
+        return $this->ind9xcx6;
+    }
+
+    /**
+     * Set ind9xdx1
+     *
+     * @param boolean $ind9xdx1
+     * @return Persona
+     */
+    public function setInd9xdx1($ind9xdx1)
+    {
+        $this->ind9xdx1 = $ind9xdx1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xdx1
+     *
+     * @return boolean 
+     */
+    public function getInd9xdx1()
+    {
+        return $this->ind9xdx1;
+    }
+
+    /**
+     * Set ind9xdx2
+     *
+     * @param boolean $ind9xdx2
+     * @return Persona
+     */
+    public function setInd9xdx2($ind9xdx2)
+    {
+        $this->ind9xdx2 = $ind9xdx2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xdx2
+     *
+     * @return boolean 
+     */
+    public function getInd9xdx2()
+    {
+        return $this->ind9xdx2;
+    }
+
+    /**
+     * Set ind9xdx3
+     *
+     * @param boolean $ind9xdx3
+     * @return Persona
+     */
+    public function setInd9xdx3($ind9xdx3)
+    {
+        $this->ind9xdx3 = $ind9xdx3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xdx3
+     *
+     * @return boolean 
+     */
+    public function getInd9xdx3()
+    {
+        return $this->ind9xdx3;
+    }
+
+    /**
+     * Set ind9xdx4
+     *
+     * @param boolean $ind9xdx4
+     * @return Persona
+     */
+    public function setInd9xdx4($ind9xdx4)
+    {
+        $this->ind9xdx4 = $ind9xdx4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xdx4
+     *
+     * @return boolean 
+     */
+    public function getInd9xdx4()
+    {
+        return $this->ind9xdx4;
+    }
+
+    /**
+     * Set ind9xdx5
+     *
+     * @param boolean $ind9xdx5
+     * @return Persona
+     */
+    public function setInd9xdx5($ind9xdx5)
+    {
+        $this->ind9xdx5 = $ind9xdx5;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xdx5
+     *
+     * @return boolean 
+     */
+    public function getInd9xdx5()
+    {
+        return $this->ind9xdx5;
+    }
+
+    /**
+     * Set ind9xdx6
+     *
+     * @param boolean $ind9xdx6
+     * @return Persona
+     */
+    public function setInd9xdx6($ind9xdx6)
+    {
+        $this->ind9xdx6 = $ind9xdx6;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xdx6
+     *
+     * @return boolean 
+     */
+    public function getInd9xdx6()
+    {
+        return $this->ind9xdx6;
+    }
+
+    /**
+     * Set ind9xdx7
+     *
+     * @param boolean $ind9xdx7
+     * @return Persona
+     */
+    public function setInd9xdx7($ind9xdx7)
+    {
+        $this->ind9xdx7 = $ind9xdx7;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xdx7
+     *
+     * @return boolean 
+     */
+    public function getInd9xdx7()
+    {
+        return $this->ind9xdx7;
+    }
+
+    /**
+     * Set ind9xdx8
+     *
+     * @param boolean $ind9xdx8
+     * @return Persona
+     */
+    public function setInd9xdx8($ind9xdx8)
+    {
+        $this->ind9xdx8 = $ind9xdx8;
+
+        return $this;
+    }
+
+    /**
+     * Get ind9xdx8
+     *
+     * @return boolean 
+     */
+    public function getInd9xdx8()
+    {
+        return $this->ind9xdx8;
+    }
+
+    /**
+     * Set ind10x1
+     *
+     * @param boolean $ind10x1
+     * @return Persona
+     */
+    public function setInd10x1($ind10x1)
+    {
+        $this->ind10x1 = $ind10x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10x1
+     *
+     * @return boolean 
+     */
+    public function getInd10x1()
+    {
+        return $this->ind10x1;
+    }
+
+    /**
+     * Set ind10x2
+     *
+     * @param boolean $ind10x2
+     * @return Persona
+     */
+    public function setInd10x2($ind10x2)
+    {
+        $this->ind10x2 = $ind10x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10x2
+     *
+     * @return boolean 
+     */
+    public function getInd10x2()
+    {
+        return $this->ind10x2;
+    }
+
+    /**
+     * Set ind10x2x1
+     *
+     * @param boolean $ind10x2x1
+     * @return Persona
+     */
+    public function setInd10x2x1($ind10x2x1)
+    {
+        $this->ind10x2x1 = $ind10x2x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10x2x1
+     *
+     * @return boolean 
+     */
+    public function getInd10x2x1()
+    {
+        return $this->ind10x2x1;
+    }
+
+    /**
+     * Set ind10x2x1xa
+     *
+     * @param boolean $ind10x2x1xa
+     * @return Persona
+     */
+    public function setInd10x2x1xa($ind10x2x1xa)
+    {
+        $this->ind10x2x1xa = $ind10x2x1xa;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10x2x1xa
+     *
+     * @return boolean 
+     */
+    public function getInd10x2x1xa()
+    {
+        return $this->ind10x2x1xa;
+    }
+
+    /**
+     * Set ind10x2x2
+     *
+     * @param boolean $ind10x2x2
+     * @return Persona
+     */
+    public function setInd10x2x2($ind10x2x2)
+    {
+        $this->ind10x2x2 = $ind10x2x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10x2x2
+     *
+     * @return boolean 
+     */
+    public function getInd10x2x2()
+    {
+        return $this->ind10x2x2;
+    }
+
+    /**
+     * Set ind10x3
+     *
+     * @param boolean $ind10x3
+     * @return Persona
+     */
+    public function setInd10x3($ind10x3)
+    {
+        $this->ind10x3 = $ind10x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10x3
+     *
+     * @return boolean 
+     */
+    public function getInd10x3()
+    {
+        return $this->ind10x3;
+    }
+
+    /**
+     * Set ind10x4
+     *
+     * @param boolean $ind10x4
+     * @return Persona
+     */
+    public function setInd10x4($ind10x4)
+    {
+        $this->ind10x4 = $ind10x4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10x4
+     *
+     * @return boolean 
+     */
+    public function getInd10x4()
+    {
+        return $this->ind10x4;
+    }
+
+    /**
+     * Set ind10x5
+     *
+     * @param boolean $ind10x5
+     * @return Persona
+     */
+    public function setInd10x5($ind10x5)
+    {
+        $this->ind10x5 = $ind10x5;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10x5
+     *
+     * @return boolean 
+     */
+    public function getInd10x5()
+    {
+        return $this->ind10x5;
+    }
+
+    /**
+     * Set ind10x6
+     *
+     * @param boolean $ind10x6
+     * @return Persona
+     */
+    public function setInd10x6($ind10x6)
+    {
+        $this->ind10x6 = $ind10x6;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10x6
+     *
+     * @return boolean 
+     */
+    public function getInd10x6()
+    {
+        return $this->ind10x6;
+    }
+
+    /**
+     * Set ind10x7
+     *
+     * @param boolean $ind10x7
+     * @return Persona
+     */
+    public function setInd10x7($ind10x7)
+    {
+        $this->ind10x7 = $ind10x7;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10x7
+     *
+     * @return boolean 
+     */
+    public function getInd10x7()
+    {
+        return $this->ind10x7;
+    }
+
+    /**
+     * Set ind10x8
+     *
+     * @param boolean $ind10x8
+     * @return Persona
+     */
+    public function setInd10x8($ind10x8)
+    {
+        $this->ind10x8 = $ind10x8;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10x8
+     *
+     * @return boolean 
+     */
+    public function getInd10x8()
+    {
+        return $this->ind10x8;
+    }
+
+    /**
+     * Set ind10xax1
+     *
+     * @param boolean $ind10xax1
+     * @return Persona
+     */
+    public function setInd10xax1($ind10xax1)
+    {
+        $this->ind10xax1 = $ind10xax1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10xax1
+     *
+     * @return boolean 
+     */
+    public function getInd10xax1()
+    {
+        return $this->ind10xax1;
+    }
+
+    /**
+     * Set ind10xax2
+     *
+     * @param boolean $ind10xax2
+     * @return Persona
+     */
+    public function setInd10xax2($ind10xax2)
+    {
+        $this->ind10xax2 = $ind10xax2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10xax2
+     *
+     * @return boolean 
+     */
+    public function getInd10xax2()
+    {
+        return $this->ind10xax2;
+    }
+
+    /**
+     * Set ind10xax3
+     *
+     * @param boolean $ind10xax3
+     * @return Persona
+     */
+    public function setInd10xax3($ind10xax3)
+    {
+        $this->ind10xax3 = $ind10xax3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10xax3
+     *
+     * @return boolean 
+     */
+    public function getInd10xax3()
+    {
+        return $this->ind10xax3;
+    }
+
+    /**
+     * Set ind10xax4
+     *
+     * @param boolean $ind10xax4
+     * @return Persona
+     */
+    public function setInd10xax4($ind10xax4)
+    {
+        $this->ind10xax4 = $ind10xax4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind10xax4
+     *
+     * @return boolean 
+     */
+    public function getInd10xax4()
+    {
+        return $this->ind10xax4;
+    }
+
+    /**
+     * Set ind11x1
+     *
+     * @param boolean $ind11x1
+     * @return Persona
+     */
+    public function setInd11x1($ind11x1)
+    {
+        $this->ind11x1 = $ind11x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind11x1
+     *
+     * @return boolean 
+     */
+    public function getInd11x1()
+    {
+        return $this->ind11x1;
+    }
+
+    /**
+     * Set ind11x2
+     *
+     * @param boolean $ind11x2
+     * @return Persona
+     */
+    public function setInd11x2($ind11x2)
+    {
+        $this->ind11x2 = $ind11x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind11x2
+     *
+     * @return boolean 
+     */
+    public function getInd11x2()
+    {
+        return $this->ind11x2;
+    }
+
+    /**
+     * Set ind11x3
+     *
+     * @param boolean $ind11x3
+     * @return Persona
+     */
+    public function setInd11x3($ind11x3)
+    {
+        $this->ind11x3 = $ind11x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind11x3
+     *
+     * @return boolean 
+     */
+    public function getInd11x3()
+    {
+        return $this->ind11x3;
+    }
+
+    /**
+     * Set ind11x4
+     *
+     * @param boolean $ind11x4
+     * @return Persona
+     */
+    public function setInd11x4($ind11x4)
+    {
+        $this->ind11x4 = $ind11x4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind11x4
+     *
+     * @return boolean 
+     */
+    public function getInd11x4()
+    {
+        return $this->ind11x4;
+    }
+
+    /**
+     * Set ind11x5
+     *
+     * @param boolean $ind11x5
+     * @return Persona
+     */
+    public function setInd11x5($ind11x5)
+    {
+        $this->ind11x5 = $ind11x5;
+
+        return $this;
+    }
+
+    /**
+     * Get ind11x5
+     *
+     * @return boolean 
+     */
+    public function getInd11x5()
+    {
+        return $this->ind11x5;
+    }
+
+    /**
+     * Set ind11x6
+     *
+     * @param boolean $ind11x6
+     * @return Persona
+     */
+    public function setInd11x6($ind11x6)
+    {
+        $this->ind11x6 = $ind11x6;
+
+        return $this;
+    }
+
+    /**
+     * Get ind11x6
+     *
+     * @return boolean 
+     */
+    public function getInd11x6()
+    {
+        return $this->ind11x6;
+    }
+
+    /**
+     * Set ind11x7
+     *
+     * @param boolean $ind11x7
+     * @return Persona
+     */
+    public function setInd11x7($ind11x7)
+    {
+        $this->ind11x7 = $ind11x7;
+
+        return $this;
+    }
+
+    /**
+     * Get ind11x7
+     *
+     * @return boolean 
+     */
+    public function getInd11x7()
+    {
+        return $this->ind11x7;
+    }
+
+    /**
+     * Set ind12x1
+     *
+     * @param boolean $ind12x1
+     * @return Persona
+     */
+    public function setInd12x1($ind12x1)
+    {
+        $this->ind12x1 = $ind12x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind12x1
+     *
+     * @return boolean 
+     */
+    public function getInd12x1()
+    {
+        return $this->ind12x1;
+    }
+
+    /**
+     * Set ind12x2
+     *
+     * @param boolean $ind12x2
+     * @return Persona
+     */
+    public function setInd12x2($ind12x2)
+    {
+        $this->ind12x2 = $ind12x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind12x2
+     *
+     * @return boolean 
+     */
+    public function getInd12x2()
+    {
+        return $this->ind12x2;
+    }
+
+    /**
+     * Set ind12x3
+     *
+     * @param boolean $ind12x3
+     * @return Persona
+     */
+    public function setInd12x3($ind12x3)
+    {
+        $this->ind12x3 = $ind12x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind12x3
+     *
+     * @return boolean 
+     */
+    public function getInd12x3()
+    {
+        return $this->ind12x3;
+    }
+
+    /**
+     * Set indtx17
+     *
+     * @param boolean $indtx17
+     * @return Persona
+     */
+    public function setIndtx17($indtx17)
+    {
+        $this->indtx17 = $indtx17;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx17
+     *
+     * @return boolean 
+     */
+    public function getIndtx17()
+    {
+        return $this->indtx17;
+    }
+
+    /**
+     * Set indtx17xa
+     *
+     * @param boolean $indtx17xa
+     * @return Persona
+     */
+    public function setIndtx17xa($indtx17xa)
+    {
+        $this->indtx17xa = $indtx17xa;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx17xa
+     *
+     * @return boolean 
+     */
+    public function getIndtx17xa()
+    {
+        return $this->indtx17xa;
+    }
+
+    /**
+     * Set indtx17xb
+     *
+     * @param boolean $indtx17xb
+     * @return Persona
+     */
+    public function setIndtx17xb($indtx17xb)
+    {
+        $this->indtx17xb = $indtx17xb;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx17xb
+     *
+     * @return boolean 
+     */
+    public function getIndtx17xb()
+    {
+        return $this->indtx17xb;
+    }
+
+    /**
+     * Set indtx18
+     *
+     * @param boolean $indtx18
+     * @return Persona
+     */
+    public function setIndtx18($indtx18)
+    {
+        $this->indtx18 = $indtx18;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx18
+     *
+     * @return boolean 
+     */
+    public function getIndtx18()
+    {
+        return $this->indtx18;
+    }
+
+    /**
+     * Set indtx19
+     *
+     * @param boolean $indtx19
+     * @return Persona
+     */
+    public function setIndtx19($indtx19)
+    {
+        $this->indtx19 = $indtx19;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx19
+     *
+     * @return boolean 
+     */
+    public function getIndtx19()
+    {
+        return $this->indtx19;
+    }
+
+    /**
+     * Set ind13x1
+     *
+     * @param boolean $ind13x1
+     * @return Persona
+     */
+    public function setInd13x1($ind13x1)
+    {
+        $this->ind13x1 = $ind13x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13x1
+     *
+     * @return boolean 
+     */
+    public function getInd13x1()
+    {
+        return $this->ind13x1;
+    }
+
+    /**
+     * Set ind13x2
+     *
+     * @param boolean $ind13x2
+     * @return Persona
+     */
+    public function setInd13x2($ind13x2)
+    {
+        $this->ind13x2 = $ind13x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13x2
+     *
+     * @return boolean 
+     */
+    public function getInd13x2()
+    {
+        return $this->ind13x2;
+    }
+
+    /**
+     * Set ind13x3
+     *
+     * @param boolean $ind13x3
+     * @return Persona
+     */
+    public function setInd13x3($ind13x3)
+    {
+        $this->ind13x3 = $ind13x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13x3
+     *
+     * @return boolean 
+     */
+    public function getInd13x3()
+    {
+        return $this->ind13x3;
+    }
+
+    /**
+     * Set ind13x3xa
+     *
+     * @param boolean $ind13x3xa
+     * @return Persona
+     */
+    public function setInd13x3xa($ind13x3xa)
+    {
+        $this->ind13x3xa = $ind13x3xa;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13x3xa
+     *
+     * @return boolean 
+     */
+    public function getInd13x3xa()
+    {
+        return $this->ind13x3xa;
+    }
+
+    /**
+     * Set ind13xax1
+     *
+     * @param boolean $ind13xax1
+     * @return Persona
+     */
+    public function setInd13xax1($ind13xax1)
+    {
+        $this->ind13xax1 = $ind13xax1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13xax1
+     *
+     * @return boolean 
+     */
+    public function getInd13xax1()
+    {
+        return $this->ind13xax1;
+    }
+
+    /**
+     * Set ind13xax2
+     *
+     * @param boolean $ind13xax2
+     * @return Persona
+     */
+    public function setInd13xax2($ind13xax2)
+    {
+        $this->ind13xax2 = $ind13xax2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13xax2
+     *
+     * @return boolean 
+     */
+    public function getInd13xax2()
+    {
+        return $this->ind13xax2;
+    }
+
+    /**
+     * Set ind13xbx1
+     *
+     * @param boolean $ind13xbx1
+     * @return Persona
+     */
+    public function setInd13xbx1($ind13xbx1)
+    {
+        $this->ind13xbx1 = $ind13xbx1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13xbx1
+     *
+     * @return boolean 
+     */
+    public function getInd13xbx1()
+    {
+        return $this->ind13xbx1;
+    }
+
+    /**
+     * Set ind13xbx1xa
+     *
+     * @param boolean $ind13xbx1xa
+     * @return Persona
+     */
+    public function setInd13xbx1xa($ind13xbx1xa)
+    {
+        $this->ind13xbx1xa = $ind13xbx1xa;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13xbx1xa
+     *
+     * @return boolean 
+     */
+    public function getInd13xbx1xa()
+    {
+        return $this->ind13xbx1xa;
+    }
+
+    /**
+     * Set ind13xbx2
+     *
+     * @param boolean $ind13xbx2
+     * @return Persona
+     */
+    public function setInd13xbx2($ind13xbx2)
+    {
+        $this->ind13xbx2 = $ind13xbx2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13xbx2
+     *
+     * @return boolean 
+     */
+    public function getInd13xbx2()
+    {
+        return $this->ind13xbx2;
+    }
+
+    /**
+     * Set ind13xbx3
+     *
+     * @param boolean $ind13xbx3
+     * @return Persona
+     */
+    public function setInd13xbx3($ind13xbx3)
+    {
+        $this->ind13xbx3 = $ind13xbx3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13xbx3
+     *
+     * @return boolean 
+     */
+    public function getInd13xbx3()
+    {
+        return $this->ind13xbx3;
+    }
+
+    /**
+     * Set ind13xcx1
+     *
+     * @param boolean $ind13xcx1
+     * @return Persona
+     */
+    public function setInd13xcx1($ind13xcx1)
+    {
+        $this->ind13xcx1 = $ind13xcx1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13xcx1
+     *
+     * @return boolean 
+     */
+    public function getInd13xcx1()
+    {
+        return $this->ind13xcx1;
+    }
+
+    /**
+     * Set ind13xcx2
+     *
+     * @param boolean $ind13xcx2
+     * @return Persona
+     */
+    public function setInd13xcx2($ind13xcx2)
+    {
+        $this->ind13xcx2 = $ind13xcx2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13xcx2
+     *
+     * @return boolean 
+     */
+    public function getInd13xcx2()
+    {
+        return $this->ind13xcx2;
+    }
+
+    /**
+     * Set ind13xcx3
+     *
+     * @param boolean $ind13xcx3
+     * @return Persona
+     */
+    public function setInd13xcx3($ind13xcx3)
+    {
+        $this->ind13xcx3 = $ind13xcx3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind13xcx3
+     *
+     * @return boolean 
+     */
+    public function getInd13xcx3()
+    {
+        return $this->ind13xcx3;
+    }
+
+    /**
+     * Set ind14x1
+     *
+     * @param boolean $ind14x1
+     * @return Persona
+     */
+    public function setInd14x1($ind14x1)
+    {
+        $this->ind14x1 = $ind14x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind14x1
+     *
+     * @return boolean 
+     */
+    public function getInd14x1()
+    {
+        return $this->ind14x1;
+    }
+
+    /**
+     * Set ind14x2
+     *
+     * @param boolean $ind14x2
+     * @return Persona
+     */
+    public function setInd14x2($ind14x2)
+    {
+        $this->ind14x2 = $ind14x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind14x2
+     *
+     * @return boolean 
+     */
+    public function getInd14x2()
+    {
+        return $this->ind14x2;
+    }
+
+    /**
+     * Set ind14x3
+     *
+     * @param boolean $ind14x3
+     * @return Persona
+     */
+    public function setInd14x3($ind14x3)
+    {
+        $this->ind14x3 = $ind14x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind14x3
+     *
+     * @return boolean 
+     */
+    public function getInd14x3()
+    {
+        return $this->ind14x3;
+    }
+
+    /**
+     * Set ind14x4
+     *
+     * @param boolean $ind14x4
+     * @return Persona
+     */
+    public function setInd14x4($ind14x4)
+    {
+        $this->ind14x4 = $ind14x4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind14x4
+     *
+     * @return boolean 
+     */
+    public function getInd14x4()
+    {
+        return $this->ind14x4;
+    }
+
+    /**
+     * Set indtx20
+     *
+     * @param boolean $indtx20
+     * @return Persona
+     */
+    public function setIndtx20($indtx20)
+    {
+        $this->indtx20 = $indtx20;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx20
+     *
+     * @return boolean 
+     */
+    public function getIndtx20()
+    {
+        return $this->indtx20;
+    }
+
+    /**
+     * Set indtx21
+     *
+     * @param boolean $indtx21
+     * @return Persona
+     */
+    public function setIndtx21($indtx21)
+    {
+        $this->indtx21 = $indtx21;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx21
+     *
+     * @return boolean 
+     */
+    public function getIndtx21()
+    {
+        return $this->indtx21;
+    }
+
+    /**
+     * Set indtx22
+     *
+     * @param boolean $indtx22
+     * @return Persona
+     */
+    public function setIndtx22($indtx22)
+    {
+        $this->indtx22 = $indtx22;
+
+        return $this;
+    }
+
+    /**
+     * Get indtx22
+     *
+     * @return boolean 
+     */
+    public function getIndtx22()
+    {
+        return $this->indtx22;
+    }
+
+    /**
+     * Set ind15x1
+     *
+     * @param boolean $ind15x1
+     * @return Persona
+     */
+    public function setInd15x1($ind15x1)
+    {
+        $this->ind15x1 = $ind15x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind15x1
+     *
+     * @return boolean 
+     */
+    public function getInd15x1()
+    {
+        return $this->ind15x1;
+    }
+
+    /**
+     * Set ind15x2
+     *
+     * @param boolean $ind15x2
+     * @return Persona
+     */
+    public function setInd15x2($ind15x2)
+    {
+        $this->ind15x2 = $ind15x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind15x2
+     *
+     * @return boolean 
+     */
+    public function getInd15x2()
+    {
+        return $this->ind15x2;
+    }
+
+    /**
+     * Set ind16x1
+     *
+     * @param boolean $ind16x1
+     * @return Persona
+     */
+    public function setInd16x1($ind16x1)
+    {
+        $this->ind16x1 = $ind16x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind16x1
+     *
+     * @return boolean 
+     */
+    public function getInd16x1()
+    {
+        return $this->ind16x1;
+    }
+
+    /**
+     * Set ind16x2
+     *
+     * @param boolean $ind16x2
+     * @return Persona
+     */
+    public function setInd16x2($ind16x2)
+    {
+        $this->ind16x2 = $ind16x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind16x2
+     *
+     * @return boolean 
+     */
+    public function getInd16x2()
+    {
+        return $this->ind16x2;
+    }
+
+    /**
+     * Set ind17x1
+     *
+     * @param boolean $ind17x1
+     * @return Persona
+     */
+    public function setInd17x1($ind17x1)
+    {
+        $this->ind17x1 = $ind17x1;
+
+        return $this;
+    }
+
+    /**
+     * Get ind17x1
+     *
+     * @return boolean 
+     */
+    public function getInd17x1()
+    {
+        return $this->ind17x1;
+    }
+
+    /**
+     * Set ind17x1xa
+     *
+     * @param boolean $ind17x1xa
+     * @return Persona
+     */
+    public function setInd17x1xa($ind17x1xa)
+    {
+        $this->ind17x1xa = $ind17x1xa;
+
+        return $this;
+    }
+
+    /**
+     * Get ind17x1xa
+     *
+     * @return boolean 
+     */
+    public function getInd17x1xa()
+    {
+        return $this->ind17x1xa;
+    }
+
+    /**
+     * Set ind17x2
+     *
+     * @param boolean $ind17x2
+     * @return Persona
+     */
+    public function setInd17x2($ind17x2)
+    {
+        $this->ind17x2 = $ind17x2;
+
+        return $this;
+    }
+
+    /**
+     * Get ind17x2
+     *
+     * @return boolean 
+     */
+    public function getInd17x2()
+    {
+        return $this->ind17x2;
+    }
+
+    /**
+     * Set ind17x2xa
+     *
+     * @param boolean $ind17x2xa
+     * @return Persona
+     */
+    public function setInd17x2xa($ind17x2xa)
+    {
+        $this->ind17x2xa = $ind17x2xa;
+
+        return $this;
+    }
+
+    /**
+     * Get ind17x2xa
+     *
+     * @return boolean 
+     */
+    public function getInd17x2xa()
+    {
+        return $this->ind17x2xa;
+    }
+
+    /**
+     * Set ind17x3
+     *
+     * @param boolean $ind17x3
+     * @return Persona
+     */
+    public function setInd17x3($ind17x3)
+    {
+        $this->ind17x3 = $ind17x3;
+
+        return $this;
+    }
+
+    /**
+     * Get ind17x3
+     *
+     * @return boolean 
+     */
+    public function getInd17x3()
+    {
+        return $this->ind17x3;
+    }
+
+    /**
+     * Set ind17x3xa
+     *
+     * @param boolean $ind17x3xa
+     * @return Persona
+     */
+    public function setInd17x3xa($ind17x3xa)
+    {
+        $this->ind17x3xa = $ind17x3xa;
+
+        return $this;
+    }
+
+    /**
+     * Get ind17x3xa
+     *
+     * @return boolean 
+     */
+    public function getInd17x3xa()
+    {
+        return $this->ind17x3xa;
+    }
+
+    /**
+     * Set ind17x4
+     *
+     * @param boolean $ind17x4
+     * @return Persona
+     */
+    public function setInd17x4($ind17x4)
+    {
+        $this->ind17x4 = $ind17x4;
+
+        return $this;
+    }
+
+    /**
+     * Get ind17x4
+     *
+     * @return boolean 
+     */
+    public function getInd17x4()
+    {
+        return $this->ind17x4;
+    }
+
+    /**
+     * Set ind17x5
+     *
+     * @param boolean $ind17x5
+     * @return Persona
+     */
+    public function setInd17x5($ind17x5)
+    {
+        $this->ind17x5 = $ind17x5;
+
+        return $this;
+    }
+
+    /**
+     * Get ind17x5
+     *
+     * @return boolean 
+     */
+    public function getInd17x5()
+    {
+        return $this->ind17x5;
+    }
+
+    /**
+     * Set ind17x5xa
+     *
+     * @param boolean $ind17x5xa
+     * @return Persona
+     */
+    public function setInd17x5xa($ind17x5xa)
+    {
+        $this->ind17x5xa = $ind17x5xa;
+
+        return $this;
+    }
+
+    /**
+     * Get ind17x5xa
+     *
+     * @return boolean 
+     */
+    public function getInd17x5xa()
+    {
+        return $this->ind17x5xa;
+    }
+
+    /**
+     * Set ind17x6
+     *
+     * @param boolean $ind17x6
+     * @return Persona
+     */
+    public function setInd17x6($ind17x6)
+    {
+        $this->ind17x6 = $ind17x6;
+
+        return $this;
+    }
+
+    /**
+     * Get ind17x6
+     *
+     * @return boolean 
+     */
+    public function getInd17x6()
+    {
+        return $this->ind17x6;
+    }
+
+    /**
+     * Set ind17x7
+     *
+     * @param boolean $ind17x7
+     * @return Persona
+     */
+    public function setInd17x7($ind17x7)
+    {
+        $this->ind17x7 = $ind17x7;
+
+        return $this;
+    }
+
+    /**
+     * Get ind17x7
+     *
+     * @return boolean 
+     */
+    public function getInd17x7()
+    {
+        return $this->ind17x7;
     }
 }
