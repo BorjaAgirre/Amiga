@@ -5,9 +5,20 @@ namespace Zubietxe\PrincipalBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Zubietxe\PrincipalBundle\Entity\Desplegables;
+use Zubietxe\PrincipalBundle\Entity\DesplegablesRepository;
+
+use Doctrine\ORM\EntityRepository;
 
 class PersonaType extends AbstractType
 {
+    protected $grupo;
+
+    public function __construct (EntityRepository $grupo)
+    {
+        $this->grupo = $grupo;
+    }
+
         /**
      * @param FormBuilderInterface $builder
      * @param array $options
@@ -28,7 +39,10 @@ class PersonaType extends AbstractType
             ->add('nie')
             ->add('numsegsoc')
             ->add('numexpediente')
-            ->add('nacionalidad')
+            ->add('nacionalidad', 'choice', array(
+                'label' => 'Nacionalidad',
+                'choices' => $this->grupo->findDesplegable('paises_mundo')
+                ))  
             ->add('telefono')
             ->add('direccionactual')
             ->add('poblacion')
