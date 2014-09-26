@@ -28,6 +28,7 @@ class PersonaType extends AbstractType
     {
         $opcionesInd = $options['opciones'];
         $tituloInd = $options['titulos'];
+        $despl = $options['despl'];
 /*        foreach ($indicadores as $row)  {
  //           if (isset($opcionesInd[$row->getIndicador()])) {
             if ($row->getTitulo() == 't') {
@@ -45,12 +46,8 @@ class PersonaType extends AbstractType
         }
 */
         $builder
-            ->add('idUnico')
-            ->add('historial')
             ->add('sexo')
-            ->add('nombre', 'text', array(
-                'label' => $opcionesInd['ind1x1'][1]
-                ))
+            ->add('nombre')
             ->add('apellido1')
             ->add('apellido2')
             ->add('fechanac')
@@ -60,10 +57,10 @@ class PersonaType extends AbstractType
             ->add('nie')
             ->add('numsegsoc')
             ->add('numexpediente')
-         /*   ->add('nacionalidad', 'choice', array(
+            ->add('nacionalidad', 'choice', array(
                 'label' => 'Nacionalidad',
-                'choices' => $this->grupo->findDesplegable('paises_mundo')
-                ))    */
+                'choices' => $despl->findDesplegable('paises_mundo')
+                ))    
             ->add('telefono')
             ->add('direccionactual')
             ->add('poblacion')
@@ -924,8 +921,8 @@ class PersonaType extends AbstractType
         $resolver->setDefaults(array(
             'data_class' => 'Zubietxe\PrincipalBundle\Entity\Persona',
             'opciones' => array(),
-            'titulos' => array()
-
+            'titulos' => array(), 
+            'despl' => array()
         ));
     }
 

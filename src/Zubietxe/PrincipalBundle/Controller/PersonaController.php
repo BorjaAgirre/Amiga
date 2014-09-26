@@ -20,14 +20,19 @@ class personaController extends Controller
                     );
                 }
 
-        $grupo2 = $em->getRepository('ZubietxePrincipalBundle:Desplegables'); 
+        $despl = $em->getRepository('ZubietxePrincipalBundle:Desplegables'); 
         $grupo = $em->getRepository('ZubietxePrincipalBundle:Indicadores'); 
         $opcionesInd = $em->getRepository('ZubietxePrincipalBundle:Indicadores')->opcionesIndicador();
 
         //$grupo2 = $em->getRepository('ZubietxePrincipalBundle:Desplegables')->findDesplegable('anosconsumo'); 
 
 
-        $form = $this->createForm(new PersonaType($grupo), $pers, array('opciones' => $opcionesInd[0], 'titulos' => $opcionesInd[1]));                    
+        $form = $this->createForm(new PersonaType($grupo), $pers, 
+            array(
+                'opciones' => $opcionesInd[0], 
+                'titulos' => $opcionesInd[1],
+                'despl' => $despl
+                ));                    
 
 		$form->handleRequest($request);
 
