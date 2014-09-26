@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Indicadores
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="indicador", type="string", length=15, nullable=true)
@@ -66,21 +57,27 @@ class Indicadores
     /**
      * @var string
      *
+     * @ORM\Column(name="titulo", type="string", length=1, nullable=true)
+     */
+    private $titulo;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="otro", type="string", length=2, nullable=true)
      */
     private $otro;
 
-
-
     /**
-     * Get id
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $id;
+
+
 
     /**
      * Set indicador
@@ -221,6 +218,29 @@ class Indicadores
     }
 
     /**
+     * Set titulo
+     *
+     * @param string $titulo
+     * @return Indicadores
+     */
+    public function setTitulo($titulo)
+    {
+        $this->titulo = $titulo;
+
+        return $this;
+    }
+
+    /**
+     * Get titulo
+     *
+     * @return string 
+     */
+    public function getTitulo()
+    {
+        return $this->titulo;
+    }
+
+    /**
      * Set otro
      *
      * @param string $otro
@@ -241,5 +261,15 @@ class Indicadores
     public function getOtro()
     {
         return $this->otro;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

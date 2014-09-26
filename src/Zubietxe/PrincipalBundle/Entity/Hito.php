@@ -13,6 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Hito
 {
     /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_hito", type="string", length=30, nullable=true)
+     */
+    private $nombreHito;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id_hito", type="integer")
@@ -21,24 +28,7 @@ class Hito
      */
     private $idHito;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nombre_hito", type="string", length=30, nullable=true)
-     */
-    private $nombreHito;
 
-
-
-    /**
-     * Get idHito
-     *
-     * @return integer 
-     */
-    public function getIdHito()
-    {
-        return $this->idHito;
-    }
 
     /**
      * Set nombreHito
@@ -61,5 +51,15 @@ class Hito
     public function getNombreHito()
     {
         return $this->nombreHito;
+    }
+
+    /**
+     * Get idHito
+     *
+     * @return integer 
+     */
+    public function getIdHito()
+    {
+        return $this->idHito;
     }
 }

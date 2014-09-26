@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Tutor
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_tutor", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idTutor;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="nombre", type="string", length=20, nullable=true)
@@ -56,17 +47,16 @@ class Tutor
      */
     private $ultimaCx;
 
-
-
     /**
-     * Get idTutor
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="id_tutor", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public function getIdTutor()
-    {
-        return $this->idTutor;
-    }
+    private $idTutor;
+
+
 
     /**
      * Set nombre
@@ -181,5 +171,15 @@ class Tutor
     public function getUltimaCx()
     {
         return $this->ultimaCx;
+    }
+
+    /**
+     * Get idTutor
+     *
+     * @return integer 
+     */
+    public function getIdTutor()
+    {
+        return $this->idTutor;
     }
 }

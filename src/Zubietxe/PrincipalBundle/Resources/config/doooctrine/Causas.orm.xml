@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Zubietxe\PrincipalBundle\Entity\Causas" table="causas">
+    <id name="idCausa" type="integer" column="id_causa">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idUnico" type="integer" column="id_unico" nullable="true"/>
+    <field name="organoJudicial" type="string" column="organo_judicial" length="30" nullable="true"/>
+    <field name="situacion" type="string" column="situacion" length="30" nullable="true"/>
+    <field name="abogado" type="string" column="abogado" length="30" nullable="true"/>
+    <field name="citaciones" type="string" column="citaciones" length="30" nullable="true"/>
+    <field name="condena" type="string" column="condena" length="30" nullable="true"/>
+    <field name="informes" type="string" column="informes" length="30" nullable="true"/>
+    <field name="domicilio" type="string" column="domicilio" length="30" nullable="true"/>
+    <field name="informes2" type="string" column="informes2" length="30" nullable="true"/>
+  </entity>
+</doctrine-mapping>

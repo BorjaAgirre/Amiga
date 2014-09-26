@@ -15,15 +15,6 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_pers", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idPers;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="id_unico", type="integer", nullable=true)
      */
     private $idUnico;
@@ -2281,6 +2272,15 @@ class Persona
      * @ORM\Column(name="ind17x7", type="boolean", nullable=true)
      */
     private $ind17x7;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_pers", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idPers;
 
 
 }

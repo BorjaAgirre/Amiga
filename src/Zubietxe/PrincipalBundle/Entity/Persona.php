@@ -15,15 +15,6 @@ class Persona
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_pers", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idPers;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="id_unico", type="integer", nullable=true)
      */
     private $idUnico;
@@ -2282,17 +2273,16 @@ class Persona
      */
     private $ind17x7;
 
-
-
     /**
-     * Get idPers
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="id_pers", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public function getIdPers()
-    {
-        return $this->idPers;
-    }
+    private $idPers;
+
+
 
     /**
      * Set idUnico
@@ -9721,5 +9711,15 @@ class Persona
     public function getInd17x7()
     {
         return $this->ind17x7;
+    }
+
+    /**
+     * Get idPers
+     *
+     * @return integer 
+     */
+    public function getIdPers()
+    {
+        return $this->idPers;
     }
 }

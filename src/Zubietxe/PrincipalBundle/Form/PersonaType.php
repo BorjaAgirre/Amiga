@@ -27,6 +27,23 @@ class PersonaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $opcionesInd = $options['opciones'];
+        $tituloInd = $options['titulos'];
+/*        foreach ($indicadores as $row)  {
+ //           if (isset($opcionesInd[$row->getIndicador()])) {
+            if ($row->getTitulo() == 't') {
+                if (isset($opcionesInd[$row->getIndicador()])) {
+                    $builder->add($row->getIndicador(), 'choice', array(
+                    'label' => $row->getTexto(),
+                    'choices' => $opcionesInd[$row->getIndicador()]
+                    ));
+                } else {
+                    $builder->add($row->getIndicador(), 'text', array(
+                    'label' => $row->getTexto()
+                    ));
+                }
+            }
+        }
+*/
         $builder
             ->add('idUnico')
             ->add('historial')
@@ -177,725 +194,725 @@ class PersonaType extends AbstractType
             ->add('situacionadministrativa')
             ->add('fechacaductis')
             ->add('ind1x1', 'choice', array(
-                'label' => 'Indicador 1.1',
+                'label' => $tituloInd['ind1x1'],
                 'choices' => $opcionesInd['ind1x1']
                 ))
-            ->add('ind1x1xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind1x1xa')
+            ->add('ind1x1xA', 'choice', array(
+                'label' => $tituloInd['ind1x1xA'],
+                'choices' => $opcionesInd['ind1x1xA']
                 ))
             ->add('ind1x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind1x2')
+                'label' => $tituloInd['ind1x2'],
+                'choices' => $opcionesInd['ind1x2']
                 ))
-            ->add('ind1x2xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind1x2xa')
+            ->add('ind1x2xA', 'choice', array(
+                'label' => $tituloInd['ind1x2xA'],
+                'choices' => $opcionesInd['ind1x2xA']
                 ))
             ->add('ind1x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind1x3')
+                'label' => $tituloInd['ind1x3'],
+                'choices' => $opcionesInd['ind1x3']
                 ))
             ->add('ind1x4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind1x4')
+                'label' => $tituloInd['ind1x4'],
+                'choices' => $opcionesInd['ind1x4']
                 ))
             ->add('ind1x5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind1x5')
+                'label' => $tituloInd['ind1x5'],
+                'choices' => $opcionesInd['ind1x5']
                 ))
-            ->add('ind1x5xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind1x5xa')
+            ->add('ind1x5xA', 'choice', array(
+                'label' => $tituloInd['ind1x5xA'],
+                'choices' => $opcionesInd['ind1x5xA']
                 ))
             ->add('ind1x6', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind1x6')
+                'label' => $tituloInd['ind1x6'],
+                'choices' => $opcionesInd['ind1x6']
                 ))
             ->add('ind1x7', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind1x7')
+                'label' => $tituloInd['ind1x7'],
+                'choices' => $opcionesInd['ind1x7']
                 ))
             ->add('ind2x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind2x1')
+                'label' => $tituloInd['ind2x1'],
+                'choices' => $opcionesInd['ind2x1']
                 ))
-            ->add('ind2xax1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind2xax1')
+            ->add('ind2xAx1', 'choice', array(
+                'label' => $tituloInd['ind2xAx1'],
+                'choices' => $opcionesInd['ind2xAx1']
                 ))
-            ->add('ind2xax2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind2xax2')
+            ->add('ind2xAx2', 'choice', array(
+                'label' => $tituloInd['ind2xAx2'],
+                'choices' => $opcionesInd['ind2xAx2']
                 ))
-            ->add('ind2xax3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind2xax3')
+            ->add('ind2xAx3', 'choice', array(
+                'label' => $tituloInd['ind2xAx3'],
+                'choices' => $opcionesInd['ind2xAx3']
                 ))
-            ->add('ind2xax4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind2xax4')
+            ->add('ind2xAx4', 'choice', array(
+                'label' => $tituloInd['ind2xAx4'],
+                'choices' => $opcionesInd['ind2xAx4']
                 ))
-            ->add('ind2xbx1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind2xbx1')
+            ->add('ind2xBx1', 'choice', array(
+                'label' => $tituloInd['ind2xBx1'],
+                'choices' => $opcionesInd['ind2xBx1']
                 ))
-            ->add('ind2xbx2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind2xbx2')
+            ->add('ind2xBx2', 'choice', array(
+                'label' => $tituloInd['ind2xBx2'],
+                'choices' => $opcionesInd['ind2xBx2']
                 ))
             ->add('ind3x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind3x1')
+                'label' => $tituloInd['ind3x1'],
+                'choices' => $opcionesInd['ind3x1']
                 ))
-            ->add('ind3x1xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind3x1xa')
+            ->add('ind3x1xA', 'choice', array(
+                'label' => $tituloInd['ind3x1xA'],
+                'choices' => $opcionesInd['ind3x1xA']
                 ))
             ->add('ind3x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind3x2')
+                'label' => $tituloInd['ind3x2'],
+                'choices' => $opcionesInd['ind3x2']
                 ))
-            ->add('ind3x2xe', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind3x2xe')
+            ->add('ind3x2xE', 'choice', array(
+                'label' => $tituloInd['ind3x2xE'],
+                'choices' => $opcionesInd['ind3x2xE']
                 ))
-            ->add('ind3x2xd', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind3x2xd')
+            ->add('ind3x2xD', 'choice', array(
+                'label' => $tituloInd['ind3x2xD'],
+                'choices' => $opcionesInd['ind3x2xD']
                 ))
-            ->add('ind3x2xr', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind3x2xr')
+            ->add('ind3x2xR', 'choice', array(
+                'label' => $tituloInd['ind3x2xR'],
+                'choices' => $opcionesInd['ind3x2xR']
                 ))
             ->add('ind3x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind3x3')
+                'label' => $tituloInd['ind3x3'],
+                'choices' => $opcionesInd['ind3x3']
                 ))
-            ->add('ind3x3xt', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind3x3xt')
+            ->add('ind3x3xT', 'choice', array(
+                'label' => $tituloInd['ind3x3xT'],
+                'choices' => $opcionesInd['ind3x3xT']
                 ))
             ->add('ind3x4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind3x4')
+                'label' => $tituloInd['ind3x4'],
+                'choices' => $opcionesInd['ind3x4']
                 ))
-            ->add('indtx1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx1')
+            ->add('indTx1', 'choice', array(
+                'label' => $tituloInd['indTx1'],
+                'choices' => $opcionesInd['indTx1']
                 ))
-            ->add('indtx2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx2')
+            ->add('indTx2', 'choice', array(
+                'label' => $tituloInd['indTx2'],
+                'choices' => $opcionesInd['indTx2']
                 ))
-            ->add('indtx3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx3')
+            ->add('indTx3', 'choice', array(
+                'label' => $tituloInd['indTx3'],
+                'choices' => $opcionesInd['indTx3']
                 ))
-            ->add('indtx4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx4')
+            ->add('indTx4', 'choice', array(
+                'label' => $tituloInd['indTx4'],
+                'choices' => $opcionesInd['indTx4']
                 ))
             ->add('ind4x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4x1')
+                'label' => $tituloInd['ind4x1'],
+                'choices' => $opcionesInd['ind4x1']
                 ))
-            ->add('ind4x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4x2')
+            ->add('ind4x2', 'text', array(
+                'label' => $tituloInd['ind4x2'],
                 ))
-            ->add('ind4x2xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4x2xa')
+            ->add('ind4x2xA', 'choice', array(
+                'label' => $tituloInd['ind4x2xA'],
+                'choices' => $opcionesInd['ind4x2xA']
                 ))
-            ->add('ind4x2xb', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4x2xb')
+            ->add('ind4x2xB', 'choice', array(
+                'label' => $tituloInd['ind4x2xB'],
+                'choices' => $opcionesInd['ind4x2xB']
                 ))
-            ->add('ind4x2xc', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4x2xc')
+            ->add('ind4x2xC', 'choice', array(
+                'label' => $tituloInd['ind4x2xC'],
+                'choices' => $opcionesInd['ind4x2xC']
                 ))
             ->add('ind4x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4x3')
+                'label' => $tituloInd['ind4x3'],
+                'choices' => $opcionesInd['ind4x3']
                 ))
             ->add('ind4x3x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4x3x1')
+                'label' => $tituloInd['ind4x3x1'],
+                'choices' => $opcionesInd['ind4x3x1']
                 ))
             ->add('ind4x3x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4x3x2')
+                'label' => $tituloInd['ind4x3x2'],
+                'choices' => $opcionesInd['ind4x3x2']
                 ))
             ->add('ind4x3x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4x3x3')
+                'label' => $tituloInd['ind4x3x3'],
+                'choices' => $opcionesInd['ind4x3x3']
                 ))
-            ->add('ind4xax1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xax1')
+            ->add('ind4xAx1', 'choice', array(
+                'label' => $tituloInd['ind4xAx1'],
+                'choices' => $opcionesInd['ind4xAx1']
                 ))
-            ->add('ind4xax2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xax2')
+            ->add('ind4xAx2', 'choice', array(
+                'label' => $tituloInd['ind4xAx2'],
+                'choices' => $opcionesInd['ind4xAx2']
                 ))
-            ->add('ind4xax3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xax3')
+            ->add('ind4xAx3', 'choice', array(
+                'label' => $tituloInd['ind4xAx3'],
+                'choices' => $opcionesInd['ind4xAx3']
                 ))
-            ->add('ind4xax4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xax4')
+            ->add('ind4xAx4', 'choice', array(
+                'label' => $tituloInd['ind4xAx4'],
+                'choices' => $opcionesInd['ind4xAx4']
                 ))
-            ->add('ind4xax5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xax5')
+            ->add('ind4xAx5', 'choice', array(
+                'label' => $tituloInd['ind4xAx5'],
+                'choices' => $opcionesInd['ind4xAx5']
                 ))
-            ->add('ind4xax6', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xax6')
+            ->add('ind4xAx6', 'choice', array(
+                'label' => $tituloInd['ind4xAx6'],
+                'choices' => $opcionesInd['ind4xAx6']
                 ))
-            ->add('ind4xbx1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xbx1')
+            ->add('ind4xBx1', 'choice', array(
+                'label' => $tituloInd['ind4xBx1'],
+                'choices' => $opcionesInd['ind4xBx1']
                 ))
-            ->add('ind4xbx2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xbx2')
+            ->add('ind4xBx2', 'choice', array(
+                'label' => $tituloInd['ind4xBx2'],
+                'choices' => $opcionesInd['ind4xBx2']
                 ))
-            ->add('ind4xcx1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xcx1')
+            ->add('ind4xCx1', 'choice', array(
+                'label' => $tituloInd['ind4xCx1'],
+                'choices' => $opcionesInd['ind4xCx1']
                 ))
-            ->add('ind4xcx2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xcx2')
+            ->add('ind4xCx2', 'choice', array(
+                'label' => $tituloInd['ind4xCx2'],
+                'choices' => $opcionesInd['ind4xCx2']
                 ))
-            ->add('ind4xcx3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xcx3')
+            ->add('ind4xCx3', 'choice', array(
+                'label' => $tituloInd['ind4xCx3'],
+                'choices' => $opcionesInd['ind4xCx3']
                 ))
-            ->add('ind4xcx4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind4xcx4')
+            ->add('ind4xCx4', 'choice', array(
+                'label' => $tituloInd['ind4xCx4'],
+                'choices' => $opcionesInd['ind4xCx4']
                 ))
             ->add('ind5x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind5x1')
+                'label' => $tituloInd['ind5x1'],
+                'choices' => $opcionesInd['ind5x1']
                 ))
             ->add('ind5x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind5x2')
+                'label' => $tituloInd['ind5x2'],
+                'choices' => $opcionesInd['ind5x2']
                 ))
             ->add('ind5x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind5x3')
+                'label' => $tituloInd['ind5x3'],
+                'choices' => $opcionesInd['ind5x3']
                 ))
             ->add('ind5x4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind5x4')
+                'label' => $tituloInd['ind5x4'],
+                'choices' => $opcionesInd['ind5x4']
                 ))
             ->add('ind5x5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind5x5')
+                'label' => $tituloInd['ind5x5'],
+                'choices' => $opcionesInd['ind5x5']
                 ))
-            ->add('ind6x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind6x1')
+            ->add('ind6x1', 'text', array(
+                'label' => $tituloInd['ind6x1'],
                 ))
             ->add('ind6x1x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind6x1x1')
+                'label' => $tituloInd['ind6x1x1'],
+                'choices' => $opcionesInd['ind6x1x1']
                 ))
             ->add('ind6x1x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind6x1x2')
+                'label' => $tituloInd['ind6x1x2'],
+                'choices' => $opcionesInd['ind6x1x2']
                 ))
             ->add('ind6x1x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind6x1x3')
+                'label' => $tituloInd['ind6x1x3'],
+                'choices' => $opcionesInd['ind6x1x3']
                 ))
             ->add('ind6x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind6x2')
+                'label' => $tituloInd['ind6x2'],
+                'choices' => $opcionesInd['ind6x2']
                 ))
             ->add('ind6x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind6x3')
+                'label' => $tituloInd['ind6x3'],
+                'choices' => $opcionesInd['ind6x3']
                 ))
             ->add('ind6x4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind6x4')
+                'label' => $tituloInd['ind6x4'],
+                'choices' => $opcionesInd['ind6x4']
                 ))
-            ->add('ind7xax1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xax1')
+            ->add('ind7xAx1', 'choice', array(
+                'label' => $tituloInd['ind7xAx1'],
+                'choices' => $opcionesInd['ind7xAx1']
                 ))
-            ->add('ind7xax2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xax2')
+            ->add('ind7xAx2', 'choice', array(
+                'label' => $tituloInd['ind7xAx2'],
+                'choices' => $opcionesInd['ind7xAx2']
                 ))
-            ->add('ind7xax3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xax3')
+            ->add('ind7xAx3', 'choice', array(
+                'label' => $tituloInd['ind7xAx3'],
+                'choices' => $opcionesInd['ind7xAx3']
                 ))
-            ->add('ind7xax4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xax4')
+            ->add('ind7xAx4', 'choice', array(
+                'label' => $tituloInd['ind7xAx4'],
+                'choices' => $opcionesInd['ind7xAx4']
                 ))
-            ->add('ind7xax5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xax5')
+            ->add('ind7xAx5', 'choice', array(
+                'label' => $tituloInd['ind7xAx5'],
+                'choices' => $opcionesInd['ind7xAx5']
                 ))
-            ->add('ind7xax6', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xax6')
+            ->add('ind7xAx6', 'choice', array(
+                'label' => $tituloInd['ind7xAx6'],
+                'choices' => $opcionesInd['ind7xAx6']
                 ))
-            ->add('ind7xax7', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xax7')
+            ->add('ind7xAx7', 'choice', array(
+                'label' => $tituloInd['ind7xAx7'],
+                'choices' => $opcionesInd['ind7xAx7']
                 ))
-            ->add('ind7xbx1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xbx1')
+            ->add('ind7xBx1', 'choice', array(
+                'label' => $tituloInd['ind7xBx1'],
+                'choices' => $opcionesInd['ind7xBx1']
                 ))
-            ->add('ind7xbx2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xbx2')
+            ->add('ind7xBx2', 'choice', array(
+                'label' => $tituloInd['ind7xBx2'],
+                'choices' => $opcionesInd['ind7xBx2']
                 ))
-            ->add('ind7xbx3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xbx3')
+            ->add('ind7xBx3', 'choice', array(
+                'label' => $tituloInd['ind7xBx3'],
+                'choices' => $opcionesInd['ind7xBx3']
                 ))
-            ->add('ind7xbx4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xbx4')
+            ->add('ind7xBx4', 'choice', array(
+                'label' => $tituloInd['ind7xBx4'],
+                'choices' => $opcionesInd['ind7xBx4']
                 ))
-            ->add('ind7xbx5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind7xbx5')
+            ->add('ind7xBx5', 'choice', array(
+                'label' => $tituloInd['ind7xBx5'],
+                'choices' => $opcionesInd['ind7xBx5']
                 ))
             ->add('ind8x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind8x1')
+                'label' => $tituloInd['ind8x1'],
+                'choices' => $opcionesInd['ind8x1']
                 ))
             ->add('ind8x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind8x2')
+                'label' => $tituloInd['ind8x2'],
+                'choices' => $opcionesInd['ind8x2']
                 ))
             ->add('ind8x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind8x3')
+                'label' => $tituloInd['ind8x3'],
+                'choices' => $opcionesInd['ind8x3']
                 ))
             ->add('ind8x4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind8x4')
+                'label' => $tituloInd['ind8x4'],
+                'choices' => $opcionesInd['ind8x4']
                 ))
-            ->add('indtx5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx5')
+            ->add('indTx5', 'choice', array(
+                'label' => $tituloInd['indTx5'],
+                'choices' => $opcionesInd['indTx5']
                 ))
-            ->add('indtx6', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx6')
+            ->add('indTx6', 'choice', array(
+                'label' => $tituloInd['indTx6'],
+                'choices' => $opcionesInd['indTx6']
                 ))
-            ->add('indtx7', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx7')
+            ->add('indTx7', 'choice', array(
+                'label' => $tituloInd['indTx7'],
+                'choices' => $opcionesInd['indTx7']
                 ))
-            ->add('indtx8', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx8')
+            ->add('indTx8', 'choice', array(
+                'label' => $tituloInd['indTx8'],
+                'choices' => $opcionesInd['indTx8']
                 ))
-            ->add('indtx9', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx9')
+            ->add('indTx9', 'choice', array(
+                'label' => $tituloInd['indTx9'],
+                'choices' => $opcionesInd['indTx9']
                 ))
-            ->add('indtx10', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx10')
+            ->add('indTx10', 'choice', array(
+                'label' => $tituloInd['indTx10'],
+                'choices' => $opcionesInd['indTx10']
                 ))
-            ->add('indtx11', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx11')
+            ->add('indTx11', 'choice', array(
+                'label' => $tituloInd['indTx11'],
+                'choices' => $opcionesInd['indTx11']
                 ))
-            ->add('indtx12', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx12')
+            ->add('indTx12', 'choice', array(
+                'label' => $tituloInd['indTx12'],
+                'choices' => $opcionesInd['indTx12']
                 ))
-            ->add('indtx13', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx13')
+            ->add('indTx13', 'choice', array(
+                'label' => $tituloInd['indTx13'],
+                'choices' => $opcionesInd['indTx13']
                 ))
-            ->add('indtx14', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx14')
+            ->add('indTx14', 'choice', array(
+                'label' => $tituloInd['indTx14'],
+                'choices' => $opcionesInd['indTx14']
                 ))
-            ->add('indtx15', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx15')
+            ->add('indTx15', 'choice', array(
+                'label' => $tituloInd['indTx15'],
+                'choices' => $opcionesInd['indTx15']
                 ))
-            ->add('indtx16', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx16')
+            ->add('indTx16', 'choice', array(
+                'label' => $tituloInd['indTx16'],
+                'choices' => $opcionesInd['indTx16']
                 ))
-            ->add('ind9xax1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xax1')
+            ->add('ind9xAx1', 'choice', array(
+                'label' => $tituloInd['ind9xAx1'],
+                'choices' => $opcionesInd['ind9xAx1']
                 ))
-            ->add('ind9xax2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xax2')
+            ->add('ind9xAx2', 'choice', array(
+                'label' => $tituloInd['ind9xAx2'],
+                'choices' => $opcionesInd['ind9xAx2']
                 ))
-            ->add('ind9xax3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xax3')
+            ->add('ind9xAx3', 'choice', array(
+                'label' => $tituloInd['ind9xAx3'],
+                'choices' => $opcionesInd['ind9xAx3']
                 ))
-            ->add('ind9xax4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xax4')
+            ->add('ind9xAx4', 'choice', array(
+                'label' => $tituloInd['ind9xAx4'],
+                'choices' => $opcionesInd['ind9xAx4']
                 ))
-            ->add('ind9xax5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xax5')
+            ->add('ind9xAx5', 'choice', array(
+                'label' => $tituloInd['ind9xAx5'],
+                'choices' => $opcionesInd['ind9xAx5']
                 ))
-            ->add('ind9xbx1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xbx1')
+            ->add('ind9xBx1', 'choice', array(
+                'label' => $tituloInd['ind9xBx1'],
+                'choices' => $opcionesInd['ind9xBx1']
                 ))
-            ->add('ind9xbx2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xbx2')
+            ->add('ind9xBx2', 'choice', array(
+                'label' => $tituloInd['ind9xBx2'],
+                'choices' => $opcionesInd['ind9xBx2']
                 ))
-            ->add('ind9xbx3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xbx3')
+            ->add('ind9xBx3', 'choice', array(
+                'label' => $tituloInd['ind9xBx3'],
+                'choices' => $opcionesInd['ind9xBx3']
                 ))
-            ->add('ind9xbx4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xbx4')
+            ->add('ind9xBx4', 'choice', array(
+                'label' => $tituloInd['ind9xBx4'],
+                'choices' => $opcionesInd['ind9xBx4']
                 ))
-            ->add('ind9xbx5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xbx5')
+            ->add('ind9xBx5', 'choice', array(
+                'label' => $tituloInd['ind9xBx5'],
+                'choices' => $opcionesInd['ind9xBx5']
                 ))
-            ->add('ind9xcx1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xcx1')
+            ->add('ind9xCx1', 'choice', array(
+                'label' => $tituloInd['ind9xCx1'],
+                'choices' => $opcionesInd['ind9xCx1']
                 ))
-            ->add('ind9xcx2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xcx2')
+            ->add('ind9xCx2', 'choice', array(
+                'label' => $tituloInd['ind9xCx2'],
+                'choices' => $opcionesInd['ind9xCx2']
                 ))
-            ->add('ind9xcx3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xcx3')
+            ->add('ind9xCx3', 'choice', array(
+                'label' => $tituloInd['ind9xCx3'],
+                'choices' => $opcionesInd['ind9xCx3']
                 ))
-            ->add('ind9xcx4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xcx4')
+            ->add('ind9xCx4', 'choice', array(
+                'label' => $tituloInd['ind9xCx4'],
+                'choices' => $opcionesInd['ind9xCx4']
                 ))
-            ->add('ind9xcx5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xcx5')
+            ->add('ind9xCx5', 'choice', array(
+                'label' => $tituloInd['ind9xCx5'],
+                'choices' => $opcionesInd['ind9xCx5']
                 ))
-            ->add('ind9xcx6', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xcx6')
+            ->add('ind9xCx6', 'choice', array(
+                'label' => $tituloInd['ind9xCx6'],
+                'choices' => $opcionesInd['ind9xCx6']
                 ))
-            ->add('ind9xdx1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xdx1')
+            ->add('ind9xDx1', 'choice', array(
+                'label' => $tituloInd['ind9xDx1'],
+                'choices' => $opcionesInd['ind9xDx1']
                 ))
-            ->add('ind9xdx2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xdx2')
+            ->add('ind9xDx2', 'choice', array(
+                'label' => $tituloInd['ind9xDx2'],
+                'choices' => $opcionesInd['ind9xDx2']
                 ))
-            ->add('ind9xdx3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xdx3')
+            ->add('ind9xDx3', 'choice', array(
+                'label' => $tituloInd['ind9xDx3'],
+                'choices' => $opcionesInd['ind9xDx3']
                 ))
-            ->add('ind9xdx4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xdx4')
+            ->add('ind9xDx4', 'choice', array(
+                'label' => $tituloInd['ind9xDx4'],
+                'choices' => $opcionesInd['ind9xDx4']
                 ))
-            ->add('ind9xdx5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xdx5')
+            ->add('ind9xDx5', 'choice', array(
+                'label' => $tituloInd['ind9xDx5'],
+                'choices' => $opcionesInd['ind9xDx5']
                 ))
-            ->add('ind9xdx6', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xdx6')
+            ->add('ind9xDx6', 'choice', array(
+                'label' => $tituloInd['ind9xDx6'],
+                'choices' => $opcionesInd['ind9xDx6']
                 ))
-            ->add('ind9xdx7', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xdx7')
+            ->add('ind9xDx7', 'choice', array(
+                'label' => $tituloInd['ind9xDx7'],
+                'choices' => $opcionesInd['ind9xDx7']
                 ))
-            ->add('ind9xdx8', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind9xdx8')
+            ->add('ind9xDx8', 'choice', array(
+                'label' => $tituloInd['ind9xDx8'],
+                'choices' => $opcionesInd['ind9xDx8']
                 ))
             ->add('ind10x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10x1')
+                'label' => $tituloInd['ind10x1'],
+                'choices' => $opcionesInd['ind10x1']
                 ))
-            ->add('ind10x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10x2')
+            ->add('ind10x2', 'text', array(
+                'label' => $tituloInd['ind10x2'],
                 ))
             ->add('ind10x2x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10x2x1')
+                'label' => $tituloInd['ind10x2x1'],
+                'choices' => $opcionesInd['ind10x2x1']
                 ))
-            ->add('ind10x2x1xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10x2x1xa')
+            ->add('ind10x2x1xA', 'choice', array(
+                'label' => $tituloInd['ind10x2x1xA'],
+                'choices' => $opcionesInd['ind10x2x1xA']
                 ))
             ->add('ind10x2x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10x2x2')
+                'label' => $tituloInd['ind10x2x2'],
+                'choices' => $opcionesInd['ind10x2x2']
                 ))
             ->add('ind10x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10x3')
+                'label' => $tituloInd['ind10x3'],
+                'choices' => $opcionesInd['ind10x3']
                 ))
             ->add('ind10x4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10x4')
+                'label' => $tituloInd['ind10x4'],
+                'choices' => $opcionesInd['ind10x4']
                 ))
             ->add('ind10x5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10x5')
+                'label' => $tituloInd['ind10x5'],
+                'choices' => $opcionesInd['ind10x5']
                 ))
             ->add('ind10x6', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10x6')
+                'label' => $tituloInd['ind10x6'],
+                'choices' => $opcionesInd['ind10x6']
                 ))
             ->add('ind10x7', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10x7')
+                'label' => $tituloInd['ind10x7'],
+                'choices' => $opcionesInd['ind10x7']
                 ))
             ->add('ind10x8', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10x8')
+                'label' => $tituloInd['ind10x8'],
+                'choices' => $opcionesInd['ind10x8']
                 ))
-            ->add('ind10xax1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10xax1')
+            ->add('ind10xAx1', 'choice', array(
+                'label' => $tituloInd['ind10xAx1'],
+                'choices' => $opcionesInd['ind10xAx1']
                 ))
-            ->add('ind10xax2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10xax2')
+            ->add('ind10xAx2', 'choice', array(
+                'label' => $tituloInd['ind10xAx2'],
+                'choices' => $opcionesInd['ind10xAx2']
                 ))
-            ->add('ind10xax3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10xax3')
+            ->add('ind10xAx3', 'choice', array(
+                'label' => $tituloInd['ind10xAx3'],
+                'choices' => $opcionesInd['ind10xAx3']
                 ))
-            ->add('ind10xax4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind10xax4')
+            ->add('ind10xAx4', 'choice', array(
+                'label' => $tituloInd['ind10xAx4'],
+                'choices' => $opcionesInd['ind10xAx4']
                 ))
             ->add('ind11x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind11x1')
+                'label' => $tituloInd['ind11x1'],
+                'choices' => $opcionesInd['ind11x1']
                 ))
             ->add('ind11x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind11x2')
+                'label' => $tituloInd['ind11x2'],
+                'choices' => $opcionesInd['ind11x2']
                 ))
             ->add('ind11x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind11x3')
+                'label' => $tituloInd['ind11x3'],
+                'choices' => $opcionesInd['ind11x3']
                 ))
             ->add('ind11x4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind11x4')
+                'label' => $tituloInd['ind11x4'],
+                'choices' => $opcionesInd['ind11x4']
                 ))
             ->add('ind11x5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind11x5')
+                'label' => $tituloInd['ind11x5'],
+                'choices' => $opcionesInd['ind11x5']
                 ))
             ->add('ind11x6', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind11x6')
+                'label' => $tituloInd['ind11x6'],
+                'choices' => $opcionesInd['ind11x6']
                 ))
             ->add('ind11x7', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind11x7')
+                'label' => $tituloInd['ind11x7'],
+                'choices' => $opcionesInd['ind11x7']
                 ))
             ->add('ind12x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind12x1')
+                'label' => $tituloInd['ind12x1'],
+                'choices' => $opcionesInd['ind12x1']
                 ))
             ->add('ind12x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind12x2')
+                'label' => $tituloInd['ind12x2'],
+                'choices' => $opcionesInd['ind12x2']
                 ))
             ->add('ind12x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind12x3')
+                'label' => $tituloInd['ind12x3'],
+                'choices' => $opcionesInd['ind12x3']
                 ))
-            ->add('indtx17', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx17')
+            ->add('indTx17', 'text', array(
+                'label' => $tituloInd['indTx17'],
                 ))
-            ->add('indtx17xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx17xa')
+            ->add('indTx17xA', 'choice', array(
+                'label' => $tituloInd['indTx17xA'],
+                'choices' => $opcionesInd['indTx17xA']
                 ))
-            ->add('indtx17xb', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx17xb')
+            ->add('indTx17xB', 'choice', array(
+                'label' => $tituloInd['indTx17xB'],
+                'choices' => $opcionesInd['indTx17xB']
                 ))
-            ->add('indtx18', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx18')
+            ->add('indTx18', 'choice', array(
+                'label' => $tituloInd['indTx18'],
+                'choices' => $opcionesInd['indTx18']
                 ))
-            ->add('indtx19', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx19')
+            ->add('indTx19', 'choice', array(
+                'label' => $tituloInd['indTx19'],
+                'choices' => $opcionesInd['indTx19']
                 ))
             ->add('ind13x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13x1')
+                'label' => $tituloInd['ind13x1'],
+                'choices' => $opcionesInd['ind13x1']
                 ))
             ->add('ind13x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13x2')
+                'label' => $tituloInd['ind13x2'],
+                'choices' => $opcionesInd['ind13x2']
                 ))
             ->add('ind13x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13x3')
+                'label' => $tituloInd['ind13x3'],
+                'choices' => $opcionesInd['ind13x3']
                 ))
-            ->add('ind13x3xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13x3xa')
+            ->add('ind13x3xA', 'choice', array(
+                'label' => $tituloInd['ind13x3xA'],
+                'choices' => $opcionesInd['ind13x3xA']
                 ))
-            ->add('ind13xax1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13xax1')
+            ->add('ind13xAx1', 'choice', array(
+                'label' => $tituloInd['ind13xAx1'],
+                'choices' => $opcionesInd['ind13xAx1']
                 ))
-            ->add('ind13xax2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13xax2')
+            ->add('ind13xAx2', 'choice', array(
+                'label' => $tituloInd['ind13xAx2'],
+                'choices' => $opcionesInd['ind13xAx2']
                 ))
-            ->add('ind13xbx1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13xbx1')
+            ->add('ind13xBx1', 'choice', array(
+                'label' => $tituloInd['ind13xBx1'],
+                'choices' => $opcionesInd['ind13xBx1']
                 ))
-            ->add('ind13xbx1xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13xbx1xa')
+            ->add('ind13xBx1xA', 'choice', array(
+                'label' => $tituloInd['ind13xBx1xA'],
+                'choices' => $opcionesInd['ind13xBx1xA']
                 ))
-            ->add('ind13xbx2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13xbx2')
+            ->add('ind13xBx2', 'choice', array(
+                'label' => $tituloInd['ind13xBx2'],
+                'choices' => $opcionesInd['ind13xBx2']
                 ))
-            ->add('ind13xbx3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13xbx3')
+            ->add('ind13xBx3', 'choice', array(
+                'label' => $tituloInd['ind13xBx3'],
+                'choices' => $opcionesInd['ind13xBx3']
                 ))
-            ->add('ind13xcx1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13xcx1')
+            ->add('ind13xCx1', 'choice', array(
+                'label' => $tituloInd['ind13xCx1'],
+                'choices' => $opcionesInd['ind13xCx1']
                 ))
-            ->add('ind13xcx2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13xcx2')
+            ->add('ind13xCx2', 'choice', array(
+                'label' => $tituloInd['ind13xCx2'],
+                'choices' => $opcionesInd['ind13xCx2']
                 ))
-            ->add('ind13xcx3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind13xcx3')
+            ->add('ind13xCx3', 'choice', array(
+                'label' => $tituloInd['ind13xCx3'],
+                'choices' => $opcionesInd['ind13xCx3']
                 ))
             ->add('ind14x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind14x1')
+                'label' => $tituloInd['ind14x1'],
+                'choices' => $opcionesInd['ind14x1']
                 ))
             ->add('ind14x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind14x2')
+                'label' => $tituloInd['ind14x2'],
+                'choices' => $opcionesInd['ind14x2']
                 ))
             ->add('ind14x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind14x3')
+                'label' => $tituloInd['ind14x3'],
+                'choices' => $opcionesInd['ind14x3']
                 ))
             ->add('ind14x4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind14x4')
+                'label' => $tituloInd['ind14x4'],
+                'choices' => $opcionesInd['ind14x4']
                 ))
-            ->add('indtx20', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx20')
+            ->add('indTx20', 'choice', array(
+                'label' => $tituloInd['indTx20'],
+                'choices' => $opcionesInd['indTx20']
                 ))
-            ->add('indtx21', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx21')
+            ->add('indTx21', 'choice', array(
+                'label' => $tituloInd['indTx21'],
+                'choices' => $opcionesInd['indTx21']
                 ))
-            ->add('indtx22', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'indtx22')
+            ->add('indTx22', 'choice', array(
+                'label' => $tituloInd['indTx22'],
+                'choices' => $opcionesInd['indTx22']
                 ))
             ->add('ind15x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind15x1')
+                'label' => $tituloInd['ind15x1'],
+                'choices' => $opcionesInd['ind15x1']
                 ))
             ->add('ind15x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind15x2')
+                'label' => $tituloInd['ind15x2'],
+                'choices' => $opcionesInd['ind15x2']
                 ))
             ->add('ind16x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind16x1')
+                'label' => $tituloInd['ind16x1'],
+                'choices' => $opcionesInd['ind16x1']
                 ))
             ->add('ind16x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind16x2')
+                'label' => $tituloInd['ind16x2'],
+                'choices' => $opcionesInd['ind16x2']
                 ))
             ->add('ind17x1', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind17x1')
+                'label' => $tituloInd['ind17x1'],
+                'choices' => $opcionesInd['ind17x1']
                 ))
-            ->add('ind17x1xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind17x1xa')
+            ->add('ind17x1xA', 'choice', array(
+                'label' => $tituloInd['ind17x1xA'],
+                'choices' => $opcionesInd['ind17x1xA']
                 ))
             ->add('ind17x2', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind17x2')
+                'label' => $tituloInd['ind17x2'],
+                'choices' => $opcionesInd['ind17x2']
                 ))
-            ->add('ind17x2xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind17x2xa')
+            ->add('ind17x2xA', 'choice', array(
+                'label' => $tituloInd['ind17x2xA'],
+                'choices' => $opcionesInd['ind17x2xA']
                 ))
             ->add('ind17x3', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind17x3')
+                'label' => $tituloInd['ind17x3'],
+                'choices' => $opcionesInd['ind17x3']
                 ))
-            ->add('ind17x3xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind17x3xa')
+            ->add('ind17x3xA', 'choice', array(
+                'label' => $tituloInd['ind17x3xA'],
+                'choices' => $opcionesInd['ind17x3xA']
                 ))
             ->add('ind17x4', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind17x4')
+                'label' => $tituloInd['ind17x4'],
+                'choices' => $opcionesInd['ind17x4']
                 ))
             ->add('ind17x5', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind17x5')
+                'label' => $tituloInd['ind17x5'],
+                'choices' => $opcionesInd['ind17x5']
                 ))
-            ->add('ind17x5xa', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind17x5xa')
+            ->add('ind17x5xA', 'choice', array(
+                'label' => $tituloInd['ind17x5xA'],
+                'choices' => $opcionesInd['ind17x5xA']
                 ))
             ->add('ind17x6', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind17x6')
+                'label' => $tituloInd['ind17x6'],
+                'choices' => $opcionesInd['ind17x6']
                 ))
             ->add('ind17x7', 'choice', array(
-                'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas( 'ind17x7')
+                'label' => $tituloInd['ind17x7'],
+                'choices' => $opcionesInd['ind17x7']
                 ))
+//
+//  botones
+//
+            ->add('guardar', 'submit')
         ;
     }
     
@@ -906,7 +923,9 @@ class PersonaType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => 'Zubietxe\PrincipalBundle\Entity\Persona',
-            'opciones' => array()
+            'opciones' => array(),
+            'titulos' => array()
+
         ));
     }
 

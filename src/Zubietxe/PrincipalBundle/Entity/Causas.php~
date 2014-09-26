@@ -15,15 +15,6 @@ class Causas
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_causa", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idCausa;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="id_unico", type="integer", nullable=true)
      */
     private $idUnico;
@@ -83,6 +74,15 @@ class Causas
      * @ORM\Column(name="informes2", type="string", length=30, nullable=true)
      */
     private $informes2;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_causa", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCausa;
 
 
 }

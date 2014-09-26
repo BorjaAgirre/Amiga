@@ -12,8 +12,6 @@ class personaController extends Controller
 {
     public function activAction(Request $request, $id)
     {
-    // create a activ and give it some dummy data for this example
-    //     $activ = new Actividad();
         $em = $this->getDoctrine();
         $pers = $em->getRepository('ZubietxePrincipalBundle:Persona')->find($id);
                 if (!$pers) {
@@ -29,7 +27,7 @@ class personaController extends Controller
         //$grupo2 = $em->getRepository('ZubietxePrincipalBundle:Desplegables')->findDesplegable('anosconsumo'); 
 
 
-    	$form = $this->createForm(new PersonaType($grupo), $pers, array('opciones' => $opcionesInd));            
+        $form = $this->createForm(new PersonaType($grupo), $pers, array('opciones' => $opcionesInd[0], 'titulos' => $opcionesInd[1]));                    
 
 		$form->handleRequest($request);
 

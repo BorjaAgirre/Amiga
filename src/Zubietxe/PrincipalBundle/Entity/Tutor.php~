@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Tutor
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_tutor", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $idTutor;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="nombre", type="string", length=20, nullable=true)
@@ -55,6 +46,15 @@ class Tutor
      * @ORM\Column(name="ultima_cx", type="datetime", nullable=false)
      */
     private $ultimaCx;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_tutor", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idTutor;
 
 
 }

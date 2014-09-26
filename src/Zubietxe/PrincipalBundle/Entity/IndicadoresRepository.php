@@ -12,18 +12,21 @@ class IndicadoresRepository extends EntityRepository
     {
         $query = $this->getEntityManager()
             ->createQuery(
-                'SELECT i FROM ZubietxePrincipalBundle:Indicadores i ORDER BY i.indicador ASC'
+                'SELECT i FROM ZubietxePrincipalBundle:Indicadores i ORDER BY i.indicador, i.valorindicador ASC'
             );
             $result = $query->getResult();
             $ultimo_ind = "";
             foreach ($result as $row)  {
- //               if ($row->getIndicador() == $ultimo_ind) {
-                    $retorna[$row->getIndicador()][$row->getValorIndicador()] =  $row->getTexto();
+                if ($row->getTitulo() == 'i') {
+                    $opcion[$row->getIndicador()][$row->getValorIndicador()] =  $row->getTexto();
+                } else {
+                    $titulo[$row->getIndicador()] =  $row->getTexto();
+                }
  //               }
  //               $ultimo_ind = $row->getIndicador();
 
             }
-            return $retorna; 
+            return array($opcion, $titulo); 
     }
 
 

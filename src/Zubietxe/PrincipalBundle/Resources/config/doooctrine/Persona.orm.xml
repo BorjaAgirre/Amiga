@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Zubietxe\PrincipalBundle\Entity\Persona" table="persona">
+    <indexes>
+      <index name="id_unico" columns="id_unico"/>
+    </indexes>
+    <id name="idPers" type="integer" column="id_pers">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idUnico" type="integer" column="id_unico" nullable="true"/>
+    <field name="historial" type="string" column="historial" length="9" nullable="true"/>
+    <field name="sexo" type="string" column="sexo" length="5" nullable="true"/>
+    <field name="nombre" type="string" column="nombre" length="30" nullable="true"/>
+    <field name="apellido1" type="string" column="apellido1" length="30" nullable="true"/>
+    <field name="apellido2" type="string" column="apellido2" length="30" nullable="true"/>
+    <field name="fechanac" type="date" column="fechanac" nullable="true"/>
+    <field name="lugarnac" type="string" column="lugarNac" length="30" nullable="true"/>
+    <field name="dni" type="string" column="dni" length="15" nullable="true"/>
+    <field name="pasaporte" type="string" column="pasaporte" length="15" nullable="true"/>
+    <field name="nie" type="string" column="nie" length="15" nullable="true"/>
+    <field name="numsegsoc" type="string" column="numSegSoc" length="20" nullable="true"/>
+    <field name="numexpediente" type="string" column="numExpediente" length="10" nullable="true"/>
+    <field name="nacionalidad" type="integer" column="nacionalidad" nullable="true"/>
+    <field name="telefono" type="string" column="telefono" length="30" nullable="true"/>
+    <field name="direccionactual" type="string" column="direccionActual" length="40" nullable="true"/>
+    <field name="poblacion" type="integer" column="poblacion" nullable="true"/>
+    <field name="nucleoconv" type="integer" column="nucleoConv" nullable="true"/>
+    <field name="estadocivil" type="integer" column="estadoCivil" nullable="true"/>
+    <field name="hijos" type="string" column="hijos" length="4" nullable="true"/>
+    <field name="numhijos" type="integer" column="numHijos" nullable="true"/>
+    <field name="observacioneshijos" type="string" column="observacionesHijos" length="255" nullable="true"/>
+    <field name="telefonosinteres" type="string" column="telefonosInteres" length="512" nullable="true"/>
+    <field name="fechaingreso" type="date" column="fechaIngreso" nullable="true"/>
+    <field name="fechasalida" type="date" column="fechaSalida" nullable="true"/>
+    <field name="procedenciademanda" type="string" column="procedenciaDemanda" length="120" nullable="true"/>
+    <field name="responsable" type="integer" column="responsable" nullable="true"/>
+    <field name="comedorlun" type="integer" column="comedorLun" nullable="true"/>
+    <field name="comedormar" type="integer" column="comedorMar" nullable="true"/>
+    <field name="comedormie" type="integer" column="comedorMie" nullable="true"/>
+    <field name="comedorjue" type="integer" column="comedorJue" nullable="true"/>
+    <field name="comedorvie" type="integer" column="comedorVie" nullable="true"/>
+    <field name="transporte" type="integer" column="transporte" nullable="true"/>
+    <field name="listaespera" type="string" column="listaEspera" length="20" nullable="true"/>
+    <field name="observacionesnivelformativo" type="string" column="observacionesNivelFormativo" length="100" nullable="true"/>
+    <field name="nivelformativo" type="string" column="nivelFormativo" length="30" nullable="true"/>
+    <field name="observacionesidioma" type="string" column="observacionesIdioma" length="50" nullable="true"/>
+    <field name="edadabandonoestudios" type="string" column="EdadAbandonoEstudios" length="5" nullable="true"/>
+    <field name="laboralorigen" type="string" column="LaboralOrigen" length="20" nullable="true"/>
+    <field name="laboralespana" type="string" column="LaboralEspana" length="20" nullable="true"/>
+    <field name="tiempotrabajado" type="string" column="TiempoTrabajado" length="20" nullable="true"/>
+    <field name="trabaja" type="integer" column="Trabaja" nullable="true"/>
+    <field name="autonomia" type="integer" column="Autonomia" nullable="true"/>
+    <field name="disminucionfisica" type="integer" column="DisminucionFisica" nullable="true"/>
+    <field name="minusvaliaporcentaje" type="integer" column="MinusvaliaPorcentaje" nullable="true"/>
+    <field name="incapacitacion" type="integer" column="Incapacitacion" nullable="true"/>
+    <field name="toxicomania" type="integer" column="Toxicomania" nullable="true"/>
+    <field name="antecconsumo" type="integer" column="AntecConsumo" nullable="true"/>
+    <field name="disminucionpsiquica" type="integer" column="DisminucionPsiquica" nullable="true"/>
+    <field name="enfermedadmental" type="integer" column="EnfermedadMental" nullable="true"/>
+    <field name="tuberculosis" type="integer" column="Tuberculosis" nullable="true"/>
+    <field name="hepatitis" type="integer" column="Hepatitis" nullable="true"/>
+    <field name="vih" type="integer" column="VIH" nullable="true"/>
+    <field name="diabetes" type="string" column="diabetes" length="2" nullable="true"/>
+    <field name="otras" type="integer" column="Otras" nullable="true"/>
+    <field name="enfermedadescomentarios" type="string" column="EnfermedadesComentarios" length="200" nullable="true"/>
+    <field name="medicacion" type="string" column="Medicacion" length="200" nullable="true"/>
+    <field name="enfmentaldiagnostico" type="string" column="EnfMentalDiagnostico" length="120" nullable="true"/>
+    <field name="enfmentalfechadiagn" type="date" column="EnfMentalFechaDiagn" nullable="true"/>
+    <field name="enfmentaltratamiento" type="integer" column="EnfMentalTratamiento" nullable="true"/>
+    <field name="enfmentalingresos" type="string" column="EnfMentalIngresos" length="30" nullable="true"/>
+    <field name="enfmentalpadres" type="integer" column="EnfMentalPadres" nullable="true"/>
+    <field name="enfmentalhermanos" type="integer" column="EnfMentalHermanos" nullable="true"/>
+    <field name="enfmentalpareja" type="integer" column="EnfMentalPareja" nullable="true"/>
+    <field name="enfmentalhijos" type="integer" column="EnfMentalHijos" nullable="true"/>
+    <field name="drogaspadres" type="integer" column="DrogasPadres" nullable="true"/>
+    <field name="drogashermanos" type="integer" column="DrogasHermanos" nullable="true"/>
+    <field name="drogaspareja" type="integer" column="DrogasPareja" nullable="true"/>
+    <field name="drogashijos" type="integer" column="DrogasHijos" nullable="true"/>
+    <field name="permisoresid" type="integer" column="PermisoResid" nullable="true"/>
+    <field name="permisoresidtr" type="integer" column="PermisoResidTr" nullable="true"/>
+    <field name="numpasap" type="string" column="numPasap" length="20" nullable="true"/>
+    <field name="fechapasap" type="date" column="fechaPasap" nullable="true"/>
+    <field name="numcedula" type="string" column="numCedula" length="20" nullable="true"/>
+    <field name="fechacaduccedula" type="date" column="fechaCaducCedula" nullable="true"/>
+    <field name="fecharesidsolicit" type="date" column="fechaResidSolicit" nullable="true"/>
+    <field name="numresidconced" type="string" column="numResidConced" length="20" nullable="true"/>
+    <field name="fecharesidconced" type="date" column="fechaResidConced" nullable="true"/>
+    <field name="fecharesidtrabsolicit" type="date" column="fechaResidTrabSolicit" nullable="true"/>
+    <field name="numresidtrabconc" type="string" column="numResidTrabConc" length="20" nullable="true"/>
+    <field name="fecharesidtrabconc" type="date" column="fechaResidTrabConc" nullable="true"/>
+    <field name="visado" type="integer" column="visado" nullable="true"/>
+    <field name="asilo" type="integer" column="asilo" nullable="true"/>
+    <field name="otrosdoc" type="string" column="otrosDoc" length="40" nullable="true"/>
+    <field name="fechaentrada" type="date" column="fechaEntrada" nullable="true"/>
+    <field name="fechaprueba" type="date" column="fechaPrueba" nullable="true"/>
+    <field name="abogadootros" type="string" column="abogadootros" length="40" nullable="true"/>
+    <field name="permisoresidrazonesno" type="string" column="PermisoResidRazonesNo" length="20" nullable="true"/>
+    <field name="permisosolicitudlugar" type="string" column="PermisoSolicitudLugar" length="20" nullable="true"/>
+    <field name="tiemporesidenciaespanya" type="string" column="TiempoResidenciaEspanya" length="20" nullable="true"/>
+    <field name="tiemporesidenciabilbao" type="string" column="TiempoResidenciaBilbao" length="20" nullable="true"/>
+    <field name="permisotrabajo" type="string" column="PermisoTrabajo" length="20" nullable="true"/>
+    <field name="permisotrabajorazonesno" type="string" column="PermisoTrabajoRazonesNo" length="20" nullable="true"/>
+    <field name="fechaempadronamiento" type="date" column="FechaEmpadronamiento" nullable="true"/>
+    <field name="direccionpadronactual" type="string" column="direccionPadronActual" length="50" nullable="true"/>
+    <field name="tis" type="integer" column="Tis" nullable="true"/>
+    <field name="redapoyo" type="integer" column="RedApoyo" nullable="true"/>
+    <field name="ingresospropios" type="integer" column="IngresosPropios" nullable="true"/>
+    <field name="ingresospnc" type="integer" column="IngresosPnc" nullable="true"/>
+    <field name="ingresosotros" type="integer" column="IngresosOtros" nullable="true"/>
+    <field name="ingresosnomina" type="integer" column="IngresosNomina" nullable="true"/>
+    <field name="ingresosrgi" type="integer" column="IngresosRGI" nullable="true"/>
+    <field name="ingresosprestcontrib" type="integer" column="IngresosPrestContrib" nullable="true"/>
+    <field name="ingresossedesconoce" type="integer" column="IngresosSeDesconoce" nullable="true"/>
+    <field name="ingresosayudaindividual" type="integer" column="IngresosAyudaIndividual" nullable="true"/>
+    <field name="ingresosno" type="integer" column="IngresosNo" nullable="true"/>
+    <field name="penalantecedentesprision" type="integer" column="PenalAntecedentesPrision" nullable="true"/>
+    <field name="penalordenalejamiento" type="integer" column="PenalOrdenAlejamiento" nullable="true"/>
+    <field name="penalprisionpreventiva" type="integer" column="PenalPrisionPreventiva" nullable="true"/>
+    <field name="penalprisionotros" type="integer" column="PenalPrisionOtros" nullable="true"/>
+    <field name="penallibcondicional" type="integer" column="PenalLibCondicional" nullable="true"/>
+    <field name="penalmedidaseguridad" type="integer" column="PenalMedidaSeguridad" nullable="true"/>
+    <field name="penalcausaspendientes" type="integer" column="PenalCausasPendientes" nullable="true"/>
+    <field name="penalpermisopenitenc" type="integer" column="PenalPermisoPenitenc" nullable="true"/>
+    <field name="penaltercergrado" type="integer" column="PenalTercerGrado" nullable="true"/>
+    <field name="penaltbc" type="integer" column="PenalTbc" nullable="true"/>
+    <field name="ducha" type="integer" column="ducha" nullable="true"/>
+    <field name="ropero" type="integer" column="ropero" nullable="true"/>
+    <field name="lavanderia" type="integer" column="lavanderia" nullable="true"/>
+    <field name="tlsabado" type="integer" column="tlSabado" nullable="true"/>
+    <field name="tldomingo" type="integer" column="tlDomingo" nullable="true"/>
+    <field name="salidaverano" type="integer" column="salidaVerano" nullable="true"/>
+    <field name="salidaotro" type="integer" column="salidaOtro" nullable="true"/>
+    <field name="medicacioncentro" type="integer" column="medicacionCentro" nullable="true"/>
+    <field name="nivelcastellano" type="integer" column="NivelCastellano" nullable="true"/>
+    <field name="explaboral" type="integer" column="expLaboral" nullable="true"/>
+    <field name="lanbide" type="integer" column="lanbide" nullable="true"/>
+    <field name="fechaaltalanbide" type="date" column="fechaAltaLanbide" nullable="true"/>
+    <field name="fecharenovlanbide" type="date" column="fechaRenovLanbide" nullable="true"/>
+    <field name="inem" type="integer" column="inem" nullable="true"/>
+    <field name="fechaaltainem" type="date" column="fechaAltaInem" nullable="true"/>
+    <field name="fecharenovinem" type="date" column="fechaRenovInem" nullable="true"/>
+    <field name="cursos" type="string" column="cursos" length="100" nullable="true"/>
+    <field name="poblacionpadron" type="integer" column="poblacionPadron" nullable="true"/>
+    <field name="consumoprinc" type="integer" column="ConsumoPrinc" nullable="true"/>
+    <field name="insertidusuario" type="integer" column="insertIdUsuario" nullable="true"/>
+    <field name="fechainsert" type="date" column="fechaInsert" nullable="true"/>
+    <field name="anosconsumo" type="integer" column="AnosConsumo" nullable="true"/>
+    <field name="tratamiento" type="integer" column="Tratamiento" nullable="true"/>
+    <field name="tratamientotipo" type="integer" column="TratamientoTipo" nullable="true"/>
+    <field name="procedenciademandalista" type="integer" column="procedenciaDemandaLista" nullable="true"/>
+    <field name="situacionadministrativa" type="integer" column="situacionAdministrativa" nullable="true"/>
+    <field name="fechacaductis" type="date" column="fechaCaducTis" nullable="true"/>
+    <field name="ind1x1" type="boolean" column="ind1x1" nullable="true"/>
+    <field name="ind1x1xa" type="boolean" column="ind1x1xA" nullable="true"/>
+    <field name="ind1x2" type="boolean" column="ind1x2" nullable="true"/>
+    <field name="ind1x2xa" type="boolean" column="ind1x2xA" nullable="true"/>
+    <field name="ind1x3" type="boolean" column="ind1x3" nullable="true"/>
+    <field name="ind1x4" type="boolean" column="ind1x4" nullable="true"/>
+    <field name="ind1x5" type="boolean" column="ind1x5" nullable="true"/>
+    <field name="ind1x5xa" type="boolean" column="ind1x5xA" nullable="true"/>
+    <field name="ind1x6" type="boolean" column="ind1x6" nullable="true"/>
+    <field name="ind1x7" type="boolean" column="ind1x7" nullable="true"/>
+    <field name="ind2x1" type="boolean" column="ind2x1" nullable="true"/>
+    <field name="ind2xax1" type="boolean" column="ind2xAx1" nullable="true"/>
+    <field name="ind2xax2" type="boolean" column="ind2xAx2" nullable="true"/>
+    <field name="ind2xax3" type="boolean" column="ind2xAx3" nullable="true"/>
+    <field name="ind2xax4" type="boolean" column="ind2xAx4" nullable="true"/>
+    <field name="ind2xbx1" type="boolean" column="ind2xBx1" nullable="true"/>
+    <field name="ind2xbx2" type="boolean" column="ind2xBx2" nullable="true"/>
+    <field name="ind3x1" type="boolean" column="ind3x1" nullable="true"/>
+    <field name="ind3x1xa" type="boolean" column="ind3x1xA" nullable="true"/>
+    <field name="ind3x2" type="boolean" column="ind3x2" nullable="true"/>
+    <field name="ind3x2xe" type="boolean" column="ind3x2xE" nullable="true"/>
+    <field name="ind3x2xd" type="boolean" column="ind3x2xD" nullable="true"/>
+    <field name="ind3x2xr" type="boolean" column="ind3x2xR" nullable="true"/>
+    <field name="ind3x3" type="boolean" column="ind3x3" nullable="true"/>
+    <field name="ind3x3xt" type="boolean" column="ind3x3xT" nullable="true"/>
+    <field name="ind3x4" type="boolean" column="ind3x4" nullable="true"/>
+    <field name="indtx1" type="boolean" column="indTx1" nullable="true"/>
+    <field name="indtx2" type="boolean" column="indTx2" nullable="true"/>
+    <field name="indtx3" type="boolean" column="indTx3" nullable="true"/>
+    <field name="indtx4" type="boolean" column="indTx4" nullable="true"/>
+    <field name="ind4x1" type="boolean" column="ind4x1" nullable="true"/>
+    <field name="ind4x2" type="boolean" column="ind4x2" nullable="true"/>
+    <field name="ind4x2xa" type="boolean" column="ind4x2xA" nullable="true"/>
+    <field name="ind4x2xb" type="boolean" column="ind4x2xB" nullable="true"/>
+    <field name="ind4x2xc" type="boolean" column="ind4x2xC" nullable="true"/>
+    <field name="ind4x3" type="boolean" column="ind4x3" nullable="true"/>
+    <field name="ind4x3x1" type="boolean" column="ind4x3x1" nullable="true"/>
+    <field name="ind4x3x2" type="boolean" column="ind4x3x2" nullable="true"/>
+    <field name="ind4x3x3" type="boolean" column="ind4x3x3" nullable="true"/>
+    <field name="ind4xax1" type="boolean" column="ind4xAx1" nullable="true"/>
+    <field name="ind4xax2" type="boolean" column="ind4xAx2" nullable="true"/>
+    <field name="ind4xax3" type="boolean" column="ind4xAx3" nullable="true"/>
+    <field name="ind4xax4" type="boolean" column="ind4xAx4" nullable="true"/>
+    <field name="ind4xax5" type="boolean" column="ind4xAx5" nullable="true"/>
+    <field name="ind4xax6" type="boolean" column="ind4xAx6" nullable="true"/>
+    <field name="ind4xbx1" type="boolean" column="ind4xBx1" nullable="true"/>
+    <field name="ind4xbx2" type="boolean" column="ind4xBx2" nullable="true"/>
+    <field name="ind4xcx1" type="boolean" column="ind4xCx1" nullable="true"/>
+    <field name="ind4xcx2" type="boolean" column="ind4xCx2" nullable="true"/>
+    <field name="ind4xcx3" type="boolean" column="ind4xCx3" nullable="true"/>
+    <field name="ind4xcx4" type="boolean" column="ind4xCx4" nullable="true"/>
+    <field name="ind5x1" type="boolean" column="ind5x1" nullable="true"/>
+    <field name="ind5x2" type="boolean" column="ind5x2" nullable="true"/>
+    <field name="ind5x3" type="boolean" column="ind5x3" nullable="true"/>
+    <field name="ind5x4" type="boolean" column="ind5x4" nullable="true"/>
+    <field name="ind5x5" type="boolean" column="ind5x5" nullable="true"/>
+    <field name="ind6x1" type="boolean" column="ind6x1" nullable="true"/>
+    <field name="ind6x1x1" type="boolean" column="ind6x1x1" nullable="true"/>
+    <field name="ind6x1x2" type="boolean" column="ind6x1x2" nullable="true"/>
+    <field name="ind6x1x3" type="boolean" column="ind6x1x3" nullable="true"/>
+    <field name="ind6x2" type="boolean" column="ind6x2" nullable="true"/>
+    <field name="ind6x3" type="boolean" column="ind6x3" nullable="true"/>
+    <field name="ind6x4" type="boolean" column="ind6x4" nullable="true"/>
+    <field name="ind7xax1" type="boolean" column="ind7xAx1" nullable="true"/>
+    <field name="ind7xax2" type="boolean" column="ind7xAx2" nullable="true"/>
+    <field name="ind7xax3" type="boolean" column="ind7xAx3" nullable="true"/>
+    <field name="ind7xax4" type="boolean" column="ind7xAx4" nullable="true"/>
+    <field name="ind7xax5" type="boolean" column="ind7xAx5" nullable="true"/>
+    <field name="ind7xax6" type="boolean" column="ind7xAx6" nullable="true"/>
+    <field name="ind7xax7" type="boolean" column="ind7xAx7" nullable="true"/>
+    <field name="ind7xbx1" type="boolean" column="ind7xBx1" nullable="true"/>
+    <field name="ind7xbx2" type="boolean" column="ind7xBx2" nullable="true"/>
+    <field name="ind7xbx3" type="boolean" column="ind7xBx3" nullable="true"/>
+    <field name="ind7xbx4" type="boolean" column="ind7xBx4" nullable="true"/>
+    <field name="ind7xbx5" type="boolean" column="ind7xBx5" nullable="true"/>
+    <field name="ind8x1" type="boolean" column="ind8x1" nullable="true"/>
+    <field name="ind8x2" type="boolean" column="ind8x2" nullable="true"/>
+    <field name="ind8x3" type="boolean" column="ind8x3" nullable="true"/>
+    <field name="ind8x4" type="boolean" column="ind8x4" nullable="true"/>
+    <field name="indtx5" type="boolean" column="indTx5" nullable="true"/>
+    <field name="indtx6" type="boolean" column="indTx6" nullable="true"/>
+    <field name="indtx7" type="boolean" column="indTx7" nullable="true"/>
+    <field name="indtx8" type="boolean" column="indTx8" nullable="true"/>
+    <field name="indtx9" type="boolean" column="indTx9" nullable="true"/>
+    <field name="indtx10" type="boolean" column="indTx10" nullable="true"/>
+    <field name="indtx11" type="boolean" column="indTx11" nullable="true"/>
+    <field name="indtx12" type="boolean" column="indTx12" nullable="true"/>
+    <field name="indtx13" type="boolean" column="indTx13" nullable="true"/>
+    <field name="indtx14" type="boolean" column="indTx14" nullable="true"/>
+    <field name="indtx15" type="boolean" column="indTx15" nullable="true"/>
+    <field name="indtx16" type="boolean" column="indTx16" nullable="true"/>
+    <field name="ind9xax1" type="boolean" column="ind9xAx1" nullable="true"/>
+    <field name="ind9xax2" type="boolean" column="ind9xAx2" nullable="true"/>
+    <field name="ind9xax3" type="boolean" column="ind9xAx3" nullable="true"/>
+    <field name="ind9xax4" type="boolean" column="ind9xAx4" nullable="true"/>
+    <field name="ind9xax5" type="boolean" column="ind9xAx5" nullable="true"/>
+    <field name="ind9xbx1" type="boolean" column="ind9xBx1" nullable="true"/>
+    <field name="ind9xbx2" type="boolean" column="ind9xBx2" nullable="true"/>
+    <field name="ind9xbx3" type="boolean" column="ind9xBx3" nullable="true"/>
+    <field name="ind9xbx4" type="boolean" column="ind9xBx4" nullable="true"/>
+    <field name="ind9xbx5" type="boolean" column="ind9xBx5" nullable="true"/>
+    <field name="ind9xcx1" type="boolean" column="ind9xCx1" nullable="true"/>
+    <field name="ind9xcx2" type="boolean" column="ind9xCx2" nullable="true"/>
+    <field name="ind9xcx3" type="boolean" column="ind9xCx3" nullable="true"/>
+    <field name="ind9xcx4" type="boolean" column="ind9xCx4" nullable="true"/>
+    <field name="ind9xcx5" type="boolean" column="ind9xCx5" nullable="true"/>
+    <field name="ind9xcx6" type="boolean" column="ind9xCx6" nullable="true"/>
+    <field name="ind9xdx1" type="boolean" column="ind9xDx1" nullable="true"/>
+    <field name="ind9xdx2" type="boolean" column="ind9xDx2" nullable="true"/>
+    <field name="ind9xdx3" type="boolean" column="ind9xDx3" nullable="true"/>
+    <field name="ind9xdx4" type="boolean" column="ind9xDx4" nullable="true"/>
+    <field name="ind9xdx5" type="boolean" column="ind9xDx5" nullable="true"/>
+    <field name="ind9xdx6" type="boolean" column="ind9xDx6" nullable="true"/>
+    <field name="ind9xdx7" type="boolean" column="ind9xDx7" nullable="true"/>
+    <field name="ind9xdx8" type="boolean" column="ind9xDx8" nullable="true"/>
+    <field name="ind10x1" type="boolean" column="ind10x1" nullable="true"/>
+    <field name="ind10x2" type="boolean" column="ind10x2" nullable="true"/>
+    <field name="ind10x2x1" type="boolean" column="ind10x2x1" nullable="true"/>
+    <field name="ind10x2x1xa" type="boolean" column="ind10x2x1xA" nullable="true"/>
+    <field name="ind10x2x2" type="boolean" column="ind10x2x2" nullable="true"/>
+    <field name="ind10x3" type="boolean" column="ind10x3" nullable="true"/>
+    <field name="ind10x4" type="boolean" column="ind10x4" nullable="true"/>
+    <field name="ind10x5" type="boolean" column="ind10x5" nullable="true"/>
+    <field name="ind10x6" type="boolean" column="ind10x6" nullable="true"/>
+    <field name="ind10x7" type="boolean" column="ind10x7" nullable="true"/>
+    <field name="ind10x8" type="boolean" column="ind10x8" nullable="true"/>
+    <field name="ind10xax1" type="boolean" column="ind10xAx1" nullable="true"/>
+    <field name="ind10xax2" type="boolean" column="ind10xAx2" nullable="true"/>
+    <field name="ind10xax3" type="boolean" column="ind10xAx3" nullable="true"/>
+    <field name="ind10xax4" type="boolean" column="ind10xAx4" nullable="true"/>
+    <field name="ind11x1" type="boolean" column="ind11x1" nullable="true"/>
+    <field name="ind11x2" type="boolean" column="ind11x2" nullable="true"/>
+    <field name="ind11x3" type="boolean" column="ind11x3" nullable="true"/>
+    <field name="ind11x4" type="boolean" column="ind11x4" nullable="true"/>
+    <field name="ind11x5" type="boolean" column="ind11x5" nullable="true"/>
+    <field name="ind11x6" type="boolean" column="ind11x6" nullable="true"/>
+    <field name="ind11x7" type="boolean" column="ind11x7" nullable="true"/>
+    <field name="ind12x1" type="boolean" column="ind12x1" nullable="true"/>
+    <field name="ind12x2" type="boolean" column="ind12x2" nullable="true"/>
+    <field name="ind12x3" type="boolean" column="ind12x3" nullable="true"/>
+    <field name="indtx17" type="boolean" column="indTx17" nullable="true"/>
+    <field name="indtx17xa" type="boolean" column="indTx17xA" nullable="true"/>
+    <field name="indtx17xb" type="boolean" column="indTx17xB" nullable="true"/>
+    <field name="indtx18" type="boolean" column="indTx18" nullable="true"/>
+    <field name="indtx19" type="boolean" column="indTx19" nullable="true"/>
+    <field name="ind13x1" type="boolean" column="ind13x1" nullable="true"/>
+    <field name="ind13x2" type="boolean" column="ind13x2" nullable="true"/>
+    <field name="ind13x3" type="boolean" column="ind13x3" nullable="true"/>
+    <field name="ind13x3xa" type="boolean" column="ind13x3xA" nullable="true"/>
+    <field name="ind13xax1" type="boolean" column="ind13xAx1" nullable="true"/>
+    <field name="ind13xax2" type="boolean" column="ind13xAx2" nullable="true"/>
+    <field name="ind13xbx1" type="boolean" column="ind13xBx1" nullable="true"/>
+    <field name="ind13xbx1xa" type="boolean" column="ind13xBx1xA" nullable="true"/>
+    <field name="ind13xbx2" type="boolean" column="ind13xBx2" nullable="true"/>
+    <field name="ind13xbx3" type="boolean" column="ind13xBx3" nullable="true"/>
+    <field name="ind13xcx1" type="boolean" column="ind13xCx1" nullable="true"/>
+    <field name="ind13xcx2" type="boolean" column="ind13xCx2" nullable="true"/>
+    <field name="ind13xcx3" type="boolean" column="ind13xCx3" nullable="true"/>
+    <field name="ind14x1" type="boolean" column="ind14x1" nullable="true"/>
+    <field name="ind14x2" type="boolean" column="ind14x2" nullable="true"/>
+    <field name="ind14x3" type="boolean" column="ind14x3" nullable="true"/>
+    <field name="ind14x4" type="boolean" column="ind14x4" nullable="true"/>
+    <field name="indtx20" type="boolean" column="indTx20" nullable="true"/>
+    <field name="indtx21" type="boolean" column="indTx21" nullable="true"/>
+    <field name="indtx22" type="boolean" column="indTx22" nullable="true"/>
+    <field name="ind15x1" type="boolean" column="ind15x1" nullable="true"/>
+    <field name="ind15x2" type="boolean" column="ind15x2" nullable="true"/>
+    <field name="ind16x1" type="boolean" column="ind16x1" nullable="true"/>
+    <field name="ind16x2" type="boolean" column="ind16x2" nullable="true"/>
+    <field name="ind17x1" type="boolean" column="ind17x1" nullable="true"/>
+    <field name="ind17x1xa" type="boolean" column="ind17x1xA" nullable="true"/>
+    <field name="ind17x2" type="boolean" column="ind17x2" nullable="true"/>
+    <field name="ind17x2xa" type="boolean" column="ind17x2xA" nullable="true"/>
+    <field name="ind17x3" type="boolean" column="ind17x3" nullable="true"/>
+    <field name="ind17x3xa" type="boolean" column="ind17x3xA" nullable="true"/>
+    <field name="ind17x4" type="boolean" column="ind17x4" nullable="true"/>
+    <field name="ind17x5" type="boolean" column="ind17x5" nullable="true"/>
+    <field name="ind17x5xa" type="boolean" column="ind17x5xA" nullable="true"/>
+    <field name="ind17x6" type="boolean" column="ind17x6" nullable="true"/>
+    <field name="ind17x7" type="boolean" column="ind17x7" nullable="true"/>
+  </entity>
+</doctrine-mapping>

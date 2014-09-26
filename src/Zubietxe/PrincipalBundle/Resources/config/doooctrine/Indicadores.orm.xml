@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Zubietxe\PrincipalBundle\Entity\Indicadores" table="indicadores">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="indicador" type="string" column="indicador" length="15" nullable="true"/>
+    <field name="texto" type="string" column="texto" length="255" nullable="true"/>
+    <field name="valorindicador" type="integer" column="valorIndicador" nullable="true"/>
+    <field name="valorable" type="string" column="valorable" length="1" nullable="true"/>
+    <field name="valorinstrum" type="integer" column="valorInstrum" nullable="true"/>
+    <field name="subvalorinstrum" type="integer" column="subvalorInstrum" nullable="true"/>
+    <field name="titulo" type="string" column="titulo" length="1" nullable="true"/>
+    <field name="otro" type="string" column="otro" length="2" nullable="true"/>
+  </entity>
+</doctrine-mapping>

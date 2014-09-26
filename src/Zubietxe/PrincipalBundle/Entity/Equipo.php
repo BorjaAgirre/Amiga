@@ -13,15 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Equipo
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
-     */
-    private $id;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="nombre", type="string", length=20, nullable=true)
@@ -56,17 +47,16 @@ class Equipo
      */
     private $ultimaCx;
 
-
-
     /**
-     * Get id
+     * @var integer
      *
-     * @return integer 
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    private $id;
+
+
 
     /**
      * Set nombre
@@ -181,5 +171,15 @@ class Equipo
     public function getUltimaCx()
     {
         return $this->ultimaCx;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }
