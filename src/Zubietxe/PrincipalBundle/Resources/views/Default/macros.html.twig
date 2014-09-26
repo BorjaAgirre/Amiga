@@ -29,6 +29,7 @@
     {% spaceless %}
         <div class="control-group{% if errors|length > 0 %} error{% endif %}">
             {{ form_label(form, '', { 'label_attr': {'class': 'control-label'} }) }}
+            <br>
             <div class="controls">
                 {{ form_widget(form) }}
                 {% if form.vars.help is defined %}
