@@ -26,11 +26,14 @@ class PersonaType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $opcionesInd = $options['opciones'];
         $builder
             ->add('idUnico')
             ->add('historial')
             ->add('sexo')
-            ->add('nombre')
+            ->add('nombre', 'text', array(
+                'label' => $opcionesInd['ind1x1'][1]
+                ))
             ->add('apellido1')
             ->add('apellido2')
             ->add('fechanac')
@@ -175,7 +178,7 @@ class PersonaType extends AbstractType
             ->add('fechacaductis')
             ->add('ind1x1', 'choice', array(
                 'label' => 'Indicador 1.1',
-                'choices' => $this->grupo->findRespuestas('ind1x1')
+                'choices' => $opcionesInd['ind1x1']
                 ))
             ->add('ind1x1xa', 'choice', array(
                 'label' => 'Indicador 1.1',
@@ -902,7 +905,8 @@ class PersonaType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Zubietxe\PrincipalBundle\Entity\Persona'
+            'data_class' => 'Zubietxe\PrincipalBundle\Entity\Persona',
+            'opciones' => array()
         ));
     }
 

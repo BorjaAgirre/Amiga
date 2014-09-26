@@ -24,11 +24,12 @@ class personaController extends Controller
 
         $grupo2 = $em->getRepository('ZubietxePrincipalBundle:Desplegables'); 
         $grupo = $em->getRepository('ZubietxePrincipalBundle:Indicadores'); 
+        $opcionesInd = $em->getRepository('ZubietxePrincipalBundle:Indicadores')->opcionesIndicador();
 
         //$grupo2 = $em->getRepository('ZubietxePrincipalBundle:Desplegables')->findDesplegable('anosconsumo'); 
 
 
-    	$form = $this->createForm(new PersonaType($grupo), $pers);            
+    	$form = $this->createForm(new PersonaType($grupo), $pers, array('opciones' => $opcionesInd));            
 
 		$form->handleRequest($request);
 
