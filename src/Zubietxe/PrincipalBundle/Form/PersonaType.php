@@ -5,20 +5,13 @@ namespace Zubietxe\PrincipalBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Zubietxe\PrincipalBundle\Entity\Desplegables;
-use Zubietxe\PrincipalBundle\Entity\DesplegablesRepository;
+
 
 use Doctrine\ORM\EntityRepository;
 
 class PersonaType extends AbstractType
 {
-    protected $grupo;
 
-
-    public function __construct (EntityRepository $grupo)
-    {
-        $this->grupo = $grupo;
-    }
 
         /**
      * @param FormBuilderInterface $builder
@@ -46,11 +39,14 @@ class PersonaType extends AbstractType
         }
 */
         $builder
-            ->add('sexo')
+            ->add('sexo', 'choice', array(
+                'label' => 'Nacionalidad',
+                'choices' => $despl->findDesplegable('sexo')
+                ))    
             ->add('nombre')
             ->add('apellido1')
             ->add('apellido2')
-            ->add('fechanac')
+            ->add('fechanac', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
             ->add('lugarnac')
             ->add('dni')
             ->add('pasaporte')
@@ -63,15 +59,21 @@ class PersonaType extends AbstractType
                 ))    
             ->add('telefono')
             ->add('direccionactual')
-            ->add('poblacion')
-            ->add('nucleoconv')
-            ->add('estadocivil')
+            ->add('poblacion', 'choice', array(
+                'choices' => $despl->findDesplegable('poblaciones')
+                ))    
+            ->add('nucleoconv', 'choice', array(
+                'choices' => $despl->findDesplegable('nucleoconv')
+                ))    
+            ->add('estadocivil', 'choice', array(
+                'choices' => $despl->findDesplegable('estado_civil')
+                ))    
             ->add('hijos')
             ->add('numhijos')
             ->add('observacioneshijos')
             ->add('telefonosinteres')
-            ->add('fechaingreso')
-            ->add('fechasalida')
+            ->add('fechaingreso', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
+            ->add('fechasalida', 'date', array('widget' => 'single_text', 'format' => 'dd-M-yyyy'))
             ->add('procedenciademanda')
             ->add('responsable')
             ->add('comedorlun')
