@@ -316,6 +316,7 @@ class PersonaType extends AbstractType
                 ))
             ->add('ind4x2', 'text', array(
                 'label' => $tituloInd['ind4x2'],
+                'required'    => false,
                 ))
             ->add('ind4x2xA', 'choice', array(
                 'label' => $tituloInd['ind4x2xA'],
@@ -415,6 +416,7 @@ class PersonaType extends AbstractType
                 ))
             ->add('ind6x1', 'text', array(
                 'label' => $tituloInd['ind6x1'],
+                'required'    => false,
                 ))
             ->add('ind6x1x1', 'choice', array(
                 'label' => $tituloInd['ind6x1x1'],
@@ -654,6 +656,7 @@ class PersonaType extends AbstractType
                 ))
             ->add('ind10x2', 'text', array(
                 'label' => $tituloInd['ind10x2'],
+                'required'    => false,
                 ))
             ->add('ind10x2x1', 'choice', array(
                 'label' => $tituloInd['ind10x2x1'],
@@ -749,6 +752,7 @@ class PersonaType extends AbstractType
                 ))
             ->add('indTx17', 'text', array(
                 'label' => $tituloInd['indTx17'],
+                'required'    => false,
                 ))
             ->add('indTx17xA', 'choice', array(
                 'label' => $tituloInd['indTx17xA'],
