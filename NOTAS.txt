@@ -1,0 +1,15 @@
+
+
+Auxiliar
+--------
+	Es una copia de la tabla 'persona' en la que solamente aparece una vez cada usuario. En concreto, la última aparición según id_pers.
+Esta copia se hace: 
+- Desde 'insertar_persona.php', al final de todo. Se utiliza la función 'fotografia_auxiliar()' de 'auxiliar.php'
+
+
+Copia
+-----
+	Se hacen cuatro fotografías de la base de datos. 
+	En 'resultados.php' se crea la tabla 'copia' cuando se ejecuta. 
+	- Copia: saca la 'fotografia auxiliar' de 'auxiliar3.php' entre dos fechas. 
+

@@ -1,0 +1,890 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000;
+	background-color: #eeeeee;
+/* text-align: center  */
+}
+
+h3 {
+	padding: 0px;
+	font-size: 23px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	color: #000000;
+}
+
+
+
+#iframe	 {
+	background:#FFFFFF;
+	overflow:auto; 
+	position:relative; 
+	font-size:18; 
+	font-family:'Verdana'; 
+	visibility:show
+}
+
+
+
+#iframe2up  {
+	z-index:0;
+	height:10%; 
+	width:100%; 
+	background:#EEEEEE;
+	overflow:auto; 
+	position:absolute; 
+	top:18%; 
+	left: 0%; 
+	font-size:18; 
+	font-family:'Verdana'; 
+	visibility:show
+}
+
+#iframe2  {
+	z-index:0;
+	height:75%; 
+	width:100%; 
+	background:#EEEEEE;
+	overflow:auto; 
+	position:absolute; 
+	top:25%; 
+	left: 0%; 
+	font-size:18; 
+	font-family:'Verdana'; 
+	visibility:show
+}
+
+#iframetabla  {
+	height:40%; 
+	width:90%; 
+	background:#EEEEEE;
+	overflow:auto; 
+	position:absolute; 
+	top:40%; 
+	left:5%; 
+	font-size:18; 
+	font-family:'Verdana'; 
+	visibility:show
+}
+
+#container {
+	left: 10px;
+/*	width: 200px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	padding: 1px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;    */
+}
+
+
+#formulario {
+	position:relative; 
+	top: 3%;  
+	width: 70%;
+	font-size:18; 
+	font-family:'Verdana'; 
+	visibility:show
+}
+
+#formulario {
+	position: absolute; 
+	top: 120px;
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	padding: 1px;
+	border-radius: 10px;
+	border-radius: 10px;
+}
+
+#d_persona {
+	position:relative;  
+	height: 50px;
+	font-size:18; 
+	font-family:'Verdana'; 
+	visibility:show
+}
+
+
+#d_comentario {
+/*	height:300px; 
+	width:90%; 
+	background:#EEEEEE;
+	overflow:auto; 
+	position:absolute; 
+	top: 30%;   */
+	left: 05%; 
+	font-size:18; 
+	font-family:'Verdana'; 
+	visibility:show
+}
+
+#indice_coment {
+	border: 1px solid black; 
+	padding: 3px; 
+	background-color: white;
+	text-decoration: none; 
+	font-family: verdana; 
+	font-size: 0.8em; 
+}
+
+#nota  {
+	position:absolute;
+	background: white; 
+	left:0px;
+	top:0px;
+	z-index:-1;
+} 
+
+.textovertical {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);	
+}
+
+
+#historicoindicadores {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#historicoindicadores td, #historicoindicadores th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#historicoindicadores tr:nth-child(even){background-color: #f2f2f2;}
+
+#historicoindicadores tr:hover {background-color: #ddd;}
+
+#historicoindicadores th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+/* Esto es para que saque una ventana si el navegador no soporta CSS2 */
+.csscheck {color: red; font-size: 150%; width: 50%;
+           margin-left: 1em; border: thick red solid}
+
+body>div>.csscheck {display: none}
+
+.wrap_header {
+	height: 150px;
+}
+
+#headers {
+	position:absolute; 
+	top:10px; 
+	right:10px; 
+	font-family:arial,sans-serif; 
+	text-align:right;
+	font-size:14px;
+	border:1px solid #000000;
+	padding:10px;
+}
+
+#headers a:link {text-decoration: underline; color: blue;}
+#headers a:visited {text-decoration: underline; color: blue;}
+#headers a:active {text-decoration: underline; color: blue;}
+#headers a:hover {text-decoration: underline; color: blue;}
+
+table { 
+	border: AppWorkspace solid 1px; 
+	font-size: 0.8em; 
+	text-align: left; 
+	border-collapse:collapse; 
+	style: 600px;
+} 
+
+tr.header{
+	font-size:14px;
+	font-weight: bold;
+	background-color: #ffffef
+}
+#logotipo {
+	position: absolute; 
+	left: 40%;
+	top: 5px; 
+}
+
+.wrapper {
+	position: absolute; 
+	top: 160px; 
+}
+
+
+.wrapper td{
+	width: 130px; 
+}
+
+#superior_izda{
+	position:absolute; 
+	z-index: 0;
+	float: left; 
+	width: 30%;
+	top:0px; 
+	left:0px;
+}
+
+td { 
+	border: 1px solid; 
+	margin: 0; 
+	padding: 3px; 
+}
+
+.wrap_perfil {
+	margin-top: 30px; 
+	margin-left: 20px; 
+	font-size: 1.5em; 
+}
+
+#texto_pass {
+	font-size: 1.1em;
+}
+
+#cuadro_texto {
+	background-color: #DDDDDD;
+	border: solid 1px; 
+	margin: 10px; 
+	padding: 10px; 
+	width: 40%;
+	font-size:0.9em; 
+}
+
+#resultados_opc {
+	position: absolute; 
+	top: 130px;
+	padding: 10px;
+	margin: 5px; 
+	width: 60%;
+	font-size: 16px;
+	border: 1px solid;
+}
+
+#resultados_lista {
+	position: absolute;
+	width: 100%;
+	top: 120px; 
+	padding: 10px; 
+	margin: 5px; 
+	font-size: 16px; 
+}
+
+#resultados_lista th {
+	color: black;
+}
+
+#menuh {
+	font: 80% "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin:0 auto 0 auto;
+	width:100%;	
+		
+	
+}
+
+#menuh ul, li {
+	list-style-type: none;
+	
+}
+
+#menuh ul {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#menuh li {
+	float: center;
+	
+
+}
+
+#menuh a {
+	text-decoration: none;
+	color: #00623A;
+	background: #F0F7FC;
+	display: block;
+	padding: 15px 10px;
+	text-align: center;
+	border: 1px solid #ACCFE8;
+	border-width: 1px 1px 1px 1px;
+
+}
+
+
+
+#menuh a:hover {
+	background: #DBEBF6;
+}
+
+
+	
+#wrap {
+	width:70%;
+	_width:100%;
+	margin:0 auto;
+	padding:5px;
+	margin-top: 20px;
+	text-align:left;
+	border:0px solid #2f5d69;
+	position:relative;
+	}
+
+	
+	
+#wrap2 {
+	width:60%;
+	margin:0 auto;
+	padding:5px;
+	margin-top: 20px;
+	text-align:left;
+	}	
+#wrap p {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+line-height: 200%;
+padding: 10px;
+}
+
+#wrap2 p {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 16px;
+line-height: 100%;
+padding: 10px;
+}
+
+
+
+#Menu {
+position: absolute; 
+top: 100px; 
+font-family: Verdana, sans-serif;
+border-bottom: 10px solid #774c14;
+}
+
+#Menu ul {
+text-align: center; 
+margin: 0 0 5px 0; 
+}
+
+#Menu li {
+display: inline; 
+
+}
+#Menu li a {
+padding: 7px 0 6px 10px; 
+color: #eeeeee;
+text-decoration: none;
+font-weight: bold;
+background: #2f5d69;
+}
+
+#Menu li a:hover {
+background: #774c14;
+color: #e9d75b;
+}
+
+#Menu li a span {
+padding: 7px 10px 6px 0;
+}
+
+#noticias {
+
+}
+
+textarea {
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 14px; 
+}
+
+#idioma{
+}
+
+table, th, td {
+	border: 1px solid #D4E0EE;
+	border-collapse: collapse;
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	color: #555;
+}
+
+
+tabla, th, td {
+	border: 0px solid #D4E0EE;
+	border-collapse: collapse;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	color: #555;
+}
+
+
+caption {
+	font-size: 150%;
+	font-weight: bold;
+	margin: 5px;
+}
+
+td, th {
+	padding: 4px;
+}
+
+thead th {
+	text-align: center;
+	background: #E6EDF5;
+	color: #4F76A3;
+	font-size: 100% !important;
+}
+
+tbody th {
+	font-weight: bold;
+}
+
+tbody tr { background: #FCFDFE; }
+
+tbody tr.odd { background: #F7F9FC; }
+
+table a:link {
+	color: #718ABE;
+	text-decoration: none;
+}
+
+table a:visited {
+	color: #718ABE;
+	text-decoration: none;
+}
+
+table a:hover {
+	color: #718ABE;
+	text-decoration: underline !important;
+}
+
+tfoot th, tfoot td {
+	font-size: 85%;
+}
+
+.center {
+	display: block;
+	position: absolute;
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+    border: 3px solid #73AD21;
+}
+
+
+#maini 	{
+	padding: 30px;
+	max-width: 350px;
+	width: 100% !important;
+	background-color: #F7F7F7;
+	margin: 0 auto;
+	border-radius: 2px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+#noticias	{
+	width:80%; 
+	margin:0 auto 0 auto; 
+	margin-top:5%;
+	padding: 20px;
+	font-family:'Arial';
+	font-size: 120%;
+	text-align:left; 
+	border:1px solid #2f5d69;
+	position:relative;
+	}
+
+
+#main {
+	position: absolute;
+	width:68%; 
+	height:70%; 
+	margin:0; 
+	top: 160px; 
+	left:3%;
+	padding:5px; 
+	font-family:'Verdana';	
+	margin-top: 20px;	
+	margin-bottom: 20px; 
+	text-align:left; 
+	} 
+
+
+#main_indicadores {
+	position: absolute;
+	width:90%; 
+	height:70%; 
+	margin:0; 
+	top: 160px; 
+	left:3%;
+	padding:5px; 
+	font-family:'Verdana';	
+	margin-top: 20px;	
+	margin-bottom: 20px; 
+	text-align:left; 
+	} 
+
+
+#completa {
+	position: absolute;
+	width:95%;  
+	margin:0; 
+	top: 160px; 
+	left:3%;
+	padding:5px; 
+	font-family:'Verdana';	
+	margin-top: 20px;	
+	margin-bottom: 20px; 
+	text-align:left; 
+	} 
+
+.div_login {
+	  margin: auto;
+	  margin-top: 30px;
+	width: 200px;
+}
+
+.form_login	{ 
+	width: 100%;
+	font-size:14; 
+	font-family:'Verdana'; 
+	width:100; 
+	visibility:show
+}
+
+#user {
+	
+}
+
+#password	{ 
+
+	}
+
+#sendlogin	{ 
+	margin:2% auto 0 45%; 
+	font-size:18; 
+	font-family:'Verdana'; 
+	width:100; 
+	visibility:show}
+
+#error	{ 
+	margin:4% auto 0 auto; 
+	font-size:14; 
+	font-family:'Arial'; 
+	width:220; 
+	visibility:show
+	}
+
+
+#indice {
+	width:20%; 
+	top: 180px; 
+	height: 100%; 
+	right:5%;
+	padding:5px; 
+	margin-top: 20px;	
+	margin-bottom: 20px; 
+	text-align:left; 
+	border:0px solid #2f5d69;	
+	position:absolute;
+}
+
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+
+.indicador {
+	font-size: 18px;
+	width: 100%;
+
+}
+
+.indic_titulo {
+	font-size: 24px;
+	margin: 20px;
+}
+
+.indic_linea td {
+	line-height: 24px;
+	font-size: 16px;
+}
+
+.indic_fecha {
+	line-height: 35px;
+	font-size: 24px;
+}
+
+.indic_label {
+	float: left;
+	width: 55%;
+	border-top: 1px black solid;
+
+}
+
+.indic_opciones {
+	float:right;
+	width: 42%;
+	border-top: 1px black solid;
+
+}
+
+
+/*
+#indice {
+	position: absolute; 
+	width:20%; 	
+	height:70%; 
+	top: 140px;
+	right:3%;
+	padding:5px; 
+	margin-top: 20px;	
+	margin-bottom: 20px; 
+	text-align:left; 
+	border:1px solid #2f5d69;	
+	position:absolute;
+	} 
+*/
+
+
+/*  Styling for Suggestion Box Container  */
+.suggestionsBox {
+	position: absolute;
+	width: 200px;
+	background-color: #212427;
+	border: 2px solid #000;
+	color: #fff;
+	padding: 5px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
+#inputString {
+width: 200px;
+padding: 5px;
+font-size: 18px;
+
+}
+
+
+.suggestionList {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/*  Individual Search Results  */
+.suggestionList li {
+	margin: 0px 0px 3px 0px;
+	padding: 7px;
+	cursor: pointer;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	list-style-type: none;
+}
+
+/*  Hover effect  */
+.suggestionList li:hover {
+background-color: #009900;
+font-weight: bold;
+}
+
+#estado_civil 	{position:absolute; top: 12%;  left: 80%; font-size:14;   visibility:show} 
+
+#telefono 	{position:absolute; top: 12%;  left: 60%; font-size:14;   visibility:show} 
+
+#num_ss 	{position:absolute; top: 18%;  left: 70%; font-size:14;   visibility:show} 
+
+#observaciones_hijos {position:absolute; top: 50%;  left: 30%; font-size:14;   visibility:show} 
+
+#procedencia_demanda {position:absolute; top: 70%;  left: 40%; font-size:14;   visibility:show} 
+#tutor 			{position:absolute; top: 70%;  left: 01%; font-size:14;   visibility:show} 
+#motivo_salida 		{position:absolute; top: 80%;  left: 40%; font-size:14;   visibility:show} 
+#comedor 	{position:absolute; top: 35%;  left: 62%; font-size:14;   visibility:show} 
+#come_lu 	{position:absolute; top: 40%;  left: 63%; font-size:14;   visibility:show} 
+#come_ma 	{position:absolute; top: 44%;  left: 63%; font-size:14;   visibility:show} 
+#come_mi 	{position:absolute; top: 48%;  left: 63%; font-size:14;   visibility:show} 
+#come_ju 	{position:absolute; top: 52%;  left: 63%; font-size:14;   visibility:show} 
+#come_vi 	{position:absolute; top: 56%;  left: 63%; font-size:14;   visibility:show} 
+#come_sa 	{position:absolute; top: 70%;  left: 80%; font-size:14;   visibility:show} 
+#come_do 	{position:absolute; top: 80%;  left: 80%; font-size:14;   visibility:show} 
+#come_sa_notas 		{position:absolute; top: 74%;  left: 81%; font-size:14;   visibility:show} 
+#come_do_notas 		{position:absolute; top: 84%;  left: 81%; font-size:14;   visibility:show} 
+#creditrans 		{position:absolute; top: 35%;  left: 80%; font-size:14;   visibility:show} 
+#ducha			{position:absolute; top: 39%;  left: 80%; font-size:14;   visibility:show} 
+#ropero			{position:absolute; top: 43%;  left: 80%; font-size:14;   visibility:show} 
+#medicacion_centro	{position:absolute; top: 47%;  left: 80%; font-size:14;   visibility:show} 
+#lista_espera_piso 	{position:absolute; top: 70%;  left: 80%; font-size:14;   visibility:show} 
+#DatosFormativosObs 	{position:absolute; top: 1%;   left: 33%; font-size:14;   visibility:show} 
+#Idioma 		{position:absolute; top: 18%;   left: 33%; font-size:14;   visibility:show} 
+#EdadAbandonoEstudios 	{position:absolute; top: 1%;   left: 80%; font-size:14;   visibility:show} 
+#LaboralOrigen 		{position:absolute; top: 15%;  left: 01%; font-size:14;   visibility:show} 
+#LaboralEspana 		{position:absolute; top: 15%;  left: 20; font-size:14;   visibility:show} 
+#TiempoTrabajado 	{position:absolute; top: 35%;  left: 24%; font-size:14;   visibility:show} 
+
+#ItemTrabajo 		{position:absolute; top: 30%;  left: 30%; font-size:14;   visibility:show} 
+#TrabajoComentario 	{position:absolute; top: 15%;  left: 40%; font-size:14;   visibility:show} 
+
+#PermisoResid 		{position:absolute; top: 25%;  left: 15%; font-size:14;   visibility:show} 
+#PermisoResidRazonesNo 	{position:absolute; top: 45%;  left: 35%; font-size:14;   visibility:hidden} 
+#PermisoSolicitudFecha 	{position:absolute; top: 55%;  left: 01%; font-size:14;   visibility:hidden} 
+#PermisoSolicitudLugar 	{position:absolute; top: 55%;  left: 35%; font-size:14;   visibility:hidden} 
+#TiempoResidenciaEspanya {position:absolute; top: 65%;  left: 01%; font-size:14;   visibility:hidden} 
+#TiempoResidenciaBilbao {position:absolute; top: 65%;  left: 20%; font-size:14;   visibility:hidden} 
+#PermisoTrabajo 	{position:absolute; top: 10%;  left: 10%; font-size:14;   visibility:show}
+#tablacausas 	{position:absolute; top: 50%;  left: 5%; font-size:14;   visibility:show}
+#PermisoTrabajoRazonesNo {position:absolute; top: 30%;  left: 70%; font-size:14;   visibility:show} 
+#TituloIngresos 	{position:absolute; top: 50%;  left: 05%; font-size:14;   visibility:show}
+#IngresosPropios 	{position:absolute; top: 54%;  left: 05%; font-size:14;   visibility:show} 
+#IngresosPnc 		{position:absolute; top: 58%;  left: 05%; font-size:14;   visibility:show} 
+#IngresosOtros 		{position:absolute; top: 62%;  left: 05%; font-size:14;   visibility:show} 
+#IngresosNomina 	{position:absolute; top: 66%;  left: 05%; font-size:14;   visibility:show} 
+#IngresosRentaBas 	{position:absolute; top: 70%;  left: 05%; font-size:14;   visibility:show} 
+#IngresosPrestContrib 	{position:absolute; top: 74%;  left: 05%; font-size:14;   visibility:show} 
+#IngresosSeDesconoce 	{position:absolute; top: 78%;  left: 05%; font-size:14;   visibility:show} 
+#IngresosAyudaIndividual {position:absolute; top: 82%;  left: 05%; font-size:14;   visibility:show} 
+#IngresosAyudaFamiliar 	{position:absolute; top: 86%;  left: 05%; font-size:14;   visibility:show} 
+#IngresosNo	 	{position:absolute; top: 90%;  left: 05%; font-size:14;   visibility:show} 
+#RedApoyo 		{position:absolute; top: 10%;  left: 05%; font-size:14;   visibility:show}
+
+#exp_laboral		{position:absolute; top: 43%;  left: 01%; font-size:14;   visibility:show}
+#lanbide		{position:absolute; top: 40%;  left: 35%; font-size:14;   visibility:show}
+#F_alta_lanbide 	{position:absolute; top: 40%;  left: 48%; font-size:14;   visibility:show}
+#F_renov_lanbide	{position:absolute; top: 40%;  left: 73%; font-size:14;   visibility:show}
+#inem 			{position:absolute; top: 46%;  left: 35%; font-size:14;   visibility:show}
+#F_alta_inem 		{position:absolute; top: 46%;  left: 48%; font-size:14;   visibility:show}
+#F_renov_inem 		{position:absolute; top: 46%;  left: 73%; font-size:14;   visibility:show}
+#cursos 		{position:absolute; top: 55%;  left: 35%; font-size:14;   visibility:show}
+#orient_laboral 	{position:absolute; top: 75%;  left: 35%; font-size:14;   visibility:show}
+
+
+#LblEnfMental	 	{position:absolute; top: 1%;   left: 01%; font-size:14;   visibility:show} 
+/*    #EnfermedadMental 	{position:absolute; top: 1%;   left: 01%; font-size:14;   visibility:show} 
+#EnfMentalPadres 	{position:absolute; top: 5%;  left: 70%; font-size:14;   visibility:show} 
+#EnfMentalHermanos 	{position:absolute; top: 9%;  left:70%; font-size:14;   visibility:show} 
+#EnfMentalPareja 	{position:absolute; top: 13%;  left: 70%; font-size:14;   visibility:show} 
+#EnfMentalHijos 	{position:absolute; top: 17%;  left: 70%; font-size:14;   visibility:show} 
+
+#LblToxicomania		{position:absolute; top: 30%;   left: 01%; font-size:14;   visibility:show} 
+#Toxicomania 		{position:absolute; top: 21%;   left: 01%; font-size:14;   visibility:show} 
+#ConsumoPrinc 		{position:absolute; top: 25%;   left: 5%; font-size:14;   visibility:show} 
+#DisminucionPsiquica 	{position:absolute; top: 32%;   left: 01%; font-size:14;   visibility:show} 
+#dismPsiquicaCom	{position:absolute; top: 32%;   left: 25%; font-size:14;   visibility:show} 
+#DisminucionFisica 	{position:absolute; top: 38%;   left: 01%; font-size:14;   visibility:show} 
+#dismFisicaCom 		{position:absolute; top: 38%;   left: 25%; font-size:14;   visibility:show} 
+#Autonomia 		{position:absolute; top: 45%;  left: 01%; font-size:14;   visibility:show} 
+
+#Tuberculosis 		{position:absolute; top: 50%;  left: 5%; font-size:14;   visibility:show} 
+#Hepatitis 		{position:absolute; top: 54%;  left: 5%; font-size:14;   visibility:show} 
+#VIH 			{position:absolute; top: 50%;  left: 25%; font-size:14;   visibility:show} 
+#diabetes		{position:absolute; top: 54%;  left: 25%; font-size:14;   visibility:show} 
+#Otras 			{position:absolute; top: 50%;  left: 50%; font-size:14;   visibility:show} 
+#DrogasPadres 		{position:absolute; top: 40%;  left: 70%; font-size:14;   visibility:show} 
+#DrogasHermanos 	{position:absolute; top: 44%;  left: 70%; font-size:14;   visibility:show} 
+#DrogasPareja 		{position:absolute; top: 48%;  left: 70%; font-size:14;   visibility:show} 
+#DrogasHijos 		{position:absolute; top: 52%;  left: 70%; font-size:14;   visibility:show} 
+#EnfMentalTratamiento 	{position:absolute; top: 65%;  left: 5%; font-size:14;   visibility:show} 
+#EnfMentalIngresos 	{position:absolute; top: 65%;  left: 60%; font-size:14;   visibility:show} 
+
+#pasap 			{position:absolute; top: 5%;  left: 5%; font-size:14;   visibility:show} 
+#cedula 		{position:absolute; top: 9%;  left: 5%; font-size:14;   visibility:show} 
+#ningunid		{position:absolute; top: 13%;  left: 5%; font-size:14;   visibility:show} 
+
+#fressol		{position:absolute; top: 24%;  left: 46%; font-size:14;   visibility:show} 
+#fresconc		{position:absolute; top: 28%;  left: 46%; font-size:14;   visibility:show} 
+#nresconc		{position:absolute; top: 28%;  left: 65%; font-size:14;   visibility:show} 
+#lblrestr		{position:absolute; top: 34%;  left: 5%; font-size:14;   visibility:show} 
+#lblrestr2		{position:absolute; top: 38%;  left: 5%; font-size:14;   visibility:show} 
+#restrnosol		{position:absolute; top: 34%;  left: 30%; font-size:14;   visibility:show} 
+#restrsol 		{position:absolute; top: 38%;  left: 30%; font-size:14;   visibility:show} 
+#restrconc		{position:absolute; top: 42%;  left: 30%; font-size:14;   visibility:show} 
+#frestrsol		{position:absolute; top: 38%;  left: 46%; font-size:14;   visibility:show} 
+#nrestrconc		{position:absolute; top: 42%;  left: 65%; font-size:14;   visibility:show} 
+#frestrconc		{position:absolute; top: 42%;  left: 46%; font-size:14;   visibility:show} 
+
+#visado 		{position:absolute; top: 50%;  left: 5%; font-size:14;   visibility:show} 
+#asilo 			{position:absolute; top: 54%;  left: 5%; font-size:14;   visibility:show} 
+#otrosdoc		{position:absolute; top: 58%;  left: 5%; font-size:14;   visibility:show} 
+#fentrada		{position:absolute; top: 54%;  left: 50%; font-size:14;   visibility:show} 
+#fprueba		{position:absolute; top: 58%;  left: 50%; font-size:14;   visibility:show} 
+#lblabogado		{position:absolute; top: 69%;  left: 5%; font-size:14;   visibility:show} 
+#abogado 		{position:absolute; top: 73%;  left: 25%; font-size:14;   visibility:show} 
+#semi			{position:absolute; top: 77%;  left: 5%; font-size:14;   visibility:show} 
+
+#semi			{position:absolute; top: 77%;  left: 5%; font-size:14;   visibility:show} 
+#cear			{position:absolute; top: 81%;  left: 5%; font-size:14;   visibility:show} 
+#abogadootros		{position:absolute; top: 85%;  left: 5%; font-size:14;   visibility:show} 
+
+
+
+   */
+
+
+#EnfMentalDiagnostico	{position:absolute; top: 6%;  left: 5%; font-size:14;   visibility:show} 
+#EnfMentalFechaDiagn 	{position:absolute; top: 22%;  left: 40%; font-size:14;   visibility:show} 
+#ToxicTratamPrevio 	{position:absolute; top: 90%;  left: 25%; font-size:14;   visibility:show} 
+#LblOtros		{position:absolute; top: 46%;   left: 01%; font-size:14;   visibility:show}  
+#LblMedicacion	 	{position:absolute; top: 75%;   left: 5%; font-size:14;   visibility:show} 
+#EnfermedadesComentarios {position:absolute; top: 75%;  left: 50%; font-size:14;   visibility:show} 
+#Medicacion 		{position:absolute; top: 75%;  left: 5%; font-size:14;   visibility:show} 
+#Pauta 			{position:absolute; top: 80%;  left: 50%; font-size:14;   visibility:show} 
+#npasap 		{position:absolute; top: 5%;  left: 45%; font-size:14;   visibility:show} 
+#fpasap 		{position:absolute; top: 5%;  left: 25%; font-size:14;   visibility:show} 
+#ncedula		{position:absolute; top: 9%;  left: 45%; font-size:14;   visibility:show} 
+#fcedula		{position:absolute; top: 9%;  left: 25%; font-size:14;   visibility:show} 
+#lblres			{position:absolute; top: 20%;  left: 5%; font-size:14;   visibility:show} 
+#resnosol		{position:absolute; top: 20%;  left: 30%; font-size:14;   visibility:show} 
+#ressol 		{position:absolute; top: 24%;  left: 30%; font-size:14;   visibility:show} 
+#resconc		{position:absolute; top: 28%;  left: 30%; font-size:14;   visibility:show} 
+
+
+
+/*
+#PenalTbc 		{position:absolute; top: 80%;  left:2%; font-size:14;   visibility:show} 
+#Tis 			{position:absolute; top: 15%;  left: 10%; font-size:14;   visibility:show} 
+#PenalAntecedentesPrision{position:absolute; top: 1%;   left: 60%; font-size:14;   visibility:show} 
+#PenalLibCondicional 	{position:absolute; top: 5%;   left: 60%; font-size:14;   visibility:show} 
+#PenalMedidaSeguridad 	{position:absolute; top: 9%;   left: 60%; font-size:14;   visibility:show} 
+#PenalCausasPendientes 	{position:absolute; top: 13%;   left: 60%; font-size:14;   visibility:show} 
+#PenalPermisoPenitenc 	{position:absolute; top: 17%;   left: 60%; font-size:14;   visibility:show} 
+#PenalTercerGrado 	{position:absolute; top: 21%;  left: 60%; font-size:14;   visibility:show} 
+*/
+#send	 		{position:absolute; top: 95%; left: 40%; font-size:14;   visibility:show} 
+#insert_fecha	 	{position:absolute; top: 95%; left: 55%; font-size:10;   visibility:show} 	
+#delete	 		{position:absolute; top: 95%; left: 49%; font-size:14;   visibility:show} 
+

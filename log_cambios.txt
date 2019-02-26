@@ -1,0 +1,6 @@
+
+EXCEPCIONES PARA LOS DATOS DE HIRITAR
+include/auxiliar3.php   línea 146
+resultados.php en varios sitios, apuntado con barras ///////
+
+

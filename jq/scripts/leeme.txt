@@ -1,0 +1,1 @@
+Este es el directorio con los scripts de JQuery
