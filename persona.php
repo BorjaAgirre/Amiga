@@ -12,6 +12,7 @@ $pagina = "persona";
 include_once "menu_lateral.php";
 include_once "clases/class.leer_mysqli.php";
 
+
 		//echo "<br><h2>HOLA soy Borja, estoy haciendo cambios en el programa, en unos minutos vuelven a aparecer los datos. </h2>";
 		$db = new Leer_Mysqli(); 
 
@@ -148,7 +149,7 @@ if ($tot_personas != $tot_actuales) {
 		imprimeItem("direccionPadronActual", "Domicilio padrón actual", 30, "BBBBBB", 36, 23, false);     
 		imprimeListaDesplegable("poblacionPadron", "Población padrón actual", "poblaciones", "fafd00", "id_poblacion", 250, 36,60, false); 
 
-		imprimeItem("numHijos", "Nº hijos/as", 1, "ffbf5a", 50, 15, false);     
+		imprimeNumero("numHijos", "Nº hijos/as", 1, "ffbf5a", 50, 15, false);     
 		imprimeCheckbox("hijos", "¿Hijos/as?", "ffbf5a", 50, 1, "arriba", false);
 		imprimeTexto("observacionesHijos", "Observaciones Familia", 4,30, "BBBBBB", 50, 30, false);    
 		imprimeTexto("telefonosInteres", "Teléfonos de interés", 6,30, "BBBBBB", 50, 65, false);      
@@ -239,7 +240,7 @@ if ($tot_personas != $tot_actuales) {
 
 		imprimeCheckbox("DisminucionPsiquica", "Minusvalía Psíquica", "fafd00", 32, 1, "dcha", true);
 		imprimeCheckbox("DisminucionFisica", "Minusvalía Física", "fafd00", 38, 1, "dcha", true);
-		imprimeItem("MinusvaliaPorcentaje", "Porcentaje de minusvalía", 4, "fafd00", 38, 25, true);
+		imprimeNumero("MinusvaliaPorcentaje", "Porcentaje de minusvalía", 4, "fafd00", 38, 25, true);
 		imprimeTitulo("TituloIncapacit", "Incapacitación", 44, 25, "");
 			$incap[1]=array ("titulo"=>"Si", "top"=>"44", "left"=>"40");
 			$incap[2]=array ("titulo"=>"No", "top"=>"44", "left"=>"45");
@@ -603,15 +604,15 @@ if ($tot_personas != $tot_actuales) {
 
 
     include "conexion.php";
-    $resultidunico=mysql_query("SELECT id_unico FROM persona WHERE id_pers =".$loadid,$conexion); 
+
+    $resultidunico=mysqli_query("SELECT id_unico FROM persona WHERE id_pers =".$loadid,$conexion); 
 	if ($resultidunico!="")
 	{
-		$rowidunico=mysql_fetch_row($resultidunico);
+		$rowidunico=mysqli_fetch_row($resultidunico);
 		$id_unico=$rowidunico[0];
 	}
 	?>
 		<input type="hidden" name="id_unico" value="<?php echo $id_unico; ?>" >
-
 			
 			
 			<!-- FIN FORMULARIO DATOS PERSONALES -->
@@ -626,9 +627,9 @@ if ($tot_personas != $tot_actuales) {
 			
 			
 			<div id="insert_fecha">
-			<input type="text" size="10" value="<?echo date("d/m/Y");?>" name="insert_fecha" style="font-size:12;background-color: #AA55AA; "/></td>
+			<input type="text" size="10" value="<?php echo date("d/m/Y");?>" name="insert_fecha" style="font-size:12;background-color: #AA55AA; "/></td>
 			<br>
-			<?
+			<?php
 			if (isset ($loadid))
 			{
 			echo "Última modificación el <b>".fecha_sql_txt($row[120]). "</b> por <b>".$row[119]."</b>";

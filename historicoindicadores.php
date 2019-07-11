@@ -46,7 +46,7 @@ include_once "clases/class.leer_mysqli.php";
 			$datos->cerrar_conexion(); 
 			echo "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=persona.php'>";
 
-//			Cambiado a Mysqli; dejo las anteriores lÌneas temporalmente por si hay errores
+//			Cambiado a Mysqli; dejo las anteriores l√≠neas temporalmente por si hay errores
 //			include "conexion.php";
 //			$result=mysql_query("DELETE FROM persona WHERE id_pers=$deleteid", $conexion);
 //			include "cerrar_conexion.php";
@@ -57,7 +57,7 @@ include_once "clases/class.leer_mysqli.php";
 		
 	<script language="Javascript">
 		function opcion()  {
- 			ventana=confirm("Se va a proceder a borrar a esta persona de la bases de datos. Esta acciÛn no se puede deshacer. øEST¡S SEGURO?");
+ 			ventana=confirm("Se va a proceder a borrar a esta persona de la bases de datos. Esta acci√≥n no se puede deshacer. ¬øEST√ÅS SEGURO?");
 			if (ventana) {
 				alert("El registro ha sido borrado");
 			} else {
@@ -82,7 +82,7 @@ include_once "clases/class.leer_mysqli.php";
 			$fecha= date("d/m/Y");
 
 			echo "<div class='indic_titulo'>";
-			echo "HIST”RICO DE INDICADORES";
+			echo "HIST√ìRICO DE INDICADORES";
 			echo "</div><div class='indic_titulo'>";
 			echo "<br>Nombre: <strong> &nbsp; &nbsp;".$row['nombre']." ".$row['apellido1']."  ".$row['apellido2'].
 						"</strong>\n";

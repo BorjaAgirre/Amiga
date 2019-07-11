@@ -36,6 +36,7 @@ if ($_POST['user']==NULL && $_POST['pass']==NULL) {
 
 	// Se inicializan las variables
 
+
 	include_once "clases/class.leer_mysqli.php"; 
 	include "include/inicializa.php"; 	
 	include "config.php";	  
@@ -44,6 +45,8 @@ if ($_POST['user']==NULL && $_POST['pass']==NULL) {
 	// Se ejecuta el login
 	include("clases/class.login.php");
 	$login=new login();
-	$login->inicia(18000, antihack($_POST['user']), $_POST['pass']);
+	$intentos = 3; 
+		$login->inicia(18000, antihack($_POST['user']), $_POST['pass']);	
+
 }
 ?>

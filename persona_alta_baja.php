@@ -15,6 +15,8 @@ include "config.php";
 include "clases/class.registra.php"; 
 include_once "clases/class.leer_mysqli.php";
 
+$debug = false; 
+
 //		   Si al cargar la web se ha seleccionado un usuario, se carga con los datos    
 
 		$id_unico = ""; 
@@ -54,17 +56,20 @@ include_once "clases/class.leer_mysqli.php";
 	*  Crea un array con los datos recibidos del formulario
 	*/
 	if (isset($_POST['altabaja'])) {
-		$array_ab = ""; 
+		if ($debug) { echo "<pre>"; print_r($_POST); echo "</pre>";}
+		$array_ab = array(); 
 		$reg = new Registra(); 
 		foreach ($AUX->servicio as $cod => $key) {
 			if ((isset($_POST['alta_'.$cod])) && ($_POST['alta_'.$cod] != "")) {
+
 				$result = $reg->validaFecha($cod, $_POST['alta_'.$cod]);  
+				if ($debug) { echo "<br>Result ".$cod."<pre>"; print_r($result); echo "</pre>"; }				
 				if ($result['error'] == 0) {
 					$actual = new DateTime("now"); 
 					$fecha_alta = new DateTime($result['valor']); 
 					$intervalo = $actual->diff($fecha_alta);
 					$dif_dias = $intervalo->format('%R%a');
-//					echo "<br>Diferencia: ".$dif_dias; 
+					if ($debug) echo "<br>Diferencia: ".$dif_dias; 
 					if ($dif_dias > 0) {
 						echo "<script>alert('Has cogido un día mayor que la fecha de hoy<br>No es válido')</script>"; 
 					} else {
@@ -72,6 +77,9 @@ include_once "clases/class.leer_mysqli.php";
 					}
 				}
 			}
+
+			if ($debug) echo "<br>Alta ejecutada"; 
+
 			if ((isset($_POST['baja_'.$cod])) && ($_POST['baja_'.$cod] != "")) {
 				$result = $reg->validaFecha($cod, $_POST['baja_'.$cod]); 
 				if ($result['error'] == 0) $array_ab['baja'][$cod] = $result['valor'];
@@ -81,10 +89,13 @@ include_once "clases/class.leer_mysqli.php";
 				$array_ab['motivo'][$cod] = $result;
 			}
 		}
-/*		echo "<br><pre>"; 
-		print_r($array_ab); 
-		echo "</pre>";
-*/
+
+		if ($debug) {
+			echo "<br>Array_ab: <pre>"; 
+			print_r($array_ab); 
+			echo "</pre>";
+		}
+
 
 
 		$array_error = $reg->array_error; 

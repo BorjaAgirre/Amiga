@@ -25,9 +25,9 @@
 <div id="iframe2up">
 <center>
 <table>
-	<tr><td><a href="<? echo $pagina; ?>.php?filter=todos">Todos</a></td>
-	<td><a href="<? echo $pagina; ?>.php?filter=activos">Activos</a></td>
-	<td><a href="<? echo $pagina; ?>.php?filter=mios">Míos</a></td></tr></table></div>
+	<tr><td><a href="<?php echo $pagina; ?>.php?filter=todos">Todos</a></td>
+	<td><a href="<?php echo $pagina; ?>.php?filter=activos">Activos</a></td>
+	<td><a href="<?php echo $pagina; ?>.php?filter=mios">MÃ­os</a></td></tr></table></div>
 	<div id="iframe2">
 		<br>
 		

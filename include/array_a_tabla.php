@@ -1,5 +1,5 @@
 <?php
-
+/*
 
 function escribeTabla($titulo, $cabeceras, $array_tabla, $item = 'x') {	
 
@@ -13,20 +13,6 @@ function escribeTabla($titulo, $cabeceras, $array_tabla, $item = 'x') {
 	$atributos_linea = array("bgcolor"=>"#COCOCO");
 	echo "<h1>".$titulo."</h1>";
 	tabla($cabeceras, $array_tabla, $atributos_tabla, $atributos_titulo, $atributos_linea);
-	/*
-	$array_tabla = serializar($array_tabla);
-	$cabeceras = serializar($cabeceras);
-
-	echo "<form action='include/array_excel_pdf.php' method = 'POST'>"; 
-	echo "<input type = 'hidden' name = 'array_pasa' value = '".$array_tabla."'>"; 
-	echo "<input type = 'hidden' name = 'cabeceras' value = '".$cabeceras."'>";
-	if ($item != 'x') echo "<input type = 'hidden' name = 'item' value = '".$item."'>";
-	echo "<br><input type='submit' name='tabla_excel' value='Crear Excel' >";
-	echo "&nbsp; &nbsp; <input type='submit' name='tabla_pdf' value='Crear Pdf' >";
-	echo "</form>"; 
-//	crea_csv("tabla", $array_tabla); 
-*/
-
 }
 
 
@@ -34,6 +20,7 @@ function tabla($titulos, $array, $atributos_tabla, $atributos_titulo, $atributos
 
 	require_once("HTML/Table.php");
 	echo "Datos";	
+
 	$table = new HTML_Table($atributos_tabla);
 	$table->addRow($titulos, $atributos_titulo, "TH");
 	foreach ($array as $linea) {
@@ -44,5 +31,50 @@ function tabla($titulos, $array, $atributos_tabla, $atributos_titulo, $atributos
 	$table->display();
 
 }
+*/
+
+
+function display() {
+	echo "OK";
+}
+
+
+
+function displayTable($titulo, $cabeceras, $rows, $item = 'x')  {
+ 	echo "<p>&nbsp;</p>";
+ 	echo "<h3>".$titulo."</h3>";
+	 $disp = '<table class="zebra">';
+
+	 $disp .= displayRowCabecera($cabeceras);
+	 foreach ($rows as $tr) 
+	 {
+ 		$disp .= displayRow($tr, false);
+	 }
+	 $disp .= '</table>';
+	 echo $disp;
+ }
+
+
+function displayRow($tr) {
+//		 echo "<pre>"; print_r($tr); echo "</pre>"; 
+	 	$disp .= '<tr>';
+	 	foreach ($tr as $td)
+		{
+		 	$disp .= '<td>' . $td . '</td>';
+		}
+ 		$disp .= '</tr>';
+ 		return $disp;
+	}
+
+function displayRowCabecera($tr) {
+//		 echo "<pre>"; print_r($tr); echo "</pre>"; 
+	 	$disp .= '<tr>';
+	 	foreach ($tr as $td)
+		{
+		 	$disp .= '<th>' . $td . '</th>';
+		}
+ 		$disp .= '</tr>';
+ 		return $disp;
+	}
 
 ?>

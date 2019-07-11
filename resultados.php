@@ -1,6 +1,6 @@
 <?php
 /**
- * CreaciÛn de cuadros con datos estadÌsticos
+ * Creaci√≥n de cuadros con datos estad√≠sticos
  *
  */
 
@@ -23,8 +23,8 @@ function serializar($array) {
 
 
 
-/** FunciÛn que lee los datos de la tabla persona, dado un determinado campo y un valor  
-*     - hace un SELECT de la tabla _max, seg˙n sexo, campo y valores pedidos
+/** Funci√≥n que lee los datos de la tabla persona, dado un determinado campo y un valor  
+*     - hace un SELECT de la tabla _max, seg√∫n sexo, campo y valores pedidos
 *     - crea un array con los resultados
 */ 
 /*function datos($columna, $sexo, $campo_a_revisar, $valor1, $valor2) {
@@ -64,7 +64,7 @@ function serializar($array) {
 		}
 
 
-		// Se hace una selecciÛn de los que cumplen la condiciÛn. Puede haber varios resultados por cada persona (varios insert_fecha)
+		// Se hace una selecci√≥n de los que cumplen la condici√≥n. Puede haber varios resultados por cada persona (varios insert_fecha)
 		switch($campo_a_revisar) {
 			case "area":
 				$query="SELECT per.id_unico, per.id_pers, per.nombre, per.apellido1, per.insert_fecha, per.fecha_ingreso, pai.area
@@ -112,8 +112,8 @@ function serializar($array) {
 }
 */
 
-/** FunciÛn para leer todos los datos de una lista desplegable, autom·ticamente, mediante un bucle 
-*  - lee datos por sexo, usando la funciÛn datos()
+/** Funci√≥n para leer todos los datos de una lista desplegable, autom√°ticamente, mediante un bucle 
+*  - lee datos por sexo, usando la funci√≥n datos()
 *  - hace los totales
 *  - crea una tabla
 *  - muestra por pantalla
@@ -154,18 +154,18 @@ function leerListaDespl($n, $titulo, $item_despl, $item_persona) {
 	unset($array_tabla); 
 	$i = 1;	// Esta variable representa la fila de la tabla
 	foreach ($lista_despl as $id => $contenido) {
-		// Para 'edad' hay dos valores por grupo, uno mÌnimo y uno m·ximo, se guardan en la tabla despl_aux_edad
+		// Para 'edad' hay dos valores por grupo, uno m√≠nimo y uno m√°ximo, se guardan en la tabla despl_aux_edad
 		if ($item_persona == 'edad') {
 			$valor1 = $AUX->aux['edad'][$cont_tabla][2];
 			$valor2 = $AUX->aux['edad'][$cont_tabla][3];		
 		} else {
-			// Para todos los dem·s valores, el valor a comparar es el id de la tabla de desplegable
+			// Para todos los dem√°s valores, el valor a comparar es el id de la tabla de desplegable
 			// o en el caso de agrupaciones (ej: 'area'), el id de la tabla de desplegable auxiliar (ej: despl_aux_area)
 			$valor1 = $id;
 			$valor2 = 0; 
 		}
 
-		// DescripciÛn del item, primera columna
+		// Descripci√≥n del item, primera columna
 		$array_tabla[$i][0] = $contenido;
 		$j = 0;
 
@@ -178,12 +178,15 @@ function leerListaDespl($n, $titulo, $item_despl, $item_persona) {
 			$datos[$j] = $db->leer_datos($item_persona, $key, $valor1, $valor2);
 			$cont = 0;
 
-			if ($ver_nombres) $array_tabla[$i-1][$key] = ""; 
-			foreach ($datos[$j++] as $nom) {
-				if ($ver_nombres) $array_tabla[$i-1][$key] .= $nom['nombre']." ".$nom['apellido1']."<br>\n";
-				$cont++;
+			if ($ver_nombres) {
+				$array_tabla[$i-1][0] = "";
+				$array_tabla[$i-1][$key ] = ""; 
+				foreach ($datos[$j++] as $nom) {
+					$array_tabla[$i-1][$key ] .= $nom['nombre']." ".$nom['apellido1']."<br>\n";
+					$cont++;
+				}
 			}
-			$array_tabla[$i][$key] = $cont;
+			$array_tabla[$i][$key ] = $cont;
 		}
 
 		// Obtener totales
@@ -200,12 +203,12 @@ function leerListaDespl($n, $titulo, $item_despl, $item_persona) {
 			$total[$l] = $total[$l] + $array_tabla[$i][$l];
 		}
 
-		// Incrementa $i de forma diferente seg˙n es con nombres o no.
+		// Incrementa $i de forma diferente seg√∫n es con nombres o no.
 		$i = ($ver_nombres) ? $i+2 : $i+1;
 		$cont_tabla++;
 	}
 
-	// ⁄ltima lÌnea de la tabla $array_tabla: representa el total
+	// √öltima l√≠nea de la tabla $array_tabla: representa el total
 	$array_tabla[$i][0] = "TOTAL";
 	for ($m = 1; $m <= $n_sexos + 1; $m++) {
 		$array_tabla[$i][$m] = $total[$m];
@@ -213,19 +216,20 @@ function leerListaDespl($n, $titulo, $item_despl, $item_persona) {
 
 	// Escribe la tabla en pantalla 
 	$cabeceras = array(0 => "") + $array_sexo + array(($n_sexos +1) => "Total");
-	escribeTabla($titulo, $cabeceras, $array_tabla, $item_persona);
+	displayTable($titulo, $cabeceras, $array_tabla, $item_persona);
 
 	// Saca de la lista $array_comp_aux los que aparecen en el cuadro y la imprime en pantalla: tabla 'Faltan'
 	echo "Faltan: ";
 	foreach ($array_comp_aux as $key => $valor) {
 		if ($valor <> "") echo "<br>\n<a href='persona.php?load=".$key."'>".$key." - ".$valor."</a>";
 	}
+//	echo "<pre>"; print_r($array_tabla); echo "</pre>";
 	return $array_tabla;
 }
 
 
 
-/** FunciÛn para leer todos los datos de una serie de items, agrupados en el array $checkboxes  */
+/** Funci√≥n para leer todos los datos de una serie de items, agrupados en el array $checkboxes  */
 function leerItem($n, $titulo, $checkboxes) {
 //	$conexion=  $GLOBALS["conexion"];
 	global $db; 
@@ -244,7 +248,7 @@ function leerItem($n, $titulo, $checkboxes) {
 	$i = 1;	// Esta variable representa la fila de la tabla
 	foreach ($checkboxes as $checkbox) {
 			
-		// DescripciÛn del item
+		// Descripci√≥n del item
 		$array_tabla[$i][0] = $checkbox['titulo'];
 
 		$j = 0;
@@ -278,7 +282,7 @@ function leerItem($n, $titulo, $checkboxes) {
 			$total[$l] = $total[$l] + $array_tabla[$i][$l];
 		}
 
-		// Incrementa $i de forma diferente seg˙n es con nombres o no.
+		// Incrementa $i de forma diferente seg√∫n es con nombres o no.
 		$i = ($ver_nombres) ? $i+2 : $i+1;
 	}
 
@@ -295,8 +299,8 @@ function leerItem($n, $titulo, $checkboxes) {
 
 
 /** 
-*  FunciÛn para leer todos los datos de los motivos   
-*  Es una funciÛn especÌfica para ese item, ya que utiliza una tabla diferente de MySql
+*  Funci√≥n para leer todos los datos de los motivos   
+*  Es una funci√≥n espec√≠fica para ese item, ya que utiliza una tabla diferente de MySql
 */
 function leerSalida($n, $fecha, $servicio) {
 	global $db; 
@@ -319,7 +323,7 @@ function leerSalida($n, $fecha, $servicio) {
 
 	foreach ($lista_despl as $id => $motivo) {
 
-		// DescripciÛn del item
+		// Descripci√≥n del item
 		$array_tabla[$i][0] = $motivo;
 
 		/* 
@@ -358,7 +362,7 @@ function leerSalida($n, $fecha, $servicio) {
 			$total[$l] = $total[$l] + $array_tabla[$i][$l];
 		}
 
-		// Incrementa $i de forma diferente seg˙n es con nombres o no.
+		// Incrementa $i de forma diferente seg√∫n es con nombres o no.
 		$i = ($ver_nombres) ? $i+2 : $i+1;
 		$cont_tabla++;
 
@@ -385,13 +389,15 @@ function leerSalida($n, $fecha, $servicio) {
 
 /*************************************************************************
 *
-* AquÌ empieza el programa principal 
+* Aqu√≠ empieza el programa principal 
 *
 */
 
+	$lista_personas = array( 76 ,185 ,2096  ,2205 ,2212  ,2314  ,2471  ,2536  ,2558  ,2577 ,2616  ,2622  ,2623  ,2641);
+
 	$debug = 0; 		///////////////////////   DEBUG LOG IGUAL A CERO PARA QUE SAQUE NOTIFICACIONES Y -1 PARA QUE NO SAQUE
-	$fecha[0]="1/1/2017";   // Fecha inicial por defecto
-	$fecha[1]="31/12/2017";   // Fecha final por defecto (si se ha rellenado la inicial pero la final no, entonces la final quedar· en blanco)
+	$fecha[0]="1/1/2018";   // Fecha inicial por defecto
+	$fecha[1]="31/12/2018";   // Fecha final por defecto (si se ha rellenado la inicial pero la final no, entonces la final quedar√° en blanco)
 	$servicio_array = $AUX->servicio; 
 	$datos_items = $AUX->datos_items;
 	$ver_nombres=true; 
@@ -401,7 +407,7 @@ function leerSalida($n, $fecha, $servicio) {
 
 
 	if (isset($_POST['fecha_0'])) {			// Solamente se ejecuta si se ha puesto alguna fecha inicial
-
+ 
 		//  Valores recogidos del formulario
 		if ($_POST['con_nombre'] != "") $ver_nombres=true;
 		if ($_POST['sin_nombre'] != "") $ver_nombres=false;
@@ -409,22 +415,27 @@ function leerSalida($n, $fecha, $servicio) {
 		$todos = (isset($_POST['todos'])) ? $_POST['todos'] : "on";
 		$datos = $_POST['datos']; 
 
+
+
+		$busca_por_item = ($_POST['por_item_toxicomania'] != "") ? "Toxicomania" : NULL;
+		$busca_por_lista = ($_POST['por_lista_personas'] != "") ? $lista_personas : array();
+
 		echo "<div id='resultados_lista'>";
 
 
 		/*	
 		*   Cambia fecha[0] y fecha [1] si hay una propuesta diferente de fecha, por medio del formulario
 		*/
-		if ((isset($_POST['fecha_0'])) && ( $_POST['fecha_0'] <> "" )) {   // si la primera fecha est· puesta como POST...
+		if ((isset($_POST['fecha_0'])) && ( $_POST['fecha_0'] <> "" )) {   // si la primera fecha est√° puesta como POST...
 			$fecha[0] = fecha_txt_sql($_POST['fecha_0']);  
-			if ((isset($_POST['fecha_1'])) && ( $_POST['fecha_1'] <> "" )) {   // ... y la segunda tambiÈn ...
+			if ((isset($_POST['fecha_1'])) && ( $_POST['fecha_1'] <> "" )) {   // ... y la segunda tambi√©n ...
 				$fecha[1] = fecha_txt_sql($_POST['fecha_1']);  // ... se ponen las dos fechas enviadas; 
 				echo "<h1>Intervalo: de ".$fecha[0]." a ".$fecha[1]."</h1>";
-			} else 							// ... pero si la segunda no est· puesta, ...
+			} else 							// ... pero si la segunda no est√° puesta, ...
 				$fecha[1] = "";					//  ... entonces la segunda fecha es "", ... 
 				echo "<h1>Fecha: ".$fecha[0]."</h1>";
 		} else {
-			$fecha[0] = fecha_txt_sql($fecha[0]);		// ... pero si inicialmente no est· enviada ninguna de ambas, 	
+			$fecha[0] = fecha_txt_sql($fecha[0]);		// ... pero si inicialmente no est√° enviada ninguna de ambas, 	
 			$fecha[1] = fecha_txt_sql($fecha[1]);		// ... entonces ambas son las iniciales por defecto. 
 			echo "<h1>Intervalo: de ".$fecha[0]." a ".$fecha[1]."</h1>";
 		}
@@ -432,10 +443,10 @@ function leerSalida($n, $fecha, $servicio) {
 
 		/*
 		 * Crea una array con todas las personas de ese intervalo para un determinado servicio 
-		 * y crea tambiÈn una tabla para ir tachando y que queden solamente los usuarios que no aparecen en un item
+		 * y crea tambi√©n una tabla para ir tachando y que queden solamente los usuarios que no aparecen en un item
 		 */
 		$db = new Leer_Mysqli(); 
-		$array_ab = $db->crea_aux($fecha[0], $fecha[1], $servicio); 
+		$array_ab = $db->crea_aux($fecha[0], $fecha[1], $servicio, $busca_por_item,  $busca_por_lista, 1); 
 		$array_result = $db->lista_query("SELECT * FROM aux ORDER BY nombre"); 
 
 
@@ -451,7 +462,7 @@ function leerSalida($n, $fecha, $servicio) {
 		*/
 		$titulo  = "<h1>Datos de todas las personas del intervalo</h1>";
 		$cabeceras = array("Id", "Nombre","Apellido 1", "Apellido 2");
-		escribeTabla($titulo, $cabeceras, $array_tot, "personas_intervalo"); 
+		displayTable($titulo, $cabeceras, $array_tot, "personas_intervalo"); 
 
 
 		/*
@@ -468,7 +479,7 @@ function leerSalida($n, $fecha, $servicio) {
 		if (in_array("poblacion", $datos) || ($todos == 'on')) 
 			leerListaDespl($n, "Poblacion vivienda actual", "poblaciones", "poblacion");/////////
 		if (in_array("poblacion_padron", $datos) || ($todos == 'on')) 
-			leerListaDespl($n, "Poblacion padrÛn actual", "poblaciones", "poblacionPadron");////////
+			leerListaDespl($n, "Poblacion padr√≥n actual", "poblaciones", "poblacionPadron");////////
 		if (in_array("DatosFormativosItem", $datos) || ($todos == 'on')) 
 			leerListaDespl($n, "Nivel estudios", "estudios", "nivelFormativo");
 		if (in_array("NivelCastellano", $datos) || ($todos == 'on')) 
@@ -476,7 +487,7 @@ function leerSalida($n, $fecha, $servicio) {
 		if (in_array("Trabaja", $datos) || ($todos == 'on')) 
 			leerListaDespl($n,"Trabajo", "trabaja", "Trabaja");
 		if (in_array("AnosConsumo", $datos) || ($todos == 'on')) 
-			leerListaDespl($n, "AÒos consumo", "anosconsumo", "AnosConsumo");
+			leerListaDespl($n, "A√±os consumo", "anosconsumo", "AnosConsumo");
 		if (in_array("ConsumoPrinc", $datos) || ($todos == 'on')) 
 			leerListaDespl($n, "Consumo Principal", "consumoprinc", "ConsumoPrinc");
 		if (in_array("EnfMentalTratamiento", $datos) || ($todos == 'on')) 
@@ -487,11 +498,11 @@ function leerSalida($n, $fecha, $servicio) {
 			leerListaDespl($n, "Procedencia de la demanda", "demanda", "procedenciaDemandaLista");  
 		if (in_array("ingresos", $datos) || ($todos == 'on')) {
 			$checkboxes[0] = array("persona" => "IngresosPropios", "titulo" => "Propios");
-			$checkboxes[1] = array("persona" => "IngresosPnc", "titulo" => "PensiÛn no Contributiva");
+			$checkboxes[1] = array("persona" => "IngresosPnc", "titulo" => "Pensi√≥n no Contributiva");
 			$checkboxes[2] = array("persona" => "IngresosOtros", "titulo" => "Otros");
-			$checkboxes[3] = array("persona" => "IngresosNomina", "titulo" => "NÛmina");
-			$checkboxes[4] = array("persona" => "IngresosRGI", "titulo" => "Renta GarantÌa de Ingresos");
-			$checkboxes[5] = array("persona" => "IngresosPrestContrib", "titulo" => "PrestaciÛn Contributiva");
+			$checkboxes[3] = array("persona" => "IngresosNomina", "titulo" => "N√≥mina");
+			$checkboxes[4] = array("persona" => "IngresosRGI", "titulo" => "Renta Garant√≠a de Ingresos");
+			$checkboxes[5] = array("persona" => "IngresosPrestContrib", "titulo" => "Prestaci√≥n Contributiva");
 			$checkboxes[6] = array("persona" => "IngresosSeDesconoce", "titulo" => "Desconocidos");
 			$checkboxes[7] = array("persona" => "IngresosAyudaIndividual", "titulo" => "Ayuda Individual");
 			$checkboxes[9] = array("persona" => "IngresosNo", "titulo" => "Sin Ingresos");
@@ -499,27 +510,27 @@ function leerSalida($n, $fecha, $servicio) {
 			unset($checkboxes);
 		}
 		if (in_array("enferm", $datos) || ($todos == 'on')) {
-			$checkboxes[0] = array("persona" => "Toxicomania", "titulo" => "ToxicomanÌa");
-			$checkboxes[1] = array("persona" => "Autonomia", "titulo" => "Persona autÛnoma");
+			$checkboxes[0] = array("persona" => "Toxicomania", "titulo" => "Toxicoman√≠a");
+			$checkboxes[1] = array("persona" => "Autonomia", "titulo" => "Persona aut√≥noma");
 			$checkboxes[2] = array("persona" => "EnfermedadMental", "titulo" => "Enfermedad mental");
 			$checkboxes[3] = array("persona" => "VIH", "titulo" => "VIH");
 			$checkboxes[4] = array("persona" => "Hepatitis", "titulo" => "Hepatitis");
-	 		leerItem($n, "SituaciÛn sanitaria", $checkboxes);
+	 		leerItem($n, "Situaci√≥n sanitaria", $checkboxes);
 			unset($checkboxes);
 		}
 		if (in_array("penal", $datos) || ($todos == 'on')) {
-			$checkboxes[0] = array("persona" => "PenalAntecedentesPrision", "titulo" => "Antecedentes PrisiÛn");
+			$checkboxes[0] = array("persona" => "PenalAntecedentesPrision", "titulo" => "Antecedentes Prisi√≥n");
 			$checkboxes[1] = array("persona" => "PenalCausasPendientes", "titulo" => "Causas pendientes");
 			$checkboxes[2] = array("persona" => "PenalMedidaSeguridad", "titulo" => "Medidas de seguridad");
 			$checkboxes[3] = array("persona" => "PenalLibCondicional", "titulo" => "Libertad Condicional");
 			$checkboxes[4] = array("persona" => "PenalPermisoPenitenc", "titulo" => "Permiso penitenciario");
 			$checkboxes[5] = array("persona" => "PenalTercerGrado", "titulo" => "Tercer grado");
-		 	leerItem($n, "SituaciÛn judicial", $checkboxes);
+		 	leerItem($n, "Situaci√≥n judicial", $checkboxes);
 			unset($checkboxes);
 		}
 		if (in_array("tratam", $datos) || ($todos == 'on')) {
 			$checkboxes[0] = array("persona" => "Tratamiento", "titulo" => "Tratamiento");
-		 	leerItem($n, "Tratamiento mÈdico", $checkboxes);
+		 	leerItem($n, "Tratamiento m√©dico", $checkboxes);
 			unset($checkboxes);
 		}
 		if (in_array("salida", $datos) || ($todos == 'on')) {
@@ -542,27 +553,31 @@ function leerSalida($n, $fecha, $servicio) {
 
 
 	echo "<div id='resultados_opc'>";
-	echo "<h2>Datos estadÌsticos</h2>";
+	echo "<h2>Datos estad√≠sticos</h2>";
 	if ($izaskun) echo "<br><h2>Provisionalmente los datos salen solamente para Hiritar</h2>";   /////////////////////////////////////////
-	if ($izaskun) echo "<br><strong><a href='include/usar_sql.php'>Pincha aquÌ para ver la lista con fecha de entrada y salida</a></strong>";    //////////////////////
+	if ($izaskun) echo "<br><strong><a href='include/usar_sql.php'>Pincha aqu√≠ para ver la lista con fecha de entrada y salida</a></strong>";    //////////////////////
 	echo "<form name='opciones' id='opciones' action='".$_SERVER['PHP_SELF']."' method='post'>\n";
 	echo "<br>Fecha inicio: <input type='text' name='fecha_0' > &nbsp; &nbsp\n";
 	echo "Fecha fin: <input type='text' name='fecha_1' >\n";
-	echo "<br>(Formato de fecha: dia/mes/aÒo) (Por defecto: aÒo 2013)";
+	echo "<br>(Formato de fecha: dia/mes/a√±o) (Por defecto: a√±o 2018)";
 	echo "<br><br>Recurso: &nbsp; &nbsp<select name='servicio'>\n"; 
 	foreach ($servicio_array as $key => $serv) {
 		echo "<option value='".$key."'>".$serv."</option>\n";
 	}
 	echo "</select><br><br>";
-	echo "<p></p>Campos a mostrar: (si no se escoge ninguno se mostrar·n todos)<br>";
+	echo "<p></p>Campos a mostrar: (si no se escoge ninguno se mostrar√°n todos)<br>";
 	echo "<br><select name='datos[]' MULTIPLE>\n"; 
 	foreach ($datos_items as $campo => $nombre_campo) {
 		echo "<option value='".$campo."'>".$nombre_campo."</option>\n";
 	}
 	echo "</select><br><br>";
-	echo "<br>EstadÌsticas con nombre o solamente numÈricas.<br>\n"; 
+	echo "<br>Estad√≠sticas con nombre o solamente num√©ricas.<br>\n"; 
 	echo "<br><input type='submit'  name='con_nombre'  value='Con nombres'>&nbsp; &nbsp\n";
 	echo "<input type='submit'  name='sin_nombre'  value='Sin nombres'><p></p>\n";
+	echo "<br>Estad√≠sticas de personas con alg√∫n elemento activo:<br>";
+	echo "<br><input type='submit'  name='por_item_toxicomania'  value='Toxicoman√≠a'>&nbsp; &nbsp\n";	
+	echo "<br>Estad√≠sticas de personas de una lista determinada:<br>";
+	echo "<br><input type='submit'  name='por_lista_personas'  value='Lista personas'>&nbsp; &nbsp\n";	
 	echo "</form></div>";  // div resultados_opc
 
 	echo ""; 

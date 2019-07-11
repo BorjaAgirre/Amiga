@@ -1,4 +1,4 @@
-<?
+<?php
 unset($_SESSION['idusuario']);
 setcookie("usuario", $usuario, time()-29999);
 setcookie("grp", $usuario, time()-29999);

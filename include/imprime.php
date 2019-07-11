@@ -74,6 +74,7 @@ function imprimeListaDesplegable($nombre_campo, $titulo, $campo_mysql, $color, $
 
 function imprimeItem($identificador, $titulo, $size, $color_inicial, $top, $left, $lugar_titulo) {
 	$rowi=  $GLOBALS["row"];
+//	echo "<pre>"; print_r($rowi); echo "</pre>"; die(); 
 	echo "\n\n\t\t\t<div id='".$identificador."' style='position:absolute; top: ".$top."%;  left:  ".$left."%; font-size:14;   visibility:show;'>\n";
 	echo "\t\t\t";
 	$url = "popup_historial.php?id_unico=".$rowi['id_unico']."&identificador=".$identificador; 
@@ -85,6 +86,21 @@ function imprimeItem($identificador, $titulo, $size, $color_inicial, $top, $left
 	echo "\t\t\t</div>";
 }
 
+
+
+function imprimeNumero($identificador, $titulo, $size, $color_inicial, $top, $left, $lugar_titulo) {
+	$rowi=  $GLOBALS["row"];
+//	echo "<pre>"; print_r($rowi); echo "</pre>"; die(); 
+	echo "\n\n\t\t\t<div id='".$identificador."' style='position:absolute; top: ".$top."%;  left:  ".$left."%; font-size:14;   visibility:show;'>\n";
+	echo "\t\t\t";
+	$url = "popup_historial.php?id_unico=".$rowi['id_unico']."&identificador=".$identificador; 
+	echo "<img src='graficos/punto.jpeg' onclick='javascript:new_window(\"".$url."\");'>&nbsp;";
+	echo $titulo."&nbsp; &nbsp;";
+
+	if (!$lugar_titulo) echo "<br>";
+	echo "<input type='text'  name='".$identificador."' size='".$size."' style=' background-color:#".$color_inicial.";font-weight:bold' value='0'>\n";
+	echo "\t\t\t</div>";
+}
 
 
 

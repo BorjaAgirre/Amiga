@@ -45,7 +45,7 @@ include_once "clases/class.leer_mysqli.php";
 			$datos->cerrar_conexion(); 
 			echo "<META HTTP-EQUIV='REFRESH' CONTENT='0;URL=persona.php'>";
 
-//			Cambiado a Mysqli; dejo las anteriores lÌneas temporalmente por si hay errores
+//			Cambiado a Mysqli; dejo las anteriores l√≠neas temporalmente por si hay errores
 //			include "conexion.php";
 //			$result=mysql_query("DELETE FROM persona WHERE id_pers=$deleteid", $conexion);
 //			include "cerrar_conexion.php";
@@ -56,7 +56,7 @@ include_once "clases/class.leer_mysqli.php";
 		
 	<script language="Javascript">
 		function opcion()  {
- 			ventana=confirm("Se va a proceder a borrar a esta persona de la bases de datos. Esta acciÛn no se puede deshacer. øEST¡S SEGURO?");
+ 			ventana=confirm("Se va a proceder a borrar a esta persona de la bases de datos. Esta acci√≥n no se puede deshacer. ¬øEST√ÅS SEGURO?");
 			if (ventana) {
 				alert("El registro ha sido borrado");
 			} else {
@@ -102,8 +102,8 @@ include_once "clases/class.leer_mysqli.php";
 			echo "</div>";
 
 			if ($anterioressesiones) {
-				echo "<p><h4>Fecha del ˙ltimo registro: ".fecha_sql_txt($fechaultimasesion)." </h4></p>";
-				echo "<a href='historicoindicadores.php' class='button'>HistÛrico indicadores</a>";	
+				echo "<p><h4>Fecha del √∫ltimo registro: ".fecha_sql_txt($fechaultimasesion)." </h4></p>";
+				echo "<a href='historicoindicadores.php' class='button'>Hist√≥rico indicadores</a>";	
 			}		
 			echo "<p><h4>0= No Compete Pregunta (NCP)  |  1=Nada  |  2=Algo  |  3=Bastante  |  4=Mucho   |  5=Totalmente </h4></p> ";
 			

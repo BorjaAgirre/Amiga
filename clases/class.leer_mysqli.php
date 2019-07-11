@@ -103,14 +103,16 @@ class Leer_Mysqli {
 	*  Devuelve el resultado de una consulta
 	*/
 	function pregunta_query($query) {
+		if ($this->debug) echo "<p>&nbsp;</p>QUERY pregunta_query: ".$query; 
 		if($result = $this->mysqli->query($query)) {
+			if ($this->debug) { echo "<pre>result de pregunta_query: "; print_r($result);  echo "</pre>";}
 		} elseif ($this->mysqli->errno == 1062) {
 			echo "<script>alert('Parece que este dato (usuario y fecha) ya estaba introducido')</script>"; 
 		} else {
 			echo "<br>IMPORTANTE, AVISAR AL RESPONSABLE DE LA BASE DE DATOS. No cambiar de página, las siguientes líneas son importantes"; 
 			echo "<br>error en la lectura de la base de datos: (" . $this->mysqli->errno . ") " . $this->mysqli->error;
 			echo "<br>Query erróneo: ".$query."<br>";
-			printf("Mensaje de error: %s\n", $this->mysqli->error);
+			printf("Mensaje de error: %s\n", $this->mysqli->error); die();
 		} 
 		return $result;
 	}
@@ -124,18 +126,23 @@ class Leer_Mysqli {
 	*/	
 	function lista_query($query, $unico = false) {
 		$result = $this->pregunta_query($query); 
+		if ($this->debug) { echo "<pre>result de lista_query: "; print_r($result);  echo "</pre>";}
 		$cont = $result->num_rows; 
 		unset($this->lista); 
-//		echo "<br>Número de filas en el query: ".$result->num_rows; 
-		for ($i = 0; $i<$cont; $i++) {
-			$row = $result->fetch_array(MYSQLI_BOTH);
-			if ($unico) {
-				$this->lista[$i] = $row[0];	
-			} else {
-				$this->lista[$i] = $row;	
+		if ($this->debug) echo "<br>Número de filas en el query: ".$result->num_rows; 
+		if ($cont == 0) {
+			$this->lista = array(); 
+		} else {
+			for ($i = 0; $i<$cont; $i++) {
+				$row = $result->fetch_array(MYSQLI_BOTH);
+				if ($unico) {
+					$this->lista[$i] = $row[0];	
+				} else {
+					$this->lista[$i] = $row;	
+				}
 			}
 		}
-		//		echo "<pre>"; print_r($this->lista); echo "</pre>";	   // <------------------------------------------
+//				echo "<pre>"; print_r($this->lista); echo "</pre>";	   // <------------------------------------------
 		return $this->lista;
 	}
 
@@ -522,7 +529,7 @@ class Leer_Mysqli {
 		// Diseña el query según las variables
 		$query = "SELECT ".$text_columnas." FROM `alta_baja` ab
 				".$text_persona_pre."
-				WHERE 
+				WHERE 				
 				".$text_persona_post."
 				".$text_id_unico."
 				".$text_servicio."
@@ -539,10 +546,11 @@ class Leer_Mysqli {
 						alta_baja = 'a'
 						AND fecha <= '".$fecha_fin."'
 					)
-				)  
+				)  				
 				".$text_persona_group."
 				".$text_repite."
-				".$text_group_id_unico." ;"; 
+				".$text_group_id_unico."
+				 ;"; 
 		if ($this->debug) echo "<br>QUERY ACTIVOS: ".$query; 
 		$servicios_actuales = $this->array_servicios(); 
  
@@ -574,7 +582,7 @@ class Leer_Mysqli {
 	*   Crea una tabla auxiliar (aux) en Mysql, con el grupo de personas de un determinado intervalo
 	*   para un determinado servicio
 	*/
-	function crea_aux($fecha_ini, $fecha_fin, $serv) {
+	function crea_aux($fecha_ini, $fecha_fin, $serv, $busca_item = NULL, $busca_personas, $busca_valor = NULL ) {
 		//  Elimina la tabla aux si existe
 		$this->elimina_aux(); 
 
@@ -582,20 +590,41 @@ class Leer_Mysqli {
 		$query = "CREATE TABLE aux like persona;";
 		$this->pregunta_query($query);
 
-		// Lee las personas del servicio y las fechas dadas
-		$arg = array(
-			'fecha_ini' => $fecha_ini,
-			'fecha_fin' => $fecha_fin,
-			'servicio' => $serv,
-			'no_repite' => false, 
-			'group_id_unico' => true		// para que aparezca una sola vez cada id_unico, aunque haya varias altas y bajas
-		);
-		$result = $this->activos($arg); 
+		if (isset($busca_item) && isset($busca_valor)) {
+			$item = ( "" != $busca_item ) ? " AND ".$busca_item." = ".$busca_valor : "";
+		}
+
+
+		if (empty($busca_personas)) {
+			// Uso normal: no hay personas en la lista a buscar
+			// Lee las personas del servicio y las fechas dadas
+			$arg = array(
+				'fecha_ini' => $fecha_ini,
+				'fecha_fin' => $fecha_fin,
+				'servicio' => $serv,
+				'no_repite' => false, 
+				'group_id_unico' => true		// para que aparezca una sola vez cada id_unico, aunque haya varias altas y bajas
+			);
+			$result = $this->activos($arg); 
+		} else {
+			// Lista de personas a buscar
+			foreach ($busca_personas as $persona_listada) {
+				$result[] = array( 'id_unico' => $persona_listada); 
+			}
+
+		}
+
+		if ($this->debug) {
+			echo "<pre>Result: "; 
+			print_r($array_personas);
+			echo "</pre>";
+		}
 
 		// Escribe en la tabla auxiliar los datos de las personas seleccionadas
 		foreach ($result as $row) {
 			$query2 = "INSERT INTO aux SELECT * FROM persona WHERE id_pers=(SELECT id_pers FROM persona 
-					WHERE id_unico=".$row['id_unico']." AND historial = 'actual');";
+					WHERE id_unico=".$row['id_unico']. $item . " AND historial = 'actual') ;";
+			if ($this->debug) echo "<br>".$query2;
 			$this->pregunta_query($query2);
 		}
 		return $result;	
