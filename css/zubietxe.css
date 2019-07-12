@@ -164,7 +164,6 @@ h3 {
 }
 
 #iframe	 {
-	background:#FFFFFF;
 	overflow:auto; 
 	position:relative; 
 	font-size:18; 
@@ -259,7 +258,7 @@ h3 {
 }
 
 
-#d_comentario {
+.d_comentario {
 /*	height:300px; 
 	width:90%; 
 	background:#EEEEEE;
@@ -269,7 +268,8 @@ h3 {
 	left: 05%; 
 	font-size:18; 
 	font-family:'Verdana'; 
-	visibility:show
+	visibility:show;
+	border: 1px solid black;
 }
 
 #indice_coment {
@@ -350,7 +350,7 @@ table {
 	font-size: 0.8em; 
 	text-align: left; 
 	border-collapse:collapse; 
-	width: 90%;
+	width: 100%;
 } 
 
 tr.header{
@@ -549,9 +549,20 @@ padding: 7px 10px 6px 0;
 
 }
 
+.inl {
+	display: inline;
+}
+
+.tablaseguimiento tr td {
+
+}
+
 textarea {
 	font-family: Tahoma, Arial, sans-serif;
 	font-size: 14px; 
+  	width: 100%;
+  	min-height: 100px;
+
 }
 
 #idioma{

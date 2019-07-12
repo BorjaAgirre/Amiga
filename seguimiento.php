@@ -17,22 +17,50 @@ function imprimeComentario($insertar, $date, $id_unico_load, $row_comentario){
 		$link = ($insertar) ? "insertar_comentario.php" : "actualizar_comentario.php"; 
 		$fecha = (!$insertar) ? fecha_sql_txt($row_comentario['fecha']) : $date;
 
-		// <div>  ,  <table>  y  <style>
-		echo "<div id='d_comentario'>";
-		echo "\n\n<form name='persona'  autocomplete='off' id='persona' action='";
+		echo "<div class='d_comentario'>";
+
+		echo "\n\n<form  style='margin: 0; padding: 0;' name='persona'  autocomplete='off' id='persona' action='";
 		echo $link; 
 		echo "' method='post'>";
-		echo "<table>";
-		echo "\n<style type='text/css'></style>";
+		echo "<table class='tablaseguimiento'>";
+		echo "\n<style type='text/css'></style>";	
 
-		//  Fecha
-		echo "\n<tr><td>\nFecha: <input type='text' name='fecha' size='12' style='background-color:#AAAAFF;font-weight:bold' value='";
+
+		// Fecha
+		echo "\n<tr>";
+		echo "<td>Fecha:</td>";  
+		echo "<td><input style='display: inline;''  type='text' name='fecha' size='12' style='background-color:#AAAAFF;font-weight:bold' value='";
 		echo $fecha; 
+		echo "'></td>";
 
-		// Tutor
-				
+
+		// Comentario 
+		echo "<td rowspan='3'><textarea name='comentario' ROWS=5 COLS=70>";
+		if (!$insertar) echo $row_comentario[3];
+		echo "</textarea></td>\n";		
+			//echo "\n<input type='hidden' name='probando' id='probando' value='probando'>";//////////
+		if ($insertar) {
+			echo "\n<td rowspan='3'>";
+			echo "\n<input type='hidden' name='id_unico' id='id_unico' value='".$id_unico_load."'>";
+			echo "\n<input type='image' src='graficos/guarda.png' name='submit' title='Insertar comentario'></td>";		
+		} else {
+			echo "\n<td rowspan='3'>";
+			echo "\n<input type='hidden' name='id_coment' id='id_coment' value='".$row_comentario['id_coment']."'>";
+/*			echo "\n<input type='hidden' name='id_pers' id='id_pers' value='".$row_comentario[1]."'>";		*/
+			echo "\n<input type='hidden' name='id_unico' id='id_unico' value='".$id_unico_load."'>";
+	
+			if ($row_comentario['tipo_comentario'] == 'a')
+			echo "\n<a href='actividad.php?load=".$row_comentario['id_actividad']."'><img height='20px' title='Ir a actividad' src='actividad.gif'></a><br>";
+			echo "\n<input type='image' src='graficos/guarda.png' name='submit' title='Actualizar comentario'></td>";
+		}		
+		echo "</tr>";
+
+
+		// Tutor	
 		$nombretut = $row_comentario['nombre'];
-		echo "'><br>&nbsp;\nTutor:\n<select name='tutor'>";
+		echo "\n<tr>";
+		echo "<td>Tutor:</td>"; 
+		echo "<td><select name='tutor'>";
 		foreach($tutores as $tut){
 			echo "<option value='".$tut["id"]."'";
 			$selected = ((($row_comentario["tutor"] == $tut["id"]) && (!$insertar)) || 
@@ -40,10 +68,14 @@ function imprimeComentario($insertar, $date, $id_unico_load, $row_comentario){
 			echo $selected;
 			echo ">".$tut["nombre"]."</option>";
 		}
-		echo "</select>";
+		echo "</select></td>";
+		echo "</tr>";
+
 
 		// Hito 
-		echo  "<br>&nbsp;&nbsp;&nbsp;Hito \n<select name='hito'>";
+		echo "\n<tr>";
+		echo "<td>Hito:</td>";
+		echo "<td><select name='hito'>";
 //		echo "<option value=''>---------</option>";
 		foreach($hitos as $hit) {
 			echo "<option value='".$hit['id']."'";
@@ -52,27 +84,11 @@ function imprimeComentario($insertar, $date, $id_unico_load, $row_comentario){
 			echo ">".$hit['hito']."</option>";
 		}
 		echo "</select></td>";
+		echo "</tr>";
 
 		// Area de texto		
-		echo "<td><textarea name='comentario' ROWS=5 COLS=80>";
-		if (!$insertar) echo $row_comentario[3];
-		echo "</textarea><br>";		
-		echo "</td>\n<td>";
-			//echo "\n<input type='hidden' name='probando' id='probando' value='probando'>";//////////
-		if ($insertar) {
-			echo "\n<br><br><td>";
-			echo "\n<input type='hidden' name='id_unico' id='id_unico' value='".$id_unico_load."'>";
-			echo "\n<input type='image' src='graficos/guarda.png' name='submit' title='Insertar comentario'></td></tr>";		
-		} else {
-			echo "</td>\n<td>";
-			echo "\n<input type='hidden' name='id_coment' id='id_coment' value='".$row_comentario['id_coment']."'>";
-/*			echo "\n<input type='hidden' name='id_pers' id='id_pers' value='".$row_comentario[1]."'>";		*/
-			echo "\n<input type='hidden' name='id_unico' id='id_unico' value='".$id_unico_load."'>";
-	
-			if ($row_comentario['tipo_comentario'] == 'a')
-			echo "\n<a href='actividad.php?load=".$row_comentario['id_actividad']."'><img height='20px' title='Ir a actividad' src='actividad.gif'></a><br>";
-			echo "\n<input type='image' src='graficos/guarda.png' name='submit' title='Actualizar comentario'></td></tr>";
-		}
+
+
 
 		echo "\n</table>\n</form>";
 		echo "\n</div>";   // div d_comentario
@@ -215,6 +231,7 @@ include_once "menu_lateral.php";
 				if ($row_comentario['comentario'] != "") {
 					imprimeComentario(false, $fecha, $id_unico_load, $row_comentario);
 				}
+				echo "<br>";
 			}
 						echo "Identificador base datos:  (".$id_unico_load.")<br>";
 			echo "</div><br>";   // iframe
