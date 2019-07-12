@@ -29,7 +29,7 @@ function imprimeComentario($insertar, $date, $id_unico_load, $row_comentario){
 		// Fecha
 		echo "\n<tr>";
 		echo "<td>Fecha:</td>";  
-		echo "<td><input style='display: inline;''  type='text' name='fecha' size='12' style='background-color:#AAAAFF;font-weight:bold' value='";
+		echo "<td><input style='display: inline;'' class='naranja' type='text' name='fecha' size='12' style='background-color:#AAAAFF;font-weight:bold' value='";
 		echo $fecha; 
 		echo "'></td>";
 

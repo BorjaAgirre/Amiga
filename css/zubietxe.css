@@ -257,6 +257,10 @@ h3 {
 	visibility:show
 }
 
+.naranja {
+	background-color: #FFA500;
+	font-weight: bold;
+}
 
 .d_comentario {
 /*	height:300px; 
@@ -269,7 +273,10 @@ h3 {
 	font-size:18; 
 	font-family:'Verdana'; 
 	visibility:show;
+	padding: 5px; 
 	border: 1px solid black;
+	border-radius: 8px; 
+	background-color: #FFFFFF;
 }
 
 #indice_coment {
@@ -553,9 +560,16 @@ padding: 7px 10px 6px 0;
 	display: inline;
 }
 
-.tablaseguimiento tr td {
-
+.tablaseguimiento {
+	border: none;
+	background-color: #ffffff;
+	font-size: 0.8em;
+	text-align: left;
+	width: 100%;
 }
+
+
+
 
 textarea {
 	font-family: Tahoma, Arial, sans-serif;
