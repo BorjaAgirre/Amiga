@@ -147,34 +147,40 @@ function header_principal($pagina, $config_head = NULL) {
 	$grupo=$_COOKIE['grp'];
 	$permisos=$_COOKIE['prm']; 
 	
+
+	$head['array_css'] = array ('css/zubietxe.css', 'jq/css/humanity/jquery-ui.css');
+	$head['array_javascript'] = array ('jq/jquery.min.js', 'jq/jquery-ui.js', 'jq/js/scripts.js', 
+			'jq/js/historial.js', 'menu_superior.js'); 
+	$head['activ'] = true; 
+	$head['menu'] = true; 
+	$head['logo'] = true; 
+	$head['pest'] = true; 
+	$head['charset'] = 'utf'; 
+
+
 	if (isset($config_head)) {
 		if (isset ($config_head['array_css'])) {
-			if (!is_array($config_head['array_css'])) { $config_head['array_css'][] = $config_head['array_css']; } 
+			if (!is_array($config_head['array_css'])) { $head['array_css'][] = $config_head['array_css']; } 
 		}
 	
 		if (isset ($config_head['array_javascript'])) {
-			if (!is_array($script)) { $config_head['array_javascript'][] = $config_head['array_javascript']; } 
+			if (!is_array($script)) { $head['array_javascript'][] = $config_head['array_javascript']; } 
 		}
-		$config_head['charset'] = 'utf'; 
-	} else {
-		$config_head['array_css'] = array ('css/zubietxe.css', 'jq/css/humanity/jquery-ui.css');
-		$config_head['array_javascript'] = array ('jq/jquery.min.js', 'jq/jquery-ui.js', 'jq/js/scripts.js', 
-				'jq/js/historial.js', 'menu_superior.js'); 
-		$config_head['activ'] = true; 
-		$config_head['menu'] = true; 
-		$config_head['logo'] = true; 
-		$config_head['pest'] = true; 
-		$config_head['charset'] = 'utf'; 
-	}
+		$head['activ'] = (isset($config_head['activ'])) ? $config_head['activ'] : true; 
+		$head['menu'] = (isset($config_head['menu'])) ? $config_head['menu'] : true; 
+		$head['logo'] = (isset($config_head['logo'])) ? $config_head['logo'] : true; 
+		$head['pest'] = (isset($config_head['pest'])) ? $config_head['pest'] : true; 
+		$head['charset'] = (isset($config_head['charset'])) ? $config_head['charset'] : 'utf'; 
+	} 
 
 	// Se ejecutan las diferentes funciones que van dibujando la cabecera
 
-	cabecera ($config_head);
+	cabecera ($head);
 	echo "\n\t<div class='wrap_header'>\n";
-	if ($config_head['activ']) actividadesInicial($pagina);
-	if ($config_head['menu']) menuSuperiorDerecho ($permisos, $dir);
-	if ($config_head['logo']) logoCentral();
-	if ($config_head['pest']) pestanas($pagina);
+	if ($head['activ']) actividadesInicial($pagina);
+	if ($head['menu']) menuSuperiorDerecho($permisos, $dir);
+	if ($head['logo']) logoCentral();
+	if ($head['pest']) pestanas($pagina);
 	echo "\n\t</div>\n";  //class wrap_header
 }
 

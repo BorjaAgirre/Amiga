@@ -19,6 +19,7 @@ public function inicia($tiempo = 18000, $usuario = NULL, $clave = NULL) {
 				if (isset($_COOKIE['idusuario'])) {
 					// Restaura sesion
 					$_SESSION['idusuario']=$_COOKIE['idusuario'];
+					$_SESSION['usuario']=$_COOKIE['usuario'];
 				} else {
 					// Si no hay sesion regresa al login
 					header( "Location: index.php" );
@@ -61,6 +62,7 @@ private function verifica_usuario($tiempo, $usuario, $clave_md5) {
 		setcookie("nom", $nombre_tutor, time()+$tiempo);
 		
 		$_SESSION['idusuario']=$idusuario;
+		$_SESSION['nombreusuario']=$nombre_tutor;
 
 		header( "Location: alertasprevias.php" );
 	} else {

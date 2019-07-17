@@ -830,6 +830,22 @@ a.button {
 
 }
 
+#alerta {
+	display: block;
+	max-width: 50%; 
+	margin:0px auto 20px;
+	padding: 20px;
+	font-size: 16px;	
+	background-color: #ffe7b8;
+	border: solid 4px black;
+	border-radius: 10px; 
+}
+
+.unaalerta {
+	margin: 0 0 20px 0;
+}
+
+
 
 /*
 #indice {
