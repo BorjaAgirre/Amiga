@@ -1,5 +1,4 @@
 
-
 <html>
 <head>
 <title>Zubietxe</title>
@@ -53,6 +52,10 @@ pero necesitarás un navegador más moderno para ver el documento correctamente.
 VERY IMPORTANT: he visto que confundís algunas personas porque tienen el mismo nombre. A ver si en breve ponemos fotos en la base de datos. Mientras tanto, acordaos de utilizar el botoncito 'Activos' para que solamente os aparezcan los que están dados de alta en el Centro de Día o el servicio que sea, así eliminaréis posibles confusiones.  
 </div>
 -->
+
+
+
+
 
 </body>
 </html>

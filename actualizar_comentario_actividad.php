@@ -6,6 +6,8 @@ include_once "clases/class.leer_mysqli.php";
 	$tutor=$_POST['tutor'];
 	$id_pers=(int)$_POST['id_pers'];
 	$comentario = $db->escape($_POST['comentario']);
+	$alerta = fecha_txt_sql($_POST['alerta']);
+	$db->pregunta_query("UPDATE comentario SET alerta='$alerta' WHERE id_coment=$id_coment;");		
 	$db->pregunta_query("UPDATE comentario SET comentario='$comentario' WHERE id_coment=$id_coment;");
 	$db->pregunta_query("UPDATE comentario SET tutor='$tutor' WHERE id_coment=$id_coment;");
 	$db->pregunta_query("UPDATE comentario SET tipo_comentario='a' WHERE id_coment=$id_coment;");

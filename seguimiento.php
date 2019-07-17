@@ -16,6 +16,8 @@ function imprimeComentario($insertar, $date, $id_unico_load, $row_comentario){
 
 		$link = ($insertar) ? "insertar_comentario.php" : "actualizar_comentario.php"; 
 		$fecha = (!$insertar) ? fecha_sql_txt($row_comentario['fecha']) : $date;
+		$row_alerta = (isset($row_comentario['alerta'])) ? fecha_sql_txt($row_comentario['alerta']) : NULL ;
+		$alerta = (!$insertar) ? $row_alerta : NULL ;
 
 		echo "<div class='d_comentario'>";
 
@@ -35,16 +37,16 @@ function imprimeComentario($insertar, $date, $id_unico_load, $row_comentario){
 
 
 		// Comentario 
-		echo "<td rowspan='3'><textarea name='comentario' ROWS=5 COLS=70>";
+		echo "<td rowspan='4'><textarea name='comentario' ROWS=5 COLS=70>";
 		if (!$insertar) echo $row_comentario[3];
 		echo "</textarea></td>\n";		
 			//echo "\n<input type='hidden' name='probando' id='probando' value='probando'>";//////////
 		if ($insertar) {
-			echo "\n<td rowspan='3'>";
+			echo "\n<td rowspan='4'>";
 			echo "\n<input type='hidden' name='id_unico' id='id_unico' value='".$id_unico_load."'>";
 			echo "\n<input type='image' src='graficos/guarda.png' name='submit' title='Insertar comentario'></td>";		
 		} else {
-			echo "\n<td rowspan='3'>";
+			echo "\n<td rowspan='4'>";
 			echo "\n<input type='hidden' name='id_coment' id='id_coment' value='".$row_comentario['id_coment']."'>";
 /*			echo "\n<input type='hidden' name='id_pers' id='id_pers' value='".$row_comentario[1]."'>";		*/
 			echo "\n<input type='hidden' name='id_unico' id='id_unico' value='".$id_unico_load."'>";
@@ -84,6 +86,15 @@ function imprimeComentario($insertar, $date, $id_unico_load, $row_comentario){
 			echo ">".$hit['hito']."</option>";
 		}
 		echo "</select></td>";
+		echo "</tr>";
+
+
+		// Alerta 
+		echo "\n<tr>";
+		echo "<td>Alerta:</td>";
+		echo "<td><input style='display: inline;' type='text' name='alerta' size='12' style='background-color:#AAAAFF;font-weight:bold' value='";
+		echo $alerta; 
+		echo "'></td>";
 		echo "</tr>";
 
 		// Area de texto		
@@ -223,7 +234,7 @@ include_once "menu_lateral.php";
 			echo "<div id='iframe'>";
 			
 			// Imprime el primer comentario vacío, para rellenar 
-			imprimeComentario(true, $fecha, $id_unico_load, ""); 
+			imprimeComentario(true, $fecha, $id_unico_load, array()); 
 
 			echo "<br>"; 
 			// Imprime el resto de los comentarios rellenados

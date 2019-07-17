@@ -12,11 +12,13 @@ include_once "clases/class.leer_mysqli.php";
 	$hito = $_POST['hito'];
 	$tutor = $_POST['tutor'];
 	$fecha=fecha_txt_sql($_POST['fecha']);
+	$alerta = fecha_txt_sql($_POST['alerta']);
+	$mens_alerta = (empty($alerta))	? 'NULL' : "'".$alerta."'";
 	$grupo=$_COOKIE['grp'];
 	$permisos=$_COOKIE['prm'];
 	
-	$query = "INSERT INTO comentario (id_unico,comentario,hito,tutor,fecha,grupo,permisos, tipo_comentario) 
-		VALUES ('".$id_unico."','".$comentario."','".$hito."','".$tutor."','".$fecha."','".$grupo."','".$permisos."', 'c')";
+	$query = "INSERT INTO comentario (id_unico,comentario,hito,tutor,fecha,grupo,permisos, tipo_comentario, alerta) 
+		VALUES ('".$id_unico."','".$comentario."','".$hito."','".$tutor."','".$fecha."','".$grupo."','".$permisos."', 'c',".$mens_alerta.")";
 	// echo "query comentario: ".$query; 
 	$dbic->pregunta_query($query);
 

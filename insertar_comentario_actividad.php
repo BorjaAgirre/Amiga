@@ -11,7 +11,7 @@ if ($idunico!=0) {
 	$fecha_actividad = $_POST['fecha_actividad'];
 	$comentario=$_POST['comentario'];
 	$tutor=$_POST['tutor'];
-
+	$alerta = ($_POST['alerta']);
 	echo $idunico;
 	
 	$db = new Leer_Mysqli(); 
@@ -23,14 +23,16 @@ if ($idunico!=0) {
 			id_actividad,
 			comentario,
 			tutor,
-			tipo_comentario)
+			tipo_comentario,
+			alerta)
 		 VALUES (
 			'$idunico',
 			'$fecha_actividad',
 			'$id_actividad',
 			'$comentario',
 			'$tutor',
-			'a')"
+			'a',
+			'$alerta')"
 		);
    
 	//$my_error = mysql_error($conexion);

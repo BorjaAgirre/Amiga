@@ -269,6 +269,27 @@ class Leer_Mysqli {
 	}
 
 
+
+
+	/*
+	*  Devuelve un array con las alertas del día corriente para un miembro del equipo dado
+	*/
+	function lee_alertas($today, $tutor) {
+		$query = "SELECT p.nombre, p.apellido1, p.apellido2, c.comentario FROM comentario c INNER JOIN persona p 
+			WHERE c.alerta = '".$today."' 
+			AND c.tutor = '".$tutor."'
+			AND p.historial = 'actual'
+			AND c.id_unico = p.id_unico";
+		$result = $this->lista_query($query, false); 
+		return $result; 
+	}
+
+
+
+
+
+
+
 	/*
 	*  Devuelve un array con todos los datos de una actividad, dado un intervalo. 
 	*/
@@ -398,6 +419,11 @@ class Leer_Mysqli {
 		$texto .= "\n\t</select>";
 		return $texto;
 	}
+
+
+
+
+
 
 
 	/*

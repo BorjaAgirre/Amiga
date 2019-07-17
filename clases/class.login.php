@@ -62,7 +62,7 @@ private function verifica_usuario($tiempo, $usuario, $clave_md5) {
 		
 		$_SESSION['idusuario']=$idusuario;
 
-		header( "Location: seguimiento.php" );
+		header( "Location: alertasprevias.php" );
 	} else {
 		// Si la clave es incorrecta
 		$query2 = "INSERT INTO logins (nombre, momento, otros, ip) VALUES ('".$usuario."' , NOW() , 'err'  , '".$ip_login."');";

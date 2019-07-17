@@ -128,7 +128,6 @@ function pestanas($pagina) {
 		echo "<li><a href='listas_por_actividad.php' onclick=''><span>Listas por actividad
 				<img src='graficos/nueva.png' border=0></span></a></li>";
 
-
 	// ficha situacion social
 	} if ($pagina=='ficha_situacion_social') {
 		echo "<li><a href='ficha_situacion_social.php' onclick=''><span>Ficha Situación social
