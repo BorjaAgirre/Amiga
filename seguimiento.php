@@ -272,7 +272,7 @@ include_once "menu_lateral.php";
 				    }
 				}
 			} 
-			echo "\n<div style='font-size:12px'><br><a href= 'seguimientopdf.php?id_unico= ".$id_unico_load."' >Imprimir en pdf</a></div>";
+			echo "\n<div style='font-size:12px'><br><a href= 'pdf_seguimiento.php?id_unico= ".$id_unico_load."' >Imprimir en pdf</a></div>";
 		}
 
 		echo "</div>\n</body>\n</html>";
