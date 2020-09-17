@@ -63,6 +63,8 @@ private function verifica_usuario($tiempo, $usuario, $clave_md5) {
 		
 		$_SESSION['idusuario']=$idusuario;
 		$_SESSION['nombreusuario']=$nombre_tutor;
+		$_SESSION['grupousuario']=$grupos;
+		$_SESSION['permisousuario']=$permisos;
 
 		header( "Location: alertasprevias.php" );
 	} else {

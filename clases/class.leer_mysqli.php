@@ -275,10 +275,11 @@ class Leer_Mysqli {
 	*  Devuelve un array con las alertas del día corriente para un miembro del equipo dado
 	*/
 	function lee_alertas($today, $fechaposterior, $tutor) {
+		$grupo = $this->tutor_idtutor($tutor)['grupo'];
 		$query = "SELECT p.nombre, p.apellido1, p.apellido2, c.comentario, c.alerta FROM comentario c INNER JOIN persona p 
 			WHERE c.alerta >= '".$today."' 
 			AND c.alerta <= '".$fechaposterior."'
-			AND c.tutor = '".$tutor."'
+			AND c.grupo = '".$grupo."'
 			AND p.historial = 'actual'
 			AND c.id_unico = p.id_unico";
 		$result = $this->lista_query($query, false); 

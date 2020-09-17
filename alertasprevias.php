@@ -34,26 +34,27 @@ function escribeAlertas($alertas) {
 	echo "</div>";	
 }
 
-	/* Obtiene la fecha de hoy  */
-	$today = date('Y-m-d');
-	if ($debug) $today = "2019-09-02";
-	$fechaposterior =  date('Y-m-d',strtotime($today."+ 4 days"));
 
-	/*  Lee las alertas de hoy para el tutor activo  */
-	$dbic = new Leer_Mysqli(); 
-	$alertas = $dbic->lee_alertas($today, $fechaposterior, $_SESSION['idusuario']); 
-	if ($debug) {
-		echo "Fecha a buscar: ".$today; 
-		echo "<br>Alertas: <br>";
-		echo "<pre>"; print_r($alertas); echo "</pre>"; 
+/* Obtiene la fecha de hoy  */
+$today = date('Y-m-d');
+if ($debug) $today = "2019-09-02";
+$fechaposterior =  date('Y-m-d',strtotime($today."+ 4 days"));
 
-	}	 
+/*  Lee las alertas de hoy para el tutor activo  */
+$dbic = new Leer_Mysqli(); 
+$alertas = $dbic->lee_alertas($today, $fechaposterior, $_SESSION['idusuario']); 
+if ($debug) {
+	echo "Fecha a buscar: ".$today; 
+	echo "<br>Alertas: <br>";
+	echo "<pre>"; print_r($alertas); echo "</pre>"; 
 
-	/*  Si las hay, escribe las alertas; caso contrario, continúa con seguimiento.   */
-	if (!empty($alertas)) {
-		escribeAlertas($alertas);
-	} else {
-		header( "Location: seguimiento.php" );
-	}
+}	 
+
+/*  Si las hay, escribe las alertas; caso contrario, continúa con seguimiento.   */
+if (!empty($alertas)) {
+	escribeAlertas($alertas);
+} else {
+	header( "Location: seguimiento.php" );
+}
 
 
