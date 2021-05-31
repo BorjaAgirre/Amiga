@@ -13,6 +13,7 @@ $login->inicia();
 function imprimeComentario($insertar, $date, $id_unico_load, $row_comentario){
 		$tutores=  $_SESSION['tutores'];
 		$hitos=  $_SESSION['hitos'];
+		$grupo = $_SESSION['grupousuario'];
 
 		$link = ($insertar) ? "insertar_comentario.php" : "actualizar_comentario.php"; 
 		$fecha = (!$insertar) ? fecha_sql_txt($row_comentario['fecha']) : $date;
@@ -44,7 +45,10 @@ function imprimeComentario($insertar, $date, $id_unico_load, $row_comentario){
 		if ($insertar) {
 			echo "\n<td rowspan='4'>";
 			echo "\n<input type='hidden' name='id_unico' id='id_unico' value='".$id_unico_load."'>";
-			echo "\n<input type='image' src='graficos/guarda.png' name='submit' title='Insertar comentario'></td>";		
+			echo "\n<input type='image' src='graficos/guarda.png' name='submit' title='Insertar comentario'>";
+			echo "\n<br>&nbsp;<br>";
+			if ($grupo == 3) echo "<input type='image' src='graficos/green.png' height=20 width=20 name='caso' title='Comenzar caso'>";
+			echo "</td>";	
 		} else {
 			echo "\n<td rowspan='4'>";
 			echo "\n<input type='hidden' name='id_coment' id='id_coment' value='".$row_comentario['id_coment']."'>";

@@ -176,6 +176,8 @@ function leerListaDespl($n, $titulo, $item_despl, $item_persona) {
 
 			// Lee los datos para un sexo, y un determinado valor de la lista
 			$datos[$j] = $db->leer_datos($item_persona, $key, $valor1, $valor2);
+// echo "<pre>"; print_r($datos); echo "</pre>"; 
+// echo "<br>EMPEZANDO: item_persona: ".$item_persona." - key: ".$key." - valor1: ".$valor1." - valor2:".$valor2." - datos: ".print_r($datos[$j]);
 			$cont = 0;
 
 			if ($ver_nombres) {
@@ -185,9 +187,15 @@ function leerListaDespl($n, $titulo, $item_despl, $item_persona) {
 					$array_tabla[$i-1][$key ] .= $nom['nombre']." ".$nom['apellido1']."<br>\n";
 					$cont++;
 				}
+			} else {
+				foreach ($datos[$j++] as $nom) {
+					$cont++;
+				}				
 			}
 			$array_tabla[$i][$key ] = $cont;
 		}
+// echo "<pre>"; print_r($array_tabla); echo "</pre>"; 
+//	echo "<br>i: ".$i." - key: ".$key." - cont:".$cont;
 
 		// Obtener totales
 		// Datos totales de fila, mujeres + hombres
@@ -293,7 +301,7 @@ function leerItem($n, $titulo, $checkboxes) {
 
 	$cabeceras = array(0 => "") + $array_sexo + array(($n_sexos +1) => "Total");
 	$item = $item_persona;
-	escribeTabla($titulo, $cabeceras, $array_tabla, $item);
+	displayTable($titulo, $cabeceras, $array_tabla, $item);
 	return $array_tabla;
 }
 
@@ -325,6 +333,7 @@ function leerSalida($n, $fecha, $servicio) {
 
 		// Descripción del item
 		$array_tabla[$i][0] = $motivo;
+		if ($ver_nombres) $array_tabla[$i-1] = array( "", "", "", ""); 
 
 		/* 
 		*  Realiza este bucle para cada columna (sexo)
@@ -338,16 +347,21 @@ function leerSalida($n, $fecha, $servicio) {
 				OR ( ab.alta_baja = 'a' AND ab.fecha <= '".$fecha[1]."' ) );";
 //			echo "<br>Query motivo: ".$query; 
 			$lista_motivo = $db->lista_query($query); 
-//			echo "<pre>"; print_r($lista_motivo); echo "</pre>"; 
+
 			$cont = 0; 
 			foreach ($lista_motivo as $key => $motivo) {
 //				$persona = $db->leer_persona($id_unico); 
-				if ($ver_nombres) $array_tabla[$i-1][$key_sexo] .= $motivo['nombre']." ".$motivo['apellido1']."<br>";
+				if ($ver_nombres) {
+//					$array_tabla[$i-1][0] = "";
+//					$array_tabla[$i-1][$key ] = ""; 
+					$array_tabla[$i-1][$key_sexo] .=  $motivo['nombre']." ".$motivo['apellido1']."<br>";
+				}
 				$cont++; 
 			}
 			$array_tabla[$i][$key_sexo] = $cont;
 		}
 
+// echo "<pre>"; print_r($array_tabla); echo "</pre>"; 
 		// Obtener totales
 		// Datos totales de fila, mujeres + hombres
 		if ($ver_nombres) $array_tabla[$i-1][$n_sexos + 1] = ""; 
@@ -376,7 +390,8 @@ function leerSalida($n, $fecha, $servicio) {
 	$cabeceras = array(0 => "") + $array_sexo + array(($n_sexos +1) => "Total");
 	$item = $item_persona;
 	echo "<i><br>NOTA SOBRE LOS MOTIVOS DE LA SALIDA: <br>Algunas personas pueden aparecer repetidas, ya que es posible que tengan varias altas y bajas en el intervalo temporal pedido</i>"; 
-	escribeTabla("Motivos de la salida", $cabeceras, $array_tabla, $item);
+//	echo "<pre>"; print_r($array_tabla); echo "</pre>"; 
+	displayTable("Motivos de la salida", $cabeceras, $array_tabla, $item);
 	return $array_tabla;
 }
 
@@ -396,8 +411,8 @@ function leerSalida($n, $fecha, $servicio) {
 	$lista_personas = array( 76 ,185 ,2096  ,2205 ,2212  ,2314  ,2471  ,2536  ,2558  ,2577 ,2616  ,2622  ,2623  ,2641);
 
 	$debug = 0; 		///////////////////////   DEBUG LOG IGUAL A CERO PARA QUE SAQUE NOTIFICACIONES Y -1 PARA QUE NO SAQUE
-	$fecha[0]="1/1/2018";   // Fecha inicial por defecto
-	$fecha[1]="31/12/2018";   // Fecha final por defecto (si se ha rellenado la inicial pero la final no, entonces la final quedará en blanco)
+	$fecha[0]="1/1/2020";   // Fecha inicial por defecto
+	$fecha[1]="31/12/2020";   // Fecha final por defecto (si se ha rellenado la inicial pero la final no, entonces la final quedará en blanco)
 	$servicio_array = $AUX->servicio; 
 	$datos_items = $AUX->datos_items;
 	$ver_nombres=true; 
@@ -463,7 +478,6 @@ function leerSalida($n, $fecha, $servicio) {
 		$titulo  = "<h1>Datos de todas las personas del intervalo</h1>";
 		$cabeceras = array("Id", "Nombre","Apellido 1", "Apellido 2");
 		displayTable($titulo, $cabeceras, $array_tot, "personas_intervalo"); 
-
 
 		/*
 		 * Crea todos los cuadros uno por uno 
@@ -559,7 +573,7 @@ function leerSalida($n, $fecha, $servicio) {
 	echo "<form name='opciones' id='opciones' action='".$_SERVER['PHP_SELF']."' method='post'>\n";
 	echo "<br>Fecha inicio: <input type='text' name='fecha_0' > &nbsp; &nbsp\n";
 	echo "Fecha fin: <input type='text' name='fecha_1' >\n";
-	echo "<br>(Formato de fecha: dia/mes/año) (Por defecto: año 2018)";
+	echo "<br>(Formato de fecha: dia/mes/año) (Por defecto: año 2020)";
 	echo "<br><br>Recurso: &nbsp; &nbsp<select name='servicio'>\n"; 
 	foreach ($servicio_array as $key => $serv) {
 		echo "<option value='".$key."'>".$serv."</option>\n";

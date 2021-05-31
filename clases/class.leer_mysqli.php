@@ -78,9 +78,10 @@ class Leer_Mysqli {
 	*  Hace un select seguro a prueba de sql injection
 	*/
 	function pregunta_query_seguro($orden, $tabla, $columna_accion, $columna_where, $valor, $valor_where) {
+		$result = 0;
 		$db = $this->mysqli; 
 		$stmt = $db->stmt_init(); 
-		/* Sustituye a real_escape_string por seguridad */
+		// Sustituye a real_escape_string por seguridad 
 		if ($orden == 'select') { $query = "SELECT ".$columna_accion." FROM ".$tabla." WHERE ".$columna_where."=?"; }
 		elseif ($orden == 'update') { $query = "UPDATE ".$tabla." SET ".$columna_accion." = ? WHERE ".$columna_where." = '".$valor_where."' "; }
 		if ($stmt = $db->prepare($query)) {
@@ -275,7 +276,10 @@ class Leer_Mysqli {
 	*  Devuelve un array con las alertas del día corriente para un miembro del equipo dado
 	*/
 	function lee_alertas($today, $fechaposterior, $tutor) {
+		// Averigua en qué grupo está actualmente la persona tutora
 		$grupo = $this->tutor_idtutor($tutor)['grupo'];
+
+		// Obtiene las alertas de todo el grupo
 		$query = "SELECT p.nombre, p.apellido1, p.apellido2, c.comentario, c.alerta FROM comentario c INNER JOIN persona p 
 			WHERE c.alerta >= '".$today."' 
 			AND c.alerta <= '".$fechaposterior."'
@@ -869,6 +873,20 @@ class Leer_Mysqli {
 					and s.fecha_sesion <= '".$fechafin."'
 					and s.fecha_sesion >= '".$fechaini."'
 				GROUP BY i.id_indic;";
+		$result = $this->lista_query($query); 
+		return $result;		
+	}
+
+	function salidasAnuales($fechaini = '2019-12-31', $fechafin = '2021-01-01', $servicio = 'centroDia') {
+		$query = "SELECT p.nombre, p.apellido1, p.apellido2, a.fecha_correl AS fecha_salida, s.nombre 
+		FROM alta_baja a, persona p, desplegables s 
+		WHERE a.fecha_correl > '".$fechaini."'
+		AND a.fecha_correl < '".$fechafin."'
+		AND a.servicio = '".$servicio."'
+		AND p.id_unico = a.id_unico 
+		AND p.historial = 'actual' 
+		AND s.id_despl = a.motivo_baja 
+		AND s.despl = 'salida';";
 		$result = $this->lista_query($query); 
 		return $result;		
 	}
